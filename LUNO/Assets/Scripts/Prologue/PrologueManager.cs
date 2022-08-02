@@ -166,7 +166,7 @@ public class PrologueManager : MonoBehaviour
         {
             bubble.transform.GetChild(i).GetComponent<Animator>().SetBool("close", true);
         }
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0f);
         bubble.SetActive(false);
     }
 
