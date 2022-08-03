@@ -11,6 +11,10 @@ public class Move : MonoBehaviour
     SpriteRenderer spriteRenderer;
     Animator anim;
 
+    //사다리 임시
+    bool isLadder = false;
+    public float speed = 10f;
+
     void Awake()
     {
         rigid = GetComponent<Rigidbody2D>();
@@ -79,6 +83,30 @@ public class Move : MonoBehaviour
                 if(rayHit.distance < 0.5f)
                     anim.SetBool("IsJump", false);
             }
+        }
+
+        //사다리 타기
+        if (isLadder)
+        {
+            float v = Input.GetAxis("Vertical");
+            rigid.velocity = new Vector2(rigid.velocity.x, v * speed);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        //사다리 위에 있을 때
+        if (collision.gameObject.CompareTag("Ladder"))
+        {
+            isLadder = true;
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        //사다리 아닐때
+        if (collision.gameObject.CompareTag("Ladder"))
+        {
+            isLadder = false;
         }
     }
 }
