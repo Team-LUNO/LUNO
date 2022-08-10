@@ -180,7 +180,7 @@ public class PrologueManager : MonoBehaviour
         foreach (var letter in sentence)
         {
             text.text += letter;
-            yield return new WaitForSeconds(0.01f);
+            yield return new WaitForSeconds(0.015f);
         }
 
         typeDone = true;
