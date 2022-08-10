@@ -6,7 +6,6 @@ public class SkyMove : MonoBehaviour
 {
     private float startPos, pos,length,endPos;
     public Transform cam;
-    public float scale;
 
     void Awake()
     {
