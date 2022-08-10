@@ -16,12 +16,16 @@ public class PrologueManager : MonoBehaviour
     [SerializeField]
     private Prologue[] prologues;
 
+    [SerializeField]
+    private bool isRepeatable;
+
     private int order = 0;
     private GameObject frontBubble;
     private GameObject backBubble;
     private GameObject selectionBubble;
     private bool firstPlay = true;
     private bool typeDone = false;
+    private bool isDone = false;
 
     private bool start = false;
 
@@ -37,6 +41,16 @@ public class PrologueManager : MonoBehaviour
         typeDone = false;
     }
 
+    public bool GetDone()
+    {
+        return isDone;
+    }
+
+    public void ResetOrder()
+    {
+        order = 0;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -46,7 +60,7 @@ public class PrologueManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (start)
+        if (start && !isDone)
         {
             if (order < prologues.Length)
             {
@@ -56,7 +70,7 @@ public class PrologueManager : MonoBehaviour
                     {
                         firstPlay = false;
 
-                        frontBubble = prologues[order].speaker.transform.GetChild(0).GetChild(prologues[order].size - 1).gameObject;
+                        frontBubble = prologues[order].speaker.transform.Find("Balloon").GetChild(prologues[order].size - 1).gameObject;
                         StartCoroutine(PopUp(frontBubble));
                         StartCoroutine(TypeSentence(frontBubble, prologues[order].sentence));
                     }
@@ -82,7 +96,7 @@ public class PrologueManager : MonoBehaviour
                             backBubble = frontBubble;
                         }
 
-                        frontBubble = prologues[order].speaker.transform.GetChild(0).GetChild(prologues[order].size - 1).gameObject;
+                        frontBubble = prologues[order].speaker.transform.Find("Balloon").GetChild(prologues[order].size - 1).gameObject;
 
                         if (backBubble != frontBubble)
                         {
@@ -143,6 +157,11 @@ public class PrologueManager : MonoBehaviour
                     StartCoroutine(PopDown(frontBubble.transform.GetChild(int.Parse(prologues[order - 1].sentence)).gameObject, frontBubble.transform.childCount));
                     StartCoroutine(PopDown(backBubble));
                 }
+
+                if (!isRepeatable)
+                {
+                    isDone = true;
+                }
             }
         }
     }
@@ -180,7 +199,7 @@ public class PrologueManager : MonoBehaviour
         foreach (var letter in sentence)
         {
             text.text += letter;
-            yield return new WaitForSeconds(0.01f);
+            yield return new WaitForSeconds(0.015f);
         }
 
         typeDone = true;
