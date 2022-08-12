@@ -5,12 +5,18 @@ using UnityEngine;
 
 public class Move : MonoBehaviour
 {
-    public float maxSpeed = 3.0f;
+    public float maxSpeed = 3.5f;
     public float jumpPower;
     public float jumpTimeLimit = 0.1f;
     public bool IsLadder;
     public bool walkMode;
     public bool ladderMode;
+
+    public Animator rWalk;
+    public Animator rRun;
+    public Animator lWalk;
+    public Animator lRun;
+
     private float Gravity;
     Rigidbody2D rigid;
     SpriteRenderer spriteRenderer;
@@ -43,7 +49,29 @@ public class Move : MonoBehaviour
 
         if (Input.GetButtonDown("Horizontal"))
         {
-            spriteRenderer.flipX = Input.GetAxisRaw("Horizontal") == -1;
+            //spriteRenderer.flipX = Input.GetAxisRaw("Horizontal") == -1;
+            if(Input.GetAxisRaw("Horizontal") == 1)
+            {
+                if (walkMode)
+                {
+                    anim.runtimeAnimatorController = rWalk.runtimeAnimatorController;
+                }
+                else
+                {
+                    anim.runtimeAnimatorController = rRun.runtimeAnimatorController;
+                }
+            }
+            else if(Input.GetAxisRaw("Horizontal") == -1)
+            {
+                if (walkMode)
+                {
+                    anim.runtimeAnimatorController = lWalk.runtimeAnimatorController;
+                }
+                else
+                {
+                    anim.runtimeAnimatorController = lRun.runtimeAnimatorController;
+                }
+            }
         }
 
 
@@ -64,11 +92,21 @@ public class Move : MonoBehaviour
             { 
                 walkMode = false;
                 maxSpeed = 6.0f;
+
+                if (anim.runtimeAnimatorController == rWalk.runtimeAnimatorController)
+                    anim.runtimeAnimatorController = rRun.runtimeAnimatorController;
+                else if (anim == lWalk)
+                    anim.runtimeAnimatorController = lRun.runtimeAnimatorController;
             }
             else
             {
                 walkMode = true;
                 maxSpeed = 3.5f;
+
+                if (anim.runtimeAnimatorController == rRun.runtimeAnimatorController)
+                    anim.runtimeAnimatorController = rWalk.runtimeAnimatorController;
+                else if (anim == lRun)
+                    anim.runtimeAnimatorController = lWalk.runtimeAnimatorController;
             }
         }
 
