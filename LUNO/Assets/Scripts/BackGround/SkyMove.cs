@@ -4,37 +4,44 @@ using UnityEngine;
 
 public class SkyMove : MonoBehaviour
 {
-    private float startPos, pos,length,endPos;
-    public Transform cam;
+    private float length;
 
-    void Awake()
-    {
-        cam = Camera.main.transform;
-    }
+    [SerializeField]
+    private float offset;
+
+    [SerializeField]
+    private Transform[] backgrounds;
+
+
+    private float leftPosX = 0f;
+    private float rightPosX = 0f;
+    private float xScreenHalfSize = 0f;
+    private float yScreenHalfSize = 0f;
+
     void Start()
     {
-        startPos = transform.position.x*2;
-        pos = startPos;
-        length = GetComponent<SpriteRenderer>().bounds.size.x/2;
-    }
+        float tLength = backgrounds[0].GetComponent<SpriteRenderer>().sprite.bounds.size.x;
+        yScreenHalfSize = Camera.main.orthographicSize;
+        xScreenHalfSize = yScreenHalfSize * Camera.main.aspect;
 
+        leftPosX = -(xScreenHalfSize * 2.15f);
+        rightPosX = xScreenHalfSize * 2.15f * backgrounds.Length + offset;
+    }
 
     // Update is called once per frame
     void Update()
     {
-        endPos = pos + length;
-        if (startPos < endPos)
+        for (int i = 0; i < backgrounds.Length; i++)
         {
-            pos = transform.position.x;
-        }
-        else
-        {
-            transform.position = new Vector3 (startPos,transform.position.y,transform.position.z);
-            startPos = transform.position.x * 2;
-        }
+            backgrounds[i].position += Vector3.left * 1f * Time.deltaTime;
 
-        transform.position += Vector3.left * 2f * Time.deltaTime;
-
+            if (backgrounds[i].position.x < leftPosX)
+            {
+                Vector3 nextPos = backgrounds[i].position;
+                nextPos = new Vector3(nextPos.x + rightPosX, nextPos.y, nextPos.z);
+                backgrounds[i].position = nextPos;
+            }
+        }
     }
 
 }
