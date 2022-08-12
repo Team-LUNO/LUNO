@@ -32,6 +32,7 @@ public class PrologueManager : MonoBehaviour
     public void StartPrologue()
     {
         start = true;
+        //Debug.Log("start");
     }
 
     public void IncreaseOrder()
@@ -62,6 +63,7 @@ public class PrologueManager : MonoBehaviour
     {
         if (start && !isDone)
         {
+            //Debug.Log("start2");
             if (order < prologues.Length)
             {
                 if (order == 0)
@@ -71,6 +73,7 @@ public class PrologueManager : MonoBehaviour
                         firstPlay = false;
 
                         frontBubble = prologues[order].speaker.transform.Find("Balloon").GetChild(prologues[order].size - 1).gameObject;
+                        //Debug.Log(frontBubble);
                         StartCoroutine(PopUp(frontBubble));
                         StartCoroutine(TypeSentence(frontBubble, prologues[order].sentence));
                     }
@@ -169,6 +172,7 @@ public class PrologueManager : MonoBehaviour
     IEnumerator PopUp(GameObject bubble)
     {
         bubble.SetActive(true);
+       // Debug.Log("pop");
         yield return new WaitForSeconds(0.2f);
     }
 
