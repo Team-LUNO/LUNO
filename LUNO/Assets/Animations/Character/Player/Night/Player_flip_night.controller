@@ -22,7 +22,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: d9cf7030623e53746b5f86c9df78ef43, type: 2}
+  m_Motion: {fileID: 7400000, guid: 4532e167206f1485cb8a27c78abba4e4, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -100,7 +100,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: b65349a8be1210742beb522449117a09, type: 2}
+  m_Motion: {fileID: 7400000, guid: 91d75fe46767645729424dac37309609, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -112,7 +112,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Player_night
+  m_Name: Player_flip_night
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: IsWalk
@@ -290,7 +290,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 162669a610f259c4ebb67dcadebc2cf6, type: 2}
+  m_Motion: {fileID: 7400000, guid: c0d78f650e8fc4c82a22116ad8606677, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
