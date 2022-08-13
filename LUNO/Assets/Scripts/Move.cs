@@ -170,7 +170,7 @@ public class Move : MonoBehaviour
         }
     }
 
-    public void OnTriggerExit2D(Collider2D collision)
+   public void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("ladder"))
         {
