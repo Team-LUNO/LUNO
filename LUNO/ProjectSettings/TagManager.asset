@@ -10,6 +10,7 @@ TagManager:
   - ObjLeft
   - Obj
   - ObjUpper
+  - LibraryDoor
   layers:
   - Default
   - TransparentFX
