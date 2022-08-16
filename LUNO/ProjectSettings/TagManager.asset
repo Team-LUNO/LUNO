@@ -20,7 +20,7 @@ TagManager:
   - 
   - 
   - platform
-  - 
+  - platform(ignore)
   - 
   - 
   - 
