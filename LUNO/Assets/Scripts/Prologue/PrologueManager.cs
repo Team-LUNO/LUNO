@@ -49,6 +49,7 @@ public class PrologueManager : MonoBehaviour
     public void ResetOrder()
     {
         order = 0;
+        isDone = false;
     }
 
     // Start is called before the first frame update
@@ -158,10 +159,7 @@ public class PrologueManager : MonoBehaviour
                     StartCoroutine(PopDown(backBubble));
                 }
 
-                if (!isRepeatable)
-                {
-                    isDone = true;
-                }
+                isDone = true;
             }
         }
     }
