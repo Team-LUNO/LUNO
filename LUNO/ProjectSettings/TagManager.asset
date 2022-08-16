@@ -11,6 +11,8 @@ TagManager:
   - Obj
   - ObjUpper
   - LibraryDoor
+  - keepsake
+  - bookcart
   layers:
   - Default
   - TransparentFX
