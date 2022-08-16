@@ -197,8 +197,6 @@ public class Move : MonoBehaviour
     }
 
 
-
-
     public void move(float x)
     {
         rigid2D.velocity = new Vector2(x * speed, rigid2D.velocity.y);
@@ -207,6 +205,7 @@ public class Move : MonoBehaviour
 
     public void Jump()
     {
+        float Scale = transform.localScale.x;
         if (Input.GetButtonDown("Jump") && !anim.GetBool("IsJump") && !IsLadder)
         {
             rigid2D.velocity = Vector2.up * jumpForce;
@@ -231,7 +230,7 @@ public class Move : MonoBehaviour
         }
 
         // 사다리를 다 올라가지 않고 중도에 내려올 경우, 옆으로 움직일 수 있게 해주는 것
-        RaycastHit2D rayHit = Physics2D.Raycast(rigid2D.position, Vector3.down, 2 * Scale, LayerMask.GetMask("platform"));
+        RaycastHit2D rayHit = Physics2D.Raycast(rigid2D.position, Vector3.down, 4 * Scale, LayerMask.GetMask("platform"));
 
         if (Input.GetKey(KeyCode.S) && rayHit.collider != null)
         {
