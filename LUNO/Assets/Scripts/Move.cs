@@ -22,7 +22,7 @@ public class Move : MonoBehaviour
     SpriteRenderer spriteRenderer;
     Animator anim;
 
-    public bool isOn = true;
+    public bool isOn;
 
     // Start is called before the first frame update
     void Awake()
@@ -36,6 +36,7 @@ public class Move : MonoBehaviour
 
     void Update()
     {
+        Debug.Log(isOn);
         if (isOn)
         {
             //????
