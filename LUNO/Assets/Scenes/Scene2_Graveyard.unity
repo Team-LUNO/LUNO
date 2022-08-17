@@ -1082,7 +1082,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8716911181257861116}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -23.9, y: -6.2, z: 0}
+  m_LocalPosition: {x: -19, y: -6.2, z: 0}
   m_LocalScale: {x: 1.35, y: 1.35, z: 0.5}
   m_Children:
   - {fileID: 8716911182772595193}
@@ -1142,19 +1142,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &8716911181257861109
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8716911181257861116}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8366f092d1518c7489c43937c44c743f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rope: {fileID: 0}
 --- !u!1 &8716911181257861116
 GameObject:
   m_ObjectHideFlags: 0
@@ -1169,7 +1156,6 @@ GameObject:
   - component: {fileID: 8716911181257861105}
   - component: {fileID: 8716911181257861118}
   - component: {fileID: 8716911181257861119}
-  - component: {fileID: 8716911181257861109}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1481,7 +1467,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ad263a61e3ce9749bafd907b5543dbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerTransform: {fileID: 0}
+  playerTransform: {fileID: 8716911181257861106}
   cameraMove: 0
   bound: {fileID: 1065276601}
 --- !u!4 &8716911182772595193
