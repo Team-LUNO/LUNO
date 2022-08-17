@@ -149,9 +149,9 @@ GameObject:
   - component: {fileID: 8716911182038554301}
   - component: {fileID: 8716911182038554300}
   - component: {fileID: 8716911182038554294}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -276,12 +276,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 156eb4b84974fba4f890cf97af49c43a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 3
-  jumpPower: 11
-  jumpTimeLimit: 0.1
   IsLadder: 0
   walkMode: 1
   ladderMode: 0
+  isLongJump: 0
   rWalk: {fileID: 8716911182777672815}
   rRun: {fileID: 8716911181975046130}
   lWalk: {fileID: 8716911183136743878}

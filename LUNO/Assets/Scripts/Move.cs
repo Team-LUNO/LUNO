@@ -10,6 +10,7 @@ public class Move : MonoBehaviour
     private float DefaultRunspeed = 12.0f;
     private float speed;
     private float jumpForce = 14.0f;
+    private int playerLayer, ignoreLayer;
     public bool IsLadder;
     public bool walkMode;
     public bool ladderMode;
@@ -33,6 +34,8 @@ public class Move : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
         Gravity = rigid2D.gravityScale;
+        playerLayer = LayerMask.NameToLayer("Player");
+        ignoreLayer = LayerMask.NameToLayer("platform(ignore)");
         float Scale = transform.localScale.x;
         speed = DefaultWalkspeed * Scale;
     }
@@ -160,6 +163,23 @@ public class Move : MonoBehaviour
             rigid2D.gravityScale = 2.5f;
         }
 
+        //사다리타기
+        if (IsLadder)
+        {
+            rigid2D.gravityScale = 0;
+            if (ladderMode)
+            {
+                float ver = Input.GetAxis("Vertical");
+                rigid2D.velocity = new Vector2(rigid2D.velocity.x, ver * speed);
+            }
+
+        }
+        else //ad로 움직이기 기능. 사다리 타고 올라가거나 내려가고 있을 때는 옆으로 움직이기 불가능.
+        {
+            rigid2D.gravityScale = Gravity;
+            float x = Input.GetAxisRaw("Horizontal");
+            move(x);
+        }
     }
 
 
@@ -180,20 +200,7 @@ public class Move : MonoBehaviour
             }
         }
 
-        //사다리타기
-        if (IsLadder)
-        {
-            float ver = Input.GetAxis("Vertical");
-            rigid2D.gravityScale = 0.0f;
-            rigid2D.velocity = new Vector2(rigid2D.velocity.x, ver * speed);
 
-        }
-        else //ad로 움직이기 기능. 사다리 타고 올라가거나 내려가고 있을 때는 옆으로 움직이기 불가능.
-        {
-            rigid2D.gravityScale = Gravity;
-            float x = Input.GetAxisRaw("Horizontal");
-            move(x);
-        }
     }
 
 
@@ -220,23 +227,30 @@ public class Move : MonoBehaviour
     {
         float Scale = transform.localScale.x;
 
+        // 사다리를 다 올라가지 않고 중도에 내려올 경우, 옆으로 움직일 수 있게 해주는 것
+        RaycastHit2D rayHit = Physics2D.Raycast(rigid2D.position, Vector3.down, 3 * Scale, LayerMask.GetMask("platform"));
+
         if (collision.gameObject.tag == "Ladder")
         {
-            if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.S))
-            { // 사다리 사용 상태로 전환
-                IsLadder = true;
+            IsLadder = true;
+            if (Input.GetKey(KeyCode.W) ||Input.GetKey(KeyCode.S))
+            {
+                ladderMode = true;
+
             }
+            else if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
+            {
+                if (rayHit.collider != null)
+                {
+                    IsLadder = false;
+                    ladderMode = false;
+                }
+          
+            }
+            
 
         }
 
-        // 사다리를 다 올라가지 않고 중도에 내려올 경우, 옆으로 움직일 수 있게 해주는 것
-        RaycastHit2D rayHit = Physics2D.Raycast(rigid2D.position, Vector3.down, 4 * Scale, LayerMask.GetMask("platform"));
-
-        if (Input.GetKey(KeyCode.S) && rayHit.collider != null)
-        {
-            Debug.Log("connect");
-            IsLadder = false;
-        }
     }
 
     public void OnTriggerExit2D(Collider2D collision)
