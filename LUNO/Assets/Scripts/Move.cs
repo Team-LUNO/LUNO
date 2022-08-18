@@ -36,7 +36,7 @@ public class Move : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(isOn);
+        //Debug.Log(isOn);
         if (isOn)
         {
             //????

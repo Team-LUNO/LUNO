@@ -386,6 +386,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prologue1: {fileID: 1234360493}
   prologue2: {fileID: 914216104}
+  isExit: 0
 --- !u!114 &119230192
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -814,6 +815,7 @@ GameObject:
   m_Component:
   - component: {fileID: 540511789}
   - component: {fileID: 540511790}
+  - component: {fileID: 540511791}
   m_Layer: 0
   m_Name: bookcart_3
   m_TagString: bookcart
@@ -886,6 +888,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &540511791
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 540511788}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -33, y: -13}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 140, y: 33}
+    newSize: {x: 140, y: 33.017574}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 3, y: 6}
+  m_EdgeRadius: 0
 --- !u!4 &649395885 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8973357486997989805, guid: 2dc7b4fff84214494945d7401c6531b5, type: 3}
@@ -1235,7 +1263,7 @@ MonoBehaviour:
   - sentence: 0
     speaker: {fileID: 119230189}
     size: 10
-  isRepeatable: 1
+  isRepeatable: 0
 --- !u!1001 &1079565600
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2102,6 +2130,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2042310388}
   - component: {fileID: 2042310389}
+  - component: {fileID: 2042310390}
   m_Layer: 0
   m_Name: bookcart_1
   m_TagString: bookcart
@@ -2174,6 +2203,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &2042310390
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2042310387}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -33, y: -13}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 140, y: 33}
+    newSize: {x: 140, y: 33.017574}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 3, y: 6}
+  m_EdgeRadius: 0
 --- !u!1 &2051950193
 GameObject:
   m_ObjectHideFlags: 0
@@ -2184,6 +2239,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2051950194}
   - component: {fileID: 2051950195}
+  - component: {fileID: 2051950196}
   m_Layer: 0
   m_Name: bookcart_2
   m_TagString: bookcart
@@ -2256,6 +2312,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &2051950196
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2051950193}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -33, y: -13}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 140, y: 33}
+    newSize: {x: 140, y: 33.017574}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 3, y: 6}
+  m_EdgeRadius: 0
 --- !u!1 &2112921627
 GameObject:
   m_ObjectHideFlags: 0
