@@ -9,7 +9,7 @@ public class monologue : MonoBehaviour
 
     public PrologueManager prologue1;
 
-    private bool timeover = false;
+    //private bool timeover = false;
 
     public void limitMove(bool isLimit)
     {
@@ -33,16 +33,20 @@ public class monologue : MonoBehaviour
 
     void Update()
     {
+        /*
         if (timeover)
         {
             prologue1.StartPrologue();
             limitMove(false);
         }
+        */
     }
 
     IEnumerator Timer(float time)
     {
         yield return new WaitForSeconds(time);
-        timeover = true;
+        //timeover = true;
+        prologue1.StartPrologue();
+        limitMove(false);
     }
 }
