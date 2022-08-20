@@ -6,11 +6,12 @@ public class StartPrologueBookshelf : MonoBehaviour
 {
     [SerializeField]
     private PrologueManager prologueManager;
+    Move move;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-
+        move = GameObject.Find("Player_Night").GetComponent<Move>();
     }
 
     // Update is called once per frame
@@ -25,6 +26,7 @@ public class StartPrologueBookshelf : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
+                move.isOn = false;
                 if (prologueManager.GetDone())     /**/
                     prologueManager.ResetOrder(); /**/
                 prologueManager.StartPrologue();

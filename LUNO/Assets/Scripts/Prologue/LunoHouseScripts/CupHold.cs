@@ -6,7 +6,7 @@ public class CupHold : MonoBehaviour
 {
 
     public bool IsCupHold = false;
-    private int CupEvent = 0;
+    public int CupEvent = 0;
     public SpriteRenderer Cuprender;
     // Start is called before the first frame update
     void Awake()

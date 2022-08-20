@@ -5,15 +5,16 @@ using UnityEngine;
 public class StoveOff : MonoBehaviour
 {
 
-    public bool StoveON = false;
+    public bool StoveON;
     public SpriteRenderer Stoverender;
     public CupHold cupHold;
     // Start is called before the first frame update
     void Awake()
     {
         cupHold = GameObject.Find("n.luno1f_cup").GetComponent<CupHold>();
-        Stoverender = GameObject.Find("n.luno1f_stove").GetComponent<SpriteRenderer>();
+        Stoverender = GameObject.Find("n.luno1f_stoveOn").GetComponent<SpriteRenderer>();
         StoveON = true;
+
     }
 
     // Update is called once per frame

@@ -2,18 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StartPrologueStove : MonoBehaviour
+public class StartPrologueStoveOn : MonoBehaviour
 {
     [SerializeField]
-    public PrologueManager OnprologueManager;
-    public PrologueManager OFFprologueManager;
+    private PrologueManager OnprologueManager;
     StoveOff stoveOff;
     CupHold cupHold;
 
     // Start is called before the first frame update
     void Awake()
     {
-        stoveOff = GameObject.Find("n.luno1f_stove").GetComponent<StoveOff>();
+        stoveOff = GameObject.Find("n.luno1f_stoveOn").GetComponent<StoveOff>();
         cupHold = GameObject.Find("n.luno1f_cup").GetComponent<CupHold>();
     }
 
@@ -25,7 +24,8 @@ public class StartPrologueStove : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (stoveOff.StoveON) {
+        if (stoveOff.StoveON)
+        {
             if (cupHold.IsCupHold)
             {
                 if (collision.gameObject.tag == "Player")
@@ -38,17 +38,6 @@ public class StartPrologueStove : MonoBehaviour
                 if (OnprologueManager.GetDone()) /**/
                 OnprologueManager.ResetOrder(); /**/
                 OnprologueManager.StartPrologue();
-
-            }
-        }
-
-        else if (stoveOff.StoveON!) // 난로가 꺼져 있을때 나오는 말풍선 처리
-        {
-            if (collision.gameObject.tag == "Player")
-            {
-                if (Input.GetKeyDown(KeyCode.E)) {
-                    OFFprologueManager.StartPrologue();
-                }
             }
         }
     }
@@ -58,11 +47,6 @@ public class StartPrologueStove : MonoBehaviour
         if (stoveOff.StoveON)
         {
             OnprologueManager.IncreaseOrder();
-        }
-
-        else if (stoveOff.StoveON!) // 난로가 꺼져 있을때 나오는 말풍선 처리
-        {
-            OFFprologueManager.IncreaseOrder();
         }
     }
 }
