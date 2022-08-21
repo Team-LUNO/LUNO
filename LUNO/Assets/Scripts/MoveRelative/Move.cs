@@ -15,6 +15,7 @@ public class Move : MonoBehaviour
     public bool walkMode;
     public bool ladderMode;
     public bool isLongJump = false;
+    public string currentMapName;
     private float Gravity;
     private Rigidbody2D rigid2D;
     SpriteRenderer spriteRenderer;
