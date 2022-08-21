@@ -15,6 +15,7 @@ public class Move : MonoBehaviour
     public bool walkMode;
     public bool ladderMode;
     public bool isLongJump = false;
+    public string currentMapName;
     private float Gravity;
     private Rigidbody2D rigid2D;
     SpriteRenderer spriteRenderer;
@@ -41,6 +42,7 @@ public class Move : MonoBehaviour
         ignoreLayer = LayerMask.NameToLayer("platform(ignore)");
         float Scale = transform.localScale.x;
         speed = DefaultWalkspeed * Scale;
+        DontDestroyOnLoad(gameObject);
         isOn = true;
     }
 

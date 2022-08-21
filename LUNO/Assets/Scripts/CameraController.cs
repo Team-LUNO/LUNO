@@ -13,6 +13,8 @@ public class CameraController : MonoBehaviour
     private float halfWidth;
     private float halfHeight;
 
+    static public CameraController instance; // 씬 전환시의 에러 방지용
+
     void Start()
     {
         minBound = bound.bounds.min;
@@ -20,6 +22,16 @@ public class CameraController : MonoBehaviour
 
         halfHeight = Camera.main.orthographicSize;
         halfWidth = halfHeight * Screen.width / Screen.height;
+
+        if (instance == null) // 씬 전환시의 에러 방지용
+        {
+            DontDestroyOnLoad(gameObject);
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     void Update()

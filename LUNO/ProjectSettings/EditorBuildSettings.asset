@@ -8,4 +8,10 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/Scene5.unity
+    guid: 6d1f47e302366bf488a632cff0a0f632
+  - enabled: 1
+    path: Assets/Scenes/WarpTest.unity
+    guid: 3dd3f1db64919364f84b679c1c27aaee
   m_configObjects: {}

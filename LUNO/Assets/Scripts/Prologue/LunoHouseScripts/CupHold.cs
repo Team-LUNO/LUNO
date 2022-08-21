@@ -9,7 +9,7 @@ public class CupHold : MonoBehaviour
     public int CupEvent = 0;
     public SpriteRenderer Cuprender;
     // Start is called before the first frame update
-    void Awake()
+    void Start()
     {
         Cuprender = GameObject.Find("n.luno1f_cup").GetComponent<SpriteRenderer>();
     }

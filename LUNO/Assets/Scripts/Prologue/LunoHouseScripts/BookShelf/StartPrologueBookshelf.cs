@@ -9,7 +9,7 @@ public class StartPrologueBookshelf : MonoBehaviour
     Move move;
 
     // Start is called before the first frame update
-    void Awake()
+    void Start()
     {
         move = GameObject.Find("Player_Night").GetComponent<Move>();
     }

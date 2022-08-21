@@ -66,8 +66,6 @@ public class StartPrologueStoveOff : MonoBehaviour
                 OffprologueManager2.IncreaseOrder();
                 EventNum += 1;
             }
-
-            
             
         }
     }
