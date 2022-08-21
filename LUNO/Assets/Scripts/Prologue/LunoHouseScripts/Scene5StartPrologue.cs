@@ -22,7 +22,7 @@ public class Scene5StartPrologue : MonoBehaviour
     {
         if (Scene5Event == 1)
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKey(KeyCode.E))
             {
                 prologueManager.IncreaseOrder();
                 print("이동가능");
@@ -36,7 +36,9 @@ public class Scene5StartPrologue : MonoBehaviour
     void StartEvent()
     {
         if (Scene5Event == 0)
-        prologueManager.StartPrologue();
+        {
+            prologueManager.StartPrologue();
+        }
         Scene5Event += 1;
 
     }

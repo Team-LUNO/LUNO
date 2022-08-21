@@ -42,6 +42,7 @@ public class Move : MonoBehaviour
         ignoreLayer = LayerMask.NameToLayer("platform(ignore)");
         float Scale = transform.localScale.x;
         speed = DefaultWalkspeed * Scale;
+        DontDestroyOnLoad(gameObject);
         isOn = true;
     }
 
