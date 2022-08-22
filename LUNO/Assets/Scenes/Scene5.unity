@@ -565,6 +565,38 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &560533077
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 560533078}
+  m_Layer: 0
+  m_Name: Warp
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &560533078
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 560533077}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 725676765}
+  - {fileID: 1555119414}
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &590010607
 GameObject:
   m_ObjectHideFlags: 0
@@ -733,8 +765,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1676686298}
-  m_RootOrder: 3
+  m_Father: {fileID: 560533078}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &725676766
 BoxCollider2D:
@@ -775,6 +807,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transferMapName: WarpTest
+  arriveStartPoint: StartPoint1
 --- !u!1 &732759184
 GameObject:
   m_ObjectHideFlags: 0
@@ -1746,6 +1779,10 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 99fc05394620847d9884b0b1a333ad4c, type: 2}
+    - target: {fileID: 8716911182038554290, guid: 2dc7b4fff84214494945d7401c6531b5, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8716911182038554294, guid: 2dc7b4fff84214494945d7401c6531b5, type: 3}
       propertyPath: rope
       value: 
@@ -1766,6 +1803,18 @@ PrefabInstance:
       propertyPath: currentMapName
       value: Scene5
       objectReference: {fileID: 0}
+    - target: {fileID: 8716911182038554301, guid: 2dc7b4fff84214494945d7401c6531b5, type: 3}
+      propertyPath: sprites.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8716911182038554301, guid: 2dc7b4fff84214494945d7401c6531b5, type: 3}
+      propertyPath: sprites.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: fb797ea0b648eac4eb5e44fba5d35554, type: 3}
+    - target: {fileID: 8716911182038554301, guid: 2dc7b4fff84214494945d7401c6531b5, type: 3}
+      propertyPath: sprites.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: ddee6fcdf85e3438585c5d9776248b66, type: 3}
     - target: {fileID: 8716911182038554303, guid: 2dc7b4fff84214494945d7401c6531b5, type: 3}
       propertyPath: m_Name
       value: Player_Night
@@ -2191,6 +2240,78 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 9.678265, y: 15.804142}
   m_EdgeRadius: 0
+--- !u!1 &1555119413
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1555119414}
+  - component: {fileID: 1555119416}
+  - component: {fileID: 1555119415}
+  m_Layer: 8
+  m_Name: WarpExample
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1555119414
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1555119413}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -61.02, y: 0.18, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 560533078}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1555119415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1555119413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89bf3a5fb3fbdf542b300a5f9f1f26ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  transferMapName: WarpTest
+  arriveStartPoint: StartPoint2
+--- !u!61 &1555119416
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1555119413}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 33.15595, y: -14.145684}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 6.120613, y: 16.745874}
+  m_EdgeRadius: 0
 --- !u!1 &1634943129
 GameObject:
   m_ObjectHideFlags: 0
@@ -2269,7 +2390,6 @@ Transform:
   - {fileID: 1407847382}
   - {fileID: 1090225893}
   - {fileID: 958170319}
-  - {fileID: 725676765}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2416,6 +2536,7 @@ GameObject:
   - component: {fileID: 1885153533}
   - component: {fileID: 1885153535}
   - component: {fileID: 1885153534}
+  - component: {fileID: 1885153536}
   m_Layer: 0
   m_Name: n.Luno1f_stoveOff
   m_TagString: Untagged
@@ -2453,6 +2574,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OffprologueManager1: {fileID: 816248912}
   OffprologueManager2: {fileID: 2127313145}
+  EventNum: 0
 --- !u!61 &1885153535
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2479,6 +2601,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 6.466939, y: 7.674428}
   m_EdgeRadius: 0
+--- !u!114 &1885153536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1885153532}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89bf3a5fb3fbdf542b300a5f9f1f26ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  transferMapName: VillagePlatformer
+  arriveStartPoint: 
 --- !u!1 &1975354183
 GameObject:
   m_ObjectHideFlags: 0

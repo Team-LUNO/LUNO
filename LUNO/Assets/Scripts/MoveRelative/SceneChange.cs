@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class SceneChange : MonoBehaviour
 {
-    public string transferMapName; // 이 부분에 닿으면 이동시킬 Scene의 이름을 넣는 곳
+    public string transferMapName; // 이 부분에 닿으면 이동시킬 Scene의 이름을 넣는곳
+    public string arriveStartPoint; // 이 부분에 닿으면 이동시킬 Scene의 특정 StartPoint를 지정
     private Move move;
     // Start is called before the first frame update
     void Start()
@@ -27,6 +28,7 @@ public class SceneChange : MonoBehaviour
             if (Input.GetKey(KeyCode.E)) 
             {
                 move.currentMapName = transferMapName;
+                move.arriveStartPoint = arriveStartPoint;
                 SceneManager.LoadScene(transferMapName);
             }
         }

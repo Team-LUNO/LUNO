@@ -7,7 +7,7 @@ public class StartPrologueStoveOff : MonoBehaviour
     [SerializeField]
     public PrologueManager OffprologueManager1;
     public PrologueManager OffprologueManager2;
-    private int EventNum;
+    public int EventNum;
     StoveOff stoveOff;
     CupHold cupHold;
     Move move;

@@ -16,6 +16,7 @@ public class Move : MonoBehaviour
     public bool ladderMode;
     public bool isLongJump = false;
     public string currentMapName;
+    public string arriveStartPoint;
     private float Gravity;
     private Rigidbody2D rigid2D;
     SpriteRenderer spriteRenderer;
@@ -49,7 +50,8 @@ public class Move : MonoBehaviour
 
     void Update()
     {
-        if (isOn) {
+        if (isOn)
+        {
             float Scale = transform.localScale.x;
 
             if (Input.GetKeyDown(KeyCode.Space))
@@ -188,7 +190,7 @@ public class Move : MonoBehaviour
                 move(x);
             }
         }
-        
+
     }
 
 
@@ -246,7 +248,7 @@ public class Move : MonoBehaviour
         if (collision.gameObject.tag == "Ladder")
         {
             IsLadder = true;
-            if (Input.GetKey(KeyCode.W) ||Input.GetKey(KeyCode.S))
+            if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S))
             {
                 ladderMode = true;
 
@@ -258,9 +260,9 @@ public class Move : MonoBehaviour
                     IsLadder = false;
                     ladderMode = false;
                 }
-          
+
             }
-            
+
 
         }
 

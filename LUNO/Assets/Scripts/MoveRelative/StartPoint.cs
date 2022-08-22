@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 public class StartPoint : MonoBehaviour
 {
-    public string startPoint;
+    public string MapName;
+    public string StartPointName;
     private Move move;
     // Start is called before the first frame update
     void Start()
@@ -16,9 +17,12 @@ public class StartPoint : MonoBehaviour
             else if (GameObject.Find("Player"))
                 move = GameObject.Find("Player").GetComponent<Move>();
         }
-        if (startPoint == move.currentMapName)
+        if (MapName == move.currentMapName)
         {
-            move.transform.position = transform.position;
+            if (StartPointName == move.arriveStartPoint)
+            {
+                move.transform.position = transform.position;
+            }
         }
     }
 }
