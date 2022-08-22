@@ -10,6 +10,7 @@ public class S1_3_02_Scripts : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log("trigger");
         if(i == 8)
         {
             Debug.Log(prologues[i - 1].GetDone());
