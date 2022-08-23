@@ -149,6 +149,7 @@ GameObject:
   - component: {fileID: 8716911182038554301}
   - component: {fileID: 8716911182038554300}
   - component: {fileID: 8716911182038554294}
+  - component: {fileID: 1480374049}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -165,7 +166,7 @@ Transform:
   m_GameObject: {fileID: 8716911182038554303}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -86.9, y: 0.97, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 1.35, y: 1.35, z: 1.35}
   m_Children:
   - {fileID: 8716911183015368890}
   - {fileID: 8973357485646228328}
@@ -243,7 +244,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!95 &8716911182038554290
 Animator:
@@ -286,6 +287,7 @@ MonoBehaviour:
   rRun: {fileID: 8716911181975046130}
   lWalk: {fileID: 8716911183136743878}
   lRun: {fileID: 8716911181722990699}
+  isOn: 1
 --- !u!70 &8716911182038554300
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -315,6 +317,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rope: {fileID: 0}
+--- !u!114 &1480374049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8716911182038554303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22ccc36e5481c25418b294abd6ca90be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prologueManager: {fileID: 0}
+  Camera: {fileID: 8716911183015368772}
+  cam: {fileID: 8716911183015368773}
 --- !u!1 &8716911182777672809
 GameObject:
   m_ObjectHideFlags: 0
@@ -392,7 +409,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8716911183015368774}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1}
+  m_LocalPosition: {x: -0.2, y: 3.5, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8716911182038554289}
@@ -425,7 +442,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 6
+  orthographic size: 9.7
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -461,6 +478,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ad263a61e3ce9749bafd907b5543dbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerTransform: {fileID: 0}
+  cameraMove: 0
   bound: {fileID: 0}
 --- !u!1 &8716911183136743872
 GameObject:
