@@ -20,6 +20,8 @@ public class CameraController : MonoBehaviour
     //줌인
     float zoomSpeed = 0f;
     float smoothTime = 0.5f;    //목표도달까지 걸리는 시간
+    public float zoomSize;  //확대 후 카메라 크기
+    public bool zoomActive;
     Vector3 moveVelocity = Vector3.zero;
 
     void Start()
@@ -40,6 +42,10 @@ public class CameraController : MonoBehaviour
             transform.position = playerTransform.position + cameraPosition;
             LimitCameraArea();
         }
+        if(zoomActive)
+        {
+            ZoomIn();
+        }
     }
 
     void LimitCameraArea()
@@ -50,7 +56,7 @@ public class CameraController : MonoBehaviour
         transform.position = new Vector3(clampedX, clampedY, transform.position.z);
     }
 
-    public void ZoomIn(float size)    //size: 줌인 정도
+    public void ZoomIn()
     {
         //플레이어 위치로 이동
         Vector3 targetPosition = playerTransform.position + cameraPosition;
@@ -58,8 +64,8 @@ public class CameraController : MonoBehaviour
                                                 ref moveVelocity, smoothTime);
         LimitCameraArea();
 
-        //줌인
-        float smoothZoomSize = Mathf.SmoothDamp(Camera.main.orthographicSize, size,
+        //확대
+        float smoothZoomSize = Mathf.SmoothDamp(Camera.main.orthographicSize, zoomSize,
                                                 ref zoomSpeed, smoothTime);
         Camera.main.orthographicSize = smoothZoomSize;
 
@@ -67,11 +73,12 @@ public class CameraController : MonoBehaviour
         halfHeight = Camera.main.orthographicSize;
         halfWidth = halfHeight * Screen.width / Screen.height;
 
-        //줌인 완료
-        if (Mathf.Abs(Camera.main.orthographicSize - size) < 0.1f)
+        //확대 완료
+        if (Mathf.Abs(Camera.main.orthographicSize - zoomSize) < 0.1f)
         {
             halfHeight = Camera.main.orthographicSize;
             halfWidth = halfHeight * Screen.width / Screen.height;
+            zoomActive = false;
             cameraMove = true;
         }
     }

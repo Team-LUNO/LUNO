@@ -10,9 +10,6 @@ public class PlayerGetup : MonoBehaviour
     Animator anim;
     Move move;
 
-    bool zoomActive;
-    float zoomSize = 11f;
-
     void Start()
     {
         move = player.GetComponent<Move>();
@@ -24,10 +21,7 @@ public class PlayerGetup : MonoBehaviour
 
     void Update()
     {
-        if(zoomActive)
-        {
-            cam.ZoomIn(zoomSize);
-        }
+
     }
 
     public void Getup()
@@ -35,6 +29,7 @@ public class PlayerGetup : MonoBehaviour
         cam.cameraMove = false;
         move.isOn = true;
         anim.runtimeAnimatorController = move.rWalk.runtimeAnimatorController;
-        zoomActive = true;
+        cam.zoomSize = 11f;
+        cam.zoomActive = true;
     }
 }
