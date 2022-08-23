@@ -280,10 +280,14 @@ MonoBehaviour:
   walkMode: 1
   ladderMode: 0
   isLongJump: 0
+  currentMapName: 
+  arriveStartPoint: 
+  ladderSprite: {fileID: 21300000, guid: 233b04a4dea91dc4896b67310d047ec1, type: 3}
   rWalk: {fileID: 8716911182777672815}
   rRun: {fileID: 8716911181975046130}
   lWalk: {fileID: 8716911183136743878}
   lRun: {fileID: 8716911181722990699}
+  isOn: 0
 --- !u!70 &8716911182038554300
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
