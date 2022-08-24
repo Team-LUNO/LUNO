@@ -11,7 +11,14 @@ public class StartPrologueBookshelf : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        move = GameObject.Find("Player_Night").GetComponent<Move>();
+        if (move == null)
+        {
+            if (GameObject.Find("Player_Night"))
+                move = GameObject.Find("Player_Night").GetComponent<Move>();
+
+            else if (GameObject.Find("Player"))
+                move = GameObject.Find("Player").GetComponent<Move>();
+        }
     }
 
     // Update is called once per frame

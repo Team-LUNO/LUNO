@@ -17,9 +17,15 @@ public class StartPrologueStoveOff : MonoBehaviour
     {
         stoveOff = GameObject.Find("n.luno1f_stoveOn").GetComponent<StoveOff>();
         cupHold = GameObject.Find("n.luno1f_cup").GetComponent<CupHold>();
-        move = GameObject.Find("Player_Night").GetComponent<Move>();
         EventNum = 0;
+        if (move == null)
+        {
+            if (GameObject.Find("Player_Night"))
+                move = GameObject.Find("Player_Night").GetComponent<Move>();
 
+            else if (GameObject.Find("Player"))
+                move = GameObject.Find("Player").GetComponent<Move>();
+        }
     }
 
     // Update is called once per frame
@@ -30,43 +36,63 @@ public class StartPrologueStoveOff : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (cupHold.CupEvent > 0)
+
+
+        if (cupHold.IsCupHold!)
         {
             if (collision.gameObject.tag == "Player")
             {
                 if (Input.GetKeyDown(KeyCode.E))
                 {
-                    if (EventNum == 0) {
+
+                    if (EventNum == 0)
+                    {
+                        //move.isOn = false;
                         OffprologueManager1.StartPrologue();
-                    }
-                    else if (EventNum == 1) {
-                        OffprologueManager2.StartPrologue();
+                        EventNum = 1;
+                        print("EventNum 증가1");
+
+
                     }
                     else if (EventNum == 2)
+                    {
+                        //move.isOn = false;
+                        OffprologueManager2.StartPrologue();
+
+
+                    }
+                    else if (EventNum == 3)
                     {
                         print("탈출");
                     }
 
+
                 }
+
+
             }
         }
+
+
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (cupHold.CupEvent > 0)
+        if (EventNum == 0)
         {
-            if (EventNum == 0)
-            {
-                OffprologueManager1.IncreaseOrder();
-                EventNum += 1;
-            }
-            else if (EventNum == 1)
-            {
-                OffprologueManager2.IncreaseOrder();
-                EventNum += 1;
-            }
-            
+            //move.isOn = false;
+            OffprologueManager1.IncreaseOrder();
+            EventNum = 2;
+            print("EventNum 증가2");
+
+
+        }
+        else if (EventNum == 1)
+        {
+            //move.isOn = false;
+            OffprologueManager2.IncreaseOrder();
+            EventNum = 3;
+            print("EventNum 증가3");
         }
     }
 }

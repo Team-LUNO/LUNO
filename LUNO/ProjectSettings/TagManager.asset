@@ -10,6 +10,7 @@ TagManager:
   - ObjLeft
   - Obj
   - ObjUpper
+  - GetObj
   layers:
   - Default
   - TransparentFX

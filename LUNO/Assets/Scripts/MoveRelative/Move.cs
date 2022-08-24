@@ -9,17 +9,22 @@ public class Move : MonoBehaviour
     private float DefaultWalkspeed = 7.0f;
     private float DefaultRunspeed = 12.0f;
     private float speed;
-    private float jumpForce = 14.0f;
+    private float jumpForce = 12.0f;
+    private float NTime;
     private int playerLayer, ignoreLayer;
+    public bool IsHand = false;
     public bool IsLadder;
     public bool walkMode;
     public bool ladderMode;
-    public bool isLongJump = false;
+    public bool isLongJump;
+    private bool isHandEvent;
+    private bool isJumping;
     public string currentMapName;
     public string arriveStartPoint;
     private float Gravity;
     private Rigidbody2D rigid2D;
     public Sprite ladderSprite;
+    AnimatorStateInfo animStateInfo;
     SpriteRenderer spriteRenderer;
     Animator anim;
 
@@ -46,11 +51,15 @@ public class Move : MonoBehaviour
         speed = DefaultWalkspeed * Scale;
         DontDestroyOnLoad(gameObject);
         isOn = true;
+        isLongJump = false;
+        isHandEvent = false;
+        isJumping = false;
     }
 
 
     void Update()
     {
+        animStateInfo = anim.GetCurrentAnimatorStateInfo(0);
         if (isOn)
         {
             float Scale = transform.localScale.x;
@@ -58,6 +67,7 @@ public class Move : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 Jump();
+                isJumping = true;
             }
 
 
@@ -128,8 +138,12 @@ public class Move : MonoBehaviour
             }
 
 
-            //????????, ???????????? ????
-            if (Mathf.Abs(rigid2D.velocity.x) < 0.3)
+
+            if (isJumping) { // 점프할때는 애니메이션 안 나옴
+
+                anim.SetBool("IsJump", true);
+            }
+            else if (Mathf.Abs(rigid2D.velocity.x) < 0.3)
             {
                 anim.SetBool("IsWalk", false);
             }
@@ -180,7 +194,12 @@ public class Move : MonoBehaviour
                 rigid2D.gravityScale = 0;
                 if (ladderMode)
                 {
-                    if (Input.GetButton("Vertical") && rayHit1.collider == null) // 무시 플랫폼은 뚫고 애니메이션 나와야 하기 때문에
+                    if (Input.GetKey(KeyCode.W))
+                    {
+                        anim.enabled = true;
+                        anim.SetBool("IsClimb", true);
+                    }
+                    else if (Input.GetButton("Vertical") && rayHit1.collider == null) // 무시 플랫폼은 뚫고 애니메이션 나와야 하기 때문에
                     {
                         anim.enabled = true;
                         anim.SetBool("IsClimb", true);
@@ -226,9 +245,34 @@ public class Move : MonoBehaviour
                 if (rayHit1.collider != null || rayHit2.collider != null)
                 {
                     if (rayHit1.distance < 3.5f * Scale || rayHit2.distance < 3.5f * Scale)
+                    {
                         anim.SetBool("IsJump", false);
+                        isJumping = false;
+                    }
+
                 }
             }
+        }
+
+        if (IsHand) // 물건에 E키 눌러 모션이 나오는 부분 처리
+        {
+            if (isHandEvent == false)
+            {
+                GetObj();
+                isHandEvent = true;
+            }
+            animStateInfo = anim.GetCurrentAnimatorStateInfo(0);
+            NTime = animStateInfo.normalizedTime;
+            if (NTime >= 1.0f)
+            {
+                anim.SetBool("IsHand", false);
+                isOn = true;
+            }
+            
+        }
+        else
+        {
+            isHandEvent = false;
         }
 
 
@@ -250,6 +294,11 @@ public class Move : MonoBehaviour
             anim.SetBool("IsJump", true);
         }
 
+    }
+
+    public void GetObj()
+    {
+        anim.SetBool("IsHand", true);
     }
 
 
