@@ -8,7 +8,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Slide Off
-  m_Speed: 2
+  m_Speed: 3.5
   m_CycleOffset: 0
   m_Transitions: []
   m_StateMachineBehaviours: []
@@ -87,7 +87,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Slide On
-  m_Speed: 2
+  m_Speed: 3.5
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 9205035810960439089}

@@ -31,6 +31,7 @@ public class Move : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
         Gravity = rigid.gravityScale;
+        isOn = true;
     }
 
 
@@ -188,6 +189,6 @@ public class Move : MonoBehaviour
         }
 
     }
-    
+
 
 }
