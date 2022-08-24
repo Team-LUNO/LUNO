@@ -4,13 +4,13 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class StoveWarp : MonoBehaviour
 {
-    public string transferMapName; // 이 부분에 닿으면 이동시킬 Scene의 이름을 넣는 곳
+    public string transferMapName; // 이 부분에 닿으면 이동시킬 Scene의 이름을 넣는곳
+    public string arriveStartPoint; // 이 부분에 닿으면 이동시킬 Scene의 특정 StartPoint를 지정
     private Move move;
     public StartPrologueStoveOff stoveOff;
     // Start is called before the first frame update
     void Start()
     {
-        stoveOff = GameObject.Find("n.luno1f_stoveOff").GetComponent<StartPrologueStoveOff>();
         if (move == null)
         {
 
@@ -32,6 +32,7 @@ public class StoveWarp : MonoBehaviour
                 if (Input.GetKey(KeyCode.E))
                 {
                     move.currentMapName = transferMapName;
+                    move.arriveStartPoint = arriveStartPoint;
                     SceneManager.LoadScene(transferMapName);
                 }
             }

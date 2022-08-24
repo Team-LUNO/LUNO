@@ -176,7 +176,7 @@ public class Move : MonoBehaviour
             //사다리타기
             if (IsLadder)
             {
-                RaycastHit2D rayHit1 = Physics2D.Raycast(rigid2D.position, Vector3.down, 2f * Scale, LayerMask.GetMask("platform"));
+                RaycastHit2D rayHit1 = Physics2D.Raycast(rigid2D.position, Vector3.down, 3f * Scale, LayerMask.GetMask("platform"));
                 rigid2D.gravityScale = 0;
                 if (ladderMode)
                 {
@@ -220,12 +220,12 @@ public class Move : MonoBehaviour
             if (rigid2D.velocity.y < 0) // 땅에 닿았는지 안 닿았는지 판별하는 코드
             {
                 Debug.DrawRay(rigid2D.position, Vector3.down, new Color(0, 1, 0));
-                RaycastHit2D rayHit1 = Physics2D.Raycast(rigid2D.position, Vector3.down, 3 * Scale, LayerMask.GetMask("platform"));
-                RaycastHit2D rayHit2 = Physics2D.Raycast(rigid2D.position, Vector3.down, 3 * Scale, LayerMask.GetMask("platform(ignore)"));
+                RaycastHit2D rayHit1 = Physics2D.Raycast(rigid2D.position, Vector3.down, 3.5f * Scale, LayerMask.GetMask("platform"));
+                RaycastHit2D rayHit2 = Physics2D.Raycast(rigid2D.position, Vector3.down, 3.5f * Scale, LayerMask.GetMask("platform(ignore)"));
 
                 if (rayHit1.collider != null || rayHit2.collider != null)
                 {
-                    if (rayHit1.distance < 3.75f * Scale || rayHit2.distance < 3.75f * Scale)
+                    if (rayHit1.distance < 3.5f * Scale || rayHit2.distance < 3.5f * Scale)
                         anim.SetBool("IsJump", false);
                 }
             }
