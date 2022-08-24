@@ -5,6 +5,9 @@ using UnityEngine;
 public class Scene8Manager : MonoBehaviour
 {
     [SerializeField]
+    private GameObject zoomInCamera;
+
+    [SerializeField]
     private GameObject player;
 
     [SerializeField]
@@ -20,20 +23,43 @@ public class Scene8Manager : MonoBehaviour
     private GameObject itemInGame;
 
     [SerializeField]
-    private PrologueManager prologue;
+    private PrologueManager[] prologues;
+
+
 
     private int order = 0;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
         if (order == 0)
+        {
+            Invoke("TurnOffCamera", 4.5f);
+            order++;
+        }
+        else if (order == 1)
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                prologues[0].StartPrologue();
+                order++;
+            }
+        }
+        else if (order == 2 && prologues[0].GetDone())
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                prologues[1].StartPrologue();
+                order++;
+            }
+        }
+        else if (order == 3 && prologues[1].GetDone())
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
@@ -42,7 +68,7 @@ public class Scene8Manager : MonoBehaviour
                 order++;
             }
         }
-        else if(order == 1)
+        else if(order == 4)
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
@@ -53,11 +79,11 @@ public class Scene8Manager : MonoBehaviour
                 order++;
             }
         }
-        else if (order == 2)
+        else if (order == 5)
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                prologue.StartPrologue();
+                prologues[2].StartPrologue();
                 itemInGame.SetActive(false);
                 order++;
             }
@@ -68,5 +94,10 @@ public class Scene8Manager : MonoBehaviour
     {
         inventory.SetActive(false);
         player.GetComponent<Move>().enabled = true;
+    }
+
+    private void TurnOffCamera()
+    {
+        zoomInCamera.SetActive(false);
     }
 }
