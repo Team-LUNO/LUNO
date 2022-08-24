@@ -595,8 +595,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prologueManager: {fileID: 2017497769}
---- !u!70 &1171607084
-CapsuleCollider2D:
+--- !u!61 &1171607084
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -608,9 +608,19 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.085355215, y: -0.3414195}
-  m_Size: {x: 3.5699995, y: 5.5171614}
-  m_Direction: 0
+  m_Offset: {x: -0.02418089, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 3.57, y: 6.2}
+    newSize: {x: 3.57, y: 6.2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 6.9070044, y: 6.2}
+  m_EdgeRadius: 0
 --- !u!1 &1177467127
 GameObject:
   m_ObjectHideFlags: 0
@@ -693,6 +703,79 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &1238472821
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1590366930}
+    m_Modifications:
+    - target: {fileID: 8903260777766624120, guid: a95510b9d41d0498e9c618594bc88fe3, type: 3}
+      propertyPath: m_Name
+      value: cwss_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8903260777766624120, guid: a95510b9d41d0498e9c618594bc88fe3, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8903260777766624121, guid: a95510b9d41d0498e9c618594bc88fe3, type: 3}
+      propertyPath: prologueManager
+      value: 
+      objectReference: {fileID: 2017497769}
+    - target: {fileID: 8903260777766624123, guid: a95510b9d41d0498e9c618594bc88fe3, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8903260777766624123, guid: a95510b9d41d0498e9c618594bc88fe3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8903260777766624123, guid: a95510b9d41d0498e9c618594bc88fe3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8903260777766624123, guid: a95510b9d41d0498e9c618594bc88fe3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8903260777766624123, guid: a95510b9d41d0498e9c618594bc88fe3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8903260777766624123, guid: a95510b9d41d0498e9c618594bc88fe3, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8903260777766624123, guid: a95510b9d41d0498e9c618594bc88fe3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8903260777766624123, guid: a95510b9d41d0498e9c618594bc88fe3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8903260777766624123, guid: a95510b9d41d0498e9c618594bc88fe3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8903260777766624123, guid: a95510b9d41d0498e9c618594bc88fe3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8903260777766624123, guid: a95510b9d41d0498e9c618594bc88fe3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8903260778870670762, guid: a95510b9d41d0498e9c618594bc88fe3, type: 3}
+      propertyPath: m_Text
+      value: "\uCC3E\uB294 \uAC83\uC774 \uC788\uC5B4."
+      objectReference: {fileID: 0}
+    - target: {fileID: 8903260779049449824, guid: a95510b9d41d0498e9c618594bc88fe3, type: 3}
+      propertyPath: m_Text
+      value: "\uADF8\uACF3\uC5D0 \uAC00\uBCF4\uACE0 \uC2F6\uC5B4."
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a95510b9d41d0498e9c618594bc88fe3, type: 3}
 --- !u!1 &1442613405
 GameObject:
   m_ObjectHideFlags: 0
@@ -775,6 +858,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!4 &1590366930 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8973357486997989805, guid: 2dc7b4fff84214494945d7401c6531b5, type: 3}
+  m_PrefabInstance: {fileID: 2099074373}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1595106170
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1106,15 +1194,39 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prologues:
-  - sentence: "\uC774 \uC0B0\uC7A5\uC740 \uC800\uB9CC\uC758 \uACF5\uAC04\uC785\uB2C8\uB2E4."
+  - sentence: "\uB3D9\uCABD\uC774\uC694? \uC5EC\uAE30\uC11C \uC815\uB3D9\uCABD\uC774\uB77C\uBA74\u2026
+      \uC808\uBCBD\uC778\uAC78\uC694."
+    speaker: {fileID: 1171607079}
+    size: 2
+  - sentence: "\uB2F9\uC2E0\uAC19\uC740 \uC5EC\uC6B0\uC5D0\uAC8C\uB294 \uD798\uB4E4
+      \uAC81\uB2C8\uB2E4."
     speaker: {fileID: 1171607079}
     size: 3
-  - sentence: "...\uC2DC\uB044\uB7FD\uAC8C \uAD74\uC9C0 \uB9C8\uC138\uC694."
+  - sentence: "\uADF8\uB7F0\uB370, \uBB34\uC2A8 \uC77C\uB85C?"
     speaker: {fileID: 1171607079}
-    size: 3
-  - sentence: ....
+    size: 4
+  - sentence: 0
     speaker: {fileID: 58493365}
-    size: 8
+    size: 9
+  - sentence: "\uC544... \uC124\uB9C8."
+    speaker: {fileID: 1171607079}
+    size: 4
+  - sentence: "\uD558, \uD558. \uB3D9\uCABD\uC5D0\uB294 \uC6CC\uB099 \uC7AC\uBBF8\uC788\uB294
+      \uC2E0\uD654\uB4E4\uC774 \uB9CE\uC8E0."
+    speaker: {fileID: 1171607079}
+    size: 2
+  - sentence: "\uB2F9\uC2E0\uAC19\uC740 \uC9D0\uC2B9\uB4E4\uC744 \uC885\uC885 \uBD24\uC5B4\uC694."
+    speaker: {fileID: 1171607079}
+    size: 3
+  - sentence: "\uC778\uC0DD\uC744 \uC1A1\uB450\uB9AC\uC9F8 \uB4A4\uD754\uB4E4 \uC138\uACC4\uC758
+      \uC2E0\uBE44\uB97C \uCC3E\uC544\uB098\uC11C\uB294 \uBC29\uB791\uAC1D\uB4E4
+      \uB9D0\uC785\uB2C8\uB2E4."
+    speaker: {fileID: 1171607079}
+    size: 2
+  - sentence: "\uC8C4\uC1A1\uD558\uC9C0\uB9CC, \uC815\uB9D0 \uBC14\uBCF4\uB4E4\uB9CC
+      \uD560 \uC218 \uC788\uB294 \uC77C\uC774\uB77C\uACE0 \uB9D0\uD558\uACE0 \uC2F6\uB124\uC694."
+    speaker: {fileID: 1171607079}
+    size: 2
   isRepeatable: 0
 --- !u!4 &2017497770
 Transform:
@@ -1260,6 +1372,10 @@ PrefabInstance:
     - target: {fileID: 8973357486473242669, guid: 2dc7b4fff84214494945d7401c6531b5, type: 3}
       propertyPath: m_LocalPosition.y
       value: 3.6200004
+      objectReference: {fileID: 0}
+    - target: {fileID: 8973357486997989804, guid: 2dc7b4fff84214494945d7401c6531b5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8973357487156788610, guid: 2dc7b4fff84214494945d7401c6531b5, type: 3}
       propertyPath: m_IsActive

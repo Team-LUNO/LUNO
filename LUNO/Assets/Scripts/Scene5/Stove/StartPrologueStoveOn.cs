@@ -35,9 +35,13 @@ public class StartPrologueStoveOn : MonoBehaviour
             }
             else if (collision.gameObject.tag == "Player")
             {
-                if (OnprologueManager.GetDone()) /**/
-                OnprologueManager.ResetOrder(); /**/
-                OnprologueManager.StartPrologue();
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    if (OnprologueManager.GetDone()) /**/
+                        OnprologueManager.ResetOrder(); /**/
+                    OnprologueManager.StartPrologue();
+                }
+
             }
         }
     }

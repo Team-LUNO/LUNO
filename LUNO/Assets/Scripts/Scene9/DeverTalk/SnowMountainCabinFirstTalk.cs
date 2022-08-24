@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StartPrologueFirstTalk : MonoBehaviour
+public class SnowMountainCabinFirstTalk : MonoBehaviour
 {
     [SerializeField]
     private PrologueManager prologueManager;
@@ -23,10 +23,8 @@ public class StartPrologueFirstTalk : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKey(KeyCode.E))
             {
-                if (prologueManager.GetDone())
-                    prologueManager.ResetOrder();
                 prologueManager.StartPrologue();
             }
         }

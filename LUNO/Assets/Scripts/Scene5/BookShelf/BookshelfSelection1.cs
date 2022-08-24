@@ -11,7 +11,14 @@ public class BookshelfSelection1 : SelectionBalloon
     // Start is called before the first frame update
     void Awake()
     {
-        move = GameObject.Find("Player_Night").GetComponent<Move>();
+        if (move == null)
+        {
+            if (GameObject.Find("Player_Night"))
+                move = GameObject.Find("Player_Night").GetComponent<Move>();
+
+            else if (GameObject.Find("Player"))
+                move = GameObject.Find("Player").GetComponent<Move>();
+        }
     }
 
     // Update is called once per frame
