@@ -6,8 +6,10 @@ public class popUpDetail : MonoBehaviour
 {
     public GameObject[] sections;
     public GameObject[] details;
+    public Camera cam;
+    CameraController cameraController;
     Animator detailAnim;
-    bool infoOnSwitch = false;
+    bool bookshelfOnSwitch = false;
     public int index;
     public bool[] isAnswer;
 
@@ -18,18 +20,25 @@ public class popUpDetail : MonoBehaviour
 
     void Start()
     {
-
+        cameraController = cam.GetComponent<CameraController>();
     }
 
     void Update()
     {
         if (index <2)
         {
-            if (!details[index].activeSelf && infoOnSwitch == true && Input.GetKeyDown(KeyCode.E))
+            if (!details[index].activeSelf && bookshelfOnSwitch == true && Input.GetKeyDown(KeyCode.E))
             {
-                details[index].SetActive(true);
-                infoOnSwitch = false;
+                bookshelfOnSwitch = false;
                 mono.limitMove(true);
+
+                //카메라 이동
+                cameraController.targetPosition
+                    = new Vector3(cam.transform.position.x + 2.5f, cam.transform.position.y, cam.transform.position.z);
+                cameraController.smoothTime = 0.38f;
+                cameraController.cameraMove = false;
+                cameraController.moveRight = true;
+                StartCoroutine(AppearDelay());
             }
             //closePopUp()으로 옮김
             /*
@@ -50,7 +59,7 @@ public class popUpDetail : MonoBehaviour
         {
             if(collision.gameObject == sections[i])
             {
-                infoOnSwitch = true;
+                bookshelfOnSwitch = true;
                 index = i;
             }
         }
@@ -62,7 +71,7 @@ public class popUpDetail : MonoBehaviour
         {
             if (collision.gameObject == sections[i])
             {
-                infoOnSwitch = false;
+                bookshelfOnSwitch = false;
             }
         }
     }
@@ -71,7 +80,11 @@ public class popUpDetail : MonoBehaviour
     {
         detailAnim = details[index].GetComponent<Animator>();
         detailAnim.SetTrigger("PressE");
-        mono.limitMove(false);
+
+        //카메라 이동
+        cameraController.targetPosition = cameraController.playerTransform.position;
+        cameraController.moveLeft = true;
+
         isAnswer[index] = true; //일단 다 정답
         if (index == 1)  //마지막 책장 닫을 때
         {
@@ -89,6 +102,13 @@ public class popUpDetail : MonoBehaviour
             }
         }
         StartCoroutine(DisappearDelay());
+    }
+
+    IEnumerator AppearDelay()
+    {
+        yield return new WaitForSecondsRealtime(0.08f);
+        details[index].SetActive(true);
+        mono.limitMove(false);
     }
 
     IEnumerator DisappearDelay()

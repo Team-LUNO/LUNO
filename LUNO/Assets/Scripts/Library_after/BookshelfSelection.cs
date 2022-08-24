@@ -9,7 +9,7 @@ public class BookshelfSelection : SelectionBalloon
 
     void Start()
     {
-        //bookshelfManager = popUpDetail.details[popUpDetail.index].GetComponent<Bookshelf>();
+
     }
 
     void Update()

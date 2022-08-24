@@ -45,7 +45,7 @@ public class Scene2_LibraryDoor_UIManager : MonoBehaviour
             cameraController.smoothTime = 0.38f;
             cameraController.cameraMove = false;
             cameraController.moveRight = true;
-            StartCoroutine(AppearDelay());
+            StartCoroutine(AppearDelay());  //카메라 이동 0.08초 후에 팝업창 열림
         }
         else if (door.activeSelf && Input.GetKeyDown(KeyCode.E))
         {

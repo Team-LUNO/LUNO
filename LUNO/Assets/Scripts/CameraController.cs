@@ -116,6 +116,7 @@ public class CameraController : MonoBehaviour
         if(Vector3.Distance(transform.position, targetPosition) <0.1f)
         {
             moveLeft = false;
+            cameraMove = true;
         }
     }
 }
