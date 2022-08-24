@@ -33,7 +33,7 @@ public class SaraAction : MonoBehaviour
     {
         Camera.cameraMove = false;
         Debug.Log(cam.transform.localPosition);
-        Vector3 targetPosition = new Vector3(cam.transform.localPosition.x + 15000000000000, cam.transform.localPosition.y, cam.transform.localPosition.z);
+        Vector3 targetPosition = new Vector3(cam.transform.localPosition.x + 10000000000000, cam.transform.localPosition.y, cam.transform.localPosition.z);
         cam.transform.localPosition = Vector3.Lerp(cam.transform.localPosition, targetPosition,
                                                0.0000000000005f);
         Debug.Log(cam.transform.localPosition);
