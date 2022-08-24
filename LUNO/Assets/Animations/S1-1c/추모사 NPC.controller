@@ -6,7 +6,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: "\u110E\u116E\u1106\u1169\u1109\u1161 NPC"
+  m_Name: "\uCD94\uBAA8\uC0AC NPC"
   serializedVersion: 5
   m_AnimatorParameters: []
   m_AnimatorLayers:
