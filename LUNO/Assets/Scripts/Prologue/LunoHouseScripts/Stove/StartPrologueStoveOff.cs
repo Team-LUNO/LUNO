@@ -38,7 +38,7 @@ public class StartPrologueStoveOff : MonoBehaviour
     {
 
 
-        if (cupHold.IsCupHold!)
+        if (cupHold.IsCupHold)
         {
             if (collision.gameObject.tag == "Player")
             {
@@ -52,19 +52,8 @@ public class StartPrologueStoveOff : MonoBehaviour
                         EventNum = 1;
                         print("EventNum 증가1");
 
-
                     }
-                    else if (EventNum == 2)
-                    {
-                        //move.isOn = false;
-                        OffprologueManager2.StartPrologue();
-
-
-                    }
-                    else if (EventNum == 3)
-                    {
-                        print("탈출");
-                    }
+                 
 
 
                 }
@@ -72,13 +61,36 @@ public class StartPrologueStoveOff : MonoBehaviour
 
             }
         }
+        else
+        {
+            if (collision.gameObject.tag == "Player")
+            {
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    if (EventNum == 2)
+                    {
+                        //move.isOn = false;
+                        OffprologueManager2.StartPrologue();
+                        EventNum = 3;
+                        print("EventNum 증가3");
+
+
+                    }
+                    else if (EventNum == 4)
+                    {
+                        print("탈출");
+                    }
+                }
+            }
+        }
+
 
 
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (EventNum == 0)
+        if (EventNum == 1)
         {
             //move.isOn = false;
             OffprologueManager1.IncreaseOrder();
@@ -87,12 +99,12 @@ public class StartPrologueStoveOff : MonoBehaviour
 
 
         }
-        else if (EventNum == 1)
+        else if (EventNum == 3)
         {
             //move.isOn = false;
             OffprologueManager2.IncreaseOrder();
-            EventNum = 3;
-            print("EventNum 증가3");
+            EventNum = 4;
+            print("EventNum 증가4");
         }
     }
 }

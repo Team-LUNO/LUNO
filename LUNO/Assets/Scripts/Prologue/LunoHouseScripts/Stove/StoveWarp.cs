@@ -27,7 +27,7 @@ public class StoveWarp : MonoBehaviour
     {
         if (collision.CompareTag("Player"))// 이 부분은 조건이므로 자율적으로 수정하셔서 사용하셔도 됩니다
         {
-            if(stoveOff.EventNum == 2)
+            if(stoveOff.EventNum == 4)
             {
                 if (Input.GetKey(KeyCode.E))
                 {
