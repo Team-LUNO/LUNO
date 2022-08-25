@@ -32,7 +32,8 @@ public class S1_3_02_Left : MonoBehaviour
             }
             else if (!isFirst && prologue1.GetDone())
             {
-                prologue2.ResetOrder();
+                if (prologue2.GetDone())
+                    prologue2.ResetOrder();
                 prologue2.StartPrologue();
             }
         }

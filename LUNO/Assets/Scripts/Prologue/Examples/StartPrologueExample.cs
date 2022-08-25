@@ -19,6 +19,8 @@ public class StartPrologueExample : MonoBehaviour
         // E를 누르면 대화를 시작하는 예시
         if (Input.GetKeyDown(KeyCode.E))
         {
+            if(prologueManager.GetDone())
+                prologueManager.ResetOrder();
             prologueManager.StartPrologue();
         }
     }
