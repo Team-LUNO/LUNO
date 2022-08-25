@@ -1459,9 +1459,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prologues:
-  - sentence: "\uC774 \uB9C8\uC744\uC744 \uB098\uAC00\uC57C \uD574."
+  - sentence: "\uC5EC\uAE38 \uB5A0\uB098\uC790."
     speaker: {fileID: 8716911182914317818}
-    size: 8
+    size: 4
+  - sentence: "\uC774 \uB9C8\uC744\uC5D0 \uB0B4\uAC00 \uC788\uC744 \uACF3\uC740 \uC5C6\uB294
+      \uAC83 \uAC19\uC544."
+    speaker: {fileID: 8716911182914317818}
+    size: 2
   isRepeatable: 0
 --- !u!1 &1078405472
 GameObject:

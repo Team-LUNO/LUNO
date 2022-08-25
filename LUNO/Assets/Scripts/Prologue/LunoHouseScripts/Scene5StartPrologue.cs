@@ -6,13 +6,15 @@ public class Scene5StartPrologue : MonoBehaviour
 {
 
     public PrologueManager prologueManager;
-    private int Scene5Event; // 이 이벤트의 반복을 막기 위한 변수
+    private int scene5Event; // 이 이벤트의 반복을 막기 위한 변수
+    private int eventEnd;
     Move move;
     // Start is called before the first frame update
     void Start()
     {
         move = GameObject.Find("Player_Night").GetComponent<Move>();
-        Scene5Event = 0;
+        scene5Event = 0;
+        eventEnd = 0;
         move.isOn = false;
         Invoke("StartEvent", 2f);
     }
@@ -20,26 +22,31 @@ public class Scene5StartPrologue : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Scene5Event == 1)
+        if (eventEnd < 2)
         {
-            if (Input.GetKey(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.E))
             {
+                eventEnd += 1;
                 prologueManager.IncreaseOrder();
-                print("이동가능");
-                move.isOn = true;
-                Scene5Event += 1;
             }
+        }
+        
+        else
+        {
+            print("이동가능");
+            move.isOn = true;
+
         }
 
     }
 
     void StartEvent()
     {
-        if (Scene5Event == 0)
+        if (scene5Event == 0)
         {
             prologueManager.StartPrologue();
         }
-        Scene5Event += 1;
+        scene5Event += 1;
 
     }
 }

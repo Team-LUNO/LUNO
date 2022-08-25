@@ -1438,7 +1438,7 @@ MonoBehaviour:
     size: 2
   - sentence: "\uADF8\uB7F0\uB370 \uBB34\uC2A8 \uC77C\uB85C?"
     speaker: {fileID: 1171607079}
-    size: 2
+    size: 4
   - sentence: 0
     speaker: {fileID: 58493365}
     size: 9
@@ -1453,13 +1453,11 @@ MonoBehaviour:
     speaker: {fileID: 1171607079}
     size: 3
   - sentence: "\uC778\uC0DD\uC744 \uC1A1\uB450\uB9AC\uC9F8 \uB4A4\uD754\uB4E4 \uC138\uACC4\uC758
-      \uC2E0\uBE44\uB97C \uCC3E\uC544 \uB098\uC11C\uB294 \uBC29\uB791\uAC1D\uB4E4
-      \uB9D0\uC785\uB2C8\uB2E4!"
+      \uC2E0\uBE44\uB97C \uCC3E\uC544 \uB098\uC11C\uB294 \uBC29\uB791\uAC1D\uB4E4!"
     speaker: {fileID: 1171607079}
     size: 2
   - sentence: "\uC8C4\uC1A1\uD558\uC9C0\uB9CC, \uC815\uB9D0 \uBC14\uBCF4\uB4E4\uB9CC
-      \uD560 \uC218 \uC788\uB294 \uC77C\uC774\uB77C\uACE0 \uB9D0\uD574\uC8FC\uACE0
-      \uC2F6\uB124\uC694."
+      \uBC8C\uC774\uB294 \uC77C\uC774\uB77C\uACE0 \uB9D0\uD574\uC8FC\uACE0 \uC2F6\uB124\uC694."
     speaker: {fileID: 1171607079}
     size: 2
   isRepeatable: 0
