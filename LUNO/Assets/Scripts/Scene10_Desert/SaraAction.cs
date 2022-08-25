@@ -15,8 +15,6 @@ public class SaraAction : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Sara"))
         {
-            Debug.Log("trigger");
-            Debug.Log(cam.transform.position);
             StartCoroutine(cameraMove());
             collision.gameObject.GetComponent<Animator>().SetBool("isWakeUp", true);
             StartCoroutine(Popup());
@@ -32,12 +30,14 @@ public class SaraAction : MonoBehaviour
     IEnumerator cameraMove()
     {
         Camera.cameraMove = false;
-        Debug.Log(cam.transform.localPosition);
+        Debug.Log(cam.GetComponent<Animator>().GetBool("canMove"));
+        cam.GetComponent<Animator>().SetBool("canMove", true);
+        /*Debug.Log(cam.transform.localPosition);
         Vector3 targetPosition = new Vector3(cam.transform.localPosition.x + 25000000000000, cam.transform.localPosition.y, cam.transform.localPosition.z);
         cam.transform.localPosition = Vector3.Lerp(cam.transform.localPosition, targetPosition,
                                                0.0000000000005f);
-        Debug.Log(cam.transform.localPosition);
-        yield return new WaitForSeconds(2f);
+        Debug.Log(cam.transform.localPosition);*/
+        yield return new WaitForSeconds(0.5f);
 
     }
 }
