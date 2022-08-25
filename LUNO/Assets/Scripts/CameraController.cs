@@ -8,21 +8,27 @@ public class CameraController : MonoBehaviour
     Vector3 cameraPosition = new Vector3(0, 0, -1);
     public bool cameraMove;
 
-    // ¹Ú½º ÄÝ¶óÀÌ´õ ¿µ¿ªÀÇ ÃÖ¼Ò ÃÖ´ë°ª
+    // ï¿½Ú½ï¿½ ï¿½Ý¶ï¿½ï¿½Ì´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö¼ï¿½ ï¿½Ö´ë°ª
     public BoxCollider2D bound;
     private Vector3 minBound;
     private Vector3 maxBound;
 
-    // Ä«¸Þ¶óÀÇ ¹Ý³ÐÀÌ¿Í ¹Ý³ôÀÌ
+    // Ä«ï¿½Þ¶ï¿½ï¿½ï¿½ ï¿½Ý³ï¿½ï¿½Ì¿ï¿½ ï¿½Ý³ï¿½ï¿½ï¿½
     private float halfWidth;
     private float halfHeight;
 
-    //ÁÜÀÎ
-    float zoomSpeed = 0f;
-    float smoothTime = 0.5f;    //¸ñÇ¥µµ´Þ±îÁö °É¸®´Â ½Ã°£
-    public float zoomSize;  //È®´ë ÈÄ Ä«¸Þ¶ó Å©±â
+    //È®ï¿½ï¿½
     public bool zoomActive;
+    float zoomSpeed = 0f;
+    public float zoomSize;  //È®ï¿½ï¿½ ï¿½ï¿½ Ä«ï¿½Þ¶ï¿½ Å©ï¿½ï¿½
+
+    //Ä«ï¿½Þ¶ï¿½ ï¿½Ìµï¿½
+    public bool moveRight;
+    public bool moveLeft;
     Vector3 moveVelocity = Vector3.zero;
+    public Vector3 targetPosition;
+
+    public float smoothTime;    //ï¿½ï¿½Ç¥ï¿½ï¿½ï¿½Þ±ï¿½ï¿½ï¿½ ï¿½É¸ï¿½ï¿½ï¿½ ï¿½Ã°ï¿½
 
     void Start()
     {
@@ -42,9 +48,17 @@ public class CameraController : MonoBehaviour
             transform.position = playerTransform.position + cameraPosition;
             LimitCameraArea();
         }
-        if(zoomActive)
+        if (zoomActive)
         {
             ZoomIn();
+        }
+        if(moveRight)
+        {
+            CameraMoveRight();
+        }
+        if(moveLeft)
+        {
+            CameraMoveLeft();
         }
     }
 
@@ -56,29 +70,52 @@ public class CameraController : MonoBehaviour
         transform.position = new Vector3(clampedX, clampedY, transform.position.z);
     }
 
-    public void ZoomIn()
+    void ZoomIn()
     {
-        //ÇÃ·¹ÀÌ¾î À§Ä¡·Î ÀÌµ¿
+        //ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ ï¿½Ìµï¿½
         Vector3 targetPosition = playerTransform.position + cameraPosition;
         transform.position = Vector3.SmoothDamp(transform.position, targetPosition,
                                                 ref moveVelocity, smoothTime);
         LimitCameraArea();
 
-        //È®´ë
+        //È®ï¿½ï¿½
         float smoothZoomSize = Mathf.SmoothDamp(Camera.main.orthographicSize, zoomSize,
                                                 ref zoomSpeed, smoothTime);
         Camera.main.orthographicSize = smoothZoomSize;
 
-        //Ä«¸Þ¶ó »çÀÌÁî º¯°æµÊ¿¡ µû¶ó º¯¼ö °ª º¯°æ
+        //Ä«ï¿½Þ¶ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ê¿ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         halfHeight = Camera.main.orthographicSize;
         halfWidth = halfHeight * Screen.width / Screen.height;
 
-        //È®´ë ¿Ï·á
+        //È®ï¿½ï¿½ ï¿½Ï·ï¿½
         if (Mathf.Abs(Camera.main.orthographicSize - zoomSize) < 0.1f)
         {
             halfHeight = Camera.main.orthographicSize;
             halfWidth = halfHeight * Screen.width / Screen.height;
             zoomActive = false;
+            cameraMove = true;
+        }
+    }
+
+    void CameraMoveRight()
+    {
+        transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref moveVelocity, smoothTime);
+
+        //ï¿½Ìµï¿½ ï¿½Ï·ï¿½
+        if(Vector3.Distance(transform.position, targetPosition) < 0.1f)
+        {
+            moveRight = false;
+        }
+    }
+
+    void CameraMoveLeft()
+    {
+        transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref moveVelocity, smoothTime);
+
+        //ï¿½Ìµï¿½ ï¿½Ï·ï¿½
+        if(Vector3.Distance(transform.position, targetPosition) <0.1f)
+        {
+            moveLeft = false;
             cameraMove = true;
         }
     }

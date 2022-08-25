@@ -116,6 +116,10 @@ public class Move : MonoBehaviour
                 }
             }
         }
+        else
+        {
+            anim.SetBool("IsWalk", false);
+        }
 
 
     }
