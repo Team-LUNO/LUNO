@@ -1662,6 +1662,11 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!4 &840909227 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8716911183015368890, guid: 2dc7b4fff84214494945d7401c6531b5, type: 3}
+  m_PrefabInstance: {fileID: 1643004236}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &889453833
 GameObject:
   m_ObjectHideFlags: 0
@@ -2132,6 +2137,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: cwss_2
       objectReference: {fileID: 0}
+    - target: {fileID: 8903260777766624120, guid: a95510b9d41d0498e9c618594bc88fe3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8903260777766624123, guid: a95510b9d41d0498e9c618594bc88fe3, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -2529,7 +2538,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08876476640eff44bb400d62e4ce902b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 0}
+  cam: {fileID: 840909227}
   scale: 0.1
 --- !u!1 &1466341355
 GameObject:
@@ -2735,6 +2744,10 @@ PrefabInstance:
     - target: {fileID: 4951346400220553757, guid: 28e875a98a1a44aef8c854aa123e27f5, type: 3}
       propertyPath: m_Name
       value: cbss_2 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4951346400220553757, guid: 28e875a98a1a44aef8c854aa123e27f5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4951346400616015504, guid: 28e875a98a1a44aef8c854aa123e27f5, type: 3}
       propertyPath: m_Text
@@ -3102,6 +3115,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 4.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8973357485646228328, guid: 2dc7b4fff84214494945d7401c6531b5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8716911182038554294, guid: 2dc7b4fff84214494945d7401c6531b5, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2dc7b4fff84214494945d7401c6531b5, type: 3}
@@ -3152,7 +3169,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prologue1: {fileID: 1234360493}
   prologue2: {fileID: 914216104}
-  s1: {fileID: 0}
+  s1: {fileID: 1669265049}
   isExit: 0
 --- !u!114 &1643004241 stripped
 MonoBehaviour:
@@ -3272,6 +3289,10 @@ PrefabInstance:
     - target: {fileID: 4951346400220553757, guid: 28e875a98a1a44aef8c854aa123e27f5, type: 3}
       propertyPath: m_Name
       value: cbss_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4951346400220553757, guid: 28e875a98a1a44aef8c854aa123e27f5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4951346400616015504, guid: 28e875a98a1a44aef8c854aa123e27f5, type: 3}
       propertyPath: m_Text

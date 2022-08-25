@@ -8,7 +8,8 @@ public class Bookshelf : MonoBehaviour
     public Animator[] books;
     public GameObject answer;
     public int nowIndex;   //0 ~ 5번 공간
-    bool prologueOn;
+    bool prologueOn = false;
+    bool bookActive;
 
     [SerializeField]
     private PrologueManager prologueManager;
@@ -16,12 +17,12 @@ public class Bookshelf : MonoBehaviour
     void Start()
     {
         nowIndex = 0;
-        prologueOn = false;
+        bookActive = true;
     }
 
     void Update()
     {
-        if(!prologueOn)
+        if(!prologueOn && bookActive)
         {
             //왼쪽 빈 공간 열림, 책이 오른쪽으로
             if (Input.GetKeyDown(KeyCode.A) && nowIndex > 0 && nowIndex <= 5)
@@ -59,5 +60,6 @@ public class Bookshelf : MonoBehaviour
     {
         yield return new WaitForSecondsRealtime(1f);
         popUpDetail.closePopUp();
+        bookActive = false;
     }
 }

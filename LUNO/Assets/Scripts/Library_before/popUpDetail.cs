@@ -82,7 +82,8 @@ public class popUpDetail : MonoBehaviour
         detailAnim.SetTrigger("PressE");
 
         //카메라 이동
-        cameraController.targetPosition = cameraController.playerTransform.position;
+        cameraController.targetPosition
+            = new Vector3(transform.position.x, cam.transform.position.y, cam.transform.position.z);
         cameraController.moveLeft = true;
 
         isAnswer[index] = true; //일단 다 정답
@@ -108,13 +109,13 @@ public class popUpDetail : MonoBehaviour
     {
         yield return new WaitForSecondsRealtime(0.08f);
         details[index].SetActive(true);
-        mono.limitMove(false);
     }
 
     IEnumerator DisappearDelay()
     {
         yield return new WaitForSecondsRealtime(1f);
         details[index].SetActive(false);
+        mono.limitMove(false);
         index = 0;
     }
 }
