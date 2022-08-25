@@ -50,7 +50,7 @@ public class StartPrologueStoveOff : MonoBehaviour
                         //move.isOn = false;
                         OffprologueManager1.StartPrologue();
                         EventNum = 1;
-                        print("EventNum 증가1");
+                        Debug.Log("EventNum1 증가");
 
                     }
                  
@@ -72,13 +72,13 @@ public class StartPrologueStoveOff : MonoBehaviour
                         //move.isOn = false;
                         OffprologueManager2.StartPrologue();
                         EventNum = 3;
-                        print("EventNum 증가3");
+                        Debug.Log("EventNum3 증가");
 
 
                     }
                     else if (EventNum == 4)
                     {
-                        print("탈출");
+                        Debug.Log("탈출");
                     }
                 }
             }
@@ -95,7 +95,7 @@ public class StartPrologueStoveOff : MonoBehaviour
             //move.isOn = false;
             OffprologueManager1.IncreaseOrder();
             EventNum = 2;
-            print("EventNum 증가2");
+            Debug.Log("EventNum2 증가");
 
 
         }
@@ -104,7 +104,7 @@ public class StartPrologueStoveOff : MonoBehaviour
             //move.isOn = false;
             OffprologueManager2.IncreaseOrder();
             EventNum = 4;
-            print("EventNum 증가4");
+            Debug.Log("EventNum4 증가");
         }
     }
 }

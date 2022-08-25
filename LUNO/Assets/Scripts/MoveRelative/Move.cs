@@ -11,7 +11,9 @@ public class Move : MonoBehaviour
     private float speed;
     private float jumpForce = 12.0f;
     private float NTime;
-    private int playerLayer, ignoreLayer;
+    private float Gravity;
+
+
     public bool IsHand = false;
     public bool IsLadder;
     public bool walkMode;
@@ -19,11 +21,13 @@ public class Move : MonoBehaviour
     public bool isLongJump;
     private bool isHandEvent;
     private bool isJumping;
+
     public string currentMapName;
     public string arriveStartPoint;
-    private float Gravity;
+
     private Rigidbody2D rigid2D;
     public Sprite ladderSprite;
+    public UIManager UIManager;
     AnimatorStateInfo animStateInfo;
     SpriteRenderer spriteRenderer;
     Animator anim;
@@ -45,8 +49,6 @@ public class Move : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
         Gravity = rigid2D.gravityScale;
-        playerLayer = LayerMask.NameToLayer("Player");
-        ignoreLayer = LayerMask.NameToLayer("platform(ignore)");
         float Scale = transform.localScale.x;
         speed = DefaultWalkspeed * Scale;
         DontDestroyOnLoad(gameObject);
@@ -59,10 +61,10 @@ public class Move : MonoBehaviour
 
     void Update()
     {
+        float Scale = transform.localScale.x;
         animStateInfo = anim.GetCurrentAnimatorStateInfo(0);
         if (isOn)
         {
-            float Scale = transform.localScale.x;
 
             if (Input.GetKeyDown(KeyCode.Space))
             {
@@ -224,6 +226,8 @@ public class Move : MonoBehaviour
                 move(x);
             }
         }
+
+
 
     }
 
