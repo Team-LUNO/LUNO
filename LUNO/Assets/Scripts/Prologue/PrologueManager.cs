@@ -104,7 +104,8 @@ public class PrologueManager : MonoBehaviour
                             if (prologues[order - 1].size == 9 || prologues[order - 1].size == 10)
                             {
                                 StartCoroutine(PopDown(backBubble, backBubble.transform.childCount));
-                                StartCoroutine(PopDown(selectionBubble));
+                                if (prologues[order - 2].size != prologues[order].size)
+                                    StartCoroutine(PopDown(selectionBubble));
                             }
                             else if(prologues[order].size == 9 || prologues[order].size == 10)
                             {
@@ -114,7 +115,6 @@ public class PrologueManager : MonoBehaviour
                             {
                                 StartCoroutine(PopDown(backBubble));
                             }
-
                             StartCoroutine(PopUp(frontBubble));
                         }
                         
