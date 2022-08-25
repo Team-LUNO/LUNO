@@ -6,37 +6,57 @@ public class PlayerGetup : MonoBehaviour
 {
     public GameObject player;
     public Animator getup;
-    public CameraController cam;
+    public FirstCameraController cam;
     Animator anim;
     Move move;
 
+    public Camera firstCamera;
+    public Camera mainCamera;
+
     [SerializeField]
     private PrologueManager prologueManager1;
+
+    [SerializeField]
+    Vector3 getUpPos;
 
     void Start()
     {
         move = player.GetComponent<Move>();
         anim = player.GetComponent<Animator>();
 
-        move.isOn = false;
         anim.runtimeAnimatorController = getup.runtimeAnimatorController;
-        StartCoroutine(Getup());
+
+        move.isOn = false;
+        StartCoroutine(ZoomIn());
     }
 
     void Update()
     {
 
     }
+    IEnumerator ZoomIn()
+    {
+        yield return new WaitForSecondsRealtime(2f);
+        cam.zoomSize = 14f;
+        cam.smoothTime = 0.5f;
+        cam.targetPosition = getUpPos;
+        cam.zoomActive = true;
+        StartCoroutine(Getup());
+    }
 
     IEnumerator Getup()
     {
+        yield return new WaitForSeconds(5f);
+        anim.SetTrigger("GetUp");
+        StartCoroutine(Move());
+    }
+
+    IEnumerator Move()
+    {
         yield return new WaitForSeconds(2.6f);
         move.isOn = true;
+        player.transform.position = getUpPos;
         anim.runtimeAnimatorController = move.rWalk.runtimeAnimatorController;
-        cam.cameraMove = false;
-        cam.zoomSize = 14f;
-        cam.smoothTime = 0.5f;
-        cam.zoomActive = true;
         StartCoroutine(MuneTalk());
     }
 

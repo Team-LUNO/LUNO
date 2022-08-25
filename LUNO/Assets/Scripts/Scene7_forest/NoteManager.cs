@@ -7,10 +7,9 @@ public class NoteManager : MonoBehaviour
     public GameObject dimmedSolid;
     public GameObject diary;
     public GameObject map;
-    //public GameObject item;
 
     public GameObject diaryContent;
-    public GameObject[] mapContents;
+    public GameObject mapForest;
 
     bool noteOn = false;
     int noteIndex;
@@ -50,10 +49,7 @@ public class NoteManager : MonoBehaviour
             else if(noteIndex == 1)
             {
                 map.SetActive(false);
-                for (int i = 0; i < 4; i++)
-                {
-                    mapContents[i].SetActive(false);
-                }
+                mapForest.SetActive(false);
             }
         }
     }
@@ -68,10 +64,7 @@ public class NoteManager : MonoBehaviour
     IEnumerator MapOn()
     {
         map.SetActive(true);
-        yield return new WaitForSeconds(1f);
-        for(int i=0; i<4; i++)
-        {
-            mapContents[i].SetActive(true);
-        }
+        yield return new WaitForSeconds(0.5f);
+        mapForest.SetActive(true);
     }
 }
