@@ -5,18 +5,19 @@ using UnityEngine;
 public class NoteManager : MonoBehaviour
 {
     public GameObject dimmedSolid;
-    GameObject diary;
+    public GameObject diary;
     public GameObject map;
-    //GameObject item;
+    //public GameObject item;
+
+    public GameObject diaryContent;
+    public GameObject[] mapContents;
 
     bool noteOn = false;
     int noteIndex;
     
     void Start()
     {
-        diary = transform.GetChild(0).gameObject;
-        map = transform.GetChild(1).gameObject;
-        //item = transform.GetChild(2).gameObject;
+
     }
 
     void Update()
@@ -26,13 +27,16 @@ public class NoteManager : MonoBehaviour
             noteIndex = 0;
             noteOn = true;
             dimmedSolid.SetActive(true);
-            diary.SetActive(true);
+            
+            StartCoroutine(DiaryOn());
         }
         else if(noteOn && noteIndex == 0 && Input.GetKeyDown(KeyCode.Tab))
         {
             noteIndex = 1;
             diary.SetActive(false);
-            map.SetActive(true);
+            diaryContent.SetActive(false);
+
+            StartCoroutine(MapOn());
         }
         else if(noteOn && Input.GetKeyDown(KeyCode.Escape))
         {
@@ -41,11 +45,33 @@ public class NoteManager : MonoBehaviour
             if(noteIndex == 0)
             {
                 diary.SetActive(false);
+                diaryContent.SetActive(false);
             }
             else if(noteIndex == 1)
             {
                 map.SetActive(false);
+                for (int i = 0; i < 4; i++)
+                {
+                    mapContents[i].SetActive(false);
+                }
             }
+        }
+    }
+
+    IEnumerator DiaryOn()
+    {
+        diary.SetActive(true);
+        yield return new WaitForSeconds(1f);
+        diaryContent.SetActive(true);
+    }
+
+    IEnumerator MapOn()
+    {
+        map.SetActive(true);
+        yield return new WaitForSeconds(1f);
+        for(int i=0; i<4; i++)
+        {
+            mapContents[i].SetActive(true);
         }
     }
 }
