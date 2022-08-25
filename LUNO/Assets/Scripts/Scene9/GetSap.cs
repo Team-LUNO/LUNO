@@ -9,6 +9,7 @@ public class GetSap : MonoBehaviour
     public int getEvent = 0;
     public SpriteRenderer render; // 해당 아이템의 sprite를 집어넣는 곳
     Move move;
+    UIManager uiManager;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +22,7 @@ public class GetSap : MonoBehaviour
                 move = GameObject.Find("Player").GetComponent<Move>();
         }
         render = GameObject.Find("mountain_sap").GetComponent<SpriteRenderer>();
+        uiManager = GameObject.Find("UIManager").GetComponent<UIManager>();
     }
 
     // Update is called once per frame
@@ -46,6 +48,7 @@ public class GetSap : MonoBehaviour
             if (Input.GetKey(KeyCode.E) && getEvent == 0)
             {
                 IsSapHold = true;
+                uiManager.hasItem = true;
                 move.isOn = false;
                 move.IsHand = true;
                 getEvent = 1; // 딱 한번만 이벤트 발생

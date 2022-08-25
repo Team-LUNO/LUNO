@@ -8,6 +8,7 @@ public class GetObject : MonoBehaviour
     private int getEvent = 0;
     public SpriteRenderer render; // 해당 아이템의 sprite를 집어넣는 곳
     Move move;
+    UIManager uiManager;
 
     void Start()
     {
@@ -19,8 +20,10 @@ public class GetObject : MonoBehaviour
 
             else if (GameObject.Find("Player"))
                 move = GameObject.Find("Player").GetComponent<Move>();
+
         }
         // render = GameObject.Find("없어져야할 스프라이트 오브젝트").GetComponent<SpriteRenderer>(); << 수정해서 활성화 해주세요
+        uiManager = GameObject.Find("UIManager").GetComponent<UIManager>();
     }
 
     // Update is called once per frame
@@ -46,6 +49,7 @@ public class GetObject : MonoBehaviour
             if (Input.GetKey(KeyCode.E) && getEvent == 0)
             {
                 //Is어쩌구Hold = true;
+                uiManager.hasItem = true;
                 move.isOn = false;
                 move.IsHand = true;// 해당 아이템의 sprite를 집어넣는 곳
                 getEvent = 1;

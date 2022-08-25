@@ -8,11 +8,13 @@ public class StoveOff : MonoBehaviour
     public bool StoveON;
     public SpriteRenderer Stoverender;
     public CupHold cupHold;
+    UIManager uiManager;
     // Start is called before the first frame update
     void Awake()
     {
         cupHold = GameObject.Find("n.luno1f_cup").GetComponent<CupHold>();
         Stoverender = GameObject.Find("n.luno1f_stoveOn").GetComponent<SpriteRenderer>();
+        uiManager = GameObject.Find("UIManager").GetComponent<UIManager>();
         StoveON = true;
 
     }
@@ -40,6 +42,12 @@ public class StoveOff : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     StoveON = false;
+                    if (uiManager.hasItem && uiManager.itemImage.gameObject.activeSelf)
+                    {
+                        uiManager.itemImage.SetActive(false);
+                        uiManager.hasItem = false;
+                        Debug.Log("아이템 사용");
+                    }
                     cupHold.IsCupHold = false;
                        
                 }

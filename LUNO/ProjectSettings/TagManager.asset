@@ -16,6 +16,7 @@ TagManager:
   - bookcart
   - section1
   - section4
+  - Item
   layers:
   - Default
   - TransparentFX

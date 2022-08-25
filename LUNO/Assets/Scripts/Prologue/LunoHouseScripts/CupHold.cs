@@ -8,6 +8,7 @@ public class CupHold : MonoBehaviour
     public int getEvent = 0;
     public SpriteRenderer render;
     Move move;
+    UIManager uiManager;
 
     void Start()
     {
@@ -21,6 +22,7 @@ public class CupHold : MonoBehaviour
                 move = GameObject.Find("Player").GetComponent<Move>();
         }
         render = GameObject.Find("n.luno1f_cup").GetComponent<SpriteRenderer>();
+        uiManager = GameObject.Find("UIManager").GetComponent<UIManager>();
     }
 
     // Update is called once per frame
@@ -46,6 +48,7 @@ public class CupHold : MonoBehaviour
             if (Input.GetKey(KeyCode.E) && getEvent == 0)
             {
                 IsCupHold = true;
+                uiManager.hasItem = true;
                 move.isOn = false;
                 move.IsHand = true;// 해당 아이템의 sprite를 집어넣는 곳
                 getEvent = 1;
