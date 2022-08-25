@@ -10,6 +10,9 @@ public class PlayerGetup : MonoBehaviour
     Animator anim;
     Move move;
 
+    [SerializeField]
+    private PrologueManager prologueManager1;
+
     void Start()
     {
         move = player.GetComponent<Move>();
@@ -17,6 +20,7 @@ public class PlayerGetup : MonoBehaviour
 
         move.isOn = false;
         anim.runtimeAnimatorController = getup.runtimeAnimatorController;
+        StartCoroutine(Getup());
     }
 
     void Update()
@@ -24,12 +28,15 @@ public class PlayerGetup : MonoBehaviour
 
     }
 
-    public void Getup()
+    IEnumerator Getup()
     {
-        cam.cameraMove = false;
+        yield return new WaitForSeconds(2.6f);
         move.isOn = true;
         anim.runtimeAnimatorController = move.rWalk.runtimeAnimatorController;
+        cam.cameraMove = false;
         cam.zoomSize = 11f;
+        cam.smoothTime = 0.5f;
         cam.zoomActive = true;
+        prologueManager1.StartPrologue();
     }
 }
