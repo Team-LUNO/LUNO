@@ -34,9 +34,15 @@ public class PlayerGetup : MonoBehaviour
         move.isOn = true;
         anim.runtimeAnimatorController = move.rWalk.runtimeAnimatorController;
         cam.cameraMove = false;
-        cam.zoomSize = 11f;
+        cam.zoomSize = 14f;
         cam.smoothTime = 0.5f;
         cam.zoomActive = true;
+        StartCoroutine(MuneTalk());
+    }
+
+    IEnumerator MuneTalk()
+    {
+        yield return new WaitForSeconds(1f);
         prologueManager1.StartPrologue();
     }
 }
