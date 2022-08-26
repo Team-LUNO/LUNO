@@ -1000,6 +1000,27 @@ MonoBehaviour:
     speaker: {fileID: 8716911182914317818}
     size: 10
   isRepeatable: 0
+--- !u!1 &894186353 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9167833538535657886, guid: 165eed2c5b58f49029d88c7fd8400839, type: 3}
+  m_PrefabInstance: {fileID: 559009916017406621}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &894186358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 894186353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa454390b0849a2498c535183d154306, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bound: {fileID: 719800613}
+  playerTransform: {fileID: 8716911182914317825}
+  upstairCamera: {x: 14.54426, y: 12, z: -1}
+  upstairPlayer: 0.8234886
 --- !u!1 &958170318
 GameObject:
   m_ObjectHideFlags: 0
