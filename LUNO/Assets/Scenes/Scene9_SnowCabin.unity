@@ -802,6 +802,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1177467128}
   - component: {fileID: 1177467129}
+  - component: {fileID: 1177467130}
   m_Layer: 0
   m_Name: mountain01
   m_TagString: Untagged
@@ -874,6 +875,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1177467130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1177467127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08876476640eff44bb400d62e4ce902b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 58493372}
+  scale: 0.05
 --- !u!1001 &1261205275
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1006,6 +1021,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1442613406}
   - component: {fileID: 1442613407}
+  - component: {fileID: 1442613408}
   m_Layer: 0
   m_Name: mountain_sky02
   m_TagString: Untagged
@@ -1078,6 +1094,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1442613408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1442613405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db98d89d09008c84aa3c7607cfc619c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 58493372}
 --- !u!1001 &1595106170
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1312,6 +1341,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1925458624}
   - component: {fileID: 1925458625}
+  - component: {fileID: 1925458626}
   m_Layer: 0
   m_Name: mountain02
   m_TagString: Untagged
@@ -1384,6 +1414,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1925458626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1925458623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08876476640eff44bb400d62e4ce902b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 58493372}
+  scale: 0.1
 --- !u!1 &2009462655 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8903260777766624120, guid: a95510b9d41d0498e9c618594bc88fe3, type: 3}
