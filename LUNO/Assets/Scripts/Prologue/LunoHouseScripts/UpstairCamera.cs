@@ -23,9 +23,8 @@ public class UpstairCamera : MonoBehaviour
 
     Vector3 moveVelocity = Vector3.zero;
     float smoothTime = 0.5f;
-    bool moveUp;
-    bool moveDown;
     bool isUpstair;
+    bool isDownstair;
 
     void Start()
     {
@@ -35,40 +34,37 @@ public class UpstairCamera : MonoBehaviour
         halfHeight = Camera.main.orthographicSize;
         halfWidth = halfHeight * Screen.width / Screen.height;
 
-        moveUp = true;
         cameraController = GetComponent<CameraController>();
+        isUpstair = true;
+        cameraController.cameraMove = false;
     }
 
     void Update()
     {
-        //player upstair
-        if(playerTransform.position.y >= upstairPlayer)
+        //Camera Move
+        //Player Downstair -> Upstair
+        if(!isUpstair && playerTransform.position.y >= upstairPlayer)
         {
+            isDownstair = false;
             cameraController.cameraMove = false;
-            moveUp = true;
-        }
-        //player downstair
-        else if(playerTransform.position.y < upstairPlayer)
-        {
-            isUpstair = false;
-            moveUp = false;
-            moveDown = true;
-        }
-
-        //CameraMove
-        if(moveUp)
-        {
             CameraMoveUp();
         }
-        if(moveDown)
+        //Player Downstair -> Upstair
+        else if(!isDownstair && playerTransform.position.y < upstairPlayer)
         {
+            isUpstair = false;
+            cameraController.cameraMove = false;
             CameraMoveDown();
         }
 
-        //CameraFixed
+        //Camera Fixed
         if(isUpstair)
         {
             transform.position = upstairCamera;
+        }
+        else if(isDownstair)
+        {
+            cameraController.cameraMove = true;
         }
     }
     void LimitCameraArea()
@@ -84,23 +80,21 @@ public class UpstairCamera : MonoBehaviour
         LimitCameraArea();
         transform.position 
             = Vector3.SmoothDamp(transform.position, upstairCamera, ref moveVelocity, smoothTime);
-        if (Vector3.Distance(transform.position, upstairCamera) < 0.1f)
+        if (Vector3.Distance(transform.position, upstairCamera) < 0.2f)
         {
             isUpstair = true;
-            moveUp = false;
         }
     }
 
     void CameraMoveDown()
     {
-            LimitCameraArea();
+        LimitCameraArea();
         Vector3 targetPosition = playerTransform.position + cameraPosition;
         transform.position = Vector3.SmoothDamp(transform.position, targetPosition,
                                                 ref moveVelocity, smoothTime);
-        if(Vector3.Distance(transform.position, targetPosition) < 0.1f)
+        if(Vector3.Distance(transform.position, targetPosition) < 1.3f)
         {
-            moveDown = false;
-            cameraController.cameraMove = true;
+            isDownstair = true;
         }
     }
 }

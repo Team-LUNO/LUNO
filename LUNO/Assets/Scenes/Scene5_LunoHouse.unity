@@ -620,8 +620,8 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: -100, y: 100}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_SizeDelta: {x: 169, y: 131}
+  m_Pivot: {x: 1, y: 0}
 --- !u!1 &560533077
 GameObject:
   m_ObjectHideFlags: 0
@@ -765,7 +765,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.014755249, y: 2.9842815}
+  m_Offset: {x: -0.014755249, y: 0.18034172}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -776,7 +776,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 72.16455, y: 53.77786}
+  m_Size: {x: 72.16455, y: 48.16998}
   m_EdgeRadius: 0
 --- !u!4 &719800614
 Transform:
@@ -1020,7 +1020,7 @@ MonoBehaviour:
   bound: {fileID: 719800613}
   playerTransform: {fileID: 8716911182914317825}
   upstairCamera: {x: 14.54426, y: 12, z: -1}
-  upstairPlayer: 0.8234886
+  upstairPlayer: 0.2831888
 --- !u!1 &958170318
 GameObject:
   m_ObjectHideFlags: 0
