@@ -5,26 +5,27 @@ using UnityEngine;
 public class PlayerGetup : MonoBehaviour
 {
     public GameObject player;
-    public Animator getup;
     public FirstCameraController cam;
+    Animator getupAnim;
     Animator anim;
     Move move;
 
-    public Camera firstCamera;
-    public Camera mainCamera;
-
     [SerializeField]
-    private PrologueManager prologueManager1;
+    private PrologueManager prologueManager;
 
     [SerializeField]
     Vector3 getUpPos;
+
+    public GameObject firstCamera;
+    public GameObject mainCamera;
 
     void Start()
     {
         move = player.GetComponent<Move>();
         anim = player.GetComponent<Animator>();
+        getupAnim = GetComponent<Animator>();
 
-        anim.runtimeAnimatorController = getup.runtimeAnimatorController;
+        anim.runtimeAnimatorController = getupAnim.runtimeAnimatorController;
 
         move.isOn = false;
         StartCoroutine(ZoomIn());
@@ -36,33 +37,45 @@ public class PlayerGetup : MonoBehaviour
     }
     IEnumerator ZoomIn()
     {
+        //줌 아웃된 상태에서 2초 정도 후 맵 줌인
         yield return new WaitForSecondsRealtime(2f);
         cam.zoomSize = 14f;
         cam.smoothTime = 0.5f;
-        cam.targetPosition = getUpPos;
         cam.zoomActive = true;
+        cam.targetPosition = getUpPos;
         StartCoroutine(Getup());
     }
 
     IEnumerator Getup()
     {
-        yield return new WaitForSeconds(5f);
+        //2초 정도 뒤 일어나기
+        yield return new WaitForSecondsRealtime(2.1f);
         anim.SetTrigger("GetUp");
         StartCoroutine(Move());
     }
 
     IEnumerator Move()
     {
-        yield return new WaitForSeconds(2.6f);
+        //애니메이션 종료 후
+        yield return new WaitForSecondsRealtime(3f);
         move.isOn = true;
-        player.transform.position = getUpPos;
         anim.runtimeAnimatorController = move.rWalk.runtimeAnimatorController;
+        player.transform.position = getUpPos;
+
+        //카메라 전환
+        mainCamera.transform.position = firstCamera.transform.position;
+        mainCamera.GetComponent<Camera>().orthographicSize
+            = firstCamera.GetComponent<Camera>().orthographicSize;
+        mainCamera.SetActive(true);
+        firstCamera.SetActive(false);
+
         StartCoroutine(MuneTalk());
     }
 
     IEnumerator MuneTalk()
     {
-        yield return new WaitForSeconds(1f);
-        prologueManager1.StartPrologue();
+        //1초 정도 뒤 뮨 대사 
+        yield return new WaitForSecondsRealtime(1f);
+        prologueManager.StartPrologue();
     }
 }

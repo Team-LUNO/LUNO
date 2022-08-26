@@ -13,14 +13,13 @@ public class FirstCameraController : MonoBehaviour
 
     public bool zoomActive;
     float zoomSpeed = 0f;
-    public float zoomSize;  
+    public float zoomSize;
+
+    public Vector3 targetPosition;
+    Vector3 cameraPosition = new Vector3(0, 0, -1);
 
     Vector3 moveVelocity = Vector3.zero;
-    public Vector3 targetPosition;
-
-    public float smoothTime;    
-
-    public GameObject mainCamera;
+    public float smoothTime;
 
     void Start()
     {
@@ -51,8 +50,7 @@ public class FirstCameraController : MonoBehaviour
 
     void ZoomIn()
     {
-        transform.position = Vector3.SmoothDamp(transform.position, targetPosition,
-                                                ref moveVelocity, smoothTime);
+        transform.position = Vector3.SmoothDamp(transform.position, targetPosition + cameraPosition, ref moveVelocity, smoothTime);
         LimitCameraArea();
 
         float smoothZoomSize = Mathf.SmoothDamp(Camera.main.orthographicSize, zoomSize,
@@ -67,8 +65,6 @@ public class FirstCameraController : MonoBehaviour
             halfHeight = Camera.main.orthographicSize;
             halfWidth = halfHeight * Screen.width / Screen.height;
             zoomActive = false;
-            mainCamera.SetActive(true);
-            gameObject.SetActive(false);
         }
     }
 }
