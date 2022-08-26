@@ -64,7 +64,7 @@ public class NoteManager : MonoBehaviour
     IEnumerator MapOn()
     {
         map.SetActive(true);
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(2f);
         mapForest.SetActive(true);
     }
 }
