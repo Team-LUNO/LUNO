@@ -10,6 +10,12 @@ TagManager:
   - ObjLeft
   - Obj
   - ObjUpper
+  - LibraryDoor
+  - keepsake
+  - bookcart
+  - section1
+  - section4
+  - GraveStone
   layers:
   - Default
   - TransparentFX
