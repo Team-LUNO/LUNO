@@ -5,8 +5,10 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
     public Transform playerTransform;
-    Vector3 cameraPosition = new Vector3(0, 0, -1);
     public bool cameraMove;
+
+    [SerializeField]
+    Vector3 cameraPosition;
 
     // �ڽ� �ݶ��̴� ������ �ּ� �ִ밪
     public BoxCollider2D bound;
