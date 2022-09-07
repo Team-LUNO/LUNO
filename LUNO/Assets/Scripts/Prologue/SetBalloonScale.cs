@@ -17,6 +17,10 @@ public class SetBalloonScale : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        float x = (1.0f / gameObject.transform.parent.lossyScale.x) / (9.0f / Camera.main.orthographicSize);
+        float y = (1.0f / gameObject.transform.parent.lossyScale.y) / (9.0f / Camera.main.orthographicSize);
+        float z = (1.0f / gameObject.transform.parent.lossyScale.z) / (9.0f / Camera.main.orthographicSize);
+
+        gameObject.transform.localScale = new Vector3(x, y, z);
     }
 }

@@ -118,10 +118,12 @@ public class Move : MonoBehaviour
         }
         else
         {
-            anim.SetBool("IsWalk", false);
+            if(anim.runtimeAnimatorController == rWalk.runtimeAnimatorController || anim.runtimeAnimatorController == rRun.runtimeAnimatorController
+                || anim.runtimeAnimatorController == rWalk.runtimeAnimatorController || anim.runtimeAnimatorController == rRun.runtimeAnimatorController)
+            {
+                anim.SetBool("IsWalk", false);
+            }   
         }
-
-
     }
 
 

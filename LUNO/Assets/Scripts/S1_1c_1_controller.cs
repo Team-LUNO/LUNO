@@ -42,7 +42,7 @@ public class S1_1c_1_controller : MonoBehaviour
         }
         else if (order == 2)
         {
-            StartCoroutine(Timer(3.0f));
+            StartCoroutine(Timer(0f));
             if (timeover)
             {
                 prologue1.StartPrologue();

@@ -15,6 +15,7 @@ TagManager:
   - bookcart
   - section1
   - section4
+  - GraveStone
   layers:
   - Default
   - TransparentFX
