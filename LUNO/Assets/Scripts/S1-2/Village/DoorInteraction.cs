@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DoorInteraction : MonoBehaviour
 {
-    public Scene2_LibraryDoor_UIManager UIManager;
+    public S1_2_Village_UIManager UIManager;
 
     void Start()
     {
@@ -26,6 +26,11 @@ public class DoorInteraction : MonoBehaviour
         {
             UIManager.keyOnSwitch = true;
         }
+
+        if(collision.gameObject.CompareTag("LunohouseDoor"))
+        {
+            UIManager.lunohouseOnSwitch = true;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -38,6 +43,11 @@ public class DoorInteraction : MonoBehaviour
         if (UIManager.hasItem && collision.gameObject.CompareTag("LibraryDoor"))
         {
             UIManager.keyOnSwitch = false;
+        }
+
+        if(collision.gameObject.CompareTag("LunohouseDoor"))
+        {
+            UIManager.lunohouseOnSwitch = false;
         }
     }
 

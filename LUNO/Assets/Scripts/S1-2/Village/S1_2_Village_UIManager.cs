@@ -2,8 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Scene2_LibraryDoor_UIManager : MonoBehaviour
+public class S1_2_Village_UIManager : MonoBehaviour
 {
+    //lunohouse
+    public bool lunohouseOnSwitch;
+
+    [SerializeField]
+    GameObject lunohouseBubble;
+
     public GameObject door;
     public GameObject doorNoKey;
     public Camera cam;
@@ -31,6 +37,15 @@ public class Scene2_LibraryDoor_UIManager : MonoBehaviour
     }
     void Update()
     {
+        if(lunohouseOnSwitch)
+        {
+            lunohouseBubble.SetActive(true);
+        }
+        else
+        {
+            lunohouseBubble.SetActive(false);
+        }
+
         if (!door.activeSelf && doorOnSwitch == true && Input.GetKeyDown(KeyCode.E))
         {
             doorAct = true;
