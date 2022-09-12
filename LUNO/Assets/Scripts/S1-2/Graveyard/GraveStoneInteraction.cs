@@ -4,12 +4,7 @@ using UnityEngine;
 
 public class GraveStoneInteraction : MonoBehaviour
 {
-    public Scene2_Graveyard_UIManager UIManager;
-
-    int prologueIndex;
-
-    [SerializeField]
-    private PrologueManager[] prologues;
+    public S1_2_GraveyardManager UIManager;
 
     void Start()
     {
@@ -18,22 +13,30 @@ public class GraveStoneInteraction : MonoBehaviour
 
     void Update()
     {
-        if (prologueIndex == 2)
+        
+    }
+
+    private void OnTriggerEnter2D(Collider2D collider)
+    {
+        if(collider.name == "obj-01-01")
         {
-            prologueIndex = 0;
+            UIManager.objBubble[0].SetActive(true);
+        }
+        else if (collider.name == "obj-01-02")
+        {
+            UIManager.objBubble[1].SetActive(true);
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerExit2D(Collider2D collider)
     {
-        if (collision.CompareTag("GraveStone"))
+        if (collider.name == "obj-01-01")
         {
-            if (prologues[prologueIndex].GetDone())
-            {
-                prologues[prologueIndex].ResetOrder();
-            }
-            prologues[prologueIndex].StartPrologue();
-            prologueIndex++;
+            UIManager.objBubble[0].SetActive(false);
+        }
+        else if (collider.name == "obj-01-02")
+        {
+            UIManager.objBubble[1].SetActive(false);
         }
     }
 }
