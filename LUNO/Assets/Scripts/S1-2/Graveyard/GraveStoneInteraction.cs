@@ -26,6 +26,10 @@ public class GraveStoneInteraction : MonoBehaviour
         {
             UIManager.objBubble[1].SetActive(true);
         }
+        else if(collider.name == "obj-01-03")
+        {
+            UIManager.objBubble[2].SetActive(true);
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collider)
@@ -37,6 +41,10 @@ public class GraveStoneInteraction : MonoBehaviour
         else if (collider.name == "obj-01-02")
         {
             UIManager.objBubble[1].SetActive(false);
+        }
+        else if (collider.name == "obj-01-03")
+        {
+            UIManager.objBubble[2].SetActive(false);
         }
     }
 }

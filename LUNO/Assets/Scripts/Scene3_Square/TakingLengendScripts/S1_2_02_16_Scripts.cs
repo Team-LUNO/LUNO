@@ -7,8 +7,18 @@ public class S1_2_02_16_Scripts : MonoBehaviour
     [SerializeField]
     private PrologueManager prologue1;
 
+    [SerializeField]
+    private S1_2_VillageManager UIManager;
+
     private bool isFirst = true;
 
+    private void Update()
+    {
+        if(prologue1.GetDone() && !UIManager.takingLegend)
+        {
+            UIManager.takingLegend = true;
+        }
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

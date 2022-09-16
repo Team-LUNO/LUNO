@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DoorInteraction : MonoBehaviour
 {
-    public S1_2_Village_UIManager UIManager;
+    public S1_2_VillageManager UIManager;
 
     void Start()
     {
@@ -17,37 +17,31 @@ public class DoorInteraction : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!UIManager.doorAct && collision.gameObject.CompareTag("LibraryDoor"))
+        //library
+        if (collision.gameObject.CompareTag("LibraryDoor"))
         {
-            UIManager.doorOnSwitch = true;
+            UIManager.libraryBubble.SetActive(true);
         }
 
-        if(UIManager.hasItem && collision.gameObject.CompareTag("LibraryDoor"))
-        {
-            UIManager.keyOnSwitch = true;
-        }
-
+        //lunohouse
         if(collision.gameObject.CompareTag("LunohouseDoor"))
         {
-            UIManager.lunohouseOnSwitch = true;
+            UIManager.lunohouseBubble.SetActive(true);
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if(!UIManager.doorAct && collision.gameObject.CompareTag("LibraryDoor"))
+        //library
+        if(collision.gameObject.CompareTag("LibraryDoor"))
         {
-            UIManager.doorOnSwitch = false;
+            UIManager.libraryBubble.SetActive(false);
         }
 
-        if (UIManager.hasItem && collision.gameObject.CompareTag("LibraryDoor"))
+        //lunohouse
+        if (collision.gameObject.CompareTag("LunohouseDoor"))
         {
-            UIManager.keyOnSwitch = false;
-        }
-
-        if(collision.gameObject.CompareTag("LunohouseDoor"))
-        {
-            UIManager.lunohouseOnSwitch = false;
+            UIManager.lunohouseBubble.SetActive(false);
         }
     }
 

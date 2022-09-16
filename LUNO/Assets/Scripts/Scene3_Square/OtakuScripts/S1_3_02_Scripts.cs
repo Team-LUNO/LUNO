@@ -9,6 +9,9 @@ public class S1_3_02_Scripts : MonoBehaviour
     bool isColliderin = false;
     int i = 0;
 
+    [SerializeField]
+    private S1_2_VillageManager UIManager;
+
     private void Update()
     {
         if (isColliderin && Input.GetKeyDown(KeyCode.G))
@@ -37,6 +40,11 @@ public class S1_3_02_Scripts : MonoBehaviour
                 prologues[i - 1].ResetOrder();
                 prologues[i - 1].StartPrologue();
             }
+        }
+
+        if(prologues[prologues.Length-1].GetDone() && !UIManager.otakuEvent)
+        {
+            UIManager.otakuEvent = true;
         }
     }
     /*private void OnTriggerEnter2D(Collider2D collision)
