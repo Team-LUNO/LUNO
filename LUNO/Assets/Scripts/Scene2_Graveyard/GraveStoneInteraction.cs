@@ -16,17 +16,17 @@ public class GraveStoneInteraction : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter2D(Collider2D collider)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if(collider.name == "obj-01-01")
+        if(other.name == "obj-01-01")
         {
             UIManager.objBubble[0].SetActive(true);
         }
-        else if (collider.name == "obj-01-02")
+        else if (other.name == "obj-01-02")
         {
             UIManager.objBubble[1].SetActive(true);
         }
-        else if(collider.name == "obj-01-03")
+        else if(other.name == "obj-01-03")
         {
             UIManager.objBubble[2].SetActive(true);
         }

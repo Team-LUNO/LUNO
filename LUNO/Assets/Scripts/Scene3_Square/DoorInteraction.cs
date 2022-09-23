@@ -16,33 +16,45 @@ public class DoorInteraction : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        //library
-        if (collision.gameObject.CompareTag("LibraryDoor"))
+        //graveyard
+        if (other.name == "Graveyard")
         {
-            UIManager.libraryBubble.SetActive(true);
+            UIManager.bubble[0].SetActive(true);
         }
 
         //lunohouse
-        if(collision.gameObject.CompareTag("LunohouseDoor"))
+        if(other.gameObject.CompareTag("LunohouseDoor"))
         {
-            UIManager.lunohouseBubble.SetActive(true);
+            UIManager.bubble[1].SetActive(true);
+        }
+
+        //library
+        if (other.gameObject.CompareTag("LibraryDoor"))
+        {
+            UIManager.bubble[2].SetActive(true);
         }
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
+    private void OnTriggerExit2D(Collider2D other)
     {
-        //library
-        if(collision.gameObject.CompareTag("LibraryDoor"))
+        //graveyard
+        if (other.name == "Graveyard")
         {
-            UIManager.libraryBubble.SetActive(false);
+            UIManager.bubble[0].SetActive(false);
         }
 
         //lunohouse
-        if (collision.gameObject.CompareTag("LunohouseDoor"))
+        if (other.gameObject.CompareTag("LunohouseDoor"))
         {
-            UIManager.lunohouseBubble.SetActive(false);
+            UIManager.bubble[1].SetActive(false);
+        }
+
+        //library
+        if (other.gameObject.CompareTag("LibraryDoor"))
+        {
+            UIManager.bubble[2].SetActive(false);
         }
     }
 

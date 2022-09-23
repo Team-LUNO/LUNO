@@ -12,11 +12,8 @@ public class Scene3_SquareManager : MonoBehaviour
     public Camera cam;
     CameraController cameraController;
 
-    //lunohouse
-    [SerializeField]
-    private GameObject lunohouseDetail;
-
-    public GameObject lunohouseBubble;
+    //bubble
+    public GameObject[] bubble;
 
     //library
     [SerializeField]
@@ -28,7 +25,6 @@ public class Scene3_SquareManager : MonoBehaviour
     [SerializeField]
     Vector3 libraryPosition;
 
-    public GameObject libraryBubble;
     public bool detailAct = false;
     public GameObject keyImage;
 
@@ -45,32 +41,31 @@ public class Scene3_SquareManager : MonoBehaviour
 
     void Start()
     {
-        detailAnim = lunohouseDetail.GetComponent<Animator>();
         cameraController = cam.GetComponent<CameraController>();
         blackScreenAnim = blackScreen.GetComponent<Animator>();   
     }
     void Update()
     {
-        //lunohouse
-        if(lunohouseBubble.activeSelf && Input.GetKeyDown(KeyCode.E))
+        //graveyard
+        if(bubble[0].activeSelf & Input.GetKeyDown(KeyCode.E))
         {
-            lunohouseBubble.SetActive(false);
-            lunohouseDetail.SetActive(true);
-            player.GetComponent<Move>().enabled = false;
+            bubble[0].SetActive(false);
+            SceneManager.LoadScene("Scene2_Graveyard");
         }
-        else if(lunohouseDetail.activeSelf && Input.GetKeyDown(KeyCode.E))
+
+        //lunohouse
+        if (bubble[1].activeSelf && Input.GetKeyDown(KeyCode.E))
         {
-            detailAnim = lunohouseDetail.GetComponent<Animator>();
-            detailAnim.SetTrigger("PressE");
-            StartCoroutine(DetailDisappear());
+            bubble[1].SetActive(false);
+            //SceneManager.LoadScene("Scene5_lunohouse");
         }
 
         //library
         //Show Detail
-        if (!detailAct && libraryBubble.activeSelf && Input.GetKeyDown(KeyCode.E))
+        if (!detailAct && bubble[2].activeSelf && Input.GetKeyDown(KeyCode.E))
         {
             detailAct = true;
-            libraryBubble.SetActive(false);
+            bubble[2].SetActive(false);
             player.GetComponent<Move>().enabled = false;
             player.transform.position = libraryPosition;
 
@@ -83,7 +78,7 @@ public class Scene3_SquareManager : MonoBehaviour
             StartCoroutine(DetailAppear());  //after 0.08s, Detail On
         }
         //Enter Library
-        else if(detailAct && libraryBubble.activeSelf && Input.GetKeyDown(KeyCode.E))
+        else if(detailAct && bubble[2].activeSelf && Input.GetKeyDown(KeyCode.E))
         {
             blackScreenAnim.SetTrigger("FadeOut");
             StartCoroutine(SceneMove());
@@ -101,7 +96,7 @@ public class Scene3_SquareManager : MonoBehaviour
             StartCoroutine(DetailDisappear());
         }
         
-        if (libraryBubble.activeSelf && keyImage.gameObject.activeSelf
+        if (bubble[2].activeSelf && keyImage.gameObject.activeSelf
                     && Input.GetKeyDown(KeyCode.E)) //Use Key
         {
             keyImage.SetActive(false);
@@ -125,7 +120,6 @@ public class Scene3_SquareManager : MonoBehaviour
     IEnumerator DetailDisappear()
     {
         yield return new WaitForSecondsRealtime(1f);
-        lunohouseDetail.SetActive(false);
         noKeyDetail.SetActive(false);
         player.GetComponent<Move>().enabled = true;
     }
