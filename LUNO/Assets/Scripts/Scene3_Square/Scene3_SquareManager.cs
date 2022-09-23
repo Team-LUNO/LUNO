@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class S1_2_VillageManager : MonoBehaviour
+public class Scene3_SquareManager : MonoBehaviour
 {
     [SerializeField]
     private GameObject player;

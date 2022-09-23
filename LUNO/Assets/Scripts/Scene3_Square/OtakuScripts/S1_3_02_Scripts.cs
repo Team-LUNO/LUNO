@@ -10,7 +10,7 @@ public class S1_3_02_Scripts : MonoBehaviour
     int i = 0;
 
     [SerializeField]
-    private S1_2_VillageManager UIManager;
+    private Scene3_SquareManager UIManager;
 
     private void Update()
     {

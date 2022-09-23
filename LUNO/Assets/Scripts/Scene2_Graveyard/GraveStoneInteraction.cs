@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GraveStoneInteraction : MonoBehaviour
 {
-    public S1_2_GraveyardManager UIManager;
+    public Scene2_GraveyardManager UIManager;
 
     void Start()
     {

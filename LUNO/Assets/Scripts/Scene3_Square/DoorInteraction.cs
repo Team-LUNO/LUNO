@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class DoorInteraction : MonoBehaviour
 {
-    public S1_2_VillageManager UIManager;
+    [SerializeField]
+    private Scene3_SquareManager UIManager;
 
     void Start()
     {

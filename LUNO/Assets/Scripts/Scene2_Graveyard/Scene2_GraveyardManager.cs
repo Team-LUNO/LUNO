@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class S1_2_GraveyardManager : MonoBehaviour
+public class Scene2_GraveyardManager : MonoBehaviour
 {
     [SerializeField]
     private GameObject blackScreen;
