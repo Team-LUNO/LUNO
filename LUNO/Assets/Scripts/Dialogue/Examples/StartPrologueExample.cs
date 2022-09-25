@@ -21,7 +21,7 @@ public class StartPrologueExample : MonoBehaviour
         {
             if(prologueManager.GetDone())
                 prologueManager.ResetOrder();
-            prologueManager.StartPrologue();
+            prologueManager.StartDialogue();
         }
     }
 }

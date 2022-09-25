@@ -8,9 +8,6 @@ public class DialogueManager : MonoBehaviour
     [SerializeField]
     private DialogueLoader dialogueLoader;
 
-    [SerializeField]
-    private bool isRepeatable;
-
     private DialogueLoader.Dialogue[] dialogues;
 
     private int order = 0;
@@ -23,7 +20,7 @@ public class DialogueManager : MonoBehaviour
 
     private bool start = false;
 
-    public void StartPrologue()
+    public void StartDialogue()
     {
         start = true;
     }
