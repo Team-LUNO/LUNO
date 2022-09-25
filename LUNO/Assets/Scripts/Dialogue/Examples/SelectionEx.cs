@@ -2,21 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class S1_3_Selection1 : SelectionBalloon
+public class SelectionEx : SelectionBalloon
 {
     [SerializeField]
-    private PrologueManager prologueManager;
+    private DialogueManager prologueManager;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public override void First()
@@ -26,7 +26,6 @@ public class S1_3_Selection1 : SelectionBalloon
 
     public override void Second()
     {
-        Debug.Log("책 다시 읽기");
         prologueManager.IncreaseOrder();
     }
 }

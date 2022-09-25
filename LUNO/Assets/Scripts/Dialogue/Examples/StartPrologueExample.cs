@@ -5,7 +5,7 @@ using UnityEngine;
 public class StartPrologueExample : MonoBehaviour
 {
     [SerializeField]
-    private PrologueManager prologueManager;
+    private DialogueManager prologueManager;
 
     // Start is called before the first frame update
     void Start()
