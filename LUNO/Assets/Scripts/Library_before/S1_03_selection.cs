@@ -5,7 +5,7 @@ using UnityEngine;
 public class S1_03_selection : SelectionBalloon
 {
     [SerializeField]
-    public PrologueManager[] prologueManagers;
+    public DialogueManager[] dialogueManagers;
 
     public GameObject[] carts;
     private int cnt = 0;
@@ -54,18 +54,18 @@ public class S1_03_selection : SelectionBalloon
             ChangeCart(cnt);
             cnt++;      
         }
-        prologueManagers[0].IncreaseOrder();
-        if (prologueManagers[cnt].GetDone())
+        dialogueManagers[0].IncreaseOrder();
+        if (dialogueManagers[cnt].GetDone())
         {
-            prologueManagers[cnt].ResetOrder();
+            dialogueManagers[cnt].ResetOrder();
         }
-        prologueManagers[cnt].StartPrologue();
+        dialogueManagers[cnt].StartDialogue();
     }
 
     public override void Second()
     {
         Debug.Log("¾Æ´Ï");
-        prologueManagers[0].IncreaseOrder();
+        dialogueManagers[0].IncreaseOrder();
         isDone=true;
     }
 
