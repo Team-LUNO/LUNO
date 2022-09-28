@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class S1_03_selection : SelectionBalloon
 {
@@ -8,7 +9,7 @@ public class S1_03_selection : SelectionBalloon
     public PrologueManager[] prologueManagers;
 
     public GameObject[] carts;
-    private int cnt = 0;
+    public int cnt = 0;
     private bool isEnabled = true;
     private bool isDone = false;
 
@@ -16,6 +17,8 @@ public class S1_03_selection : SelectionBalloon
     void Start()
     {
         ChangeCart(3);
+        gameObject.transform.GetChild(0).GetChild(0).GetComponent<Text>().text = "좋아.";
+        gameObject.transform.GetChild(1).GetChild(0).GetComponent<Text>().text = "나중에.";
     }
 
     private void ChangeCart(int i)
@@ -47,6 +50,7 @@ public class S1_03_selection : SelectionBalloon
     }
 
 
+    //좋아
     public override void First()
     {
         if (isEnabled)
@@ -55,6 +59,7 @@ public class S1_03_selection : SelectionBalloon
             cnt++;      
         }
         prologueManagers[0].IncreaseOrder();
+        Debug.Log("현재: "+cnt+prologueManagers[cnt].GetDone());
         if (prologueManagers[cnt].GetDone())
         {
             prologueManagers[cnt].ResetOrder();
@@ -62,6 +67,7 @@ public class S1_03_selection : SelectionBalloon
         prologueManagers[cnt].StartPrologue();
     }
 
+    //나중에
     public override void Second()
     {
         Debug.Log("아니");
