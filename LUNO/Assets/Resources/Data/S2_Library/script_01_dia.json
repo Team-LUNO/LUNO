@@ -34,7 +34,7 @@
       "dialogueName": "S1-2-03-03",
       "charName": "char-01",
       "size": 10,
-      "dialogue ": "0"
+      "dialogue": "0"
     },
     {
       "dialogueName": "S1-2-03-04",
@@ -59,6 +59,24 @@
       "charName": "char-01",
       "size": 8,
       "dialogue": "책이 정말 많아. "
+    },
+    {
+      "dialogueName": "S1-2-03-08",
+      "charName": "char-01",
+      "size": 6,
+      "dialogue": "이 책의 제목은… 『죽고 싶지만 캣닢은 먹고 싶어』."
+    },
+    {
+      "dialogueName": "S1-2-03-09",
+      "charName": "char-01",
+      "size": 7,
+      "dialogue": "이 책의 제목은… 『동물 실격』."
+    },
+    {
+      "dialogueName": "S1-2-03-10",
+      "charName": "char-01",
+      "size": 6,
+      "dialogue": "이 책의 제목은… 『아빠! 인간이 뭐예요? 먹는 거예요?』."
     }
   ]
 }

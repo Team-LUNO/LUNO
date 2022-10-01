@@ -6,6 +6,7 @@ public class S1_03_selection : SelectionBalloon
 {
     [SerializeField]
     public DialogueManager[] dialogueManagers;
+    public GameObject selectOrigin;
 
     public GameObject[] carts;
     private int cnt = 0;
@@ -16,6 +17,7 @@ public class S1_03_selection : SelectionBalloon
     void Start()
     {
         ChangeCart(3);
+        
     }
 
     private void ChangeCart(int i)
@@ -54,7 +56,8 @@ public class S1_03_selection : SelectionBalloon
             ChangeCart(cnt);
             cnt++;      
         }
-        dialogueManagers[0].IncreaseOrder();
+        //dialogueManagers[0].IncreaseOrder();
+        selectOrigin.GetComponent<EInteractionInLibrary>().dialogues[1].IncreaseOrder();
         if (dialogueManagers[cnt].GetDone())
         {
             dialogueManagers[cnt].ResetOrder();
@@ -65,7 +68,7 @@ public class S1_03_selection : SelectionBalloon
     public override void Second()
     {
         Debug.Log("¾Æ´Ï");
-        dialogueManagers[0].IncreaseOrder();
+        selectOrigin.GetComponent<EInteractionInLibrary>().dialogues[1].IncreaseOrder();
         isDone=true;
     }
 

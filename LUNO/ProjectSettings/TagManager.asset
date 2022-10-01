@@ -16,6 +16,7 @@ TagManager:
   - section1
   - section4
   - GraveStone
+  - vase
   layers:
   - Default
   - TransparentFX
