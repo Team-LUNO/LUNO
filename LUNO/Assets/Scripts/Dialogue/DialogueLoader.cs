@@ -11,6 +11,7 @@ public class DialogueLoader : MonoBehaviour
     [Serializable]
     public class Dialogue
     {
+        public string dialogueName;
         public string charName;
         public int size;
         public string dialogue;

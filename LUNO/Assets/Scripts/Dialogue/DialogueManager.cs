@@ -8,6 +8,9 @@ public class DialogueManager : MonoBehaviour
     [SerializeField]
     private DialogueLoader dialogueLoader;
 
+    [SerializeField]
+    private string dialogueName;
+
     private DialogueLoader.Dialogue[] dialogues;
 
     private int order = 0;
@@ -61,74 +64,96 @@ public class DialogueManager : MonoBehaviour
             {
                 if (order < dialogues.Length)
                 {
-                    if (order == 0)
+                    if (dialogues[order].dialogueName == dialogueName)
                     {
-                        if (firstPlay)
+                        if (order == 0)
                         {
-                            firstPlay = false;
+                            if (firstPlay)
+                            {
+                                firstPlay = false;
 
-                            frontBubble = GameObject.Find(dialogues[order].charName).transform.Find("Balloon").GetChild(dialogues[order].size - 1).gameObject;
-                            StartCoroutine(PopUp(frontBubble));
-                            StartCoroutine(TypeSentence(frontBubble, dialogues[order].dialogue));
+                                frontBubble = GameObject.Find(dialogues[order].charName).transform.Find("Balloon").GetChild(dialogues[order].size - 1).gameObject;
+                                StartCoroutine(PopUp(frontBubble));
+                                StartCoroutine(TypeSentence(frontBubble, dialogues[order].dialogue));
+                            }
+                            if ((Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.Return)) && typeDone)
+                            {
+                                order++;
+                                firstPlay = true;
+                                typeDone = false;
+                            }
                         }
-                        if ((Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.Return)) && typeDone)
+                        else
                         {
-                            order++;
-                            firstPlay = true;
-                            typeDone = false;
+                            if (firstPlay)
+                            {
+                                firstPlay = false;
+
+                                if (dialogues[order - 1].size == 9 || dialogues[order - 1].size == 10)
+                                {
+                                    backBubble = frontBubble.transform.GetChild(int.Parse(dialogues[order - 1].dialogue)).gameObject;
+                                }
+                                else
+                                {
+                                    backBubble = frontBubble;
+                                }
+
+                                frontBubble = GameObject.Find(dialogues[order].charName).transform.Find("Balloon").GetChild(dialogues[order].size - 1).gameObject;
+
+                                if (backBubble != frontBubble && backBubble != null)
+                                {
+                                    if (dialogues[order - 1].size == 9 || dialogues[order - 1].size == 10)
+                                    {
+                                        StartCoroutine(PopDown(backBubble, backBubble.transform.childCount));
+                                        if (dialogues[order - 2].size != dialogues[order].size)
+                                            StartCoroutine(PopDown(selectionBubble));
+                                    }
+                                    else if (dialogues[order].size == 9 || dialogues[order].size == 10)
+                                    {
+                                        selectionBubble = backBubble;
+                                    }
+                                    else
+                                    {
+                                        StartCoroutine(PopDown(backBubble));
+                                    }
+                                    StartCoroutine(PopUp(frontBubble));
+                                }
+
+                                if (dialogues[order].size == 9 || dialogues[order].size == 10)
+                                {
+                                    frontBubble.transform.GetChild(int.Parse(dialogues[order].dialogue)).gameObject.SetActive(true);
+                                }
+                                else
+                                {
+                                    StartCoroutine(TypeSentence(frontBubble, dialogues[order].dialogue));
+                                }
+                            }
+
+                            if ((Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.Return)) && typeDone)
+                            {
+                                order++;
+                                firstPlay = true;
+                                typeDone = false;
+                            }
                         }
                     }
                     else
                     {
-                        if (firstPlay)
-                        {
-                            firstPlay = false;
-
-                            if (dialogues[order - 1].size == 9 || dialogues[order - 1].size == 10)
-                            {
-                                backBubble = frontBubble.transform.GetChild(int.Parse(dialogues[order - 1].dialogue)).gameObject;
-                            }
-                            else
-                            {
-                                backBubble = frontBubble;
-                            }
-
-                            frontBubble = GameObject.Find(dialogues[order].charName).transform.Find("Balloon").GetChild(dialogues[order].size - 1).gameObject;
-
-                            if (backBubble != frontBubble)
-                            {
-                                if (dialogues[order - 1].size == 9 || dialogues[order - 1].size == 10)
-                                {
-                                    StartCoroutine(PopDown(backBubble, backBubble.transform.childCount));
-                                    if (dialogues[order - 2].size != dialogues[order].size)
-                                        StartCoroutine(PopDown(selectionBubble));
-                                }
-                                else if (dialogues[order].size == 9 || dialogues[order].size == 10)
-                                {
-                                    selectionBubble = backBubble;
-                                }
-                                else
-                                {
-                                    StartCoroutine(PopDown(backBubble));
-                                }
-                                StartCoroutine(PopUp(frontBubble));
-                            }
-
-                            if (dialogues[order].size == 9 || dialogues[order].size == 10)
-                            {
-                                frontBubble.transform.GetChild(int.Parse(dialogues[order].dialogue)).gameObject.SetActive(true);
-                            }
-                            else
-                            {
-                                StartCoroutine(TypeSentence(frontBubble, dialogues[order].dialogue));
-                            }
-                        }
-
-                        if ((Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.Return)) && typeDone)
+                        while (dialogues[order].dialogueName != dialogueName && order < dialogues.Length - 1)
                         {
                             order++;
                             firstPlay = true;
                             typeDone = false;
+                        }
+
+                        if (dialogues[order].dialogueName == dialogueName && order < dialogues.Length)
+                        {
+                            frontBubble = GameObject.Find(dialogues[order].charName).transform.Find("Balloon").GetChild(dialogues[order].size - 1).gameObject;
+                            StartCoroutine(PopUp(frontBubble));
+                        }
+                        else
+                        {
+                            order++;
                         }
                     }
                 }
