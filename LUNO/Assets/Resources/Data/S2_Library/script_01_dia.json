@@ -1,55 +1,61 @@
 ﻿{
   "dialogues": [
     {
-      "DialogName ": "S1-2-03-01",
+      "dialogueName": "S1-2-03-01",
       "charName": "char-01",
       "size": 7,
       "dialogue": "도서관을 방치한 지 오래되었어. "
     },
     {
-      "DialogName ": "S1-2-03-02",
+      "dialogueName": "S1-2-03-02",
       "charName": "char-01",
       "size": 8,
       "dialogue": "관장님의 유품이야. "
     },
     {
-      "DialogName ": "S1-2-03-03",
+      "dialogueName": "S1-2-03-03",
       "charName": "char-01",
       "size": 7,
       "dialogue": "아직 정리가 안된 책들이야. "
     },
     {
-      "DialogName ": "S1-2-03-03",
+      "dialogueName": "S1-2-03-03",
       "charName": "char-01",
       "size": 8,
       "dialogue": "책을 정리해야겠어.  "
     },
     {
-      "DialogName ": "S1-2-03-03",
+      "dialogueName": "S1-2-03-03",
       "charName": "char-01",
       "size": 8,
       "dialogue": "지금 시작할까? "
     },
     {
-      "DialogName ": "S1-2-03-05",
+      "dialogueName": "S1-2-03-03",
+      "charName": "char-01",
+      "size": 10,
+      "dialogue ": "0"
+    },
+    {
+      "dialogueName": "S1-2-03-04",
       "charName": "char-01",
       "size": 7,
       "dialogue": "향기가 사라져가고 있어. "
     },
     {
-      "DialogName ": "S1-2-03-06",
+      "dialogueName": "S1-2-03-05",
       "charName": "char-01",
       "size": 8,
       "dialogue": "…먼지가 쌓여 있네. "
     },
     {
-      "DialogName ": "S1-2-03-07",
+      "dialogueName": "S1-2-03-06",
       "charName": "char-01",
       "size": 8,
       "dialogue": "책장이야. "
     },
     {
-      "DialogName ": "S1-2-03-08",
+      "dialogueName": "S1-2-03-07",
       "charName": "char-01",
       "size": 8,
       "dialogue": "책이 정말 많아. "

@@ -10,7 +10,7 @@ public class S1_03_selection : SelectionBalloon
     public GameObject[] carts;
     private int cnt = 0;
     private bool isEnabled = true;
-    private bool isDone = false;
+    private bool isDone = true;
 
     // Start is called before the first frame update
     void Start()
