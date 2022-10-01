@@ -1,0 +1,298 @@
+﻿{
+    "dialogues": [
+        {
+            "dialogueName": "forest1",
+            "charName": "Player",
+            "size": 8,
+            "dialogue": "평범한 오솔길이야"
+        },
+        {
+            "dialogueName": "forest2",
+            "charName": "Player",
+            "size": 8,
+            "dialogue": "…"
+        },
+        {
+            "dialogueName": "forest2",
+            "charName": "Player",
+            "size": 7,
+            "dialogue": "맛있는 열매를 찾았어!"
+        },
+        {
+            "dialogueName": "forest3",
+            "charName": "Player",
+            "size": 8,
+            "dialogue": "!!!"
+        },
+        {
+            "dialogueName": "forest3",
+            "charName": "Player",
+            "size": 8,
+            "dialogue": "동전을 찾았어!"
+        },
+        {
+            "dialogueName": "library1",
+            "charName": "Player",
+            "size": 7,
+            "dialogue": "도서관 문이 잠겨있어."
+        },
+        {
+            "dialogueName": "library1",
+            "charName": "Player",
+            "size": 7,
+            "dialogue": "열쇠가 어디 있을텐데…"
+        },
+        {
+            "dialogueName": "library1",
+            "charName": "Player",
+            "size": 6,
+            "dialogue": "관장님 유품을 정리하다가 잃어버렸나봐."
+        },
+        {
+            "dialogueName": "library2",
+            "charName": "Player",
+            "size": 7,
+            "dialogue": "문 앞에 쪽지가 붙어 있어."
+        },
+        {
+            "dialogueName": "hasFruit",
+            "charName": "Player",
+            "size": 6,
+            "dialogue": "들 수 있는 손이 더 없네. 열매를 버릴까?"
+        },
+        {
+            "dialogueName": "hasFruit",
+            "charName": "Player",
+            "size": 10,
+            "dialogue": "0"
+        },
+        {
+            "dialogueName": "hasCoin",
+            "charName": "Player",
+            "size": 6,
+            "dialogue": "들 수 있는 손이 더 없네. 동전을 버릴까?"
+        },
+        {
+            "dialogueName": "hasCoin",
+            "charName": "Player",
+            "size": 10,
+            "dialogue": "1"
+        },
+        {
+            "dialogueName": "hasKey",
+            "charName": "Player",
+            "size": 6,
+            "dialogue": "들 수 있는 손이 더 없네. 열쇠를 버릴까?"
+        },
+        {
+            "dialogueName": "hasKey",
+            "charName": "Player",
+            "size": 10,
+            "dialogue": "2"
+        },
+        {
+            "dialogueName": "hasKey1",
+            "charName": "Player",
+            "size": 6,
+            "dialogue": "이렇게 중요한 물건을 버릴 수는 없어."
+        },
+        {
+            "dialogueName": "talkingLegend",
+            "charName": "Baby",
+            "size": 3,
+            "dialogue": "너, 그 이야기 아는가?"
+        },
+        {
+            "dialogueName": "talkingLegend",
+            "charName": "BabyFriend",
+            "size": 2,
+            "dialogue": "또 무서운 이야기 하려는 거지? 나 어제도 엄마랑 잤다고."
+        },
+        {
+            "dialogueName": "talkingLegend",
+            "charName": "Baby",
+            "size": 2,
+            "dialogue": "이번엔 좀 특이해!!! 이번 괴담의 주제는 '인간'이다."
+        },
+        {
+            "dialogueName": "talkingLegend",
+            "charName": "BabyFriend",
+            "size": 2,
+            "dialogue": "그… 멸종한 지 한참됐다는 전설의 종족? 엄마가 이미 말해줬어. "
+        },
+        {
+            "dialogueName": "talkingLegend",
+            "charName": "Baby",
+            "size": 2,
+            "dialogue": "인간이 어떻게 생겨먹은 짐승인지는 들었나?"
+        },
+        {
+            "dialogueName": "talkingLegend",
+            "charName": "Baby",
+            "size": 2,
+            "dialogue": "걔네들은 민둥 등짝에 민둥 다리, 민둥 엉덩이였지만"
+        },
+        {
+            "dialogueName": "talkingLegend",
+            "charName": "Baby",
+            "size": 2,
+            "dialogue": "머리랑 겨드랑이에만 털이 수북한 종족이었다고 한다."
+        },
+        {
+            "dialogueName": "talkingLegend",
+            "charName": "BabyFriend",
+            "size": 4,
+            "dialogue": "…………."
+        },
+        {
+            "dialogueName": "talkingLegend",
+            "charName": "Baby",
+            "size": 4,
+            "dialogue": "그리고 아랫도리도. "
+        },
+        {
+            "dialogueName": "talkingLegend",
+            "charName": "BabyFriend",
+            "size": 3,
+            "dialogue": "그, 그만. 너무 무서워. "
+        },
+        {
+            "dialogueName": "talkingLegend",
+            "charName": "Baby",
+            "size": 3,
+            "dialogue": "나약하군. 아직 끝나지 않았어. "
+        },
+        {
+            "dialogueName": "talkingLegend",
+            "charName": "Baby",
+            "size": 2,
+            "dialogue": "사실 그 인간들이 아직 우리 주변에 남아있다면?"
+        },
+        {
+            "dialogueName": "talkingLegend",
+            "charName": "Baby",
+            "size": 2,
+            "dialogue": "자기들의 옛 터전에 자리 잡은 짐승들을 질투해 악령으로 변한 뒤…"
+        },
+        {
+            "dialogueName": "talkingLegend",
+            "charName": "Baby",
+            "size": 2,
+            "dialogue": "가끔 잘 때 창문에 나타난다고 하더군."
+        },
+        {
+            "dialogueName": "talkingLegend",
+            "charName": "BabyFriend",
+            "size": 4,
+            "dialogue": "…………."
+        },
+        {
+            "dialogueName": "talkingLegend",
+            "charName": "BabyFriend",
+            "size": 4,
+            "dialogue": "……………………."
+        },
+        {
+            "dialogueName": "talkingLegend",
+            "charName": "BabyFriend",
+            "size": 4,
+            "dialogue": "나… 엄마랑 잘래."
+        },
+        {
+            "dialogueName": "talkingLegend",
+            "charName": "Baby",
+            "size": 4,
+            "dialogue": "그래야 내 친구지. "
+        },
+        {
+            "dialogueName": "fountain",
+            "charName": "Player",
+            "size": 7,
+            "dialogue": "관장님의 동상이 있는 분수야"
+        },
+        {
+            "dialogueName": "fountain",
+            "charName": "Player",
+            "size": 6,
+            "dialogue": "분수에 동전을 던지고 소원을 빌까?"
+        },
+        {
+            "dialogueName": "fountain",
+            "charName": "Player",
+            "size": 10,
+            "dialogue": "3"
+        },
+        {
+            "dialogueName": "fountain1",
+            "charName": "Player",
+            "size": 6,
+            "dialogue": "무슨 소원을 빌어야할지 모르겠어."
+        },
+        {
+            "dialogueName": "Dog1",
+            "charName": "Player",
+            "size": 6,
+            "dialogue": "관장님께서 좋아하시던 장미꽃이야."
+        },
+        {
+            "dialogueName": "Dog1",
+            "charName": "Player",
+            "size": 6,
+            "dialogue": "이걸 가져가서 관장님 묘지에 놓을까?"
+        },
+        {
+            "dialogueName": "Dog1",
+            "charName": "Player",
+            "size": 10,
+            "dialogue": "4"
+        },
+        {
+            "dialogueName": "Dog1-1",
+            "charName": "Player",
+            "size": 7,
+            "dialogue": "다 시들어버린 꽃인걸..."
+        },
+        {
+            "dialogueName": "Dog1-1",
+            "charName": "Player",
+            "size": 7,
+            "dialogue": "새 장미꽃을 찾아보자."
+        },
+        {
+            "dialogueName": "Dog1-2",
+            "charName": "Player",
+            "size": 7,
+            "dialogue": "다른 장미꽃을 찾아보자."
+        },
+        {
+            "dialogueName": "Dog2",
+            "charName": "Player",
+            "size": 6,
+            "dialogue": "관장님께서 좋아하시던 장미꽃이야."
+        },
+        {
+            "dialogueName": "Elder1",
+            "charName": "Elder",
+            "size": 3,
+            "dialogue": "아이고, 여기 있었구만!"
+        },
+        {
+            "dialogueName": "Elder1",
+            "charName": "Elder",
+            "size": 2,
+            "dialogue": "전해줄 물건이 있어서 한참을 찾았단다."
+        },
+        {
+            "dialogueName": "Elder1",
+            "charName": "Elder",
+            "size": 1,
+            "dialogue": "결국 찾지 못해 도서관 문 앞에 붙여놓고 오던 참인데 한번 확인해보려무나. "
+        },
+        {
+            "dialogueName": "Elder2",
+            "charName": "Elder",
+            "size": 3,
+            "dialogue": "도서관 문 앞은 확인해봤니?"
+        }
+    ]
+}

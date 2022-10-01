@@ -12,14 +12,6 @@ public class S1_2_02_16_Scripts : MonoBehaviour
 
     private bool isFirst = true;
 
-    private void Update()
-    {
-        if(prologue1.GetDone() && !UIManager.takingLegend)
-        {
-            UIManager.takingLegend = true;
-        }
-    }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (isFirst)
