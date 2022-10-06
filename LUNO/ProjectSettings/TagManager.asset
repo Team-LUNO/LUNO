@@ -10,6 +10,13 @@ TagManager:
   - ObjLeft
   - Obj
   - ObjUpper
+  - GetObj
+  - LibraryDoor
+  - keepsake
+  - bookcart
+  - section1
+  - section4
+  - Item
   layers:
   - Default
   - TransparentFX
@@ -18,9 +25,9 @@ TagManager:
   - Water
   - UI
   - 
-  - 
+  - Player
   - platform
-  - 
+  - platform(ignore)
   - 
   - 
   - 

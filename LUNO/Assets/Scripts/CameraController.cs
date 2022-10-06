@@ -4,34 +4,131 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    // ¹Ú½º ÄÃ¶óÀÌ´õ ¿µ¿ªÀÇ ÃÖ¼Ò ÃÖ´ë°ª
+    public Transform playerTransform;
+    Vector3 cameraPosition = new Vector3(0, 0, -1);
+    public bool cameraMove;
+
+    // ï¿½Ú½ï¿½ ï¿½Ý¶ï¿½ï¿½Ì´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö¼ï¿½ ï¿½Ö´ë°ª
     public BoxCollider2D bound;
     private Vector3 minBound;
     private Vector3 maxBound;
 
-    // Ä«¸Þ¶óÀÇ ¹Ý³ÐÀÌ¿Í ¹Ý³ôÀÌÀÇ °ª º¯¼ö
+    // Ä«ï¿½Þ¶ï¿½ï¿½ï¿½ ï¿½Ý³ï¿½ï¿½Ì¿ï¿½ ï¿½Ý³ï¿½ï¿½ï¿½
     private float halfWidth;
     private float halfHeight;
 
+    static public CameraController instance; // ï¿½ï¿½ ï¿½ï¿½È¯ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+
+    //È®ï¿½ï¿½
+    public bool zoomActive;
+    float zoomSpeed = 0f;
+    public float zoomSize;  //È®ï¿½ï¿½ ï¿½ï¿½ Ä«ï¿½Þ¶ï¿½ Å©ï¿½ï¿½
+
+    //Ä«ï¿½Þ¶ï¿½ ï¿½Ìµï¿½
+    public bool moveRight;
+    public bool moveLeft;
+    Vector3 moveVelocity = Vector3.zero;
+    public Vector3 targetPosition;
+
+    public float smoothTime;    //ï¿½ï¿½Ç¥ï¿½ï¿½ï¿½Þ±ï¿½ï¿½ï¿½ ï¿½É¸ï¿½ï¿½ï¿½ ï¿½Ã°ï¿½
+
     void Start()
     {
+        cameraMove = true;
+
         minBound = bound.bounds.min;
         maxBound = bound.bounds.max;
 
         halfHeight = Camera.main.orthographicSize;
         halfWidth = halfHeight * Screen.width / Screen.height;
+
+        if (instance == null) // ï¿½ï¿½ ï¿½ï¿½È¯ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+        {
+            DontDestroyOnLoad(gameObject);
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     void Update()
     {
-        LimitCameraArea();
+        if (cameraMove)
+        {
+            transform.position = playerTransform.position + cameraPosition;
+            LimitCameraArea();
+        }
+        if (zoomActive)
+        {
+            ZoomIn();
+        }
+        if(moveRight)
+        {
+            CameraMoveRight();
+        }
+        if(moveLeft)
+        {
+            CameraMoveLeft();
+        }
     }
 
     void LimitCameraArea()
     {
-        float clampedX = Mathf.Clamp(this.transform.position.x, minBound.x + halfWidth, maxBound.x - halfWidth);
-        float clampedY = Mathf.Clamp(this.transform.position.y, minBound.y + halfHeight, maxBound.y - halfHeight);
+        float clampedX = Mathf.Clamp(transform.position.x, minBound.x + halfWidth, maxBound.x - halfWidth);
+        float clampedY = Mathf.Clamp(transform.position.y, minBound.y + halfHeight, maxBound.y - halfHeight);
 
-        this.transform.position = new Vector3(clampedX, clampedY, this.transform.position.z);
+        transform.position = new Vector3(clampedX, clampedY, transform.position.z);
+    }
+
+    void ZoomIn()
+    {
+        //ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ ï¿½Ìµï¿½
+        Vector3 targetPosition = playerTransform.position + cameraPosition;
+        transform.position = Vector3.SmoothDamp(transform.position, targetPosition,
+                                                ref moveVelocity, smoothTime);
+        LimitCameraArea();
+
+        //È®ï¿½ï¿½
+        float smoothZoomSize = Mathf.SmoothDamp(Camera.main.orthographicSize, zoomSize,
+                                                ref zoomSpeed, smoothTime);
+        Camera.main.orthographicSize = smoothZoomSize;
+
+        //Ä«ï¿½Þ¶ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ê¿ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+        halfHeight = Camera.main.orthographicSize;
+        halfWidth = halfHeight * Screen.width / Screen.height;
+
+        //È®ï¿½ï¿½ ï¿½Ï·ï¿½
+        if (Mathf.Abs(Camera.main.orthographicSize - zoomSize) < 0.1f)
+        {
+            halfHeight = Camera.main.orthographicSize;
+            halfWidth = halfHeight * Screen.width / Screen.height;
+            zoomActive = false;
+            cameraMove = true;
+        }
+    }
+
+    void CameraMoveRight()
+    {
+        transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref moveVelocity, smoothTime);
+
+        //ï¿½Ìµï¿½ ï¿½Ï·ï¿½
+        if(Vector3.Distance(transform.position, targetPosition) < 0.1f)
+        {
+            moveRight = false;
+        }
+    }
+
+    void CameraMoveLeft()
+    {
+        transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref moveVelocity, smoothTime);
+
+        //ï¿½Ìµï¿½ ï¿½Ï·ï¿½
+        if(Vector3.Distance(transform.position, targetPosition) <0.1f)
+        {
+            moveLeft = false;
+            cameraMove = true;
+        }
     }
 }

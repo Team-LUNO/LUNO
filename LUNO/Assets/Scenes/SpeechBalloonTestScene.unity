@@ -159,6 +159,7 @@ MonoBehaviour:
   - sentence: 0
     speaker: {fileID: 289983342}
     size: 9
+  isRepeatable: 0
 --- !u!4 &61634305
 Transform:
   m_ObjectHideFlags: 0
@@ -787,7 +788,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e336ef375dec9444d9ae8e13e58638e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prologueManager: {fileID: 61634304}
+  prologueManager: {fileID: 1965450254}
 --- !u!4 &1181327686 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 324107020793958083, guid: 708f501e103934722b12d26be620449d, type: 3}
@@ -1174,6 +1175,7 @@ MonoBehaviour:
   - sentence: "\uC5B4\uB450\uC6CC\uC9C0\uB124\u2026 \uC774\uC81C \uAC00\uC790."
     speaker: {fileID: 1445531260}
     size: 3
+  isRepeatable: 1
 --- !u!1 &2124625477
 GameObject:
   m_ObjectHideFlags: 0
@@ -1213,6 +1215,7 @@ MonoBehaviour:
   - sentence: 0
     speaker: {fileID: 289983342}
     size: 10
+  isRepeatable: 0
 --- !u!4 &2124625479
 Transform:
   m_ObjectHideFlags: 0
