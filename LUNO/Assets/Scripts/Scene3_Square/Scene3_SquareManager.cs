@@ -124,65 +124,46 @@ public class Scene3_SquareManager : MonoBehaviour
             //dialogue
             //남의 집 사다리에 함부로 올라가는 것은 예의가 아니야.
         }
-        else if (bubble[5].activeSelf && Input.GetKeyDown(KeyCode.E))   //House1
+        else if ((bubble[5].activeSelf || bubble[9].activeSelf)
+            && Input.GetKeyDown(KeyCode.E))   //House1, 2
         {
             //dialogue
             //남의 집에 함부로 들어가는 것은 예의가 아니야.
         }
-
-        else if (bubble[9].activeSelf && Input.GetKeyDown(KeyCode.E))
+        else if ((bubble[6].activeSelf || bubble[8].activeSelf)
+            && Input.GetKeyDown(KeyCode.E))   //Bench1, 2
         {
-            bubble[9].SetActive(false);
-            if (dialogueManager[10].GetDone())
-                dialogueManager[10].ResetOrder();
-            dialogueManager[10].StartDialogue();
+            //dialogue
+            //평범한 벤치야.
+        }
+        else if (bubble[7].activeSelf && Input.GetKeyDown(KeyCode.E))   //Fountain
+        {
+            //dialogue
+            //우리 마을 중앙에 있는 분수야.
         }
 
-        else if (bubble[12].activeSelf && Input.GetKeyDown(KeyCode.E))
+        else if (bubble[10].activeSelf && Input.GetKeyDown(KeyCode.E))   //Babybear
         {
-            bubble[12].SetActive(false);
-            if (dialogueManager[9].GetDone())
-                dialogueManager[9].ResetOrder();
-            dialogueManager[9].StartDialogue();
+            //animation
+            //dialogue
         }
 
-        else if (bubble[13].activeSelf && Input.GetKeyDown(KeyCode.E))
+        else if (bubble[11].activeSelf && Input.GetKeyDown(KeyCode.E))   //Otaku
         {
-            /*
-            bubble[13].SetActive(false);
-            if (quest1 == -1 || quest1 == 1)
-            {
-                if (dialogueManager[15].GetDone())
-                    dialogueManager[15].ResetOrder();
-                dialogueManager[15].StartDialogue();
-            }
-            else if (quest1 == 0)
-            {
-                if (dialogueManager[12].GetDone())
-                    dialogueManager[12].ResetOrder();
-                dialogueManager[12].StartDialogue();
-            }
-            */
+            //dialogue
         }
-        else if (bubble[14].activeSelf && Input.GetKeyDown(KeyCode.E))
+
+        else if (bubble[12].activeSelf && Input.GetKeyDown(KeyCode.E))  //Dog
+        {
+            //dialogue
+        }
+
+        else if (bubble[13].activeSelf && Input.GetKeyDown(KeyCode.E))  //OldDog
         {
 
         }
 
-        if(dialogueManager[1].GetDone())
-        {
-            dialogueManager[0].ResetOrder();
-            getItemName = "fruit";
-            if (!hasItem)
-            {
-                getItem();
-            }
-            else
-            {
-                itemDialogue();
-            }
-        }
-
+        /*
         //library enter action
         if (libraryDetail.activeSelf && Input.GetKeyDown(KeyCode.E))
         {
@@ -197,42 +178,7 @@ public class Scene3_SquareManager : MonoBehaviour
             detailAnim.SetTrigger("PressE");
             StartCoroutine(DetailDisappear());
         }
-    }
-
-    public void getItem()
-    {
-        hasItem = true;
-        switch (getItemName)
-        {
-            case ("fruit"):
-                item[0].SetActive(true);
-                hasItemName = "fruit";
-                break;
-            case ("coin"):
-                item[1].SetActive(true);
-                hasItemName = "coin";
-                break;
-            case ("key"):
-                item[2].SetActive(true);
-                hasItemName = "key";
-                break;
-        }
-    }
-
-    void itemDialogue()
-    {
-        switch(hasItemName)
-        {
-            case ("fruit"):
-                dialogueManager[5].StartDialogue();
-                break;
-            case ("coin"):
-                dialogueManager[6].StartDialogue();
-                break;
-            case ("key"):
-                dialogueManager[7].StartDialogue();
-                break;
-        }
+        */
     }
 
     IEnumerator DetailAppear()
@@ -253,6 +199,4 @@ public class Scene3_SquareManager : MonoBehaviour
         yield return new WaitForSecondsRealtime(1f);
         SceneManager.LoadScene("Scene4_Library");
     }
-
-    
 }
