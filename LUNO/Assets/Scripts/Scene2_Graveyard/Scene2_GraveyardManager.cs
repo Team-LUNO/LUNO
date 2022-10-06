@@ -11,19 +11,9 @@ public class Scene2_GraveyardManager : MonoBehaviour
     [SerializeField]
     private GameObject player;
 
-    [SerializeField]
-    private GameObject[] objDetail;
-
-    [SerializeField]
-    private PrologueManager[] prologues;
-
-    public GameObject[] objBubble;
+    public GameObject[] bubble;
 
     Animator screenAnim;
-    Animator detailAnim;
-    int prologueIndex;
-    bool prologueOn;
-
 
     void Start()
     {
@@ -34,56 +24,17 @@ public class Scene2_GraveyardManager : MonoBehaviour
 
     void Update()
     {
-        if (objBubble[0].activeSelf && Input.GetKeyDown(KeyCode.E))
+        if (bubble[0].activeSelf && Input.GetKeyDown(KeyCode.E))    //DirectorCemetery
         {
-            player.GetComponent<Move>().enabled = false;
-            objBubble[0].SetActive(false);
-            objDetail[0].SetActive(false);
-            objDetail[0].SetActive(true);
-        }
-        else if(objDetail[0].activeSelf && Input.GetKeyDown(KeyCode.E))
-        {
-            detailAnim = objDetail[0].GetComponent<Animator>();
-            detailAnim.SetTrigger("PressE");
-            StartCoroutine(WaitForAnimation());
+            bubble[0].SetActive(false);
         }
 
-        if(objBubble[1].activeSelf && Input.GetKeyDown(KeyCode.E))
+        else if((bubble[1].activeSelf || bubble[2].activeSelf || bubble[3].activeSelf)
+            && Input.GetKeyDown(KeyCode.E))    //Cemetery1 ~ 3
         {
-            prologueOn = true;
-            player.GetComponent<Move>().enabled = false;
-            objBubble[1].SetActive(false);
-            if (prologues[prologueIndex].GetDone())
-            {
-                prologues[prologueIndex].ResetOrder();
-            }
-            prologues[prologueIndex].StartPrologue();
-            prologueIndex++;
-        }
-
-        if(prologueOn && Input.GetKeyDown(KeyCode.E))
-        {
-            prologueOn = false;
-            player.GetComponent<Move>().enabled = true;
-        }
-
-        if (prologueIndex == 2)
-        {
-            prologueIndex = 0;
-        }
-
-        if (objBubble[2].activeSelf && Input.GetKeyDown(KeyCode.E))
-        {
-            player.GetComponent<Move>().enabled = false;
-            objBubble[2].SetActive(false);
-            objDetail[1].SetActive(false);
-            objDetail[1].SetActive(true);
-        }
-        else if (objDetail[1].activeSelf && Input.GetKeyDown(KeyCode.E))
-        {
-            detailAnim = objDetail[1].GetComponent<Animator>();
-            detailAnim.SetTrigger("PressE");
-            StartCoroutine(WaitForAnimation());
+            bubble[1].SetActive(false);
+            bubble[2].SetActive(false);
+            bubble[3].SetActive(false);
         }
     }
 
@@ -96,7 +47,7 @@ public class Scene2_GraveyardManager : MonoBehaviour
     IEnumerator SceneMoveDelay()
     {
         yield return new WaitForSecondsRealtime(1f);
-        SceneManager.LoadScene("S1-2_Village");
+        SceneManager.LoadScene("Scene3_Square");
     }
 
     IEnumerator WaitForFadeIn()
@@ -105,9 +56,4 @@ public class Scene2_GraveyardManager : MonoBehaviour
         player.GetComponent<Move>().enabled = true;
     }
 
-    IEnumerator WaitForAnimation()
-    {
-        yield return new WaitUntil(() => detailAnim.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1.0f);
-        player.GetComponent<Move>().enabled = true;
-    }
 }

@@ -10,7 +10,7 @@ public class Scene3_SquareManager : MonoBehaviour
     private GameObject player;
 
     [SerializeField]
-    private GameObject elder;
+    private GameObject oldDog;
 
     [SerializeField]
     private Camera cam;
@@ -44,80 +44,47 @@ public class Scene3_SquareManager : MonoBehaviour
     public GameObject blackScreen;
     Animator blackScreenAnim;
 
-    //quest condition
-    //not doing: -1, doing: 0, finished: 1
-    public int quest1;
-    public bool libraryOn;
-    bool enterLibrary;
+    int sceneNum;
 
     void Start()
     {
         cameraController = cam.GetComponent<CameraController>();
         blackScreenAnim = blackScreen.GetComponent<Animator>();  
         
+        /*
         if(quest1 == 1 && !enterLibrary)
         {
-            elder.SetActive(true);
+            oldDog.SetActive(true);
             libraryOn = true;
         }
+        */
     }
     void Update()
     {
         //collider action
-        if (bubble[0].activeSelf & Input.GetKeyDown(KeyCode.E))  //graveyard
+        if (bubble[0].activeSelf & Input.GetKeyDown(KeyCode.E))  //Graveyaed
         {
             bubble[0].SetActive(false);
             SceneManager.LoadScene("Scene2_Graveyard");
         }
-        else if ((bubble[1].activeSelf || bubble[2].activeSelf || bubble[3].activeSelf)
-            && Input.GetKeyDown(KeyCode.E)) //forest
+        else if (bubble[1].activeSelf && Input.GetKeyDown(KeyCode.E)) //Forest
         {
             bubble[1].SetActive(false);
-            bubble[2].SetActive(false);
-            bubble[3].SetActive(false);
-
-            int num = Random.Range(1, 10);
-
-            //dialogue test
-            //num = 6;
-            //num = 10;
-
-            if (num >= 1 && num <= 6)
-            {
-                dialogueManager[0].StartDialogue();
-            }
-            else if (num >= 7 && num <= 9)    //fruit
-            {
-                if (dialogueManager[1].GetDone())
-                    dialogueManager[1].ResetOrder();
-                dialogueManager[1].StartDialogue();
-            }
-            else    //coin
-            {
-                if (dialogueManager[2].GetDone())
-                    dialogueManager[2].ResetOrder();
-                dialogueManager[2].StartDialogue();
-
-                getItemName = "coin";
-
-                if (!hasItem)
-                {
-                    getItem();
-                }
-                else
-                {
-                    itemDialogue();
-                }
-            }
+            //dialogue
+            //흙과 나무 냄새
         }
-        else if (bubble[4].activeSelf && Input.GetKeyDown(KeyCode.E))   //lunohouse
+        else if (bubble[2].activeSelf && Input.GetKeyDown(KeyCode.E))   //Lunohouse
         {
-            bubble[4].SetActive(false);
+            bubble[2].SetActive(false);
             //SceneManager.LoadScene("Scene5_lunohouse");
         }
-        else if (bubble[5].activeSelf && Input.GetKeyDown(KeyCode.E))   //library
+        else if (bubble[3].activeSelf && Input.GetKeyDown(KeyCode.E))   //Library
         {
-            bubble[5].SetActive(false);
+            bubble[3].SetActive(false);
+            //dialogue
+            //도서관 문은 잠겨있어.
+
+            /*
             if (!libraryOn)
             {
                 if (dialogueManager[3].GetDone())
@@ -126,7 +93,7 @@ public class Scene3_SquareManager : MonoBehaviour
             }
             else if (libraryOn && hasItemName != "key")  //get key
             {
-                elder.SetActive(false);
+                oldDog.SetActive(false);
                 enterLibrary = true;
                 dialogueManager[4].StartDialogue();
 
@@ -150,8 +117,18 @@ public class Scene3_SquareManager : MonoBehaviour
                 blackScreenAnim.SetTrigger("FadeOut");
                 StartCoroutine(SceneMove());
             }
+            */
         }
-
+        else if (bubble[4].activeSelf && Input.GetKeyDown(KeyCode.E))   //Ladder1
+        {
+            //dialogue
+            //남의 집 사다리에 함부로 올라가는 것은 예의가 아니야.
+        }
+        else if (bubble[5].activeSelf && Input.GetKeyDown(KeyCode.E))   //House1
+        {
+            //dialogue
+            //남의 집에 함부로 들어가는 것은 예의가 아니야.
+        }
 
         else if (bubble[9].activeSelf && Input.GetKeyDown(KeyCode.E))
         {
@@ -171,6 +148,7 @@ public class Scene3_SquareManager : MonoBehaviour
 
         else if (bubble[13].activeSelf && Input.GetKeyDown(KeyCode.E))
         {
+            /*
             bubble[13].SetActive(false);
             if (quest1 == -1 || quest1 == 1)
             {
@@ -184,6 +162,7 @@ public class Scene3_SquareManager : MonoBehaviour
                     dialogueManager[12].ResetOrder();
                 dialogueManager[12].StartDialogue();
             }
+            */
         }
         else if (bubble[14].activeSelf && Input.GetKeyDown(KeyCode.E))
         {
