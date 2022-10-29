@@ -165,7 +165,8 @@ public class DialogueManager : MonoBehaviour
                     }
                     else
                     {
-                        StartCoroutine(PopDown(frontBubble.transform.GetChild(int.Parse(dialogues[order - 1].dialogue)).gameObject, frontBubble.transform.childCount));
+                        for(int i = 0; i < frontBubble.transform.childCount; i++)
+                            StartCoroutine(PopDown(frontBubble.transform.GetChild(i).gameObject, frontBubble.transform.childCount));
                         StartCoroutine(PopDown(backBubble));
                     }
 

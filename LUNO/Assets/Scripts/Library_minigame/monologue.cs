@@ -7,7 +7,7 @@ public class monologue : MonoBehaviour
     [SerializeField]
     private Move move;
 
-    public PrologueManager prologue1;
+    public DialogueManager dialogue1;
 
     //private bool timeover = false;
 
@@ -46,7 +46,7 @@ public class monologue : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
         //timeover = true;
-        prologue1.StartPrologue();
+        dialogue1.StartDialogue();
         limitMove(false);
     }
 }
