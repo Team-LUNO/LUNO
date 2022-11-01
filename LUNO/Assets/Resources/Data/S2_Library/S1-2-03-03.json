@@ -1,0 +1,22 @@
+{
+  "dialogues": [
+    {
+      "DialogName ": "S1-2-03-03",
+      "charName": "char-01",
+      "size": 7,
+      "dialogue": "아직 정리가 안된 책들이야. "
+    },
+    {
+      "DialogName ": "S1-2-03-03",
+      "charName": "char-01",
+      "size": 8,
+      "dialogue": "책을 정리해야겠어.  "
+    },
+    {
+      "DialogName ": "S1-2-03-03",
+      "charName": "char-01",
+      "size": 8,
+      "dialogue": "지금 시작할까? "
+    }
+  ]
+}
