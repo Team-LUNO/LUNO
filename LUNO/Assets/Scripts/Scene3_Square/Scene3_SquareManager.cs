@@ -19,10 +19,10 @@ public class Scene3_SquareManager : MonoBehaviour
     private Vector3[] startPosition;
 
     [SerializeField]
-    private GameObject[] InfoUI;
+    private bool firstPlay;
 
     [SerializeField]
-    private bool infoUISwitch;
+    private GameObject[] InfoUI;
 
     [SerializeField]
     private GameObject oldDog;
@@ -41,7 +41,7 @@ public class Scene3_SquareManager : MonoBehaviour
     [SerializeField]
     private GameObject flowerBubble;
 
-    int benchDialogue = 0;
+    private int benchDialogue = 0;
 
     //library
     [SerializeField]
@@ -53,7 +53,7 @@ public class Scene3_SquareManager : MonoBehaviour
     [SerializeField]
     Vector3 libraryPosition;
 
-    Animator animator;
+    private bool libraryOpen;
 
     //dialogue
     [SerializeField]
@@ -65,23 +65,25 @@ public class Scene3_SquareManager : MonoBehaviour
     void Start()
     {
         cameraController = cam.GetComponent<CameraController>();
-        animator = blackScreen.GetComponent<Animator>();
 
-        if (sceneNum == 2 && !infoUISwitch)
+        if (sceneNum == 2 && firstPlay)
         {
             player.transform.position = startPosition[0];
             director[0].Play();
-            infoUISwitch = true;
+            firstPlay = false;
         }
-        else if (sceneNum == 2 && infoUISwitch)
+        else if (sceneNum >= 2 && !firstPlay)
+        {
+            director[1].Play();
+            player.transform.position = startPosition[0];
+        }
+        /*
+        else if (sceneNum == 3)
         {
             director[1].Play();
             player.transform.position = startPosition[1];
         }
-        else if (sceneNum == 3)
-        {
-
-        }
+        */
     }
     void Update()
     {
@@ -273,36 +275,38 @@ public class Scene3_SquareManager : MonoBehaviour
         }
         else if (sceneNum == 5)
         {
-            libraryDetail.SetActive(true);
-            player.GetComponent<Move>().enabled = false;
-            player.transform.position = libraryPosition;
+            if(bubble[3].activeSelf && Input.GetKeyDown(KeyCode.E))   //Library
+            {
+                bubble[3].SetActive(false);
+                if (libraryOpen)
+                {
+                    StartCoroutine(SceneMove());
+                }
+                else if(item[0].activeSelf)
+                {
+                    item[0].SetActive(false);
+                    libraryOpen = true;
+                    StartCoroutine(SceneMove());
+                }
+                else if(!item[0].activeSelf)
+                {
+                    libraryDetail.SetActive(true);
 
-            //camera move
-            cameraController.targetPosition
-                = new Vector3(cam.transform.position.x + 2.5f, cam.transform.position.y, cam.transform.position.z);
-            cameraController.smoothTime = 0.38f;
-            cameraController.cameraMove = false;
-            cameraController.moveRight = true;
-            StartCoroutine(DetailAppear());  //after 0.08s, Detail On
+                    player.GetComponent<Move>().enabled = false;
+                    player.transform.position = libraryPosition;
 
-            animator.SetTrigger("FadeOut");
-            StartCoroutine(SceneMove());
-
-            animator.SetTrigger("FadeOut");
-            StartCoroutine(SceneMove());
-
-            //library enter action
-            if (libraryDetail.activeSelf && Input.GetKeyDown(KeyCode.E))
+                    //camera move
+                    cameraController.targetPosition
+                        = new Vector3(cam.transform.position.x + 2.5f, cam.transform.position.y, cam.transform.position.z);
+                    cameraController.smoothTime = 0.38f;
+                    cameraController.cameraMove = false;
+                    cameraController.moveRight = true;
+                }
+            }
+            else if (libraryDetail.activeSelf && Input.GetKeyDown(KeyCode.E))
             {
                 libraryDetail.SetActive(false);
                 noKeyDetail.SetActive(true);
-                //화면 중앙 하단에 ‘Q 닫기’ 안내 메시지 출력. 5초간 노출 후 사라짐. 
-            }
-
-            if (noKeyDetail.activeSelf && Input.GetKeyDown(KeyCode.Q))
-            {
-                animator = noKeyDetail.GetComponent<Animator>();
-                animator.SetTrigger("PressE");
                 StartCoroutine(DetailDisappear());
             }
         }
@@ -314,16 +318,12 @@ public class Scene3_SquareManager : MonoBehaviour
             }
         }
     }
-    IEnumerator DetailAppear()
-    {
-        yield return new WaitForSecondsRealtime(0.08f);
-        libraryDetail.SetActive(true);
-    }
 
     IEnumerator DetailDisappear()
     {
         yield return new WaitForSecondsRealtime(1f);
         noKeyDetail.SetActive(false);
+        item[0].SetActive(true);
         player.GetComponent<Move>().enabled = true;
     }
 
@@ -331,13 +331,5 @@ public class Scene3_SquareManager : MonoBehaviour
     {
         yield return new WaitForSecondsRealtime(1f);
         SceneManager.LoadScene("Scene4_Library");
-    }
-
-    IEnumerator SceneFadeIn()
-    {
-        player.GetComponent<Move>().enabled = false;
-        yield return new WaitForSeconds(1.0f);
-        player.GetComponent<Move>().enabled = true;
-        blackScreen.SetActive(false);
     }
 }

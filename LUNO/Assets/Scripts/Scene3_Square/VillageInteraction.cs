@@ -130,6 +130,9 @@ public class VillageInteraction : MonoBehaviour
         {
             switch (other.gameObject.name)
             {
+                case "Library":
+                    UIManager.bubble[3].SetActive(true);
+                    break;
                 case "Fountain":
                     UIManager.bubble[7].SetActive(true);
                     break;
@@ -276,7 +279,9 @@ public class VillageInteraction : MonoBehaviour
         {
             switch (other.gameObject.name)
             {
-
+                case "Library":
+                    UIManager.bubble[3].SetActive(false);
+                    break;
                 case "Fountain":
                     UIManager.bubble[7].SetActive(true);
                     break;
