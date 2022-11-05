@@ -52,6 +52,10 @@ public class VillageInteraction : MonoBehaviour
                 case "House2":
                     UIManager.bubble[9].SetActive(true);
                     break;
+                case "BabyBear":
+                    Vector3 dir = other.transform.position - transform.position;
+                    Debug.Log(dir);
+                    break;
                 case "Otaku":
                     UIManager.bubble[11].SetActive(true);
                     break;
