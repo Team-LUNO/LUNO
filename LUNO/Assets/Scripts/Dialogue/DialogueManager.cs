@@ -100,7 +100,7 @@ public class DialogueManager : MonoBehaviour
 
                                 frontBubble = GameObject.Find(dialogues[order].charName).transform.Find("Balloon").GetChild(dialogues[order].size - 1).gameObject;
 
-                                if (backBubble != frontBubble && backBubble != null)
+                                if (backBubble != frontBubble && backBubble != null && dialogues[order - 1].dialogueName == dialogues[order].dialogueName)
                                 {
                                     if (dialogues[order - 1].size == 9 || dialogues[order - 1].size == 10)
                                     {
