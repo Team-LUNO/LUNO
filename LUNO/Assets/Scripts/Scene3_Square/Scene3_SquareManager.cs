@@ -98,7 +98,9 @@ public class Scene3_SquareManager : MonoBehaviour
             else if (bubble[1].activeSelf && Input.GetKeyDown(KeyCode.E)) //Forest
             {
                 bubble[1].SetActive(false);
-                //S2-2s-1 dialogue
+                if(dialogueManager[0].GetDone())
+                    dialogueManager[0].ResetOrder();
+                dialogueManager[0].StartDialogue();
             }
             else if (bubble[2].activeSelf && Input.GetKeyDown(KeyCode.E))   //Lunohouse
             {
@@ -108,15 +110,21 @@ public class Scene3_SquareManager : MonoBehaviour
             else if (bubble[3].activeSelf && Input.GetKeyDown(KeyCode.E))   //Library
             {
                 bubble[3].SetActive(false);
-                //S2-2s-2 dialogue
+                if (dialogueManager[1].GetDone())
+                    dialogueManager[1].ResetOrder();
+                dialogueManager[1].StartDialogue();
             }
             else if (bubble[4].activeSelf && Input.GetKeyDown(KeyCode.E))   //Ladder1
             {
-                //S2-2s-3 dialogue
+                if (dialogueManager[2].GetDone())
+                    dialogueManager[2].ResetOrder();
+                dialogueManager[2].StartDialogue();
             }
             else if (bubble[5].activeSelf && Input.GetKeyDown(KeyCode.E))   //House1
             {
-                //S2-2s-4 dialogue
+                if (dialogueManager[3].GetDone())
+                    dialogueManager[3].ResetOrder();
+                dialogueManager[3].StartDialogue();
             }
             else if ((bubble[6].activeSelf || bubble[8].activeSelf)
             && Input.GetKeyDown(KeyCode.E))   //Bench1, 2

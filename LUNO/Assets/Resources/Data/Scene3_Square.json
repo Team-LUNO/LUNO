@@ -1,298 +1,796 @@
 ﻿{
     "dialogues": [
         {
-            "dialogueName": "forest1",
-            "charName": "Player",
+            "dialogueName": "S2-2s-1",
+            "charName": "char-01",
             "size": 8,
-            "dialogue": "평범한 오솔길이야"
+            "dialogue": "흙과 나무 냄새."
         },
         {
-            "dialogueName": "forest2",
-            "charName": "Player",
+            "dialogueName": "S2-2s-2",
+            "charName": "char-01",
+            "size": 7,
+            "dialogue": "도서관 문은 잠겨 있어. "
+        },
+        {
+            "dialogueName": "S2-2s-2",
+            "charName": "char-01",
+            "size": 7,
+            "dialogue": "열쇠가 누군가에게 있을 텐데... "
+        },
+        {
+            "dialogueName": "S2-2s-2",
+            "charName": "char-01",
+            "size": 7,
+            "dialogue": "지금 중요한 일은 아닌 것 같아. "
+        },
+        {
+            "dialogueName": "S2-2s-3",
+            "charName": "char-01",
+            "size": 6,
+            "dialogue": "남의 집 사다리에 함부로 올라가는 것은 예의가 아니야."
+        },
+        {
+            "dialogueName": "S2-2s-4",
+            "charName": "char-01",
+            "size": 6,
+            "dialogue": "남의 집에 함부로 들어가는 것은 예의가 아니야. "
+        },
+        {
+            "dialogueName": "S2-2s-5",
+            "charName": "char-01",
             "size": 8,
-            "dialogue": "…"
+            "dialogue": "평범한 벤치야."
         },
         {
-            "dialogueName": "forest2",
-            "charName": "Player",
-            "size": 7,
-            "dialogue": "맛있는 열매를 찾았어!"
-        },
-        {
-            "dialogueName": "forest3",
-            "charName": "Player",
+            "dialogueName": "S2-2s-6",
+            "charName": "char-01",
             "size": 8,
-            "dialogue": "!!!"
+            "dialogue": "평범한 벤치야."
         },
         {
-            "dialogueName": "forest3",
-            "charName": "Player",
-            "size": 8,
-            "dialogue": "동전을 찾았어!"
-        },
-        {
-            "dialogueName": "library1",
-            "charName": "Player",
+            "dialogueName": "S2-2s-6",
+            "charName": "char-01",
             "size": 7,
-            "dialogue": "도서관 문이 잠겨있어."
+            "dialogue": "지금은 별로 앉고 싶지 않아."
         },
         {
-            "dialogueName": "library1",
-            "charName": "Player",
+            "dialogueName": "S2-2s-7",
+            "charName": "char-01",
             "size": 7,
-            "dialogue": "열쇠가 어디 있을텐데…"
+            "dialogue": "우리 마을 중앙에 있는 분수야. "
         },
         {
-            "dialogueName": "library1",
-            "charName": "Player",
-            "size": 6,
-            "dialogue": "관장님 유품을 정리하다가 잃어버렸나봐."
-        },
-        {
-            "dialogueName": "library2",
-            "charName": "Player",
+            "dialogueName": "S2-2s-8",
+            "charName": "char-01",
             "size": 7,
-            "dialogue": "문 앞에 쪽지가 붙어 있어."
+            "dialogue": "무슨 말을 하는지 잘 들리지 않아."
         },
         {
-            "dialogueName": "hasFruit",
-            "charName": "Player",
+            "dialogueName": "S2-2s-8",
+            "charName": "char-01",
             "size": 6,
-            "dialogue": "들 수 있는 손이 더 없네. 열매를 버릴까?"
+            "dialogue": "내가 들어야 할 이유는 없지… 지금 중요한 건 이게 아니야."
         },
         {
-            "dialogueName": "hasFruit",
-            "charName": "Player",
-            "size": 10,
-            "dialogue": "0"
-        },
-        {
-            "dialogueName": "hasCoin",
-            "charName": "Player",
+            "dialogueName": "S2-2s-9",
+            "charName": "char-01",
             "size": 6,
-            "dialogue": "들 수 있는 손이 더 없네. 동전을 버릴까?"
+            "dialogue": "남의 집에 함부로 들어가는 것은 예의가 아니야. "
         },
         {
-            "dialogueName": "hasCoin",
-            "charName": "Player",
-            "size": 10,
-            "dialogue": "1"
+            "dialogueName": "S2-2s-10",
+            "charName": "char-06",
+            "size": 4,
+            "dialogue": "여, 안녕."
         },
         {
-            "dialogueName": "hasKey",
-            "charName": "Player",
-            "size": 6,
-            "dialogue": "들 수 있는 손이 더 없네. 열쇠를 버릴까?"
-        },
-        {
-            "dialogueName": "hasKey",
-            "charName": "Player",
-            "size": 10,
-            "dialogue": "2"
-        },
-        {
-            "dialogueName": "hasKey1",
-            "charName": "Player",
-            "size": 6,
-            "dialogue": "이렇게 중요한 물건을 버릴 수는 없어."
-        },
-        {
-            "dialogueName": "talkingLegend",
-            "charName": "Baby",
+            "dialogueName": "S2-2s-10",
+            "charName": "char-06",
             "size": 3,
-            "dialogue": "너, 그 이야기 아는가?"
+            "dialogue": "오늘도 묘지에 가는 건가?"
         },
         {
-            "dialogueName": "talkingLegend",
-            "charName": "BabyFriend",
-            "size": 2,
-            "dialogue": "또 무서운 이야기 하려는 거지? 나 어제도 엄마랑 잤다고."
-        },
-        {
-            "dialogueName": "talkingLegend",
-            "charName": "Baby",
-            "size": 2,
-            "dialogue": "이번엔 좀 특이해!!! 이번 괴담의 주제는 '인간'이다."
-        },
-        {
-            "dialogueName": "talkingLegend",
-            "charName": "BabyFriend",
-            "size": 2,
-            "dialogue": "그… 멸종한 지 한참됐다는 전설의 종족? 엄마가 이미 말해줬어. "
-        },
-        {
-            "dialogueName": "talkingLegend",
-            "charName": "Baby",
-            "size": 2,
-            "dialogue": "인간이 어떻게 생겨먹은 짐승인지는 들었나?"
-        },
-        {
-            "dialogueName": "talkingLegend",
-            "charName": "Baby",
-            "size": 2,
-            "dialogue": "걔네들은 민둥 등짝에 민둥 다리, 민둥 엉덩이였지만"
-        },
-        {
-            "dialogueName": "talkingLegend",
-            "charName": "Baby",
-            "size": 2,
-            "dialogue": "머리랑 겨드랑이에만 털이 수북한 종족이었다고 한다."
-        },
-        {
-            "dialogueName": "talkingLegend",
-            "charName": "BabyFriend",
+            "dialogueName": "S2-2s-10",
+            "charName": "char-06",
             "size": 4,
-            "dialogue": "…………."
+            "dialogue": "넌 정말 한결같군."
         },
         {
-            "dialogueName": "talkingLegend",
-            "charName": "Baby",
+            "dialogueName": "S2-2s-11",
+            "charName": "char-07",
             "size": 4,
-            "dialogue": "그리고 아랫도리도. "
+            "dialogue": "안녕?"
         },
         {
-            "dialogueName": "talkingLegend",
-            "charName": "BabyFriend",
+            "dialogueName": "S2-2s-11",
+            "charName": "char-07",
+            "size": 2,
+            "dialogue": "이 시간에 여기까지 나와주다니… 조금 감동이네."
+        },
+        {
+            "dialogueName": "S2-2s-11",
+            "charName": "char-07",
+            "size": 2,
+            "dialogue": "넌 항상 묘지에만 들리잖아. 여기서 정 반대인 곳 말이야."
+        },
+        {
+            "dialogueName": "S2-2s-11",
+            "charName": "char-07",
             "size": 3,
-            "dialogue": "그, 그만. 너무 무서워. "
+            "dialogue": "설마 날 보러 여기까지 와준 거야?"
         },
         {
-            "dialogueName": "talkingLegend",
-            "charName": "Baby",
+            "dialogueName": "S2-2s-11",
+            "charName": "char-07",
             "size": 3,
-            "dialogue": "나약하군. 아직 끝나지 않았어. "
+            "dialogue": "헤헤, 나는 지금 꽃을 팔고 있어…."
         },
         {
-            "dialogueName": "talkingLegend",
-            "charName": "Baby",
-            "size": 2,
-            "dialogue": "사실 그 인간들이 아직 우리 주변에 남아있다면?"
+            "dialogueName": "S2-2s-11",
+            "charName": "char-07",
+            "size": 3,
+            "dialogue": "뭐, 그냥 소일거리 정도지만."
         },
         {
-            "dialogueName": "talkingLegend",
-            "charName": "Baby",
-            "size": 2,
-            "dialogue": "자기들의 옛 터전에 자리 잡은 짐승들을 질투해 악령으로 변한 뒤…"
+            "dialogueName": "S2-3s-1",
+            "charName": "char-01",
+            "size": 8,
+            "dialogue": "……."
         },
         {
-            "dialogueName": "talkingLegend",
-            "charName": "Baby",
-            "size": 2,
-            "dialogue": "가끔 잘 때 창문에 나타난다고 하더군."
+            "dialogueName": "S2-3s-1",
+            "charName": "char-01",
+            "size": 8,
+            "dialogue": "꽃들이 다 시들었네."
         },
         {
-            "dialogueName": "talkingLegend",
-            "charName": "BabyFriend",
-            "size": 4,
-            "dialogue": "…………."
+            "dialogueName": "S2-3s-1",
+            "charName": "char-01",
+            "size": 8,
+            "dialogue": "새것을 구해와야겠어."
         },
         {
-            "dialogueName": "talkingLegend",
-            "charName": "BabyFriend",
-            "size": 4,
-            "dialogue": "……………………."
-        },
-        {
-            "dialogueName": "talkingLegend",
-            "charName": "BabyFriend",
-            "size": 4,
-            "dialogue": "나… 엄마랑 잘래."
-        },
-        {
-            "dialogueName": "talkingLegend",
-            "charName": "Baby",
-            "size": 4,
-            "dialogue": "그래야 내 친구지. "
-        },
-        {
-            "dialogueName": "fountain",
-            "charName": "Player",
+            "dialogueName": "S2-3s-2",
+            "charName": "char-01",
             "size": 7,
-            "dialogue": "관장님의 동상이 있는 분수야"
+            "dialogue": "누구의 묘인지 모르겠어."
         },
         {
-            "dialogueName": "fountain",
-            "charName": "Player",
+            "dialogueName": "S2-3s-2",
+            "charName": "char-01",
+            "size": 7,
+            "dialogue": "내가 모르는 동물이야. "
+        },
+        {
+            "dialogueName": "S2-3s-3",
+            "charName": "char-01",
+            "size": 7,
+            "dialogue": "누구의 묘인지 모르겠어."
+        },
+        {
+            "dialogueName": "S2-3s-3",
+            "charName": "char-01",
+            "size": 7,
+            "dialogue": "내가 모르는 동물이야."
+        },
+        {
+            "dialogueName": "S2-3s-3",
+            "charName": "char-01",
+            "size": 7,
+            "dialogue": "관장님의 묘를 찾아야 해."
+        },
+        {
+            "dialogueName": "S2-3s-4",
+            "charName": "char-01",
             "size": 6,
-            "dialogue": "분수에 동전을 던지고 소원을 빌까?"
+            "dialogue": "“여생을 행복하게 살다 간 수사슴, 미스터 스미스 씨의 묘.”"
         },
         {
-            "dialogueName": "fountain",
-            "charName": "Player",
+            "dialogueName": "S2-3s-5",
+            "charName": "char-01",
+            "size": 6,
+            "dialogue": "“여생을 행복하게 살다 간 암사슴, 미세스 스미스 씨의 묘.”"
+        },
+        {
+            "dialogueName": "S3-1s-1",
+            "charName": "char-01",
+            "size": 8,
+            "dialogue": "새 꽃을 구해오자."
+        },
+        {
+            "dialogueName": "S3-1s-2",
+            "charName": "char-01",
+            "size": 7,
+            "dialogue": "누구의 묘인지 모르겠어."
+        },
+        {
+            "dialogueName": "S3-1s-2",
+            "charName": "char-01",
+            "size": 7,
+            "dialogue": "내가 모르는 동물이야. "
+        },
+        {
+            "dialogueName": "S3-1s-3",
+            "charName": "char-01",
+            "size": 7,
+            "dialogue": "누구의 묘인지 모르겠어."
+        },
+        {
+            "dialogueName": "S3-1s-3",
+            "charName": "char-01",
+            "size": 7,
+            "dialogue": "내가 모르는 동물이야."
+        },
+        {
+            "dialogueName": "S3-1s-3",
+            "charName": "char-01",
+            "size": 7,
+            "dialogue": "묘지에 놓을 새 꽃이나 구해오자."
+        },
+        {
+            "dialogueName": "S3-2s-1",
+            "charName": "char-01",
+            "size": 8,
+            "dialogue": "흙과 나무 냄새."
+        },
+        {
+            "dialogueName": "S3-2s-1",
+            "charName": "char-01",
+            "size": 6,
+            "dialogue": "여기에 꺾을 만한 꽃은 없을 것 같아."
+        },
+        {
+            "dialogueName": "S3-2s-2",
+            "charName": "char-01",
+            "size": 7,
+            "dialogue": "도서관 문은 잠겨 있어."
+        },
+        {
+            "dialogueName": "S3-2s-2",
+            "charName": "char-01",
+            "size": 7,
+            "dialogue": "열쇠가 누군가에게 있을 텐데... "
+        },
+        {
+            "dialogueName": "S3-2s-2",
+            "charName": "char-01",
+            "size": 7,
+            "dialogue": "지금 중요한 일은 아닌 것 같아. "
+        },
+        {
+            "dialogueName": "S3-2s-3",
+            "charName": "char-01",
+            "size": 6,
+            "dialogue": "볼 일도 없이 남의 집 사다리에 함부로 올라가는 것은 예의가 아니야. "
+        },
+        {
+            "dialogueName": "S3-2s-4",
+            "charName": "char-01",
+            "size": 6,
+            "dialogue": "볼 일도 없이 남의 집에 함부로 들어가는 것은 예의가 아니야. "
+        },
+        {
+            "dialogueName": "S3-2s-5",
+            "charName": "char-01",
+            "size": 7,
+            "dialogue": "지금은 별로 앉고 싶지 않아. "
+        },
+        {
+            "dialogueName": "S3-2s-6",
+            "charName": "char-01",
+            "size": 8,
+            "dialogue": "……."
+        },
+        {
+            "dialogueName": "S3-2s-6",
+            "charName": "char-01",
+            "size": 6,
+            "dialogue": "항상 이 분수를 보면 관장님 생각이 나."
+        },
+        {
+            "dialogueName": "S3-2s-7",
+            "charName": "char-08",
+            "size": 3,
+            "dialogue": "내가 무서운 이야기 하나…"
+        },
+        {
+            "dialogueName": "S3-2s-7",
+            "charName": "char-09",
+            "size": 3,
+            "dialogue": "그만! 난 어제도 너 때문에…"
+        },
+        {
+            "dialogueName": "S3-2s-8",
+            "charName": "char-01",
+            "size": 6,
+            "dialogue": "남의 집에 함부로 들어가는 것은 예의가 아니야."
+        },
+        {
+            "dialogueName": "S3-2s-8",
+            "charName": "char-01",
+            "size": 7,
+            "dialogue": "특히나 볼 일이 없을 때는 더욱."
+        },
+        {
+            "dialogueName": "S3-2s-9",
+            "charName": "char-06",
+            "size": 3,
+            "dialogue": "그래. 왔나? 또 산책을 했나보지?"
+        },
+        {
+            "dialogueName": "S3-2s-9",
+            "charName": "char-06",
+            "size": 2,
+            "dialogue": "도서관 문은 언제 열려? 이 몸은 좀이 쑤시다고."
+        },
+        {
+            "dialogueName": "S3-2s-10",
+            "charName": "char-06",
+            "size": 2,
+            "dialogue": "얼마 전에는 그런 책을 읽은 적이 있다."
+        },
+        {
+            "dialogueName": "S3-2s-10",
+            "charName": "char-06",
+            "size": 2,
+            "dialogue": "<노래하는 물방개와 드럼치는 흰점찌르레기의 음악 정신>."
+        },
+        {
+            "dialogueName": "S3-2s-10",
+            "charName": "char-06",
+            "size": 2,
+            "dialogue": "한 시대를 풍미했던 전설의 락이었다지."
+        },
+        {
+            "dialogueName": "S3-2s-10",
+            "charName": "char-06",
+            "size": 2,
+            "dialogue": "그걸 이 귀로 직접 듣지 못한 것이 내 한이다. "
+        },
+        {
+            "dialogueName": "S3-2s-10",
+            "charName": "char-06",
+            "size": 2,
+            "dialogue": "물방개와 찌르레기는 아주 짧은 생을 사니까…. "
+        },
+        {
+            "dialogueName": "S3-2s-10",
+            "charName": "char-06",
+            "size": 2,
+            "dialogue": "하긴, 너 같은 평범한 여우가 락에 대해 무얼 알겠냐마는."
+        },
+        {
+            "dialogueName": "S3-2s-11",
+            "charName": "char-06",
+            "size": 2,
+            "dialogue": "잠깐. 물방개와 흰점찌르레기를 바꿔 말했나."
+        },
+        {
+            "dialogueName": "S3-2s-12",
+            "charName": "char-06",
+            "size": 2,
+            "dialogue": "얼마 전에는 이런 책도 읽은 적이 있다."
+        },
+        {
+            "dialogueName": "S3-2s-12",
+            "charName": "char-06",
+            "size": 1,
+            "dialogue": "<실존할까 궁금한 상상 속 존재, 폭시스 선정 가장 놀라운 반전의 생명체 150선…>."
+        },
+        {
+            "dialogueName": "S3-2s-12",
+            "charName": "char-06",
+            "size": 2,
+            "dialogue": "절대 말랑거리지 않는 돌 해파리와 환생하는 하루살이, "
+        },
+        {
+            "dialogueName": "S3-2s-12",
+            "charName": "char-06",
+            "size": 2,
+            "dialogue": "세상의 모든 진실을 알고 있다는 왕거대 거북의 이야기였다."
+        },
+        {
+            "dialogueName": "S3-2s-12",
+            "charName": "char-06",
+            "size": 2,
+            "dialogue": "아주 놀랍고 흥미로웠지. 여전히 심장이 뛰는군."
+        },
+        {
+            "dialogueName": "S3-2s-13",
+            "charName": "char-06",
+            "size": 3,
+            "dialogue": "…근데 제목이 그게 맞던가."
+        },
+        {
+            "dialogueName": "S3-2s-14",
+            "charName": "char-06",
+            "size": 3,
+            "dialogue": "생이란 정말 놀라운 것이야."
+        },
+        {
+            "dialogueName": "S3-2s-14",
+            "charName": "char-06",
+            "size": 2,
+            "dialogue": "이 좁아터진 마을에 사는 나는 책을 통해 그 갈증을 해소한다고."
+        },
+        {
+            "dialogueName": "S3-2s-14",
+            "charName": "char-06",
+            "size": 4,
+            "dialogue": "아, 좀이 쑤시는군."
+        },
+        {
+            "dialogueName": "S3-2s-14",
+            "charName": "char-06",
+            "size": 3,
+            "dialogue": "으아? 아직도 여기 서 있는 거야?"
+        },
+        {
+            "dialogueName": "S3-2s-15",
+            "charName": "char-06",
+            "size": 3,
+            "dialogue": "으아? 아직도 여기 서 있는 거야?"
+        },
+        {
+            "dialogueName": "S3-2s-16",
+            "charName": "char-07",
+            "size": 4,
+            "dialogue": "안녕!"
+        },
+        {
+            "dialogueName": "S3-2s-16",
+            "charName": "char-07",
+            "size": 4,
+            "dialogue": "혹시 꽃 하나 가질래?"
+        },
+        {
+            "dialogueName": 1,
+            "charName": "char-01",
             "size": 10,
-            "dialogue": "3"
+            "dialogue": "고개를 젓는다"
         },
         {
-            "dialogueName": "fountain1",
-            "charName": "Player",
+            "dialogueName": 2,
+            "charName": "char-01",
+            "size": 10,
+            "dialogue": "끄덕인다"
+        },
+        {
+            "dialogueName": "1A",
+            "charName": "char-07",
+            "size": 4,
+            "dialogue": "그래? 알겠어…."
+        },
+        {
+            "dialogueName": "1A",
+            "charName": "char-07",
+            "size": 4,
+            "dialogue": "혹시 필요하면 말해!"
+        },
+        {
+            "dialogueName": "2A",
+            "charName": "char-07",
+            "size": 3,
+            "dialogue": "그래? 하나 편히 골라!"
+        },
+        {
+            "dialogueName": "2A",
+            "charName": "char-07",
+            "size": 2,
+            "dialogue": "너라면 한 송이쯤은 그냥 줄 수 있지."
+        },
+        {
+            "dialogueName": "2A",
+            "charName": "char-07",
+            "size": 2,
+            "dialogue": "코스모스, 장미, 백합 중에 뭐가 좋아?"
+        },
+        {
+            "dialogueName": 1,
+            "charName": "char-01",
+            "size": 10,
+            "dialogue": "코스모스"
+        },
+        {
+            "dialogueName": 2,
+            "charName": "char-01",
+            "size": 10,
+            "dialogue": "장미"
+        },
+        {
+            "dialogueName": 3,
+            "charName": "char-01",
+            "size": 10,
+            "dialogue": "백합"
+        },
+        {
+            "dialogueName": "S3-2s-16",
+            "charName": "char-07",
+            "size": 3,
+            "dialogue": "헤헤, 알겠어. 가져가."
+        },
+        {
+            "dialogueName": "S3-3s-1",
+            "charName": "char-01",
             "size": 6,
-            "dialogue": "무슨 소원을 빌어야할지 모르겠어."
+            "dialogue": "...이 안에 내가 찾는 게 있을 것 같지는 않아."
         },
         {
-            "dialogueName": "Dog1",
-            "charName": "Player",
-            "size": 6,
-            "dialogue": "관장님께서 좋아하시던 장미꽃이야."
+            "dialogueName": "S3-3s-1",
+            "charName": "char-01",
+            "size": 7,
+            "dialogue": "관장님은 장미꽃을 좋아하셨어."
         },
         {
-            "dialogueName": "Dog1",
-            "charName": "Player",
+            "dialogueName": "S3-3s-1",
+            "charName": "char-01",
             "size": 6,
             "dialogue": "이걸 가져가서 관장님 묘지에 놓을까?"
         },
         {
-            "dialogueName": "Dog1",
-            "charName": "Player",
+            "dialogueName": 1,
+            "charName": "char-01",
             "size": 10,
-            "dialogue": "4"
+            "dialogue": "그러자"
         },
         {
-            "dialogueName": "Dog1-1",
-            "charName": "Player",
+            "dialogueName": 2,
+            "charName": "char-01",
+            "size": 10,
+            "dialogue": "아니야"
+        },
+        {
+            "dialogueName": "1A",
+            "charName": "char-01",
             "size": 7,
-            "dialogue": "다 시들어버린 꽃인걸..."
+            "dialogue": "다 시들어버린 꽃인걸…"
         },
         {
-            "dialogueName": "Dog1-1",
-            "charName": "Player",
+            "dialogueName": "1A",
+            "charName": "char-01",
+            "size": 8,
+            "dialogue": "새 꽃을 찾아보자."
+        },
+        {
+            "dialogueName": "2A",
+            "charName": "char-01",
+            "size": 8,
+            "dialogue": "이건 좀 그래."
+        },
+        {
+            "dialogueName": "2A",
+            "charName": "char-01",
+            "size": 8,
+            "dialogue": "다른 꽃을 찾아보자. "
+        },
+        {
+            "dialogueName": "S3-3s-2",
+            "charName": "char-01",
             "size": 7,
-            "dialogue": "새 장미꽃을 찾아보자."
+            "dialogue": "지금은 눕고 싶지 않아."
         },
         {
-            "dialogueName": "Dog1-2",
-            "charName": "Player",
-            "size": 7,
-            "dialogue": "다른 장미꽃을 찾아보자."
+            "dialogueName": "S4-1s-1",
+            "charName": "char-01",
+            "size": 4,
+            "dialogue": "……."
         },
         {
-            "dialogueName": "Dog2",
-            "charName": "Player",
-            "size": 6,
-            "dialogue": "관장님께서 좋아하시던 장미꽃이야."
+            "dialogueName": "S4-1s-2",
+            "charName": "char-08",
+            "size": 4,
+            "dialogue": "너 그 이야기 아냐구."
         },
         {
-            "dialogueName": "Elder1",
-            "charName": "Elder",
-            "size": 3,
-            "dialogue": "아이고, 여기 있었구만!"
-        },
-        {
-            "dialogueName": "Elder1",
-            "charName": "Elder",
+            "dialogueName": "S4-1s-2",
+            "charName": "char-09",
             "size": 2,
-            "dialogue": "전해줄 물건이 있어서 한참을 찾았단다."
+            "dialogue": "또 무서운 이야기 하려는 거지! 너 때문에 어제도 엄마랑 잤단 말이야!"
         },
         {
-            "dialogueName": "Elder1",
-            "charName": "Elder",
-            "size": 1,
-            "dialogue": "결국 찾지 못해 도서관 문 앞에 붙여놓고 오던 참인데 한번 확인해보려무나. "
+            "dialogueName": "S4-1s-2",
+            "charName": "char-08",
+            "size": 2,
+            "dialogue": "이번에는 좀 특이하다구. 이번 괴담의 주제는 인간이라구."
         },
         {
-            "dialogueName": "Elder2",
-            "charName": "Elder",
+            "dialogueName": "S4-1s-2",
+            "charName": "char-09",
+            "size": 2,
+            "dialogue": "그... 멸종한 지 한참됐다는 전설의 종족? 엄마가 이미 말해줬어."
+        },
+        {
+            "dialogueName": "S4-1s-2",
+            "charName": "char-08",
+            "size": 2,
+            "dialogue": "그럼 인간이 어떻게 생겨먹은 짐승인지는 들었냐구."
+        },
+        {
+            "dialogueName": "S4-1s-2",
+            "charName": "char-08",
+            "size": 2,
+            "dialogue": "걔네들은 민둥 등짝에 민둥 팔다리, 민둥 엉덩이를 가졌지만,"
+        },
+        {
+            "dialogueName": "S4-1s-2",
+            "charName": "char-08",
+            "size": 2,
+            "dialogue": "머리랑 겨드랑이에만 털이 수북한 종족이었다구!"
+        },
+        {
+            "dialogueName": "S4-1s-2",
+            "charName": "char-09",
+            "size": 4,
+            "dialogue": "…………."
+        },
+        {
+            "dialogueName": "S4-1s-2",
+            "charName": "char-08",
+            "size": 4,
+            "dialogue": "그리고 아랫도리도."
+        },
+        {
+            "dialogueName": "S4-1s-2",
+            "charName": "char-09",
             "size": 3,
-            "dialogue": "도서관 문 앞은 확인해봤니?"
+            "dialogue": "그, 그만! 너무 징그럽잖아!"
+        },
+        {
+            "dialogueName": "S4-1s-2",
+            "charName": "char-08",
+            "size": 3,
+            "dialogue": "나약하군. 아직 끝나지 않았다구."
+        },
+        {
+            "dialogueName": "S4-1s-2",
+            "charName": "char-08",
+            "size": 2,
+            "dialogue": "사실은 그 인간들이 아직 우리 주변에 남아 있다는 괴소문이 떠돈다구."
+        },
+        {
+            "dialogueName": "S4-1s-2",
+            "charName": "char-08",
+            "size": 2,
+            "dialogue": "자기들의 옛 터전에 자리 잡은 짐승들을 질투해 악령으로 변한 뒤..."
+        },
+        {
+            "dialogueName": "S4-1s-2",
+            "charName": "char-08",
+            "size": 2,
+            "dialogue": "가끔 잘 때 창문에 나타난다는 괴소문!"
+        },
+        {
+            "dialogueName": "S4-1s-2",
+            "charName": "char-09",
+            "size": 4,
+            "dialogue": "…………."
+        },
+        {
+            "dialogueName": "S4-1s-2",
+            "charName": "char-09",
+            "size": 4,
+            "dialogue": "……………………."
+        },
+        {
+            "dialogueName": "S4-1s-2",
+            "charName": "char-09",
+            "size": 3,
+            "dialogue": "나... 오늘도 엄마랑 잘래."
+        },
+        {
+            "dialogueName": "S4-1s-2",
+            "charName": "char-08",
+            "size": 4,
+            "dialogue": "역시 내 친구라구."
+        },
+        {
+            "dialogueName": "S4-1s-3",
+            "charName": "char-06",
+            "size": 4,
+            "dialogue": "아, 좀이 쑤시는군."
+        },
+        {
+            "dialogueName": "S4-1s-3",
+            "charName": "char-06",
+            "size": 3,
+            "dialogue": "으아? 아직도 여기 서 있는 거야?"
+        },
+        {
+            "dialogueName": "S4-1s-4",
+            "charName": "char-07",
+            "size": 3,
+            "dialogue": "매일 묘지에나 들리고…."
+        },
+        {
+            "dialogueName": "S4-1s-4",
+            "charName": "char-07",
+            "size": 3,
+            "dialogue": "그러지 말고 일을 시작해 봐."
+        },
+        {
+            "dialogueName": "S4-1s-4",
+            "charName": "char-07",
+            "size": 3,
+            "dialogue": "분명 네게 도움이 될 거라고 생각해!"
+        },
+        {
+            "dialogueName": "S4-1s-4",
+            "charName": "char-07",
+            "size": 4,
+            "dialogue": "……."
+        },
+        {
+            "dialogueName": "S4-1s-4",
+            "charName": "char-07",
+            "size": 3,
+            "dialogue": "난 언제나 네가 걱정돼."
+        },
+        {
+            "dialogueName": "S5-1s-1",
+            "charName": "char-01",
+            "size": 4,
+            "dialogue": "……."
+        },
+        {
+            "dialogueName": "S5-2s-1",
+            "charName": "char-02",
+            "size": 4,
+            "dialogue": "거기 있었구나."
+        },
+        {
+            "dialogueName": "S5-2s-1",
+            "charName": "char-02",
+            "size": 3,
+            "dialogue": "네게 줄 것이 있어 찾아다녔단다."
+        },
+        {
+            "dialogueName": "S5-2s-1",
+            "charName": "char-02",
+            "size": 3,
+            "dialogue": "도서관 앞에 한번 가보려무나."
+        },
+        {
+            "dialogueName": "S5-2s-2",
+            "charName": "char-02",
+            "size": 3,
+            "dialogue": "도서관 문 앞은 확인해 봤니?"
+        },
+        {
+            "dialogueName": "S5-2s-3",
+            "charName": "char-01",
+            "size": 4,
+            "dialogue": "……."
+        },
+        {
+            "dialogueName": "S5-2s-4",
+            "charName": "char-06",
+            "size": 3,
+            "dialogue": "또 여기까지 돌아다니네."
+        },
+        {
+            "dialogueName": "S5-2s-4",
+            "charName": "char-06",
+            "size": 2,
+            "dialogue": "그럴 시간이 있으면 도서관이나 다시 열어줘."
+        },
+        {
+            "dialogueName": "S5-2s-4",
+            "charName": "char-06",
+            "size": 3,
+            "dialogue": "해가 져서… 난 이만 들어가야겠군."
+        },
+        {
+            "dialogueName": "S5-2s-5",
+            "charName": "char-07",
+            "size": 4,
+            "dialogue": "무슨 생각 해?"
+        },
+        {
+            "dialogueName": "S5-2s-5",
+            "charName": "char-07",
+            "size": 3,
+            "dialogue": "난 언제나 네가 걱정돼."
         }
     ]
 }
