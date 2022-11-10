@@ -131,33 +131,45 @@ public class Scene3_SquareManager : MonoBehaviour
             {
                 if (benchDialogue == 0)
                 {
-                    //S2-2s-5 dialogue
+                    if (dialogueManager[4].GetDone())
+                        dialogueManager[4].ResetOrder();
+                    dialogueManager[4].StartDialogue();
                     benchDialogue++;
                 }
                 else
                 {
-                    //S2-2s-6 dialogue
+                    if (dialogueManager[5].GetDone())
+                        dialogueManager[5].ResetOrder();
+                    dialogueManager[5].StartDialogue();
                     benchDialogue--;
                 }
             }
             else if (bubble[7].activeSelf && Input.GetKeyDown(KeyCode.E))   //Fountain
             {
-                //S2-2s-7 dialogue
+                if (dialogueManager[7].GetDone())
+                    dialogueManager[7].ResetOrder();
+                dialogueManager[7].StartDialogue();
             }
             else if (bubble[9].activeSelf && Input.GetKeyDown(KeyCode.E))   //House2
             {
-                //S2-2s-9
+                if (dialogueManager[8].GetDone())
+                    dialogueManager[8].ResetOrder();
+                dialogueManager[8].StartDialogue();
             }
 
             //bubble[10]. babybear dialogue S2-2s-8
 
             else if (bubble[11].activeSelf && Input.GetKeyDown(KeyCode.E))   //Otaku
             {
-                //S2-2s-10 dialogue
+                if (dialogueManager[9].GetDone())
+                    dialogueManager[9].ResetOrder();
+                dialogueManager[9].StartDialogue();
             }
             else if (bubble[12].activeSelf && Input.GetKeyDown(KeyCode.E))  //Dog
             {
-                //S2-2s-11 dialogue
+                if (dialogueManager[10].GetDone())
+                    dialogueManager[10].ResetOrder();
+                dialogueManager[10].StartDialogue();
             }
 
             //no move for 5 secnods
@@ -190,7 +202,9 @@ public class Scene3_SquareManager : MonoBehaviour
             else if (bubble[1].activeSelf && Input.GetKeyDown(KeyCode.E)) //Forest
             {
                 bubble[1].SetActive(false);
-                //S3-2s-1 dialogue
+                if (dialogueManager[11].GetDone())
+                    dialogueManager[11].ResetOrder();
+                dialogueManager[11].StartDialogue();
             }
             else if (bubble[2].activeSelf && Input.GetKeyDown(KeyCode.E))   //Lunohouse
             {
@@ -200,32 +214,46 @@ public class Scene3_SquareManager : MonoBehaviour
             else if (bubble[3].activeSelf && Input.GetKeyDown(KeyCode.E))   //Library
             {
                 bubble[3].SetActive(false);
-                //S3-2s-2 dialogue
+                if (dialogueManager[12].GetDone())
+                    dialogueManager[12].ResetOrder();
+                dialogueManager[12].StartDialogue();
             }
             else if (bubble[4].activeSelf && Input.GetKeyDown(KeyCode.E))   //Ladder1
             {
-                //S3-2s-3 dialogue
+                if (dialogueManager[13].GetDone())
+                    dialogueManager[13].ResetOrder();
+                dialogueManager[13].StartDialogue();
             }
             else if (bubble[5].activeSelf && Input.GetKeyDown(KeyCode.E))   //House1
             {
-                //S3-2s-4 dialogue
+                if (dialogueManager[14].GetDone())
+                    dialogueManager[14].ResetOrder();
+                dialogueManager[14].StartDialogue();
             }
             else if ((bubble[6].activeSelf || bubble[8].activeSelf)
             && Input.GetKeyDown(KeyCode.E))   //Bench1, 2
             {
-                //S3-2s-5 dialogue
+                if (dialogueManager[15].GetDone())
+                    dialogueManager[15].ResetOrder();
+                dialogueManager[15].StartDialogue();
             }
             else if (bubble[7].activeSelf && Input.GetKeyDown(KeyCode.E))   //Fountain
             {
-                //S3-2s-6 dialogue
+                if (dialogueManager[16].GetDone())
+                    dialogueManager[16].ResetOrder();
+                dialogueManager[16].StartDialogue();
             }
             else if (bubble[9].activeSelf && Input.GetKeyDown(KeyCode.E))    //House2
             {
-                //S3-2s-8 dialogue
+                if (dialogueManager[18].GetDone())
+                    dialogueManager[18].ResetOrder();
+                dialogueManager[18].StartDialogue();
             }
             else if (bubble[10].activeSelf && Input.GetKeyDown(KeyCode.E))   //babyBear
             {
-                //S3-2s-7 dialogue
+                if (dialogueManager[17].GetDone())
+                    dialogueManager[17].ResetOrder();
+                dialogueManager[17].StartDialogue();
             }
             else if (bubble[11].activeSelf && Input.GetKeyDown(KeyCode.E))   //Otaku
             {
@@ -233,7 +261,9 @@ public class Scene3_SquareManager : MonoBehaviour
             }
             else if (bubble[12].activeSelf && Input.GetKeyDown(KeyCode.E))  //Dog
             {
-                //S3-2s-16 dialogue
+                if (dialogueManager[26].GetDone())
+                    dialogueManager[26].ResetOrder();
+                dialogueManager[26].StartDialogue();
             }
 
             //no move for 5 secnods
