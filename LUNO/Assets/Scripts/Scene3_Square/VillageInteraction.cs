@@ -52,14 +52,13 @@ public class VillageInteraction : MonoBehaviour
                 case "House2":
                     UIManager.bubble[9].SetActive(true);
                     break;
-                case "BabyBear":
-                    Vector3 dir = other.transform.position - transform.position;
-                    Debug.Log(dir);
+                case "Bear":
+                    UIManager.bubble[10].SetActive(true);
                     break;
                 case "Otaku":
                     UIManager.bubble[11].SetActive(true);
                     break;
-                case "Dog":
+                case "char-07":
                     UIManager.bubble[12].SetActive(true);
                     break;
             }
@@ -104,7 +103,7 @@ public class VillageInteraction : MonoBehaviour
                 case "Otaku":
                     UIManager.bubble[11].SetActive(true);
                     break;
-                case "Dog":
+                case "char-07":
                     UIManager.bubble[12].SetActive(true);
                     break;
             }
@@ -199,13 +198,13 @@ public class VillageInteraction : MonoBehaviour
                 case "House2":
                     UIManager.bubble[9].SetActive(false);
                     break;
-                case "BabyBear":
-                    //dialogue S2-2s-8
+                case "Bear":
+                    UIManager.bubble[10].SetActive(false);
                     break;
                 case "Otaku":
                     UIManager.bubble[11].SetActive(false);
                     break;
-                case "Dog":
+                case "char-07":
                     UIManager.bubble[12].SetActive(false);
                     break;
             }
@@ -250,7 +249,7 @@ public class VillageInteraction : MonoBehaviour
                 case "Otaku":
                     UIManager.bubble[11].SetActive(false);
                     break;
-                case "Dog":
+                case "char-07":
                     UIManager.bubble[12].SetActive(false);
                     break;
             }

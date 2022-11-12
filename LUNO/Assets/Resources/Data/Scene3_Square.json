@@ -349,16 +349,10 @@
             "dialogue": "혹시 꽃 하나 가질래?"
         },
         {
-            "dialogueName": 1,
+            "dialogueName": "S3-2s-16",
             "charName": "char-01",
             "size": 10,
-            "dialogue": "고개를 젓는다"
-        },
-        {
-            "dialogueName": 2,
-            "charName": "char-01",
-            "size": 10,
-            "dialogue": "끄덕인다"
+            "dialogue": "0"
         },
         {
             "dialogueName": "1A",
@@ -391,88 +385,16 @@
             "dialogue": "코스모스, 장미, 백합 중에 뭐가 좋아?"
         },
         {
-            "dialogueName": 1,
+            "dialogueName": "2A",
             "charName": "char-01",
             "size": 10,
-            "dialogue": "코스모스"
+            "dialogue": "2"
         },
         {
-            "dialogueName": 2,
-            "charName": "char-01",
-            "size": 10,
-            "dialogue": "장미"
-        },
-        {
-            "dialogueName": 3,
-            "charName": "char-01",
-            "size": 10,
-            "dialogue": "백합"
-        },
-        {
-            "dialogueName": "S3-2s-16",
+            "dialogueName": "2A",
             "charName": "char-07",
             "size": 3,
             "dialogue": "헤헤, 알겠어. 가져가."
-        },
-        {
-            "dialogueName": "S3-3s-1",
-            "charName": "char-01",
-            "size": 6,
-            "dialogue": "...이 안에 내가 찾는 게 있을 것 같지는 않아."
-        },
-        {
-            "dialogueName": "S3-3s-1",
-            "charName": "char-01",
-            "size": 7,
-            "dialogue": "관장님은 장미꽃을 좋아하셨어."
-        },
-        {
-            "dialogueName": "S3-3s-1",
-            "charName": "char-01",
-            "size": 6,
-            "dialogue": "이걸 가져가서 관장님 묘지에 놓을까?"
-        },
-        {
-            "dialogueName": 1,
-            "charName": "char-01",
-            "size": 10,
-            "dialogue": "그러자"
-        },
-        {
-            "dialogueName": 2,
-            "charName": "char-01",
-            "size": 10,
-            "dialogue": "아니야"
-        },
-        {
-            "dialogueName": "1A",
-            "charName": "char-01",
-            "size": 7,
-            "dialogue": "다 시들어버린 꽃인걸…"
-        },
-        {
-            "dialogueName": "1A",
-            "charName": "char-01",
-            "size": 8,
-            "dialogue": "새 꽃을 찾아보자."
-        },
-        {
-            "dialogueName": "2A",
-            "charName": "char-01",
-            "size": 8,
-            "dialogue": "이건 좀 그래."
-        },
-        {
-            "dialogueName": "2A",
-            "charName": "char-01",
-            "size": 8,
-            "dialogue": "다른 꽃을 찾아보자. "
-        },
-        {
-            "dialogueName": "S3-3s-2",
-            "charName": "char-01",
-            "size": 7,
-            "dialogue": "지금은 눕고 싶지 않아."
         },
         {
             "dialogueName": "S4-1s-1",
@@ -629,12 +551,6 @@
             "charName": "char-07",
             "size": 3,
             "dialogue": "난 언제나 네가 걱정돼."
-        },
-        {
-            "dialogueName": "S5-1s-1",
-            "charName": "char-01",
-            "size": 4,
-            "dialogue": "……."
         },
         {
             "dialogueName": "S5-2s-1",
