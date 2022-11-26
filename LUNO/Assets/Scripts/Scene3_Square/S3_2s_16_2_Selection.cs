@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class S3_2s_16_2_Selection : SelectionBalloon
 {
-    DialogueManager dialogueManager;
+    [SerializeField]
+    private DialogueManager dialogueManager;
 
     // Start is called before the first frame update
     void Start()

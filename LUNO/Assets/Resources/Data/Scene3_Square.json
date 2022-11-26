@@ -26,33 +26,81 @@
         },
         {
             "dialogueName": "S2-2s-3",
-            "charName": "char-01",
-            "size": 6,
-            "dialogue": "남의 집 사다리에 함부로 올라가는 것은 예의가 아니야."
+            "charName": "char-05",
+            "size": 4,
+            "dialogue": "…...."
         },
         {
-            "dialogueName": "S2-2s-4",
-            "charName": "char-01",
-            "size": 6,
-            "dialogue": "남의 집에 함부로 들어가는 것은 예의가 아니야. "
+            "dialogueName": "S2-2s-3",
+            "charName": "char-05",
+            "size": 4,
+            "dialogue": "또 묘지에 가니?"
+        },
+        {
+            "dialogueName": "S2-2s-3",
+            "charName": "char-05",
+            "size": 4,
+            "dialogue": "시덥잖은 녀석."
+        },
+        {
+            "dialogueName": "S2-2s-3",
+            "charName": "char-05",
+            "size": 3,
+            "dialogue": "묘지는 이 쪽이 아닐텐데."
+        },
+        {
+            "dialogueName": "S2-2s-3",
+            "charName": "char-05",
+            "size": 3,
+            "dialogue": "난 그만 쳐다보고 네 볼일이나 봐라."
         },
         {
             "dialogueName": "S2-2s-5",
-            "charName": "char-01",
-            "size": 8,
-            "dialogue": "평범한 벤치야."
+            "charName": "char-03",
+            "size": 2,
+            "dialogue": "하여튼 그래서 맨날 죽상을 하고 돌아다니니…."
+        },
+        {
+            "dialogueName": "S2-2s-5",
+            "charName": "char-04",
+            "size": 2,
+            "dialogue": "안 그랬던 적이 있나. 그 애는 항상 표정이 원체 똑같아서 말이지."
+        },
+        {
+            "dialogueName": "S2-2s-5",
+            "charName": "char-10",
+            "size": 2,
+            "dialogue": "그러니까. 어쩔 때 보면 조금 께름직하기도… 어머, 왔니?"
+        },
+        {
+            "dialogueName": "S2-2s-5",
+            "charName": "char-03",
+            "size": 4,
+            "dialogue": "어머."
+        },
+        {
+            "dialogueName": "S2-2s-5",
+            "charName": "char-04",
+            "size": 4,
+            "dialogue": "어이쿠."
+        },
+        {
+            "dialogueName": "S2-2s-5",
+            "charName": "char-04",
+            "size": 2,
+            "dialogue": "오늘은 좀 늦었구나, 조금 있으면 해가 질 텐데."
+        },
+        {
+            "dialogueName": "S2-2s-5",
+            "charName": "char-04",
+            "size": 3,
+            "dialogue": "오늘도 묘지에 가는거지?"
         },
         {
             "dialogueName": "S2-2s-6",
             "charName": "char-01",
             "size": 8,
-            "dialogue": "평범한 벤치야."
-        },
-        {
-            "dialogueName": "S2-2s-6",
-            "charName": "char-01",
-            "size": 7,
-            "dialogue": "지금은 별로 앉고 싶지 않아."
+            "dialogue": "묘지에 가야 해."
         },
         {
             "dialogueName": "S2-2s-7",
@@ -71,12 +119,6 @@
             "charName": "char-01",
             "size": 6,
             "dialogue": "내가 들어야 할 이유는 없지… 지금 중요한 건 이게 아니야."
-        },
-        {
-            "dialogueName": "S2-2s-9",
-            "charName": "char-01",
-            "size": 6,
-            "dialogue": "남의 집에 함부로 들어가는 것은 예의가 아니야. "
         },
         {
             "dialogueName": "S2-2s-10",
@@ -133,6 +175,24 @@
             "dialogue": "뭐, 그냥 소일거리 정도지만."
         },
         {
+            "dialogueName": "S2-2s-12",
+            "charName": "char-11",
+            "size": 3,
+            "dialogue": "안녕? 오늘도 정말 파랗구나?"
+        },
+        {
+            "dialogueName": "S2-2s-12",
+            "charName": "char-12",
+            "size": 4,
+            "dialogue": "그만해! 안됐잖아."
+        },
+        {
+            "dialogueName": "S2-2s-12",
+            "charName": "char-11",
+            "size": 3,
+            "dialogue": "뭐가? 아아… 그건 그렇지."
+        },
+        {
             "dialogueName": "S3-2s-1",
             "charName": "char-01",
             "size": 8,
@@ -164,21 +224,39 @@
         },
         {
             "dialogueName": "S3-2s-3",
-            "charName": "char-01",
-            "size": 6,
-            "dialogue": "볼 일도 없이 남의 집 사다리에 함부로 올라가는 것은 예의가 아니야. "
+            "charName": "char-05",
+            "size": 2,
+            "dialogue": "멋모르는 애들이 종종 여길 올라가려 해서 문제야."
         },
         {
-            "dialogueName": "S3-2s-4",
-            "charName": "char-01",
-            "size": 6,
-            "dialogue": "볼 일도 없이 남의 집에 함부로 들어가는 것은 예의가 아니야. "
+            "dialogueName": "S3-2s-3",
+            "charName": "char-05",
+            "size": 2,
+            "dialogue": "이 위에는 정말 별것도 없는데 말이지…"
+        },
+        {
+            "dialogueName": "S3-2s-3",
+            "charName": "char-05",
+            "size": 4,
+            "dialogue": "우리 집 빨래 말고는."
+        },
+        {
+            "dialogueName": "S3-2s-3",
+            "charName": "char-05",
+            "size": 3,
+            "dialogue": "이 사다리도 그러다 고장 난 거라고."
+        },
+        {
+            "dialogueName": "S3-2s-3",
+            "charName": "char-05",
+            "size": 2,
+            "dialogue": "원 참, 애들 호기심은 알다가도 모르겠어."
         },
         {
             "dialogueName": "S3-2s-5",
             "charName": "char-01",
-            "size": 7,
-            "dialogue": "지금은 별로 앉고 싶지 않아. "
+            "size": 8,
+            "dialogue": "꽃을 찾아야 해."
         },
         {
             "dialogueName": "S3-2s-6",
@@ -349,10 +427,16 @@
             "dialogue": "혹시 꽃 하나 가질래?"
         },
         {
-            "dialogueName": "S3-2s-16",
+            "dialogueName": 1,
             "charName": "char-01",
             "size": 10,
-            "dialogue": "0"
+            "dialogue": "고개를 젓는다"
+        },
+        {
+            "dialogueName": 2,
+            "charName": "char-01",
+            "size": 10,
+            "dialogue": "끄덕인다"
         },
         {
             "dialogueName": "1A",
@@ -385,16 +469,76 @@
             "dialogue": "코스모스, 장미, 백합 중에 뭐가 좋아?"
         },
         {
-            "dialogueName": "2A",
+            "dialogueName": 1,
             "charName": "char-01",
             "size": 10,
-            "dialogue": "2"
+            "dialogue": "코스모스"
         },
         {
-            "dialogueName": "2A",
+            "dialogueName": 2,
+            "charName": "char-01",
+            "size": 10,
+            "dialogue": "장미"
+        },
+        {
+            "dialogueName": 3,
+            "charName": "char-01",
+            "size": 10,
+            "dialogue": "백합"
+        },
+        {
+            "dialogueName": "S3-2s-16",
             "charName": "char-07",
             "size": 3,
             "dialogue": "헤헤, 알겠어. 가져가."
+        },
+        {
+            "dialogueName": "S3-2s-17",
+            "charName": "char-10",
+            "size": 3,
+            "dialogue": "하여튼 애들 앞에선 입조심을…"
+        },
+        {
+            "dialogueName": "S3-2s-17",
+            "charName": "char-04",
+            "size": 4,
+            "dialogue": "아이쿠."
+        },
+        {
+            "dialogueName": "S3-2s-17",
+            "charName": "char-03",
+            "size": 4,
+            "dialogue": "어머, 얘."
+        },
+        {
+            "dialogueName": "S3-2s-17",
+            "charName": "char-03",
+            "size": 3,
+            "dialogue": "어른들 대화 엿듣는 거 아니란다."
+        },
+        {
+            "dialogueName": "S3-2s-17",
+            "charName": "char-03",
+            "size": 4,
+            "dialogue": "볼 일 계속 보렴."
+        },
+        {
+            "dialogueName": "S3-2s-18",
+            "charName": "char-11",
+            "size": 3,
+            "dialogue": "안녕? 여전히… 오늘도 음침하구나?"
+        },
+        {
+            "dialogueName": "S3-2s-18",
+            "charName": "char-12",
+            "size": 3,
+            "dialogue": "재미없어… 내가 그만하라고 했잖아."
+        },
+        {
+            "dialogueName": "S3-2s-18",
+            "charName": "char-11",
+            "size": 4,
+            "dialogue": "그러네, 재미없네."
         },
         {
             "dialogueName": "S4-1s-1",
@@ -553,6 +697,12 @@
             "dialogue": "난 언제나 네가 걱정돼."
         },
         {
+            "dialogueName": "S4-1s-5",
+            "charName": "char-01",
+            "size": 8,
+            "dialogue": "꽃은 묘지에 둬야 해."
+        },
+        {
             "dialogueName": "S5-2s-1",
             "charName": "char-02",
             "size": 4,
@@ -598,7 +748,7 @@
             "dialogueName": "S5-2s-4",
             "charName": "char-06",
             "size": 3,
-            "dialogue": "해가 져서… 난 이만 들어가야겠군."
+            "dialogue": "해가 져서… 난 곧 들어가야겠군."
         },
         {
             "dialogueName": "S5-2s-5",
@@ -611,6 +761,222 @@
             "charName": "char-07",
             "size": 3,
             "dialogue": "난 언제나 네가 걱정돼."
+        },
+        {
+            "dialogueName": "S5-2s-6",
+            "charName": "char-05",
+            "size": 2,
+            "dialogue": "남의 집 사다리는 왜 함부로 타려 하는 건지, 원."
+        },
+        {
+            "dialogueName": "S5-2s-6",
+            "charName": "char-05",
+            "size": 2,
+            "dialogue": "지붕으로라도 갈 수 있을 거라 생각하는 건가?"
+        },
+        {
+            "dialogueName": "S5-2s-6",
+            "charName": "char-05",
+            "size": 2,
+            "dialogue": "여기로는 우리 집 창문까지밖에 못 간다고."
+        },
+        {
+            "dialogueName": "S5-2s-6",
+            "charName": "char-05",
+            "size": 2,
+            "dialogue": "얘, 너도 늦었는데 이제 슬슬 볼일 마치렴."
+        },
+        {
+            "dialogueName": "S5-2s-6",
+            "charName": "char-05",
+            "size": 3,
+            "dialogue": "어린애들은 일찍 일찍 자야 해."
+        },
+        {
+            "dialogueName": "S5-2s-7",
+            "charName": "char-01",
+            "size": 3,
+            "dialogue": "도서관에 볼 일이 남았어."
+        },
+        {
+            "dialogueName": "S5-2s-8",
+            "charName": "char-12",
+            "size": 3,
+            "dialogue": "이렇게 또 하루가 가네."
+        },
+        {
+            "dialogueName": "S5-2s-8",
+            "charName": "char-12",
+            "size": 4,
+            "dialogue": "뭐 재밌는 일 없나?"
+        },
+        {
+            "dialogueName": "S5-2s-8",
+            "charName": "char-11",
+            "size": 3,
+            "dialogue": "저 여우에게 말 걸어 보던가."
+        },
+        {
+            "dialogueName": "S5-2s-8",
+            "charName": "char-12",
+            "size": 3,
+            "dialogue": "재미 없어… 기껏해야 저 애는"
+        },
+        {
+            "dialogueName": "S5-2s-8",
+            "charName": "char-12",
+            "size": 3,
+            "dialogue": "옛날 관장님한테밖에 관심 없는 걸."
+        },
+        {
+            "dialogueName": "S5-2s-8",
+            "charName": "char-12",
+            "size": 3,
+            "dialogue": "기껏해야 도서관 정도일려나."
+        },
+        {
+            "dialogueName": "S7-1s-1",
+            "charName": "char-02",
+            "size": 4,
+            "dialogue": "이리 와 보거라."
+        },
+        {
+            "dialogueName": "S7-1s-2",
+            "charName": "char-02",
+            "size": 4,
+            "dialogue": "해가 져 가는구나."
+        },
+        {
+            "dialogueName": "S7-1s-2",
+            "charName": "char-02",
+            "size": 2,
+            "dialogue": "보아하니 거기서 시간을 꽤 보냈나보지."
+        },
+        {
+            "dialogueName": "S7-1s-2",
+            "charName": "char-02",
+            "size": 3,
+            "dialogue": "할 말이 있단다. 들어보렴."
+        },
+        {
+            "dialogueName": "S7-1s-2",
+            "charName": "char-02",
+            "size": 2,
+            "dialogue": "짐승이란 모름지기 위치가 중요한 법."
+        },
+        {
+            "dialogueName": "S7-1s-2",
+            "charName": "char-02",
+            "size": 2,
+            "dialogue": "관장이 그렇게 가고… 네가 방황하는 걸 꽤 오래 지켜봤단다."
+        },
+        {
+            "dialogueName": "S7-1s-2",
+            "charName": "char-02",
+            "size": 2,
+            "dialogue": "네가 혼란스러운 것도 모두 네 일을 찾지 못해서인 게지."
+        },
+        {
+            "dialogueName": "S7-1s-2",
+            "charName": "char-02",
+            "size": 2,
+            "dialogue": "우리 마을에 있어 도서관은 중요하단다."
+        },
+        {
+            "dialogueName": "S7-1s-2",
+            "charName": "char-02",
+            "size": 4,
+            "dialogue": "관장도 정말 아꼈지."
+        },
+        {
+            "dialogueName": "S7-1s-2",
+            "charName": "char-02",
+            "size": 2,
+            "dialogue": "관장 덕에 도서관이 돌아간다 해도 과언이 아니었어."
+        },
+        {
+            "dialogueName": "S7-1s-2",
+            "charName": "char-02",
+            "size": 2,
+            "dialogue": "넌 아직 어리고, 여러모로 믿음직스럽진 않지만…"
+        },
+        {
+            "dialogueName": "S7-1s-2",
+            "charName": "char-02",
+            "size": 2,
+            "dialogue": "이젠 네가 그 일을 맡는 게 어떨까 생각해봤단다."
+        },
+        {
+            "dialogueName": "S7-1s-2",
+            "charName": "char-02",
+            "size": 4,
+            "dialogue": "어떻게 생각하니?"
+        },
+        {
+            "dialogueName": 1,
+            "charName": "char-01",
+            "size": 9,
+            "dialogue": "…...."
+        },
+        {
+            "dialogueName": 2,
+            "charName": "char-01",
+            "size": 9,
+            "dialogue": "무슨 일이요?"
+        },
+        {
+            "dialogueName": "S7-1s-2",
+            "charName": "char-02",
+            "size": 4,
+            "dialogue": "도서관 일 말이다."
+        },
+        {
+            "dialogueName": "S7-1s-2",
+            "charName": "char-01",
+            "size": 4,
+            "dialogue": "…...."
+        },
+        {
+            "dialogueName": "S7-1s-2",
+            "charName": "char-02",
+            "size": 3,
+            "dialogue": "네가 마을에서 겉도는 것을 알아."
+        },
+        {
+            "dialogueName": "S7-1s-2",
+            "charName": "char-02",
+            "size": 2,
+            "dialogue": "하지만 이곳이 아니면 네가 어찌 지낼 수 있을거라 생각하나?"
+        },
+        {
+            "dialogueName": "S7-1s-2",
+            "charName": "char-01",
+            "size": 4,
+            "dialogue": "…...…...."
+        },
+        {
+            "dialogueName": "S7-1s-2",
+            "charName": "char-02",
+            "size": 1,
+            "dialogue": "기억하거라, 네가 음침하고 기분 나쁘다고 하는 마을 동물들도 여럿 있다는 것을."
+        },
+        {
+            "dialogueName": "S7-1s-2",
+            "charName": "char-02",
+            "size": 2,
+            "dialogue": "관장이 있었기에 지금까지 마을은 널 품어줬지만"
+        },
+        {
+            "dialogueName": "S7-1s-2",
+            "charName": "char-02",
+            "size": 3,
+            "dialogue": "이젠 네가 스스로 노력해야 할 때야."
+        },
+        {
+            "dialogueName": "S7-1s-2",
+            "charName": "char-02",
+            "size": 4,
+            "dialogue": "네 위치를 찾으렴."
         }
     ]
 }

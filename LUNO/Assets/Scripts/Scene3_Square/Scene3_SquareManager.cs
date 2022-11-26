@@ -42,6 +42,7 @@ public class Scene3_SquareManager : MonoBehaviour
     CameraController cameraController;
 
     public GameObject[] bubble;
+    public GameObject[] characterBubble;
     public GameObject[] item;
     private float noMoveTime = 0f;
 
@@ -51,7 +52,6 @@ public class Scene3_SquareManager : MonoBehaviour
     [SerializeField]
     private GameObject flowerBubble;
 
-    private bool benchOdd = true;
     private int otakuDialogue = 19;
     private bool oldDogFirst = true;
 
@@ -156,43 +156,21 @@ public class Scene3_SquareManager : MonoBehaviour
                 dialogueManager[1].StartDialogue();
                 //sound: door_unlock
             }
-            else if (bubble[4].activeSelf && Input.GetKeyDown(KeyCode.E))   //Ladder1
+            else if (characterBubble[3].activeSelf && Input.GetKeyDown(KeyCode.E))   //Cow
             {
-                bubble[4].SetActive(false);
+                characterBubble[3].SetActive(false);
                 //S2-2s-3
                 if (dialogueManager[2].GetDone())
                     dialogueManager[2].ResetOrder();
                 dialogueManager[2].StartDialogue();
             }
-            else if (bubble[5].activeSelf && Input.GetKeyDown(KeyCode.E))   //House1
+            else if (characterBubble[1].activeSelf && Input.GetKeyDown(KeyCode.E))   //Adult
             {
-                bubble[5].SetActive(false);
-                //S2-2s-4
+                characterBubble[1].SetActive(false);
+                //S2-2s-5
                 if (dialogueManager[3].GetDone())
                     dialogueManager[3].ResetOrder();
                 dialogueManager[3].StartDialogue();
-            }
-            else if ((bubble[6].activeSelf || bubble[8].activeSelf)
-            && Input.GetKeyDown(KeyCode.E))   //Bench1, 2
-            {
-                bubble[6].SetActive(false);
-                bubble[8].SetActive(false);
-                if (benchOdd) //odd
-                {
-                    //S2-2s-5
-                    if (dialogueManager[4].GetDone())
-                        dialogueManager[4].ResetOrder();
-                    dialogueManager[4].StartDialogue();
-                    benchOdd = false;
-                }
-                else    //even
-                {
-                    //S2-2s-6
-                    if (dialogueManager[5].GetDone())
-                        dialogueManager[5].ResetOrder();
-                    dialogueManager[5].StartDialogue();
-                    benchOdd = true;
-                }
             }
             else if (bubble[7].activeSelf && Input.GetKeyDown(KeyCode.E))   //Fountain
             {
@@ -202,32 +180,49 @@ public class Scene3_SquareManager : MonoBehaviour
                     dialogueManager[6].ResetOrder();
                 dialogueManager[6].StartDialogue();
             }
-            else if (bubble[9].activeSelf && Input.GetKeyDown(KeyCode.E))   //House2
+            else if (bubble[8].activeSelf && Input.GetKeyDown(KeyCode.E))   //BenchR
+            {
+                bubble[8].SetActive(false);
+                //sound sitdown
+                //S2-2s-6
+                if (dialogueManager[5].GetDone())
+                    dialogueManager[5].ResetOrder();
+                dialogueManager[5].StartDialogue();
+                //graveyardBubble
+            }
+            else if (bubble[9].activeSelf && Input.GetKeyDown(KeyCode.E))   //VillageNotice
             {
                 bubble[9].SetActive(false);
-                //S2-2s-9
-                if (dialogueManager[8].GetDone())
-                    dialogueManager[8].ResetOrder();
-                dialogueManager[8].StartDialogue();
+                //Image
             }
-            else if (bubble[10].activeSelf && Input.GetKeyDown(KeyCode.E))   //Bear
+            else if(bubble[10].activeSelf && Input.GetKeyDown(KeyCode.E))   //VillageGraffiti
             {
                 bubble[10].SetActive(false);
+                //Image
+            }
+            else if (characterBubble[2].activeSelf && Input.GetKeyDown(KeyCode.E))   //Bear
+            {
+                characterBubble[2].SetActive(false);
                 StartCoroutine(Scene2Bear());
                 //dialogue S2-2s-8
 
             }
-            else if (bubble[11].activeSelf && Input.GetKeyDown(KeyCode.E))   //Otaku
+            else if (characterBubble[3].activeSelf && Input.GetKeyDown(KeyCode.E))   //Teenager
             {
-                bubble[11].SetActive(false);
+                characterBubble[3].SetActive(false);
+                //S2-2s-12
+            }
+            else if (characterBubble[4].activeSelf && Input.GetKeyDown(KeyCode.E))   //Otaku
+            {
+                characterBubble[4].SetActive(false);
                 //S2-2s-10
                 if (dialogueManager[9].GetDone())
                     dialogueManager[9].ResetOrder();
                 dialogueManager[9].StartDialogue();
             }
-            else if (bubble[12].activeSelf && Input.GetKeyDown(KeyCode.E))  //Dog
+            else if (characterBubble[5].activeSelf && Input.GetKeyDown(KeyCode.E))  //Dog
             {
-                bubble[12].SetActive(false);
+                characterBubble[5].SetActive(false);
                 //S2-2s-11
                 if (dialogueManager[10].GetDone())
                     dialogueManager[10].ResetOrder();
@@ -237,7 +232,7 @@ public class Scene3_SquareManager : MonoBehaviour
             //no move for 5 secnods
             noMoveTime += Time.deltaTime;
 
-            if (Input.anyKeyDown)
+            if (Input.anyKeyDown || Input.anyKey)
             {
                 noMoveTime = 0f;
             }
@@ -303,6 +298,7 @@ public class Scene3_SquareManager : MonoBehaviour
             && Input.GetKeyDown(KeyCode.E))   //Bench1, 2
             {
                 bubble[6].SetActive(false);
+                bubble[8].SetActive(false);
                 //S3-2s-5
                 if (dialogueManager[15].GetDone())
                     dialogueManager[15].ResetOrder();
