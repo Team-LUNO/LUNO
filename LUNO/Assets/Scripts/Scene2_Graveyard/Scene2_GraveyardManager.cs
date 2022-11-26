@@ -8,18 +8,13 @@ public class Scene2_GraveyardManager : MonoBehaviour
     [SerializeField]
     private GameObject blackScreen;
 
-    [SerializeField]
-    private GameObject player;
-
     public GameObject[] bubble;
 
     Animator screenAnim;
 
     void Start()
     {
-        player.GetComponent<Move>().enabled = false;
         screenAnim = blackScreen.GetComponent<Animator>();
-        StartCoroutine(WaitForFadeIn());
     }
 
     void Update()
@@ -47,13 +42,6 @@ public class Scene2_GraveyardManager : MonoBehaviour
     IEnumerator SceneMoveDelay()
     {
         yield return new WaitForSecondsRealtime(1f);
-        SceneManager.LoadScene("Scene3_Square");
+        //SceneManager.LoadScene("Scene3_Square");
     }
-
-    IEnumerator WaitForFadeIn()
-    {
-        yield return new WaitUntil(() => screenAnim.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1.0f);
-        player.GetComponent<Move>().enabled = true;
-    }
-
 }
