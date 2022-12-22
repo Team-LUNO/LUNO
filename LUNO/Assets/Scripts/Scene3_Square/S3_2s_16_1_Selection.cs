@@ -26,14 +26,14 @@ public class S3_2s_16_1_Selection : SelectionBalloon
             UIManager.dialogueManager[36].ResetOrder();
         UIManager.dialogueManager[36].StartDialogue();
         */
-        UIManager.dialogueManager[26].IncreaseOrder();
+        //UIManager.dialogueManager[26].IncreaseOrder();
     }
 
     public override void Second()
     {
-        UIManager.dialogueManager[37].StartDialogue();
-        UIManager.dialogueManager[26].IncreaseOrder();
-        UIManager.sceneNum = 4;
+        //UIManager.dialogueManager[37].StartDialogue();
+        //UIManager.dialogueManager[26].IncreaseOrder();
+        //UIManager.sceneNum = 4;
         //get item
     }
 }
