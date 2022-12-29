@@ -21,13 +21,22 @@ public class GraveyardInteraction : MonoBehaviour
         switch (other.gameObject.name)
         {
             case "DirectorCemetery":
-                UIManager.bubble[0].SetActive(true);
+                UIManager.interactionObjects[0].transform.GetChild(0).gameObject.SetActive(true);
                 break;
             case "Cemetery1":
-                UIManager.bubble[1].SetActive(true);
+                UIManager.interactionObjects[1].transform.GetChild(0).gameObject.SetActive(true);
                 break;
             case "Cemetery2":
-                UIManager.bubble[2].SetActive(true);
+                UIManager.interactionObjects[2].transform.GetChild(0).gameObject.SetActive(true);
+                break;
+            case "Cemetery3":
+                UIManager.interactionObjects[3].transform.GetChild(0).gameObject.SetActive(true);
+                break;
+            case "Cemetery4":
+                UIManager.interactionObjects[4].transform.GetChild(0).gameObject.SetActive(true);
+                break;
+            case "Cemetery5":
+                UIManager.interactionObjects[5].transform.GetChild(0).gameObject.SetActive(true);
                 break;
         }
     }
@@ -37,13 +46,22 @@ public class GraveyardInteraction : MonoBehaviour
         switch (other.gameObject.name)
         {
             case "DirectorCemetery":
-                UIManager.bubble[0].SetActive(false);
+                UIManager.interactionObjects[0].transform.GetChild(0).gameObject.SetActive(false);
                 break;
             case "Cemetery1":
-                UIManager.bubble[1].SetActive(false);
+                UIManager.interactionObjects[1].transform.GetChild(0).gameObject.SetActive(false);
                 break;
             case "Cemetery2":
-                UIManager.bubble[2].SetActive(false);
+                UIManager.interactionObjects[2].transform.GetChild(0).gameObject.SetActive(false);
+                break;
+            case "Cemetery3":
+                UIManager.interactionObjects[3].transform.GetChild(0).gameObject.SetActive(false);
+                break;
+            case "Cemetery4":
+                UIManager.interactionObjects[4].transform.GetChild(0).gameObject.SetActive(false);
+                break;
+            case "Cemetery5":
+                UIManager.interactionObjects[5].transform.GetChild(0).gameObject.SetActive(false);
                 break;
         }
     }
