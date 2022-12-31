@@ -166,7 +166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 184150e0c8078470c96731f566b4eb27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueLoader: {fileID: 42371670}
+  dialogueLoader: {fileID: 968602571}
   dialogueName: S2-2s-10
 --- !u!1 &13363373
 GameObject:
@@ -197,7 +197,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2080304231}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &13363375
 MonoBehaviour:
@@ -211,7 +211,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 184150e0c8078470c96731f566b4eb27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueLoader: {fileID: 42371670}
+  dialogueLoader: {fileID: 2080304232}
   dialogueName: S3-2s-12
 --- !u!1 &26281136
 GameObject:
@@ -331,52 +331,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 184150e0c8078470c96731f566b4eb27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueLoader: {fileID: 42371670}
+  dialogueLoader: {fileID: 968602571}
   dialogueName: S2-2s-3
---- !u!1 &42371669
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 42371671}
-  - component: {fileID: 42371670}
-  m_Layer: 0
-  m_Name: Scene3_Sqaure
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &42371670
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 42371669}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0770f5211cab042aa92671c0ead2c004, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogueJSON: {fileID: 4900000, guid: 0935366e9b2455340890efb91a5f5b49, type: 3}
---- !u!4 &42371671
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 42371669}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1671956111}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &51144137
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -761,7 +717,7 @@ GameObject:
   - component: {fileID: 145121134}
   - component: {fileID: 145121135}
   m_Layer: 0
-  m_Name: S2-S2-01
+  m_Name: SceneStart0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -844,7 +800,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2080304231}
-  m_RootOrder: 18
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &149677049
 MonoBehaviour:
@@ -858,7 +814,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 184150e0c8078470c96731f566b4eb27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueLoader: {fileID: 42371670}
+  dialogueLoader: {fileID: 2080304232}
   dialogueName: 1A
 --- !u!1 &169899479
 GameObject:
@@ -1142,6 +1098,36 @@ Transform:
   m_Father: {fileID: 936022466}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &193342560
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 193342561}
+  m_Layer: 0
+  m_Name: S3-2s-4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &193342561
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 193342560}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2080304231}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &195516368
 GameObject:
   m_ObjectHideFlags: 0
@@ -1253,7 +1239,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2080304231}
-  m_RootOrder: 17
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &210496931
 MonoBehaviour:
@@ -1267,7 +1253,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 184150e0c8078470c96731f566b4eb27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueLoader: {fileID: 42371670}
+  dialogueLoader: {fileID: 2080304232}
   dialogueName: S3-2s-18
 --- !u!1 &251876435
 GameObject:
@@ -1478,7 +1464,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2080304231}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &298160723
 MonoBehaviour:
@@ -1492,7 +1478,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 184150e0c8078470c96731f566b4eb27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueLoader: {fileID: 42371670}
+  dialogueLoader: {fileID: 2080304232}
   dialogueName: S3-2s-16
 --- !u!1 &330380625
 GameObject:
@@ -1537,7 +1523,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 184150e0c8078470c96731f566b4eb27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueLoader: {fileID: 42371670}
+  dialogueLoader: {fileID: 1801785694}
   dialogueName: S5-2s-3
 --- !u!1 &339631824
 GameObject:
@@ -1582,7 +1568,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 184150e0c8078470c96731f566b4eb27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueLoader: {fileID: 42371670}
+  dialogueLoader: {fileID: 2080304232}
   dialogueName: S3-2s-3
 --- !u!1 &347807510
 GameObject:
@@ -1745,7 +1731,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 184150e0c8078470c96731f566b4eb27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueLoader: {fileID: 42371670}
+  dialogueLoader: {fileID: 1801785694}
   dialogueName: S5-2s-4
 --- !u!1 &375449491
 GameObject:
@@ -1986,7 +1972,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 184150e0c8078470c96731f566b4eb27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueLoader: {fileID: 42371670}
+  dialogueLoader: {fileID: 968602571}
   dialogueName: S2-2s-5
 --- !u!1 &407141774
 GameObject:
@@ -2916,7 +2902,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 184150e0c8078470c96731f566b4eb27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueLoader: {fileID: 42371670}
+  dialogueLoader: {fileID: 968602571}
   dialogueName: S2-2s-8
 --- !u!4 &515513727 stripped
 Transform:
@@ -3129,7 +3115,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2080304231}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &591397328
 MonoBehaviour:
@@ -3143,7 +3129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 184150e0c8078470c96731f566b4eb27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueLoader: {fileID: 42371670}
+  dialogueLoader: {fileID: 2080304232}
   dialogueName: S3-2s-10
 --- !u!1 &591574016
 GameObject:
@@ -3257,7 +3243,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2080304231}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &596563779
 MonoBehaviour:
@@ -3271,7 +3257,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 184150e0c8078470c96731f566b4eb27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueLoader: {fileID: 42371670}
+  dialogueLoader: {fileID: 2080304232}
   dialogueName: S3-2s-15
 --- !u!1 &597835952
 GameObject:
@@ -3384,7 +3370,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2080304231}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &604036845
 MonoBehaviour:
@@ -3398,7 +3384,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 184150e0c8078470c96731f566b4eb27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueLoader: {fileID: 42371670}
+  dialogueLoader: {fileID: 2080304232}
   dialogueName: S3-2s-7
 --- !u!1 &620281080
 GameObject:
@@ -3511,7 +3497,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fef72a657a0a8b34a8efc1a687e604c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneNum: 2
+  sceneNum: 3
   director:
   - {fileID: 145121135}
   - {fileID: 1469222572}
@@ -3563,6 +3549,7 @@ MonoBehaviour:
   S5_2s: {fileID: 1801785692}
   S7_1s: {fileID: 2100281112}
   blackScreen: {fileID: 660303270}
+  previousMap: 0
 --- !u!4 &629525376
 Transform:
   m_ObjectHideFlags: 0
@@ -3688,7 +3675,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 184150e0c8078470c96731f566b4eb27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueLoader: {fileID: 42371670}
+  dialogueLoader: {fileID: 968602571}
   dialogueName: S2-2s-1
 --- !u!4 &656651818
 Transform:
@@ -3866,6 +3853,9 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  isFirst: 1
+  isColliderin: 0
+  i: 0
   UIManager: {fileID: 629525375}
 --- !u!212 &661663962
 SpriteRenderer:
@@ -4375,7 +4365,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 184150e0c8078470c96731f566b4eb27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueLoader: {fileID: 42371670}
+  dialogueLoader: {fileID: 968602571}
   dialogueName: S2-2s-6
 --- !u!1 &709675510
 GameObject:
@@ -4696,7 +4686,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 184150e0c8078470c96731f566b4eb27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueLoader: {fileID: 42371670}
+  dialogueLoader: {fileID: 2080304232}
   dialogueName: S3-2s-1
 --- !u!1 &758899393
 GameObject:
@@ -5559,7 +5549,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 184150e0c8078470c96731f566b4eb27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueLoader: {fileID: 42371670}
+  dialogueLoader: {fileID: 2100281114}
   dialogueName: S7-1s-1
 --- !u!1 &944892503
 GameObject:
@@ -5715,7 +5705,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 184150e0c8078470c96731f566b4eb27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueLoader: {fileID: 42371670}
+  dialogueLoader: {fileID: 1705825843}
   dialogueName: S4-1s-2
 --- !u!1 &963136428
 GameObject:
@@ -5746,7 +5736,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2080304231}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &963136430
 MonoBehaviour:
@@ -5760,7 +5750,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 184150e0c8078470c96731f566b4eb27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueLoader: {fileID: 42371670}
+  dialogueLoader: {fileID: 2080304232}
   dialogueName: S3-2s-9
 --- !u!1 &964525580 stripped
 GameObject:
@@ -5789,6 +5779,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 968602570}
+  - component: {fileID: 968602571}
   m_Layer: 0
   m_Name: S2-2s
   m_TagString: Untagged
@@ -5821,8 +5812,21 @@ Transform:
   - {fileID: 1562648888}
   - {fileID: 1394059882}
   m_Father: {fileID: 1671956111}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &968602571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 968602569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0770f5211cab042aa92671c0ead2c004, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueJSON: {fileID: 4900000, guid: c91bbd972fa32b04cab4515bf216e8b0, type: 3}
 --- !u!1 &971373426
 GameObject:
   m_ObjectHideFlags: 0
@@ -5995,7 +5999,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2080304231}
-  m_RootOrder: 16
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1003022986
 MonoBehaviour:
@@ -6009,7 +6013,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 184150e0c8078470c96731f566b4eb27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueLoader: {fileID: 42371670}
+  dialogueLoader: {fileID: 2080304232}
   dialogueName: S3-2s-17
 --- !u!1 &1003089177
 GameObject:
@@ -6429,7 +6433,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 019ba06f34ed7c040a82994341060d72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UIManager: {fileID: 629525375}
+  dialogueManager:
+  - {fileID: 298160723}
+  - {fileID: 149677049}
+  - {fileID: 1652446984}
 --- !u!1 &1093334572
 GameObject:
   m_ObjectHideFlags: 0
@@ -6801,7 +6808,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2080304231}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1195710730
 MonoBehaviour:
@@ -6815,7 +6822,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 184150e0c8078470c96731f566b4eb27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueLoader: {fileID: 42371670}
+  dialogueLoader: {fileID: 2080304232}
   dialogueName: S3-2s-14
 --- !u!1 &1241534101
 GameObject:
@@ -6860,7 +6867,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 184150e0c8078470c96731f566b4eb27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueLoader: {fileID: 42371670}
+  dialogueLoader: {fileID: 2080304232}
   dialogueName: S3-2s-2
 --- !u!1001 &1265023422
 PrefabInstance:
@@ -7120,7 +7127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 184150e0c8078470c96731f566b4eb27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueLoader: {fileID: 42371670}
+  dialogueLoader: {fileID: 1801785694}
   dialogueName: S5-2s-6
 --- !u!1001 &1340952777
 PrefabInstance:
@@ -7526,7 +7533,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 184150e0c8078470c96731f566b4eb27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueLoader: {fileID: 42371670}
+  dialogueLoader: {fileID: 968602571}
   dialogueName: S2-2s-12
 --- !u!20 &1440794200 stripped
 Camera:
@@ -7576,7 +7583,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 184150e0c8078470c96731f566b4eb27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueLoader: {fileID: 42371670}
+  dialogueLoader: {fileID: 1801785694}
   dialogueName: S5-2s-7
 --- !u!1 &1447247742
 GameObject:
@@ -7655,7 +7662,7 @@ GameObject:
   - component: {fileID: 1469222571}
   - component: {fileID: 1469222572}
   m_Layer: 0
-  m_Name: S2-S2-02
+  m_Name: SceneStart1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7857,7 +7864,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2080304231}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1519834053
 MonoBehaviour:
@@ -7871,7 +7878,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 184150e0c8078470c96731f566b4eb27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueLoader: {fileID: 42371670}
+  dialogueLoader: {fileID: 2080304232}
   dialogueName: S3-2s-11
 --- !u!1 &1559965385
 GameObject:
@@ -7916,7 +7923,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 184150e0c8078470c96731f566b4eb27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueLoader: {fileID: 42371670}
+  dialogueLoader: {fileID: 1801785694}
   dialogueName: S5-2s-2
 --- !u!1 &1562648886
 GameObject:
@@ -7947,7 +7954,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 184150e0c8078470c96731f566b4eb27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueLoader: {fileID: 42371670}
+  dialogueLoader: {fileID: 968602571}
   dialogueName: S2-2s-11
 --- !u!4 &1562648888
 Transform:
@@ -8352,7 +8359,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 184150e0c8078470c96731f566b4eb27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueLoader: {fileID: 42371670}
+  dialogueLoader: {fileID: 1801785694}
   dialogueName: S5-2s-8
 --- !u!1 &1652446982
 GameObject:
@@ -8383,7 +8390,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2080304231}
-  m_RootOrder: 19
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1652446984
 MonoBehaviour:
@@ -8397,7 +8404,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 184150e0c8078470c96731f566b4eb27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueLoader: {fileID: 42371670}
+  dialogueLoader: {fileID: 2080304232}
   dialogueName: 2A
 --- !u!1 &1661231360
 GameObject:
@@ -8508,7 +8515,6 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 42371671}
   - {fileID: 968602570}
   - {fileID: 2080304231}
   - {fileID: 1705825842}
@@ -8724,7 +8730,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 184150e0c8078470c96731f566b4eb27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueLoader: {fileID: 42371670}
+  dialogueLoader: {fileID: 968602571}
   dialogueName: S2-2s-2
 --- !u!1 &1705825841
 GameObject:
@@ -8735,6 +8741,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1705825842}
+  - component: {fileID: 1705825843}
   m_Layer: 0
   m_Name: S4-1s
   m_TagString: Untagged
@@ -8759,8 +8766,21 @@ Transform:
   - {fileID: 2077534675}
   - {fileID: 1821505973}
   m_Father: {fileID: 1671956111}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1705825843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1705825841}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0770f5211cab042aa92671c0ead2c004, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueJSON: {fileID: 4900000, guid: 1daaaea63a5cf9942891ec8b9ae64b3a, type: 3}
 --- !u!1 &1710868335
 GameObject:
   m_ObjectHideFlags: 0
@@ -8790,7 +8810,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2080304231}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1710868337
 MonoBehaviour:
@@ -8804,7 +8824,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 184150e0c8078470c96731f566b4eb27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueLoader: {fileID: 42371670}
+  dialogueLoader: {fileID: 2080304232}
   dialogueName: S3-2s-5
 --- !u!4 &1728706556 stripped
 Transform:
@@ -9123,7 +9143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 184150e0c8078470c96731f566b4eb27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueLoader: {fileID: 42371670}
+  dialogueLoader: {fileID: 1801785694}
   dialogueName: S5-2s-5
 --- !u!4 &1769773260
 Transform:
@@ -9519,6 +9539,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1801785693}
+  - component: {fileID: 1801785694}
   m_Layer: 0
   m_Name: S5-2s
   m_TagString: Untagged
@@ -9547,8 +9568,21 @@ Transform:
   - {fileID: 1443508526}
   - {fileID: 1645768438}
   m_Father: {fileID: 1671956111}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1801785694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1801785692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0770f5211cab042aa92671c0ead2c004, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueJSON: {fileID: 4900000, guid: 5bdaec44f5eafcb4fa8fee790c599031, type: 3}
 --- !u!1 &1804427394
 GameObject:
   m_ObjectHideFlags: 0
@@ -9592,7 +9626,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 184150e0c8078470c96731f566b4eb27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueLoader: {fileID: 42371670}
+  dialogueLoader: {fileID: 2100281114}
   dialogueName: S7-1s-2
 --- !u!1 &1806069386
 GameObject:
@@ -9695,7 +9729,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 184150e0c8078470c96731f566b4eb27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueLoader: {fileID: 42371670}
+  dialogueLoader: {fileID: 1705825843}
   dialogueName: S4-1s-4
 --- !u!1 &1833296042
 GameObject:
@@ -9808,7 +9842,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2080304231}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1847018053
 MonoBehaviour:
@@ -9822,7 +9856,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 184150e0c8078470c96731f566b4eb27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueLoader: {fileID: 42371670}
+  dialogueLoader: {fileID: 2080304232}
   dialogueName: S3-2s-6
 --- !u!1 &1852010726
 GameObject:
@@ -9853,7 +9887,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2080304231}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1852010728
 MonoBehaviour:
@@ -9867,7 +9901,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 184150e0c8078470c96731f566b4eb27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueLoader: {fileID: 42371670}
+  dialogueLoader: {fileID: 2080304232}
   dialogueName: S3-2s-8
 --- !u!1 &1855352177
 GameObject:
@@ -10008,7 +10042,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 184150e0c8078470c96731f566b4eb27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueLoader: {fileID: 42371670}
+  dialogueLoader: {fileID: 968602571}
   dialogueName: S2-2s-7
 --- !u!1 &1868439583
 GameObject:
@@ -10039,7 +10073,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2080304231}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1868439585
 MonoBehaviour:
@@ -10053,7 +10087,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 184150e0c8078470c96731f566b4eb27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueLoader: {fileID: 42371670}
+  dialogueLoader: {fileID: 2080304232}
   dialogueName: S3-2s-13
 --- !u!1 &1878808865
 GameObject:
@@ -10358,7 +10392,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 184150e0c8078470c96731f566b4eb27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueLoader: {fileID: 42371670}
+  dialogueLoader: {fileID: 1705825843}
   dialogueName: S4-1s-1
 --- !u!1 &1927572246
 GameObject:
@@ -10543,7 +10577,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1978791605
 Transform:
   m_ObjectHideFlags: 0
@@ -11126,7 +11160,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 184150e0c8078470c96731f566b4eb27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueLoader: {fileID: 42371670}
+  dialogueLoader: {fileID: 1705825843}
   dialogueName: S4-1s-3
 --- !u!1 &2080304230
 GameObject:
@@ -11137,6 +11171,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2080304231}
+  - component: {fileID: 2080304232}
   m_Layer: 0
   m_Name: S3-2s
   m_TagString: Untagged
@@ -11159,6 +11194,7 @@ Transform:
   - {fileID: 718851148}
   - {fileID: 1241534102}
   - {fileID: 339631825}
+  - {fileID: 193342561}
   - {fileID: 1710868336}
   - {fileID: 1847018052}
   - {fileID: 604036844}
@@ -11176,8 +11212,21 @@ Transform:
   - {fileID: 149677048}
   - {fileID: 1652446983}
   m_Father: {fileID: 1671956111}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2080304232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2080304230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0770f5211cab042aa92671c0ead2c004, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueJSON: {fileID: 4900000, guid: b2b49e86e1fb50844839c27bdbf19a63, type: 3}
 --- !u!1 &2087844273
 GameObject:
   m_ObjectHideFlags: 0
@@ -11269,6 +11318,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2100281113}
+  - component: {fileID: 2100281114}
   m_Layer: 0
   m_Name: S7-1s
   m_TagString: Untagged
@@ -11291,8 +11341,21 @@ Transform:
   - {fileID: 943841253}
   - {fileID: 1804427395}
   m_Father: {fileID: 1671956111}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2100281114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2100281112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0770f5211cab042aa92671c0ead2c004, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueJSON: {fileID: 4900000, guid: a819b0406bf73ef4282a882547ec5ce7, type: 3}
 --- !u!1 &2120853731
 GameObject:
   m_ObjectHideFlags: 0
@@ -11481,5 +11544,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 184150e0c8078470c96731f566b4eb27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueLoader: {fileID: 42371670}
+  dialogueLoader: {fileID: 1801785694}
   dialogueName: S5-2s-1

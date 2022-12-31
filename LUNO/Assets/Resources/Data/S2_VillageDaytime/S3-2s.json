@@ -1,0 +1,340 @@
+﻿{
+  "dialogues": [
+    {
+      "dialogueName": "S3-2s-1",
+      "charName": "char-01",
+      "size": 8,
+      "dialogue": "흙과 나무 냄새."
+    },
+    {
+      "dialogueName": "S3-2s-1",
+      "charName": "char-01",
+      "size": 6,
+      "dialogue": "여기에 꺾을 만한 꽃은 없을 것 같아."
+    },
+    {
+      "dialogueName": "S3-2s-2",
+      "charName": "char-01",
+      "size": 7,
+      "dialogue": "도서관 문은 잠겨 있어."
+    },
+    {
+      "dialogueName": "S3-2s-2",
+      "charName": "char-01",
+      "size": 7,
+      "dialogue": "열쇠가 누군가에게 있을 텐데... "
+    },
+    {
+      "dialogueName": "S3-2s-2",
+      "charName": "char-01",
+      "size": 7,
+      "dialogue": "지금 중요한 일은 아닌 것 같아. "
+    },
+    {
+      "dialogueName": "S3-2s-3",
+      "charName": "char-05",
+      "size": 2,
+      "dialogue": "멋모르는 애들이 종종 여길 올라가려 해서 문제야."
+    },
+    {
+      "dialogueName": "S3-2s-3",
+      "charName": "char-05",
+      "size": 2,
+      "dialogue": "이 위에는 정말 별것도 없는데 말이지…"
+    },
+    {
+      "dialogueName": "S3-2s-3",
+      "charName": "char-05",
+      "size": 4,
+      "dialogue": "우리 집 빨래 말고는."
+    },
+    {
+      "dialogueName": "S3-2s-3",
+      "charName": "char-05",
+      "size": 3,
+      "dialogue": "이 사다리도 그러다 고장 난 거라고."
+    },
+    {
+      "dialogueName": "S3-2s-3",
+      "charName": "char-05",
+      "size": 2,
+      "dialogue": "원 참, 애들 호기심은 알다가도 모르겠어."
+    },
+    {
+      "dialogueName": "S3-2s-4",
+      "charName": "#N/A",
+      "size": "#N/A",
+      "dialogue": "(삭제)"
+    },
+    {
+      "dialogueName": "S3-2s-5",
+      "charName": "char-01",
+      "size": 8,
+      "dialogue": "꽃을 찾아야 해."
+    },
+    {
+      "dialogueName": "S3-2s-6",
+      "charName": "char-01",
+      "size": 8,
+      "dialogue": "……."
+    },
+    {
+      "dialogueName": "S3-2s-6",
+      "charName": "char-01",
+      "size": 6,
+      "dialogue": "항상 이 분수를 보면 관장님 생각이 나."
+    },
+    {
+      "dialogueName": "S3-2s-7",
+      "charName": "char-08",
+      "size": 3,
+      "dialogue": "내가 무서운 이야기 하나…"
+    },
+    {
+      "dialogueName": "S3-2s-7",
+      "charName": "char-09",
+      "size": 3,
+      "dialogue": "그만! 난 어제도 너 때문에…"
+    },
+    {
+      "dialogueName": "S3-2s-8",
+      "charName": "char-01",
+      "size": 6,
+      "dialogue": "남의 집에 함부로 들어가는 것은 예의가 아니야."
+    },
+    {
+      "dialogueName": "S3-2s-8",
+      "charName": "char-01",
+      "size": 7,
+      "dialogue": "특히나 볼 일이 없을 때는 더욱."
+    },
+    {
+      "dialogueName": "S3-2s-9",
+      "charName": "char-06",
+      "size": 3,
+      "dialogue": "그래. 왔나? 또 산책을 했나보지?"
+    },
+    {
+      "dialogueName": "S3-2s-9",
+      "charName": "char-06",
+      "size": 2,
+      "dialogue": "도서관 문은 언제 열려? 이 몸은 좀이 쑤시다고."
+    },
+    {
+      "dialogueName": "S3-2s-10",
+      "charName": "char-06",
+      "size": 2,
+      "dialogue": "얼마 전에는 그런 책을 읽은 적이 있다."
+    },
+    {
+      "dialogueName": "S3-2s-10",
+      "charName": "char-06",
+      "size": 2,
+      "dialogue": "<노래하는 물방개와 드럼치는 흰점찌르레기의 음악 정신>."
+    },
+    {
+      "dialogueName": "S3-2s-10",
+      "charName": "char-06",
+      "size": 2,
+      "dialogue": "한 시대를 풍미했던 전설의 락이었다지."
+    },
+    {
+      "dialogueName": "S3-2s-10",
+      "charName": "char-06",
+      "size": 2,
+      "dialogue": "그걸 이 귀로 직접 듣지 못한 것이 내 한이다. "
+    },
+    {
+      "dialogueName": "S3-2s-10",
+      "charName": "char-06",
+      "size": 2,
+      "dialogue": "물방개와 찌르레기는 아주 짧은 생을 사니까…. "
+    },
+    {
+      "dialogueName": "S3-2s-10",
+      "charName": "char-06",
+      "size": 2,
+      "dialogue": "하긴, 너 같은 평범한 여우가 락에 대해 무얼 알겠냐마는."
+    },
+    {
+      "dialogueName": "S3-2s-11",
+      "charName": "char-06",
+      "size": 2,
+      "dialogue": "잠깐. 물방개와 흰점찌르레기를 바꿔 말했나."
+    },
+    {
+      "dialogueName": "S3-2s-12",
+      "charName": "char-06",
+      "size": 2,
+      "dialogue": "얼마 전에는 이런 책도 읽은 적이 있다."
+    },
+    {
+      "dialogueName": "S3-2s-12",
+      "charName": "char-06",
+      "size": 1,
+      "dialogue": "<실존할까 궁금한 상상 속 존재, 폭시스 선정 가장 놀라운 반전의 생명체 150선…>."
+    },
+    {
+      "dialogueName": "S3-2s-12",
+      "charName": "char-06",
+      "size": 2,
+      "dialogue": "절대 말랑거리지 않는 돌 해파리와 환생하는 하루살이, "
+    },
+    {
+      "dialogueName": "S3-2s-12",
+      "charName": "char-06",
+      "size": 2,
+      "dialogue": "세상의 모든 진실을 알고 있다는 왕거대 거북의 이야기였다."
+    },
+    {
+      "dialogueName": "S3-2s-12",
+      "charName": "char-06",
+      "size": 2,
+      "dialogue": "아주 놀랍고 흥미로웠지. 여전히 심장이 뛰는군."
+    },
+    {
+      "dialogueName": "S3-2s-13",
+      "charName": "char-06",
+      "size": 3,
+      "dialogue": "…근데 제목이 그게 맞던가."
+    },
+    {
+      "dialogueName": "S3-2s-14",
+      "charName": "char-06",
+      "size": 3,
+      "dialogue": "생이란 정말 놀라운 것이야."
+    },
+    {
+      "dialogueName": "S3-2s-14",
+      "charName": "char-06",
+      "size": 2,
+      "dialogue": "이 좁아터진 마을에 사는 나는 책을 통해 그 갈증을 해소한다고."
+    },
+    {
+      "dialogueName": "S3-2s-14",
+      "charName": "char-06",
+      "size": 4,
+      "dialogue": "아, 좀이 쑤시는군."
+    },
+    {
+      "dialogueName": "S3-2s-14",
+      "charName": "char-06",
+      "size": 3,
+      "dialogue": "으아? 아직도 여기 서 있는 거야?"
+    },
+    {
+      "dialogueName": "S3-2s-15",
+      "charName": "char-06",
+      "size": 3,
+      "dialogue": "으아? 아직도 여기 서 있는 거야?"
+    },
+    {
+      "dialogueName": "S3-2s-16",
+      "charName": "char-07",
+      "size": 4,
+      "dialogue": "안녕!"
+    },
+    {
+      "dialogueName": "S3-2s-16",
+      "charName": "char-07",
+      "size": 4,
+      "dialogue": "혹시 꽃 하나 가질래?"
+    },
+    {
+      "dialogueName": "S3-2s-16",
+      "charName": "char-01",
+      "size": 10,
+      "dialogue": "0"
+    },
+    {
+      "dialogueName": "1A",
+      "charName": "char-07",
+      "size": 4,
+      "dialogue": "그래? 알겠어…."
+    },
+    {
+      "dialogueName": "1A",
+      "charName": "char-07",
+      "size": 4,
+      "dialogue": "혹시 필요하면 말해!"
+    },
+    {
+      "dialogueName": "2A",
+      "charName": "char-07",
+      "size": 3,
+      "dialogue": "그래? 하나 편히 골라!"
+    },
+    {
+      "dialogueName": "2A",
+      "charName": "char-07",
+      "size": 2,
+      "dialogue": "너라면 한 송이쯤은 그냥 줄 수 있지."
+    },
+    {
+      "dialogueName": "2A",
+      "charName": "char-07",
+      "size": 2,
+      "dialogue": "코스모스, 장미, 백합 중에 뭐가 좋아?"
+    },
+    {
+      "dialogueName": "2A",
+      "charName": "char-01",
+      "size": 10,
+      "dialogue": "1"
+    },
+    {
+      "dialogueName": "2A",
+      "charName": "char-07",
+      "size": 3,
+      "dialogue": "헤헤, 알겠어. 가져가."
+    },
+    {
+      "dialogueName": "S3-2s-17",
+      "charName": "char-10",
+      "size": 3,
+      "dialogue": "하여튼 애들 앞에선 입조심을…"
+    },
+    {
+      "dialogueName": "S3-2s-17",
+      "charName": "char-04",
+      "size": 4,
+      "dialogue": "아이쿠."
+    },
+    {
+      "dialogueName": "S3-2s-17",
+      "charName": "char-03",
+      "size": 4,
+      "dialogue": "어머, 얘."
+    },
+    {
+      "dialogueName": "S3-2s-17",
+      "charName": "char-03",
+      "size": 3,
+      "dialogue": "어른들 대화 엿듣는 거 아니란다."
+    },
+    {
+      "dialogueName": "S3-2s-17",
+      "charName": "char-03",
+      "size": 4,
+      "dialogue": "볼 일 계속 보렴."
+    },
+    {
+      "dialogueName": "S3-2s-18",
+      "charName": "char-11",
+      "size": 3,
+      "dialogue": "안녕? 여전히… 오늘도 음침하구나?"
+    },
+    {
+      "dialogueName": "S3-2s-18",
+      "charName": "char-12",
+      "size": 3,
+      "dialogue": "재미없어… 내가 그만하라고 했잖아."
+    },
+    {
+      "dialogueName": "S3-2s-18",
+      "charName": "char-11",
+      "size": 4,
+      "dialogue": "그러네, 재미없네."
+    }
+  ]
+}

@@ -5,15 +5,13 @@ using UnityEngine;
 public class S3_2s_16_1_Selection : SelectionBalloon
 {
     [SerializeField]
-    private Scene3_SquareManager UIManager;
+    private DialogueManager[] dialogueManager;
 
-    // Start is called before the first frame update
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         
@@ -21,19 +19,19 @@ public class S3_2s_16_1_Selection : SelectionBalloon
 
     public override void First()
     {
-        /*
-        if (UIManager.dialogueManager[36].GetDone())
-            UIManager.dialogueManager[36].ResetOrder();
-        UIManager.dialogueManager[36].StartDialogue();
-        */
-        //UIManager.dialogueManager[26].IncreaseOrder();
+        if (dialogueManager[1].GetDone())
+            dialogueManager[1].ResetOrder();
+        dialogueManager[1].StartDialogue();
+
+        dialogueManager[0].IncreaseOrder();
     }
 
     public override void Second()
     {
-        //UIManager.dialogueManager[37].StartDialogue();
-        //UIManager.dialogueManager[26].IncreaseOrder();
-        //UIManager.sceneNum = 4;
-        //get item
+        if (dialogueManager[2].GetDone())
+            dialogueManager[2].ResetOrder();
+        dialogueManager[2].StartDialogue();
+
+        dialogueManager[0].IncreaseOrder();
     }
 }

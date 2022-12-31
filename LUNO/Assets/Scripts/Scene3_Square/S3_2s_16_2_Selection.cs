@@ -7,17 +7,16 @@ public class S3_2s_16_2_Selection : SelectionBalloon
     [SerializeField]
     private DialogueManager dialogueManager;
 
-    // Start is called before the first frame update
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         
     }
+
     public override void First()
     {
         dialogueManager.IncreaseOrder();

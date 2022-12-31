@@ -45,6 +45,7 @@ public class Scene3_SquareManager : MonoBehaviour
     public GameObject[] characterBubble;
     public GameObject keyItem;
     private float noMoveTime = 0f;
+    private bool benchDialogue = false;
 
     [SerializeField]
     private GameObject graveyardBubble;
@@ -89,40 +90,16 @@ public class Scene3_SquareManager : MonoBehaviour
 
     //scene
     public GameObject blackScreen;
+    public int previousMap = 0;
 
     void Start()
     {
         cameraController = cam.GetComponent<CameraController>();
 
-        if (sceneNum == 2 && firstPlay)
-        {
-            player.transform.position = startPosition[0];   //LunoHouse
-            director[0].Play();
-            firstPlay = false;
-            //sound: ambience_village
-        }
-        else if (sceneNum == 2 && !firstPlay)
-        {
-            player.transform.position = startPosition[0];   //LunoHouse
-            director[1].Play();
-        }
-        else if (sceneNum == 3)
-        {
-            director[1].Play();
-            player.transform.position = startPosition[1];   //Graveyard or LunoHouse
-        }
-        else if(sceneNum == 4)
-        {
-            player.transform.position = startPosition[0];   //??
-            director[1].Play();
-        }
-        else if(sceneNum == 5)
-        {
-            player.transform.position = startPosition[1];   //Graveyard
-            director[1].Play();
-            oldDog.SetActive(true);
-        }
-        else if(sceneNum == 7)
+        //0: LunoHouse, 1: Graveyard, 2: Library
+        player.transform.position = startPosition[previousMap];
+
+        if (sceneNum == 7)
         {
             //Camera Fixed
             scene7Camera.SetActive(true);
@@ -130,10 +107,21 @@ public class Scene3_SquareManager : MonoBehaviour
             bound2.SetActive(true);
 
             player.transform.position = startPosition[2];   //Library
-            director[1].Play();
             oldDog.SetActive(true);
         }
+
+        if (firstPlay)
+        {
+            director[0].Play();
+            firstPlay = false;
+            //sound: ambience_village
+        }
+        else
+        {
+            director[1].Play();
+        }
     }
+
     void Update()
     {
         //collider action
@@ -142,8 +130,9 @@ public class Scene3_SquareManager : MonoBehaviour
             if (bubble[0].activeSelf & Input.GetKeyDown(KeyCode.E))  //Graveyard
             {
                 bubble[0].SetActive(false);
-                SceneManager.LoadScene("Scene2_Graveyard");
                 //sound: door_iron
+                previousMap = 1;
+                SceneManager.LoadScene("Scene2_Graveyard");
             }
             else if (bubble[1].activeSelf && Input.GetKeyDown(KeyCode.E)) //Forest
             {
@@ -153,6 +142,7 @@ public class Scene3_SquareManager : MonoBehaviour
             else if (bubble[2].activeSelf && Input.GetKeyDown(KeyCode.E))   //Lunohouse
             {
                 bubble[2].SetActive(false);
+                previousMap = 0;
                 //SceneManager.LoadScene("Scene5_lunohouse");
             }
             else if (bubble[3].activeSelf && Input.GetKeyDown(KeyCode.E))   //Library
@@ -179,10 +169,9 @@ public class Scene3_SquareManager : MonoBehaviour
             else if (bubble[8].activeSelf && Input.GetKeyDown(KeyCode.E))   //BenchR
             {
                 bubble[8].SetActive(false);
-                //sound sitdown
+                //sound: sitdown
                 RepeatableDialogue(S2_2s, 6);
-                //graveyardBubble
-                //sound: speechbigin
+                benchDialogue = true;
             }
             else if (characterBubble[2].activeSelf && Input.GetKeyDown(KeyCode.E))   //Bear
             {
@@ -204,14 +193,14 @@ public class Scene3_SquareManager : MonoBehaviour
                 bubble[10].SetActive(false);
                 villageGraffiti.SetActive(true);
             }
-            else if (characterBubble[4].activeSelf && Input.GetKeyDown(KeyCode.E))   //Otaku
-            {
-                characterBubble[4].SetActive(false);
-                RepeatableDialogue(S2_2s, 10);
-            }
-            else if (characterBubble[5].activeSelf && Input.GetKeyDown(KeyCode.E))  //Dog
+            else if (characterBubble[5].activeSelf && Input.GetKeyDown(KeyCode.E))   //Otaku
             {
                 characterBubble[5].SetActive(false);
+                RepeatableDialogue(S2_2s, 10);
+            }
+            else if (characterBubble[6].activeSelf && Input.GetKeyDown(KeyCode.E))  //Dog
+            {
+                characterBubble[6].SetActive(false);
                 RepeatableDialogue(S2_2s, 11);
             }
 
@@ -233,6 +222,13 @@ public class Scene3_SquareManager : MonoBehaviour
             {
                 graveyardBubble.SetActive(false);
             }
+
+            if (benchDialogue && dialogueManager.GetDone())
+            {
+                //sound: speechbigin
+                graveyardBubble.SetActive(true);
+                benchDialogue = false;
+            }
         }
 
         else if (sceneNum == 3)
@@ -240,6 +236,8 @@ public class Scene3_SquareManager : MonoBehaviour
             if (bubble[0].activeSelf & Input.GetKeyDown(KeyCode.E))  //Graveyard
             {
                 bubble[0].SetActive(false);
+                //sound: door_iron
+                previousMap = 1;
                 SceneManager.LoadScene("Scene2_Graveyard");
             }
             else if (bubble[1].activeSelf && Input.GetKeyDown(KeyCode.E)) //Forest
@@ -250,6 +248,7 @@ public class Scene3_SquareManager : MonoBehaviour
             else if (bubble[2].activeSelf && Input.GetKeyDown(KeyCode.E))   //Lunohouse
             {
                 bubble[2].SetActive(false);
+                previousMap = 0;
                 //SceneManager.LoadScene("Scene5_lunohouse");
                 //Bgm fade out
             }
@@ -272,8 +271,9 @@ public class Scene3_SquareManager : MonoBehaviour
             else if (bubble[8].activeSelf && Input.GetKeyDown(KeyCode.E))   //BenchR
             {
                 bubble[8].SetActive(false);
+                //sound: sitdown
                 RepeatableDialogue(S3_2s, 5);
-                //flowerBubble
+                benchDialogue = true;
             }
             else if (bubble[7].activeSelf && Input.GetKeyDown(KeyCode.E))   //Fountain
             {
@@ -300,9 +300,9 @@ public class Scene3_SquareManager : MonoBehaviour
                 bubble[10].SetActive(false);
                 villageGraffiti.SetActive(true);
             }
-            else if (bubble[11].activeSelf && Input.GetKeyDown(KeyCode.E))   //Otaku
+            else if (characterBubble[5].activeSelf && Input.GetKeyDown(KeyCode.E))   //Otaku
             {
-                bubble[11].SetActive(false);
+                characterBubble[5].SetActive(false);
                 if (otakuDialogue >= 9 || otakuDialogue < 15)
                 {
                     dialogueManager 
@@ -315,11 +315,10 @@ public class Scene3_SquareManager : MonoBehaviour
                     RepeatableDialogue(S3_2s, 15);
                 }
             }
-            else if (bubble[12].activeSelf && Input.GetKeyDown(KeyCode.E))  //Dog
+            else if (characterBubble[6].activeSelf && Input.GetKeyDown(KeyCode.E))  //Dog
             {
-                bubble[12].SetActive(false);
+                characterBubble[6].SetActive(false);
                 RepeatableDialogue(S3_2s, 16);
-                //scene3 -> 4
             }
 
             //no move for 5 secnods
@@ -340,6 +339,13 @@ public class Scene3_SquareManager : MonoBehaviour
             {
                 flowerBubble.SetActive(false);
             }
+
+            if (benchDialogue && dialogueManager.GetDone())
+            {
+                //sound: speechbigin
+                flowerBubble.SetActive(true);
+                benchDialogue = false;
+            }
         }
 
         else if (sceneNum == 4)
@@ -347,6 +353,7 @@ public class Scene3_SquareManager : MonoBehaviour
             if (bubble[0].activeSelf & Input.GetKeyDown(KeyCode.E))  //Graveyard
             {
                 bubble[0].SetActive(false);
+                previousMap = 1;
                 SceneManager.LoadScene("Scene2_Graveyard");
                 //sound; door_iron
             }
@@ -363,17 +370,18 @@ public class Scene3_SquareManager : MonoBehaviour
             else if (bubble[2].activeSelf && Input.GetKeyDown(KeyCode.E))   //Lunohouse
             {
                 bubble[2].SetActive(false);
+                previousMap = 0;
                 //SceneManager.LoadScene("Scene5_lunohouse");
                 //Bgm fade out
             }
-            else if (bubble[11].activeSelf && Input.GetKeyDown(KeyCode.E))   //Otaku
+            else if (characterBubble[5].activeSelf && Input.GetKeyDown(KeyCode.E))   //Otaku
             {
-                bubble[11].SetActive(false);
+                characterBubble[5].SetActive(false);
                 RepeatableDialogue(S4_1s, 3);
             }
-            else if (bubble[12].activeSelf && Input.GetKeyDown(KeyCode.E))  //Dog
+            else if (characterBubble[6].activeSelf && Input.GetKeyDown(KeyCode.E))  //Dog
             {
-                bubble[12].SetActive(false);
+                characterBubble[6].SetActive(false);
                 RepeatableDialogue(S4_1s, 4);
             }
             else if (bubble[9].activeSelf && Input.GetKeyDown(KeyCode.E))   //VillageNotice
@@ -434,9 +442,9 @@ public class Scene3_SquareManager : MonoBehaviour
         }
         else if (sceneNum == 5)
         {
-            if (bubble[13].activeSelf && Input.GetKeyDown(KeyCode.E))  //Old Dog
+            if (characterBubble[0].activeSelf && Input.GetKeyDown(KeyCode.E))  //Old Dog
             {
-                bubble[13].SetActive(false);
+                characterBubble[0].SetActive(false);
                 if (oldDogFirst)
                 {
                     dialogueManager
@@ -451,12 +459,14 @@ public class Scene3_SquareManager : MonoBehaviour
             else if (bubble[0].activeSelf & Input.GetKeyDown(KeyCode.E))  //Graveyard
             {
                 bubble[0].SetActive(false);
+                previousMap = 1;
                 SceneManager.LoadScene("Scene2_Graveyard");
                 //sound; door_iron
             }
             else if (bubble[2].activeSelf && Input.GetKeyDown(KeyCode.E))   //Lunohouse
             {
                 bubble[2].SetActive(false);
+                previousMap = 0;
                 //SceneManager.LoadScene("Scene5_lunohouse");
                 //Bgm fade out
             }
@@ -492,14 +502,14 @@ public class Scene3_SquareManager : MonoBehaviour
                 bubble[10].SetActive(false);
                 villageGraffiti.SetActive(true);
             }
-            else if (bubble[11].activeSelf && Input.GetKeyDown(KeyCode.E))   //Otaku
+            else if (characterBubble[5].activeSelf && Input.GetKeyDown(KeyCode.E))   //Otaku
             {
-                bubble[11].SetActive(false);
+                characterBubble[5].SetActive(false);
                 RepeatableDialogue(S5_2s, 4);
             }
-            else if (bubble[12].activeSelf && Input.GetKeyDown(KeyCode.E))  //Dog
+            else if (characterBubble[6].activeSelf && Input.GetKeyDown(KeyCode.E))  //Dog
             {
-                bubble[12].SetActive(false);
+                characterBubble[6].SetActive(false);
                 RepeatableDialogue(S5_2s, 5);
             }
             else if (bubble[3].activeSelf && Input.GetKeyDown(KeyCode.E))   //Library
@@ -543,9 +553,9 @@ public class Scene3_SquareManager : MonoBehaviour
         }
         else if(sceneNum == 7)
         {
-            if (bubble[13].activeSelf && Input.GetKeyDown(KeyCode.E))  //Old Dog
+            if (characterBubble[0].activeSelf && Input.GetKeyDown(KeyCode.E))  //Old Dog
             {
-                bubble[13].SetActive(false);
+                characterBubble[0].SetActive(false);
                 RepeatableDialogue(S7_1s, 2);
             }
         }
@@ -570,6 +580,7 @@ public class Scene3_SquareManager : MonoBehaviour
 
     IEnumerator EnterLibrary()
     {
+        previousMap = 2;
         yield return new WaitForSecondsRealtime(1f);
         SceneManager.LoadScene("Scene4_Library");
     }
