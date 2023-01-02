@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class collisionBalloons : MonoBehaviour
 {
-    public PrologueManager prologue1;
-    public PrologueManager prologue2;
+    public DialogueManager dialogue1;
+    public DialogueManager dialogue2;
     public S1_03_selection s1;
 
     public bool isExit=true;
@@ -15,18 +15,18 @@ public class collisionBalloons : MonoBehaviour
     {
         if (collision.CompareTag("keepsake"))
         {
-            if (prologue1.GetDone())
-                prologue1.ResetOrder();
-            prologue1.StartPrologue();
+            if (dialogue1.GetDone())
+                dialogue1.ResetOrder();
+            dialogue1.StartDialogue();
         }
         else if (collision.CompareTag("bookcart"))
         {
             //Debug.Log("trigger");
             cnt = s1.getCnt();
-            Debug.Log(s1.prologueManagers[cnt].GetDone());
-            if (s1.prologueManagers[cnt].GetDone())     
-                prologue2.ResetOrder();
-            prologue2.StartPrologue();
+            Debug.Log(s1.dialogueManagers[cnt].GetDone());
+            if (s1.dialogueManagers[cnt].GetDone())     
+                dialogue2.ResetOrder();
+            dialogue2.StartDialogue();
         }
     }
 }

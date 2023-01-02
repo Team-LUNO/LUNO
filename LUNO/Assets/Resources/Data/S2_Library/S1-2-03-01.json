@@ -1,0 +1,10 @@
+{
+  "dialogues": [
+    {
+      "DialogName ": "S1-2-03-01",
+      "charName": "char-01",
+      "size": 7,
+      "dialogue": "도서관을 방치한 지 오래되었어. "
+    }
+  ]
+}
