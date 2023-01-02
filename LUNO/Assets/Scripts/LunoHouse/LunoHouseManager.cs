@@ -6,6 +6,13 @@ using UnityEngine.Playables;
 
 public class LunoHouseManager : MonoBehaviour
 {
+    [SerializeField]
+    GameObject player;
+
+    /*
+    [SerializeField]
+    Move move;
+    */
 
     //firstPlay
     public bool firstPlay;
@@ -17,7 +24,7 @@ public class LunoHouseManager : MonoBehaviour
     public GameObject S2_1s;
     public GameObject S3_3s;
     public GameObject dayhouse;
-    DialogueManager dialogueManager;
+    public DialogueManager dialogueManager;
     public bool graveyardDialogue; //S2-1s-1, S2-1s-2
 
     //interactions
@@ -34,6 +41,8 @@ public class LunoHouseManager : MonoBehaviour
     {
         if(firstPlay)
         {
+            dialogueManager
+                = S2_1s.transform.GetChild(1).GetComponent<DialogueManager>();
             director[1].Play();
         }
         else
@@ -67,6 +76,7 @@ public class LunoHouseManager : MonoBehaviour
             {
                 Bubble_2F[1].SetActive(false);
 
+                player.GetComponent<Move>().ladderMode = true;
             }
             //Bed
             else if (Bubble_2F[2].activeSelf && Input.GetKeyDown(KeyCode.E))

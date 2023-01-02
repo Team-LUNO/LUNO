@@ -7,9 +7,6 @@ public class LunoHouseFirstPlay : MonoBehaviour
     [SerializeField]
     LunoHouseManager lunoHouseManager;
 
-    [SerializeField]
-    DialogueManager dialogueManager;
-
     void Start()
     {
         
@@ -22,7 +19,7 @@ public class LunoHouseFirstPlay : MonoBehaviour
 
     public void GraveyardDialogue()
     {
-        dialogueManager.StartDialogue();
+        lunoHouseManager.dialogueManager.StartDialogue();
         lunoHouseManager.graveyardDialogue = true;
     }
 }

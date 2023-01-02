@@ -16,11 +16,11 @@ public class monologue : MonoBehaviour
         if (isLimit)
         {
             Debug.Log("stop");
-            move.isOn = false;
+            move.enabled = false;
         }
         else
         {
-            move.isOn = true;
+            move.enabled = true;
         }
     }
 

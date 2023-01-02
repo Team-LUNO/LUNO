@@ -27,7 +27,7 @@ public class PlayerGetup : MonoBehaviour
 
         anim.runtimeAnimatorController = getupAnim.runtimeAnimatorController;
 
-        move.isOn = false;
+        move.enabled = false;
         StartCoroutine(ZoomIn());
     }
 
@@ -58,7 +58,7 @@ public class PlayerGetup : MonoBehaviour
     {
         //애니메이션 종료 후
         yield return new WaitForSecondsRealtime(3f);
-        move.isOn = true;
+        move.enabled = true;
         anim.runtimeAnimatorController = move.rWalk.runtimeAnimatorController;
         player.transform.position = getUpPos;
 
