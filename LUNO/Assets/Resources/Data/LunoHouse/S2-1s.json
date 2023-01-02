@@ -1,0 +1,70 @@
+﻿{
+    "dialogues": [
+        {
+            "dialogueName": "S2-1s-1",
+            "charName": "char-01",
+            "size": 8,
+            "dialogue": "묘지에 가보자."
+        },
+        {
+            "dialogueName": "S2-1s-2",
+            "charName": "char-01",
+            "size": 7,
+            "dialogue": "지금은 눕고 싶지 않아."
+        },
+        {
+            "dialogueName": "S2-1s-2",
+            "charName": "char-01",
+            "size": 8,
+            "dialogue": "묘지에 가보자."
+        },
+        {
+            "dialogueName": "S2-1s-3",
+            "charName": "char-01",
+            "size": 6,
+            "dialogue": "장식장 안에는 잡동사니를 밀어 넣고 방치했어."
+        },
+        {
+            "dialogueName": "S2-1s-3",
+            "charName": "char-01",
+            "size": 6,
+            "dialogue": "...지금 여는 건 좋은 생각이 아닌 것 같아."
+        },
+        {
+            "dialogueName": "S2-1s-4",
+            "charName": "char-01",
+            "size": 7,
+            "dialogue": "관장님은 장미꽃을 좋아하셨어."
+        },
+        {
+            "dialogueName": "S2-1s-4",
+            "charName": "char-01",
+            "size": 6,
+            "dialogue": "지금은 시들었지만… 당장 치울 필요는 없을 것 같아. "
+        },
+        {
+            "dialogueName": "S2-1s-5",
+            "charName": "char-01",
+            "size": 8,
+            "dialogue": "관장님과 찍은 사진."
+        },
+        {
+            "dialogueName": "S2-1s-6",
+            "charName": "char-01",
+            "size": 6,
+            "dialogue": "…저 큰 외투와 신발은 어떻게 하면 좋을까?"
+        },
+        {
+            "dialogueName": "S2-1s-6",
+            "charName": "char-01",
+            "size": 6,
+            "dialogue": "어쨌든 지금 중요한 일은 아닌 것 같아."
+        },
+        {
+            "dialogueName": "S2-1s-7",
+            "charName": "char-01",
+            "size": 8,
+            "dialogue": "물이 든 컵이야."
+        }
+    ]
+}
