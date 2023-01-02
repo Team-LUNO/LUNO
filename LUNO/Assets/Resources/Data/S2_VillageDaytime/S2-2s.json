@@ -1,0 +1,208 @@
+﻿{
+  "dialogues": [
+    {
+      "dialogueName": "S2-2s-1",
+      "charName": "char-01",
+      "size": 8,
+      "dialogue": "흙과 나무 냄새."
+    },
+    {
+      "dialogueName": "S2-2s-2",
+      "charName": "char-01",
+      "size": 7,
+      "dialogue": "도서관 문은 잠겨 있어. "
+    },
+    {
+      "dialogueName": "S2-2s-2",
+      "charName": "char-01",
+      "size": 7,
+      "dialogue": "열쇠가 누군가에게 있을 텐데... "
+    },
+    {
+      "dialogueName": "S2-2s-2",
+      "charName": "char-01",
+      "size": 7,
+      "dialogue": "지금 중요한 일은 아닌 것 같아. "
+    },
+    {
+      "dialogueName": "S2-2s-3",
+      "charName": "char-05",
+      "size": 4,
+      "dialogue": "…...."
+    },
+    {
+      "dialogueName": "S2-2s-3",
+      "charName": "char-05",
+      "size": 4,
+      "dialogue": "또 묘지에 가니?"
+    },
+    {
+      "dialogueName": "S2-2s-3",
+      "charName": "char-05",
+      "size": 4,
+      "dialogue": "시덥잖은 녀석."
+    },
+    {
+      "dialogueName": "S2-2s-3",
+      "charName": "char-05",
+      "size": 3,
+      "dialogue": "묘지는 이 쪽이 아닐텐데."
+    },
+    {
+      "dialogueName": "S2-2s-3",
+      "charName": "char-05",
+      "size": 3,
+      "dialogue": "난 그만 쳐다보고 네 볼일이나 봐라."
+    },
+    {
+      "dialogueName": "S2-2s-4",
+      "charName": "#N/A",
+      "size": "#N/A",
+      "dialogue": "(삭제)"
+    },
+    {
+      "dialogueName": "S2-2s-5",
+      "charName": "char-03",
+      "size": 2,
+      "dialogue": "하여튼 그래서 맨날 죽상을 하고 돌아다니니…."
+    },
+    {
+      "dialogueName": "S2-2s-5",
+      "charName": "char-04",
+      "size": 2,
+      "dialogue": "안 그랬던 적이 있나. 그 애는 항상 표정이 원체 똑같아서 말이지."
+    },
+    {
+      "dialogueName": "S2-2s-5",
+      "charName": "char-10",
+      "size": 2,
+      "dialogue": "그러니까. 어쩔 때 보면 조금 께름직하기도… 어머, 왔니?"
+    },
+    {
+      "dialogueName": "S2-2s-5",
+      "charName": "char-03",
+      "size": 4,
+      "dialogue": "어머."
+    },
+    {
+      "dialogueName": "S2-2s-5",
+      "charName": "char-04",
+      "size": 4,
+      "dialogue": "어이쿠."
+    },
+    {
+      "dialogueName": "S2-2s-5",
+      "charName": "char-04",
+      "size": 2,
+      "dialogue": "오늘은 좀 늦었구나, 조금 있으면 해가 질 텐데."
+    },
+    {
+      "dialogueName": "S2-2s-5",
+      "charName": "char-04",
+      "size": 3,
+      "dialogue": "오늘도 묘지에 가는거지?"
+    },
+    {
+      "dialogueName": "S2-2s-6",
+      "charName": "char-01",
+      "size": 8,
+      "dialogue": "묘지에 가야 해."
+    },
+    {
+      "dialogueName": "S2-2s-7",
+      "charName": "char-01",
+      "size": 7,
+      "dialogue": "우리 마을 중앙에 있는 분수야. "
+    },
+    {
+      "dialogueName": "S2-2s-8",
+      "charName": "char-01",
+      "size": 7,
+      "dialogue": "무슨 말을 하는지 잘 들리지 않아."
+    },
+    {
+      "dialogueName": "S2-2s-8",
+      "charName": "char-01",
+      "size": 6,
+      "dialogue": "내가 들어야 할 이유는 없지… 지금 중요한 건 이게 아니야."
+    },
+    {
+      "dialogueName": "S2-2s-9",
+      "charName": "#N/A",
+      "size": "#N/A",
+      "dialogue": "(삭제)"
+    },
+    {
+      "dialogueName": "S2-2s-10",
+      "charName": "char-06",
+      "size": 4,
+      "dialogue": "여, 안녕."
+    },
+    {
+      "dialogueName": "S2-2s-10",
+      "charName": "char-06",
+      "size": 3,
+      "dialogue": "오늘도 묘지에 가는 건가?"
+    },
+    {
+      "dialogueName": "S2-2s-10",
+      "charName": "char-06",
+      "size": 4,
+      "dialogue": "넌 정말 한결같군."
+    },
+    {
+      "dialogueName": "S2-2s-11",
+      "charName": "char-07",
+      "size": 4,
+      "dialogue": "안녕?"
+    },
+    {
+      "dialogueName": "S2-2s-11",
+      "charName": "char-07",
+      "size": 2,
+      "dialogue": "이 시간에 여기까지 나와주다니… 조금 감동이네."
+    },
+    {
+      "dialogueName": "S2-2s-11",
+      "charName": "char-07",
+      "size": 2,
+      "dialogue": "넌 항상 묘지에만 들리잖아. 여기서 정 반대인 곳 말이야."
+    },
+    {
+      "dialogueName": "S2-2s-11",
+      "charName": "char-07",
+      "size": 3,
+      "dialogue": "설마 날 보러 여기까지 와준 거야?"
+    },
+    {
+      "dialogueName": "S2-2s-11",
+      "charName": "char-07",
+      "size": 3,
+      "dialogue": "헤헤, 나는 지금 꽃을 팔고 있어…."
+    },
+    {
+      "dialogueName": "S2-2s-11",
+      "charName": "char-07",
+      "size": 3,
+      "dialogue": "뭐, 그냥 소일거리 정도지만."
+    },
+    {
+      "dialogueName": "S2-2s-12",
+      "charName": "char-11",
+      "size": 3,
+      "dialogue": "안녕? 오늘도 정말 파랗구나?"
+    },
+    {
+      "dialogueName": "S2-2s-12",
+      "charName": "char-12",
+      "size": 4,
+      "dialogue": "그만해! 안됐잖아."
+    },
+    {
+      "dialogueName": "S2-2s-12",
+      "charName": "char-11",
+      "size": 3,
+      "dialogue": "뭐가? 아아… 그건 그렇지."
+    }
+  ]
+}
