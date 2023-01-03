@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 354028}
   m_Layer: 0
   m_Name: WaterCup
-  m_TagString: Untagged
+  m_TagString: InteractionObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -531,6 +531,77 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &165596727
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 165596729}
+  - component: {fileID: 165596728}
+  - component: {fileID: 165596730}
+  m_Layer: 0
+  m_Name: LadderCollider
+  m_TagString: Ladder
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!61 &165596728
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 165596727}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 28.299437, y: 6.9538603}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 3.7450523, y: 13.147959}
+  m_EdgeRadius: 0
+--- !u!4 &165596729
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 165596727}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &165596730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 165596727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2519cba1fa09734ca9649a5a3a47538, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  platformCollider: {fileID: 1987709475}
 --- !u!1 &202648568
 GameObject:
   m_ObjectHideFlags: 0
@@ -541,7 +612,7 @@ GameObject:
   m_Component:
   - component: {fileID: 202648569}
   m_Layer: 0
-  m_Name: 2f
+  m_Name: 2F
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -621,7 +692,7 @@ GameObject:
   m_Component:
   - component: {fileID: 258981884}
   m_Layer: 0
-  m_Name: 1f
+  m_Name: 1F
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -677,14 +748,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32ff40f7643447c4ab6460b459952630, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 1255050893}
   firstPlay: 0
-  graveyardBubble: {fileID: 593420579}
   S2_1s: {fileID: 1364781073}
   S3_3s: {fileID: 515598352}
   dayhouse: {fileID: 575051092}
-  dialogueManager: {fileID: 0}
+  dialogueManager: {fileID: 1724868965}
   graveyardDialogue: 0
+  graveyardBubble: {fileID: 593420579}
   Bubble_1F:
   - {fileID: 1318133548}
   - {fileID: 49322243}
@@ -697,10 +768,18 @@ MonoBehaviour:
   - {fileID: 1962822635}
   - {fileID: 602660299}
   - {fileID: 2028308285}
+  ladder1F: {x: 28.27352, y: -3.9, z: 0}
+  ladder2F: {x: 28.27352, y: 14.3, z: 0}
+  ladderCollider: {fileID: 165596727}
+  climb1F: {x: 28.27352, y: -3.4, z: 0}
+  climb2F: {x: 28.27352, y: 12.6, z: 0}
+  climb: {fileID: 278431112}
   sceneNum: 2
   director:
   - {fileID: 1224855871}
   - {fileID: 914114842}
+  startPosition:
+  - {x: 33.9, y: 19.15484, z: 0}
 --- !u!4 &269656773
 Transform:
   m_ObjectHideFlags: 0
@@ -715,6 +794,61 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &278431110
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 278431111}
+  - component: {fileID: 278431112}
+  m_Layer: 0
+  m_Name: Climb
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &278431111
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 278431110}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 278711752}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &278431112
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 278431110}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7281db70c63f5fd42b5c5b1bf094c77e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!4 &278711752 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8716911181693926203, guid: 2dc7b4fff84214494945d7401c6531b5, type: 3}
+  m_PrefabInstance: {fileID: 299126261}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &282962342
 GameObject:
   m_ObjectHideFlags: 0
@@ -871,11 +1005,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8716911182038554289, guid: 2dc7b4fff84214494945d7401c6531b5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 33.9
+      value: 28.7
       objectReference: {fileID: 0}
     - target: {fileID: 8716911182038554289, guid: 2dc7b4fff84214494945d7401c6531b5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 19.15484
+      value: 8.7
       objectReference: {fileID: 0}
     - target: {fileID: 8716911182038554289, guid: 2dc7b4fff84214494945d7401c6531b5, type: 3}
       propertyPath: m_LocalPosition.z
@@ -909,14 +1043,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8716911182038554301, guid: 2dc7b4fff84214494945d7401c6531b5, type: 3}
+      propertyPath: climb
+      value: 
+      objectReference: {fileID: 278431112}
     - target: {fileID: 8716911182038554303, guid: 2dc7b4fff84214494945d7401c6531b5, type: 3}
       propertyPath: m_Name
       value: char-01
       objectReference: {fileID: 0}
+    - target: {fileID: 8716911182038554303, guid: 2dc7b4fff84214494945d7401c6531b5, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 8716911183015368772, guid: 2dc7b4fff84214494945d7401c6531b5, type: 3}
       propertyPath: bound
       value: 
-      objectReference: {fileID: 699216999}
+      objectReference: {fileID: 1442701958}
+    - target: {fileID: 8716911183015368772, guid: 2dc7b4fff84214494945d7401c6531b5, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8716911183015368772, guid: 2dc7b4fff84214494945d7401c6531b5, type: 3}
       propertyPath: cameraMove
       value: 1
@@ -928,6 +1074,10 @@ PrefabInstance:
     - target: {fileID: 8716911183015368773, guid: 2dc7b4fff84214494945d7401c6531b5, type: 3}
       propertyPath: orthographic size
       value: 12.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 8973357485646228328, guid: 2dc7b4fff84214494945d7401c6531b5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.6
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8716911182038554294, guid: 2dc7b4fff84214494945d7401c6531b5, type: 3}
@@ -949,20 +1099,29 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 299126263}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 760019aecf9be4645abf59668a4d50b0, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e63a7a2d17e78f478b1455c34776111, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bound: {fileID: 699216999}
   playerTransform: {fileID: 299126262}
-  upstairCamera: {x: 0, y: 0, z: 0}
-  upstairPlayer: 0
+  bound: {fileID: 699216999}
 --- !u!4 &299126265 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8716911183015368890, guid: 2dc7b4fff84214494945d7401c6531b5, type: 3}
   m_PrefabInstance: {fileID: 299126261}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &299126266 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8716911183015368772, guid: 2dc7b4fff84214494945d7401c6531b5, type: 3}
+  m_PrefabInstance: {fileID: 299126261}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 299126263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ad263a61e3ce9749bafd907b5543dbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &327423553
 GameObject:
   m_ObjectHideFlags: 0
@@ -1451,7 +1610,7 @@ GameObject:
   - component: {fileID: 563076613}
   m_Layer: 0
   m_Name: Bed
-  m_TagString: Untagged
+  m_TagString: InteractionObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1509,7 +1668,7 @@ GameObject:
   - component: {fileID: 571571448}
   m_Layer: 0
   m_Name: Cabinet
-  m_TagString: Untagged
+  m_TagString: InteractionObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1864,7 +2023,7 @@ GameObject:
   - component: {fileID: 682293699}
   m_Layer: 0
   m_Name: Ladder_1f
-  m_TagString: Untagged
+  m_TagString: InteractionObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1921,7 +2080,7 @@ GameObject:
   - component: {fileID: 699216998}
   - component: {fileID: 699216999}
   m_Layer: 0
-  m_Name: Bound_2f
+  m_Name: Bound_2F
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1979,7 +2138,7 @@ GameObject:
   - component: {fileID: 749750457}
   m_Layer: 0
   m_Name: Ladder_2f
-  m_TagString: Untagged
+  m_TagString: InteractionObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2523,7 +2682,7 @@ Animator:
   m_GameObject: {fileID: 921894064}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 3bc554af7cb096245868d49485641a29, type: 2}
+  m_Controller: {fileID: 9100000, guid: a63bc3b9a66ee0a40ad3ccad2bf45927, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -2585,9 +2744,36 @@ MonoBehaviour:
   m_Events:
     m_Signals:
     - {fileID: 11400000, guid: a48cca5572cc01f42a7b1b9c6bae751a, type: 2}
+    - {fileID: 11400000, guid: 57cd53d8dcc44334b8037f4bc1727b70, type: 2}
     m_Events:
     - m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 1255050896}
+          m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+          m_MethodName: set_enabled
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1255050896}
+          m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+          m_MethodName: set_enabled
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
 --- !u!1 &945216594
 GameObject:
   m_ObjectHideFlags: 0
@@ -2803,7 +2989,7 @@ GameObject:
   - component: {fileID: 1016361406}
   m_Layer: 0
   m_Name: Picture
-  m_TagString: Untagged
+  m_TagString: InteractionObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3108,7 +3294,7 @@ GameObject:
   - component: {fileID: 1132168975}
   m_Layer: 0
   m_Name: Door
-  m_TagString: Untagged
+  m_TagString: InteractionObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3165,7 +3351,7 @@ GameObject:
   - component: {fileID: 1156159819}
   - component: {fileID: 1156159820}
   m_Layer: 0
-  m_Name: ground_1f
+  m_Name: ground_1F
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3309,6 +3495,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ce4edbb9353dfe48824c44d4718cf88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cameraController: {fileID: 299126266}
+  cameraController_2F: {fileID: 299126264}
+  playerPosition: 8.7
 --- !u!114 &1255050895
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4014,7 +4203,7 @@ GameObject:
   - component: {fileID: 1442701957}
   - component: {fileID: 1442701958}
   m_Layer: 0
-  m_Name: Bound_1f
+  m_Name: Bound_1F
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4072,7 +4261,7 @@ GameObject:
   - component: {fileID: 1518155886}
   m_Layer: 0
   m_Name: Fireplace
-  m_TagString: Untagged
+  m_TagString: InteractionObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4265,7 +4454,7 @@ GameObject:
   - component: {fileID: 1624449642}
   m_Layer: 0
   m_Name: ShoeShelf
-  m_TagString: Untagged
+  m_TagString: InteractionObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4323,7 +4512,7 @@ GameObject:
   - component: {fileID: 1630168158}
   m_Layer: 0
   m_Name: Vase
-  m_TagString: Untagged
+  m_TagString: InteractionObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4818,8 +5007,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1987709474}
   - component: {fileID: 1987709475}
+  - component: {fileID: 1987709476}
   m_Layer: 0
-  m_Name: ground_2f
+  m_Name: ground_2F
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4850,7 +5040,7 @@ BoxCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -10.939952}
   m_SpriteTilingProperty:
@@ -4865,6 +5055,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 72.48, y: 1.739603}
   m_EdgeRadius: 0
+--- !u!251 &1987709476
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1987709473}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 180
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1 &1993845304
 GameObject:
   m_ObjectHideFlags: 0
