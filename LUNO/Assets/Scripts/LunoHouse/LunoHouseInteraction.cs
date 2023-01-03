@@ -5,10 +5,7 @@ using UnityEngine;
 public class LunoHouseInteraction : MonoBehaviour
 {
     [SerializeField]
-    CameraController cameraController;
-
-    [SerializeField]
-    CameraController_2F cameraController_2F;
+    LunoHouseManager lunoHouseManager;
 
     [SerializeField]
     float playerPosition;
@@ -29,6 +26,14 @@ public class LunoHouseInteraction : MonoBehaviour
         {
             collision.transform.GetChild(0).gameObject.SetActive(true);
         }
+        else if(collision.CompareTag("Ladder"))
+        {
+            if(lunoHouseManager.firstPlay)
+            {
+                lunoHouseManager.moveInfo.SetActive(false);
+                lunoHouseManager.ladderInfo.SetActive(true);
+            }
+        }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
@@ -38,16 +43,22 @@ public class LunoHouseInteraction : MonoBehaviour
         }
         else if(collision.CompareTag("Ladder"))
         {
+            if(lunoHouseManager.firstPlay)
+            {
+                lunoHouseManager.ladderInfo.SetActive(false);
+                lunoHouseManager.firstPlay = false;
+            }
+
             collision.gameObject.SetActive(false);
             //1F
             if(transform.position.y < playerPosition)
             {
-                cameraController.enabled = true;
+                lunoHouseManager.cameraController.enabled = true;
             }
             //2F
             else
             {
-                cameraController_2F.enabled = true;
+                lunoHouseManager.cameraController_2F.enabled = true;
             }
         }
     }

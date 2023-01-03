@@ -749,11 +749,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1255050893}
-  firstPlay: 0
+  cameraController: {fileID: 0}
+  cameraController_2F: {fileID: 0}
+  firstPlay: 1
+  moveInfo: {fileID: 2004762269}
+  ladderInfo: {fileID: 945216594}
   S2_1s: {fileID: 1364781073}
   S3_3s: {fileID: 515598352}
   dayhouse: {fileID: 575051092}
-  dialogueManager: {fileID: 1724868965}
+  dialogueManager: {fileID: 0}
   graveyardDialogue: 0
   graveyardBubble: {fileID: 593420579}
   Bubble_1F:
@@ -1111,17 +1115,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8716911183015368890, guid: 2dc7b4fff84214494945d7401c6531b5, type: 3}
   m_PrefabInstance: {fileID: 299126261}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &299126266 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8716911183015368772, guid: 2dc7b4fff84214494945d7401c6531b5, type: 3}
-  m_PrefabInstance: {fileID: 299126261}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 299126263}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ad263a61e3ce9749bafd907b5543dbc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &327423553
 GameObject:
   m_ObjectHideFlags: 0
@@ -2577,7 +2570,7 @@ PlayableDirector:
   m_Enabled: 1
   serializedVersion: 3
   m_PlayableAsset: {fileID: 11400000, guid: a1d8e3a82533c834bbbdc8b2d6483561, type: 2}
-  m_InitialState: 1
+  m_InitialState: 0
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
@@ -2785,6 +2778,7 @@ GameObject:
   - component: {fileID: 945216595}
   - component: {fileID: 945216597}
   - component: {fileID: 945216596}
+  - component: {fileID: 945216598}
   m_Layer: 5
   m_Name: Ladder
   m_TagString: Untagged
@@ -2850,6 +2844,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 945216594}
   m_CullTransparentMesh: 1
+--- !u!95 &945216598
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 945216594}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8c7c606b530da4a46bac8a527d0850c9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &957755377
 GameObject:
   m_ObjectHideFlags: 0
@@ -3223,7 +3236,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3469,7 +3482,7 @@ PlayableDirector:
   m_Enabled: 1
   serializedVersion: 3
   m_PlayableAsset: {fileID: 11400000, guid: 7baaf243d87c78949bab8119defa41b9, type: 2}
-  m_InitialState: 1
+  m_InitialState: 0
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
@@ -3495,8 +3508,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ce4edbb9353dfe48824c44d4718cf88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraController: {fileID: 299126266}
-  cameraController_2F: {fileID: 299126264}
+  lunoHouseManager: {fileID: 269656772}
   playerPosition: 8.7
 --- !u!114 &1255050895
 MonoBehaviour:
@@ -5115,6 +5127,7 @@ GameObject:
   - component: {fileID: 2004762270}
   - component: {fileID: 2004762272}
   - component: {fileID: 2004762271}
+  - component: {fileID: 2004762273}
   m_Layer: 5
   m_Name: Move
   m_TagString: Untagged
@@ -5180,6 +5193,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2004762269}
   m_CullTransparentMesh: 1
+--- !u!95 &2004762273
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2004762269}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8c7c606b530da4a46bac8a527d0850c9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2024508038
 GameObject:
   m_ObjectHideFlags: 0
@@ -5603,7 +5635,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

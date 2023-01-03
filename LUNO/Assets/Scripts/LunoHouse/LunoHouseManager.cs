@@ -10,11 +10,13 @@ public class LunoHouseManager : MonoBehaviour
     [SerializeField]
     GameObject player;
 
-    CameraController cameraController;
-    CameraController_2F cameraController_2F;
+    public CameraController cameraController;
+    public CameraController_2F cameraController_2F;
 
     //firstPlay
     public bool firstPlay;
+    public GameObject moveInfo;
+    public GameObject ladderInfo;
 
     //dialogues
     public GameObject S2_1s;
@@ -99,7 +101,7 @@ public class LunoHouseManager : MonoBehaviour
                 graveyardBubble.SetActive(false);
                 if(firstPlay)
                 {
-                    director[1].Play();
+                    moveInfo.SetActive(true);
                 }
             }
 
