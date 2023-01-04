@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.IO;
 
 public class Scene2_GraveyardManager : MonoBehaviour
 {
@@ -14,25 +15,26 @@ public class Scene2_GraveyardManager : MonoBehaviour
 
     private int sceneNum = 2;
 
-    public int GetSceneNum()
-    {
-        return sceneNum;
-    }
-
     void Start()
     {
         screenAnim = blackScreen.GetComponent<Animator>();
+        DataManager.instance.LoadData();
+        sceneNum = DataManager.instance.gameData.sceneNum;
     }
 
     void Update()
     {
+        sceneNum = DataManager.instance.gameData.sceneNum;
+
         if (interactionObjects[0].transform.GetChild(0).gameObject.activeSelf && Input.GetKeyDown(KeyCode.E))    //DirectorCemetery
         {
             interactionObjects[0].transform.GetChild(0).gameObject.SetActive(false);
             if(sceneNum == 2)
             {
                 interactionObjects[0].transform.GetChild(1).GetComponent<DialogueManager>().StartDialogue();
-                sceneNum = 3;
+                //sceneNum = 3;
+                DataManager.instance.gameData.sceneNum = 3;
+                DataManager.instance.SaveData();
             }
             else if(sceneNum == 3)
             {

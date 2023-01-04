@@ -17,7 +17,6 @@ public class CemeteryDialogueCount : MonoBehaviour
     private string dialogueName2;
 
     private int count = 0;
-    private int sceneNum;
 
     public void IncreaseCount()
     {
@@ -33,8 +32,6 @@ public class CemeteryDialogueCount : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        sceneNum = gameObject.GetComponent<Scene2_GraveyardManager>().GetSceneNum();
-
         if (count >= 3)
         {
             for(int i = 0; i < dialogueManagers1.Length; i++)
