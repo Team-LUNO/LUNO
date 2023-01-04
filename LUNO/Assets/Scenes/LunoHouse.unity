@@ -751,7 +751,7 @@ MonoBehaviour:
   player: {fileID: 1255050893}
   cameraController: {fileID: 0}
   cameraController_2F: {fileID: 0}
-  firstPlay: 1
+  firstPlay: 0
   moveInfo: {fileID: 2004762269}
   ladderInfo: {fileID: 945216594}
   S2_1s: {fileID: 1364781073}
@@ -3363,7 +3363,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1156159819}
   - component: {fileID: 1156159820}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ground_1F
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5020,7 +5020,7 @@ GameObject:
   - component: {fileID: 1987709474}
   - component: {fileID: 1987709475}
   - component: {fileID: 1987709476}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ground_2F
   m_TagString: Untagged
   m_Icon: {fileID: 0}

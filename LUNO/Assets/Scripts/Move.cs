@@ -75,7 +75,7 @@ public class Move : MonoBehaviour
             //Jump
             if (Input.GetButtonDown("Jump") && !anim.GetBool("IsJump"))
             {
-                rigid.velocity = Vector2.up * jumpPower;
+                rigid.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
                 anim.SetBool("IsJump", true);
             }
 
@@ -83,12 +83,11 @@ public class Move : MonoBehaviour
             if (rigid.velocity.y < 0)
             {
                 Debug.DrawRay(rigid.position, Vector3.down, new Color(0, 1, 0));
-                RaycastHit2D rayHit
-                    = Physics2D.Raycast(rigid.position, Vector3.down, 5f, LayerMask.GetMask("platform"));
+                RaycastHit2D rayHit = Physics2D.Raycast(rigid.position, Vector3.down, 5f, LayerMask.GetMask("platform"));
 
                 if (rayHit.collider != null)
                 {
-                    if (rayHit.distance < 2f)
+                    if (rayHit.distance < 0.5f)
                         anim.SetBool("IsJump", false);
                 }
             }
@@ -152,14 +151,6 @@ public class Move : MonoBehaviour
                         anim.runtimeAnimatorController = rWalk.runtimeAnimatorController;
                     else if (anim == lRun)
                         anim.runtimeAnimatorController = lWalk.runtimeAnimatorController;
-                }
-            }
-            else
-            {
-                if (anim.runtimeAnimatorController == rWalk.runtimeAnimatorController || anim.runtimeAnimatorController == rRun.runtimeAnimatorController
-                    || anim.runtimeAnimatorController == rWalk.runtimeAnimatorController || anim.runtimeAnimatorController == rRun.runtimeAnimatorController)
-                {
-                    anim.SetBool("IsWalk", false);
                 }
             }
         }
