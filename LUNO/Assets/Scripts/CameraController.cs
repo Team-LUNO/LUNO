@@ -52,11 +52,11 @@ public class CameraController : MonoBehaviour
         {
             ZoomIn();
         }
-        if(moveRight)
+        if (moveRight)
         {
             CameraMoveRight();
         }
-        if(moveLeft)
+        if (moveLeft)
         {
             CameraMoveLeft();
         }
@@ -102,7 +102,7 @@ public class CameraController : MonoBehaviour
         transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref moveVelocity, smoothTime);
 
         //�̵� �Ϸ�
-        if(Vector3.Distance(transform.position, targetPosition) < 0.1f)
+        if (Vector3.Distance(transform.position, targetPosition) < 0.1f)
         {
             moveRight = false;
         }
@@ -113,7 +113,7 @@ public class CameraController : MonoBehaviour
         transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref moveVelocity, smoothTime);
 
         //�̵� �Ϸ�
-        if(Vector3.Distance(transform.position, targetPosition) <0.1f)
+        if (Vector3.Distance(transform.position, targetPosition) < 0.1f)
         {
             moveLeft = false;
             cameraMove = true;

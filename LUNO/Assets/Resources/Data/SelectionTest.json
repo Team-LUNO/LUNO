@@ -1,0 +1,17 @@
+{
+    "dialogues": [
+        {
+            "dialogueName": "test",
+            "charName": "char-02",
+            "size": 3,
+            "dialogue": "마을을 나가려는거야?"
+        },
+        {
+            "dialogueName": "test",
+            "dialogue": "0",
+            "charName": "char-01",
+            "size": 9
+
+        }
+    ]
+}

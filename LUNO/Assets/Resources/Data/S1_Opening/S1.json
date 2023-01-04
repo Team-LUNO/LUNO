@@ -1,0 +1,58 @@
+﻿{
+    "dialogues": [
+        {
+            "dialogueName": "S1-1s-1",
+            "charName": "char-2",
+            "size": 2,
+            "dialogue": "관장님은 언제나 모두가 편안하고 행복하기를 바랬습니다."
+        },
+        {
+            "dialogueName": "S1-1s-1",
+            "charName": "char-2",
+            "size": 1,
+            "dialogue": "그가 지키던 도서관은 모두의 쉼터였죠. 여전히 그의 미소가 우리의 마음에 남아 온기를 전하는 듯 합니다. "
+        },
+        {
+            "dialogueName": "S1-1s-1",
+            "charName": "char-2",
+            "size": 2,
+            "dialogue": "(추모사 대사는 두고두고 고민할 예정)"
+        },
+        {
+            "dialogueName": "S1-1s-1",
+            "charName": "char-2",
+            "size": 2,
+            "dialogue": "그곳에서 본인이 나누던 사랑을 온전히 되받길 바라며,"
+        },
+        {
+            "dialogueName": "S1-1s-2",
+            "charName": "char-2",
+            "size": 4,
+            "dialogue": "그의 넋을 기립니다."
+        },
+        {
+            "dialogueName": "S1-1s-2",
+            "charName": "char-3",
+            "size": 2,
+            "dialogue": "관장님이 이렇게 빨리 떠나실 줄 누가 알았겠어요?"
+        },
+        {
+            "dialogueName": "S1-1s-2",
+            "charName": "char-4",
+            "size": 3,
+            "dialogue": "에휴, 저 애가 제일 안타깝지."
+        },
+        {
+            "dialogueName": "S1-1s-2",
+            "charName": "char-5",
+            "size": 2,
+            "dialogue": "관장이 직접 데려다 키웠다고 하던데… 이제 저 애는 어쩌려나."
+        },
+        {
+            "dialogueName": "S1-1s-2",
+            "charName": "char-3",
+            "size": 3,
+            "dialogue": "해가 져요… 이제 가요."
+        }
+    ]
+}

@@ -1,0 +1,52 @@
+{
+    "dialogues": [
+        {
+            "dialogueName": "S1-1c-01-01",
+            "charName": "char-02",
+            "size": 2,
+            "dialogue": "관장님은 항상 편견 없이 우리의 모습을 바라봐주셨습니다."
+        },
+        {
+            "dialogueName": "S1-1c-01-01",
+            "charName": "char-02",
+            "size": 1,
+            "dialogue": "도서관은 우리 모두의 쉼터였죠. 그는 언제나 따뜻하게 우리를 맞아주었습니다. "
+        },
+        {
+            "dialogueName": "S1-1c-01-01",
+            "charName": "char-02",
+            "size": 2,
+            "dialogue": "그런 따뜻함을 우리는 다시 누리기 어려울지도 모릅니다."
+        },
+        {
+            "dialogueName": "S1-1c-01-01",
+            "charName": "char-02",
+            "size": 4,
+            "dialogue": "그의 넋을 기립니다."
+        },
+        {
+            "dialogueName": "S1-1c-01-02",
+            "charName": "char-06",
+            "size": 3,
+            "dialogue": "저 애가 제일 슬플 거야."
+        },
+        {
+            "dialogueName": "S1-1c-01-02",
+            "charName": "char-05",
+            "size": 3,
+            "dialogue": "관장이 직접 데려다 키운 여우잖아."
+        },
+        {
+            "dialogueName": "S1-1c-01-02",
+            "charName": "char-06",
+            "size": 2,
+            "dialogue": "어릴 때부터 또래보다 크더니… 지금은 또래 중에 가장 큰 것 같지?"
+        },
+        {
+            "dialogueName": "S1-1c-01-02",
+            "charName": "char-05",
+            "size": 3,
+            "dialogue": "어두워지네… 이제 가자."
+        }
+    ]
+}
