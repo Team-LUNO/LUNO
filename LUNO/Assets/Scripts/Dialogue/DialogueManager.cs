@@ -8,8 +8,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField]
     private DialogueLoader dialogueLoader;
 
-    [SerializeField]
-    private string dialogueName;
+    public string dialogueName;
 
     private DialogueLoader.Dialogue[] dialogues;
 
