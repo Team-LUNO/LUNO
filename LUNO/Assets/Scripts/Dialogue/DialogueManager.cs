@@ -200,7 +200,7 @@ public class DialogueManager : MonoBehaviour
 
     IEnumerator TypeSentence(GameObject bubble, string sentence)
     {
-        Text text = bubble.transform.GetChild(0).GetComponent<Text>();
+        Text text = bubble.transform.GetChild(0).GetComponent<DialogueText>();
         text.text = string.Empty;
 
         yield return new WaitForSeconds(0.2f);
