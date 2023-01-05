@@ -1,0 +1,136 @@
+﻿{
+  "dialogues": [
+    {
+      "dialogueName": "S5-2s-1",
+      "charName": "char-02",
+      "size": 4,
+      "dialogue": "거기 있었구나."
+    },
+    {
+      "dialogueName": "S5-2s-1",
+      "charName": "char-02",
+      "size": 3,
+      "dialogue": "네게 줄 것이 있어 찾아다녔단다."
+    },
+    {
+      "dialogueName": "S5-2s-1",
+      "charName": "char-02",
+      "size": 3,
+      "dialogue": "도서관 앞에 한번 가보려무나."
+    },
+    {
+      "dialogueName": "S5-2s-2",
+      "charName": "char-02",
+      "size": 3,
+      "dialogue": "도서관 문 앞은 확인해 봤니?"
+    },
+    {
+      "dialogueName": "S5-2s-3",
+      "charName": "char-01",
+      "size": 4,
+      "dialogue": "……."
+    },
+    {
+      "dialogueName": "S5-2s-4",
+      "charName": "char-06",
+      "size": 3,
+      "dialogue": "또 여기까지 돌아다니네."
+    },
+    {
+      "dialogueName": "S5-2s-4",
+      "charName": "char-06",
+      "size": 2,
+      "dialogue": "그럴 시간이 있으면 도서관이나 다시 열어줘."
+    },
+    {
+      "dialogueName": "S5-2s-4",
+      "charName": "char-06",
+      "size": 3,
+      "dialogue": "해가 져서… 난 곧 들어가야겠군."
+    },
+    {
+      "dialogueName": "S5-2s-5",
+      "charName": "char-07",
+      "size": 4,
+      "dialogue": "무슨 생각 해?"
+    },
+    {
+      "dialogueName": "S5-2s-5",
+      "charName": "char-07",
+      "size": 3,
+      "dialogue": "난 언제나 네가 걱정돼."
+    },
+    {
+      "dialogueName": "S5-2s-6",
+      "charName": "char-05",
+      "size": 2,
+      "dialogue": "남의 집 사다리는 왜 함부로 타려 하는 건지, 원."
+    },
+    {
+      "dialogueName": "S5-2s-6",
+      "charName": "char-05",
+      "size": 2,
+      "dialogue": "지붕으로라도 갈 수 있을 거라 생각하는 건가?"
+    },
+    {
+      "dialogueName": "S5-2s-6",
+      "charName": "char-05",
+      "size": 2,
+      "dialogue": "여기로는 우리 집 창문까지밖에 못 간다고."
+    },
+    {
+      "dialogueName": "S5-2s-6",
+      "charName": "char-05",
+      "size": 2,
+      "dialogue": "얘, 너도 늦었는데 이제 슬슬 볼일 마치렴."
+    },
+    {
+      "dialogueName": "S5-2s-6",
+      "charName": "char-05",
+      "size": 3,
+      "dialogue": "어린애들은 일찍 일찍 자야 해."
+    },
+    {
+      "dialogueName": "S5-2s-7",
+      "charName": "char-01",
+      "size": 3,
+      "dialogue": "도서관에 볼 일이 남았어."
+    },
+    {
+      "dialogueName": "S5-2s-8",
+      "charName": "char-12",
+      "size": 3,
+      "dialogue": "이렇게 또 하루가 가네."
+    },
+    {
+      "dialogueName": "S5-2s-8",
+      "charName": "char-12",
+      "size": 4,
+      "dialogue": "뭐 재밌는 일 없나?"
+    },
+    {
+      "dialogueName": "S5-2s-8",
+      "charName": "char-11",
+      "size": 3,
+      "dialogue": "저 여우에게 말 걸어 보던가."
+    },
+    {
+      "dialogueName": "S5-2s-8",
+      "charName": "char-12",
+      "size": 3,
+      "dialogue": "재미 없어… 기껏해야 저 애는"
+    },
+    {
+      "dialogueName": "S5-2s-8",
+      "charName": "char-12",
+      "size": 3,
+      "dialogue": "옛날 관장님한테밖에 관심 없는 걸."
+    },
+    {
+      "dialogueName": "S5-2s-8",
+      "charName": "char-12",
+      "size": 3,
+      "dialogue": "기껏해야 도서관 정도일려나."
+    }
+  ]
+}

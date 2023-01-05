@@ -16,13 +16,13 @@ public class Scene3_SquareManager : MonoBehaviour
     private GameObject player;
 
     [SerializeField]
+    private Move move;
+
+    [SerializeField]
     private Vector3[] startPosition;
 
     [SerializeField]
     private bool firstPlay;
-
-    [SerializeField]
-    private GameObject[] InfoUI;
 
     [SerializeField]
     private GameObject oldDog;
@@ -30,10 +30,22 @@ public class Scene3_SquareManager : MonoBehaviour
     [SerializeField]
     private Camera cam;
 
+    [SerializeField]
+    private GameObject mainCamera;
+
+    [SerializeField]
+    private GameObject scene7Camera;
+
+    [SerializeField]
+    private GameObject bound2;
+
     CameraController cameraController;
+
     public GameObject[] bubble;
-    public GameObject[] item;
+    public GameObject[] characterBubble;
+    public GameObject keyItem;
     private float noMoveTime = 0f;
+    private bool benchDialogue = false;
 
     [SerializeField]
     private GameObject graveyardBubble;
@@ -41,7 +53,20 @@ public class Scene3_SquareManager : MonoBehaviour
     [SerializeField]
     private GameObject flowerBubble;
 
-    private int benchDialogue = 0;
+    private int otakuDialogue = 9;
+    private bool oldDogFirst = true;
+
+    [SerializeField]
+    private Vector3 movePosition;
+
+    [SerializeField]
+    private Animator lWalk;
+
+    [SerializeField]
+    private GameObject villageNotice;
+
+    [SerializeField]
+    private GameObject villageGraffiti;
 
     //library
     [SerializeField]
@@ -55,36 +80,48 @@ public class Scene3_SquareManager : MonoBehaviour
 
     private bool libraryOpen;
 
-    //dialogue
-    [SerializeField]
-    private DialogueManager[] dialogueManager;
+    //dialogues
+    DialogueManager dialogueManager;
+    public GameObject S2_2s;
+    public GameObject S3_2s;
+    public GameObject S4_1s;
+    public GameObject S5_2s;
+    public GameObject S7_1s;
 
     //scene
     public GameObject blackScreen;
+    public int previousMap = 0;
 
     void Start()
     {
         cameraController = cam.GetComponent<CameraController>();
 
-        if (sceneNum == 2 && firstPlay)
+        //0: LunoHouse, 1: Graveyard, 2: Library
+        player.transform.position = startPosition[previousMap];
+
+        if (sceneNum == 7)
         {
-            player.transform.position = startPosition[0];
+            //Camera Fixed
+            scene7Camera.SetActive(true);
+            mainCamera.SetActive(false);
+            bound2.SetActive(true);
+
+            player.transform.position = startPosition[2];   //Library
+            oldDog.SetActive(true);
+        }
+
+        if (firstPlay)
+        {
             director[0].Play();
             firstPlay = false;
+            //sound: ambience_village
         }
-        else if (sceneNum >= 2 && !firstPlay)
+        else
         {
             director[1].Play();
-            player.transform.position = startPosition[0];
         }
-        /*
-        else if (sceneNum == 3)
-        {
-            director[1].Play();
-            player.transform.position = startPosition[1];
-        }
-        */
     }
+
     void Update()
     {
         //collider action
@@ -93,77 +130,84 @@ public class Scene3_SquareManager : MonoBehaviour
             if (bubble[0].activeSelf & Input.GetKeyDown(KeyCode.E))  //Graveyard
             {
                 bubble[0].SetActive(false);
+                //sound: door_iron
+                previousMap = 1;
                 SceneManager.LoadScene("Scene2_Graveyard");
             }
             else if (bubble[1].activeSelf && Input.GetKeyDown(KeyCode.E)) //Forest
             {
                 bubble[1].SetActive(false);
-                if(dialogueManager[0].GetDone())
-                    dialogueManager[0].ResetOrder();
-                dialogueManager[0].StartDialogue();
+                RepeatableDialogue(S2_2s, 1);
             }
             else if (bubble[2].activeSelf && Input.GetKeyDown(KeyCode.E))   //Lunohouse
             {
                 bubble[2].SetActive(false);
+                previousMap = 0;
                 //SceneManager.LoadScene("Scene5_lunohouse");
             }
             else if (bubble[3].activeSelf && Input.GetKeyDown(KeyCode.E))   //Library
             {
                 bubble[3].SetActive(false);
-                if (dialogueManager[1].GetDone())
-                    dialogueManager[1].ResetOrder();
-                dialogueManager[1].StartDialogue();
+                RepeatableDialogue(S2_2s, 2);
+                //sound: door_unlock
             }
-            else if (bubble[4].activeSelf && Input.GetKeyDown(KeyCode.E))   //Ladder1
+            else if (characterBubble[4].activeSelf && Input.GetKeyDown(KeyCode.E))   //Cow
             {
-                if (dialogueManager[2].GetDone())
-                    dialogueManager[2].ResetOrder();
-                dialogueManager[2].StartDialogue();
+                characterBubble[4].SetActive(false);
+                RepeatableDialogue(S2_2s, 3);
             }
-            else if (bubble[5].activeSelf && Input.GetKeyDown(KeyCode.E))   //House1
+            else if (characterBubble[1].activeSelf && Input.GetKeyDown(KeyCode.E))   //Adult
             {
-                if (dialogueManager[3].GetDone())
-                    dialogueManager[3].ResetOrder();
-                dialogueManager[3].StartDialogue();
-            }
-            else if ((bubble[6].activeSelf || bubble[8].activeSelf)
-            && Input.GetKeyDown(KeyCode.E))   //Bench1, 2
-            {
-                if (benchDialogue == 0)
-                {
-                    //S2-2s-5 dialogue
-                    benchDialogue++;
-                }
-                else
-                {
-                    //S2-2s-6 dialogue
-                    benchDialogue--;
-                }
+                characterBubble[1].SetActive(false);
+                RepeatableDialogue(S2_2s, 5);
             }
             else if (bubble[7].activeSelf && Input.GetKeyDown(KeyCode.E))   //Fountain
             {
-                //S2-2s-7 dialogue
+                bubble[7].SetActive(false);
+                RepeatableDialogue(S2_2s, 7);
             }
-            else if (bubble[9].activeSelf && Input.GetKeyDown(KeyCode.E))   //House2
+            else if (bubble[8].activeSelf && Input.GetKeyDown(KeyCode.E))   //BenchR
             {
-                //S2-2s-9
+                bubble[8].SetActive(false);
+                //sound: sitdown
+                RepeatableDialogue(S2_2s, 6);
+                benchDialogue = true;
             }
-
-            //bubble[10]. babybear dialogue S2-2s-8
-
-            else if (bubble[11].activeSelf && Input.GetKeyDown(KeyCode.E))   //Otaku
+            else if (characterBubble[2].activeSelf && Input.GetKeyDown(KeyCode.E))   //Bear
             {
-                //S2-2s-10 dialogue
+                characterBubble[2].SetActive(false);
+                StartCoroutine(Scene2Bear());
             }
-            else if (bubble[12].activeSelf && Input.GetKeyDown(KeyCode.E))  //Dog
+            else if (bubble[9].activeSelf && Input.GetKeyDown(KeyCode.E))   //VillageNotice
             {
-                //S2-2s-11 dialogue
+                bubble[9].SetActive(false);
+                villageNotice.SetActive(true);
+            }
+            else if (characterBubble[3].activeSelf && Input.GetKeyDown(KeyCode.E))   //Teenager
+            {
+                characterBubble[3].SetActive(false);
+                RepeatableDialogue(S2_2s, 12);
+            }
+            else if(bubble[10].activeSelf && Input.GetKeyDown(KeyCode.E))   //VillageGraffiti
+            {
+                bubble[10].SetActive(false);
+                villageGraffiti.SetActive(true);
+            }
+            else if (characterBubble[5].activeSelf && Input.GetKeyDown(KeyCode.E))   //Otaku
+            {
+                characterBubble[5].SetActive(false);
+                RepeatableDialogue(S2_2s, 10);
+            }
+            else if (characterBubble[6].activeSelf && Input.GetKeyDown(KeyCode.E))  //Dog
+            {
+                characterBubble[6].SetActive(false);
+                RepeatableDialogue(S2_2s, 11);
             }
 
             //no move for 5 secnods
             noMoveTime += Time.deltaTime;
 
-            if (Input.anyKeyDown)
+            if (Input.anyKeyDown || Input.anyKey)
             {
                 noMoveTime = 0f;
             }
@@ -178,6 +222,13 @@ public class Scene3_SquareManager : MonoBehaviour
             {
                 graveyardBubble.SetActive(false);
             }
+
+            if (benchDialogue && dialogueManager.GetDone())
+            {
+                //sound: speechbigin
+                graveyardBubble.SetActive(true);
+                benchDialogue = false;
+            }
         }
 
         else if (sceneNum == 3)
@@ -185,61 +236,195 @@ public class Scene3_SquareManager : MonoBehaviour
             if (bubble[0].activeSelf & Input.GetKeyDown(KeyCode.E))  //Graveyard
             {
                 bubble[0].SetActive(false);
+                //sound: door_iron
+                previousMap = 1;
                 SceneManager.LoadScene("Scene2_Graveyard");
             }
             else if (bubble[1].activeSelf && Input.GetKeyDown(KeyCode.E)) //Forest
             {
                 bubble[1].SetActive(false);
-                //S3-2s-1 dialogue
+                RepeatableDialogue(S3_2s, 1);
             }
             else if (bubble[2].activeSelf && Input.GetKeyDown(KeyCode.E))   //Lunohouse
             {
                 bubble[2].SetActive(false);
+                previousMap = 0;
                 //SceneManager.LoadScene("Scene5_lunohouse");
+                //Bgm fade out
             }
             else if (bubble[3].activeSelf && Input.GetKeyDown(KeyCode.E))   //Library
             {
                 bubble[3].SetActive(false);
-                //S3-2s-2 dialogue
+                RepeatableDialogue(S3_2s, 2);
+                //sound: door_unlock
             }
-            else if (bubble[4].activeSelf && Input.GetKeyDown(KeyCode.E))   //Ladder1
+            else if (characterBubble[4].activeSelf && Input.GetKeyDown(KeyCode.E))   //Cow
             {
-                //S3-2s-3 dialogue
+                characterBubble[4].SetActive(false);
+                RepeatableDialogue(S3_2s, 3);
             }
-            else if (bubble[5].activeSelf && Input.GetKeyDown(KeyCode.E))   //House1
+            else if (characterBubble[1].activeSelf && Input.GetKeyDown(KeyCode.E))   //Adult
             {
-                //S3-2s-4 dialogue
+                characterBubble[1].SetActive(false);
+                RepeatableDialogue(S3_2s, 17);
             }
-            else if ((bubble[6].activeSelf || bubble[8].activeSelf)
-            && Input.GetKeyDown(KeyCode.E))   //Bench1, 2
+            else if (bubble[8].activeSelf && Input.GetKeyDown(KeyCode.E))   //BenchR
             {
-                //S3-2s-5 dialogue
+                bubble[8].SetActive(false);
+                //sound: sitdown
+                RepeatableDialogue(S3_2s, 5);
+                benchDialogue = true;
             }
             else if (bubble[7].activeSelf && Input.GetKeyDown(KeyCode.E))   //Fountain
             {
-                //S3-2s-6 dialogue
+                bubble[7].SetActive(false);
+                RepeatableDialogue(S3_2s, 6);
             }
-            else if (bubble[9].activeSelf && Input.GetKeyDown(KeyCode.E))    //House2
+            else if (bubble[10].activeSelf && Input.GetKeyDown(KeyCode.E))   //Bear
             {
-                //S3-2s-8 dialogue
+                bubble[10].SetActive(false);
+                RepeatableDialogue(S3_2s, 7);
             }
-            else if (bubble[10].activeSelf && Input.GetKeyDown(KeyCode.E))   //babyBear
+            else if (bubble[9].activeSelf && Input.GetKeyDown(KeyCode.E))   //VillageNotice
             {
-                //S3-2s-7 dialogue
+                bubble[9].SetActive(false);
+                villageNotice.SetActive(true);
             }
-            else if (bubble[11].activeSelf && Input.GetKeyDown(KeyCode.E))   //Otaku
+            else if (characterBubble[3].activeSelf && Input.GetKeyDown(KeyCode.E))   //Teenager
             {
-                //S3-2s-9~15 dialogue
+                characterBubble[3].SetActive(false);
+                RepeatableDialogue(S3_2s, 18);
             }
-            else if (bubble[12].activeSelf && Input.GetKeyDown(KeyCode.E))  //Dog
+            else if (bubble[10].activeSelf && Input.GetKeyDown(KeyCode.E))   //VillageGraffiti
             {
-                //S3-2s-16 dialogue
+                bubble[10].SetActive(false);
+                villageGraffiti.SetActive(true);
+            }
+            else if (characterBubble[5].activeSelf && Input.GetKeyDown(KeyCode.E))   //Otaku
+            {
+                characterBubble[5].SetActive(false);
+                if (otakuDialogue >= 9 || otakuDialogue < 15)
+                {
+                    dialogueManager 
+                        = S3_2s.transform.GetChild(otakuDialogue).GetComponent<DialogueManager>();
+                    dialogueManager.StartDialogue();
+                    otakuDialogue++;
+                }
+                else
+                {
+                    RepeatableDialogue(S3_2s, 15);
+                }
+            }
+            else if (characterBubble[6].activeSelf && Input.GetKeyDown(KeyCode.E))  //Dog
+            {
+                characterBubble[6].SetActive(false);
+                RepeatableDialogue(S3_2s, 16);
             }
 
             //no move for 5 secnods
             noMoveTime += Time.deltaTime;
 
-            if (Input.anyKeyDown)
+            if (Input.anyKeyDown || Input.anyKey)
+            {
+                noMoveTime = 0f;
+            }
+
+            if (noMoveTime >= 5f)
+            {
+                flowerBubble.SetActive(true);
+                noMoveTime = 0f;
+            }
+
+            if (flowerBubble.activeSelf && Input.GetKeyDown(KeyCode.E))
+            {
+                flowerBubble.SetActive(false);
+            }
+
+            if (benchDialogue && dialogueManager.GetDone())
+            {
+                //sound: speechbigin
+                flowerBubble.SetActive(true);
+                benchDialogue = false;
+            }
+        }
+
+        else if (sceneNum == 4)
+        {
+            if (bubble[0].activeSelf & Input.GetKeyDown(KeyCode.E))  //Graveyard
+            {
+                bubble[0].SetActive(false);
+                previousMap = 1;
+                SceneManager.LoadScene("Scene2_Graveyard");
+                //sound; door_iron
+            }
+            else if (bubble[3].activeSelf && Input.GetKeyDown(KeyCode.E))   //Library
+            {
+                bubble[3].SetActive(false);
+                //sound: door_unlock
+            }
+            else if (bubble[7].activeSelf && Input.GetKeyDown(KeyCode.E))   //Fountain
+            {
+                bubble[7].SetActive(false);
+                RepeatableDialogue(S4_1s, 1);
+            }
+            else if (bubble[2].activeSelf && Input.GetKeyDown(KeyCode.E))   //Lunohouse
+            {
+                bubble[2].SetActive(false);
+                previousMap = 0;
+                //SceneManager.LoadScene("Scene5_lunohouse");
+                //Bgm fade out
+            }
+            else if (characterBubble[5].activeSelf && Input.GetKeyDown(KeyCode.E))   //Otaku
+            {
+                characterBubble[5].SetActive(false);
+                RepeatableDialogue(S4_1s, 3);
+            }
+            else if (characterBubble[6].activeSelf && Input.GetKeyDown(KeyCode.E))  //Dog
+            {
+                characterBubble[6].SetActive(false);
+                RepeatableDialogue(S4_1s, 4);
+            }
+            else if (bubble[9].activeSelf && Input.GetKeyDown(KeyCode.E))   //VillageNotice
+            {
+                bubble[9].SetActive(false);
+                villageNotice.SetActive(true);
+            }
+            else if (characterBubble[3].activeSelf && Input.GetKeyDown(KeyCode.E))   //Teenager
+            {
+                characterBubble[3].SetActive(false);
+                //RepeatableDialogue(S4_1s, );
+            }
+            else if (bubble[10].activeSelf && Input.GetKeyDown(KeyCode.E))   //VillageGraffiti
+            {
+                bubble[10].SetActive(false);
+                villageGraffiti.SetActive(true);
+            }
+            else if (bubble[10].activeSelf && Input.GetKeyDown(KeyCode.E))   //Bear
+            {
+                bubble[10].SetActive(false);
+                //RepeatableDialogue(S4_1s, 2);
+            }
+            else if (characterBubble[4].activeSelf && Input.GetKeyDown(KeyCode.E))   //Cow
+            {
+                characterBubble[4].SetActive(false);
+                //RepeatableDialogue(S4_1s, );
+            }
+            else if (characterBubble[1].activeSelf && Input.GetKeyDown(KeyCode.E))   //Adult
+            {
+                characterBubble[1].SetActive(false);
+                //RepeatableDialogue(S4_1s, );
+            }
+            else if (bubble[8].activeSelf && Input.GetKeyDown(KeyCode.E))   //BenchR
+            {
+                bubble[8].SetActive(false);
+                RepeatableDialogue(S4_1s, 5);
+                //flowerBubble
+            }
+
+            //no move for 5 secnods
+            noMoveTime += Time.deltaTime;
+
+            if (Input.anyKeyDown || Input.anyKey)
             {
                 noMoveTime = 0f;
             }
@@ -255,53 +440,88 @@ public class Scene3_SquareManager : MonoBehaviour
                 flowerBubble.SetActive(false);
             }
         }
-
-        else if (sceneNum == 4)
+        else if (sceneNum == 5)
         {
-            if (bubble[0].activeSelf & Input.GetKeyDown(KeyCode.E))  //Graveyard
+            if (characterBubble[0].activeSelf && Input.GetKeyDown(KeyCode.E))  //Old Dog
+            {
+                characterBubble[0].SetActive(false);
+                if (oldDogFirst)
+                {
+                    dialogueManager
+                        = S5_2s.transform.GetChild(1).GetComponent<DialogueManager>();
+                    dialogueManager.StartDialogue();
+                }
+                else
+                {
+                    RepeatableDialogue(S5_2s, 2);
+                }
+            }
+            else if (bubble[0].activeSelf & Input.GetKeyDown(KeyCode.E))  //Graveyard
             {
                 bubble[0].SetActive(false);
+                previousMap = 1;
                 SceneManager.LoadScene("Scene2_Graveyard");
+                //sound; door_iron
             }
-            else if (bubble[3].activeSelf && Input.GetKeyDown(KeyCode.E))   //Library
+            else if (bubble[2].activeSelf && Input.GetKeyDown(KeyCode.E))   //Lunohouse
             {
-                bubble[3].SetActive(false);
-                //sound
+                bubble[2].SetActive(false);
+                previousMap = 0;
+                //SceneManager.LoadScene("Scene5_lunohouse");
+                //Bgm fade out
+            }
+            else if (characterBubble[4].activeSelf && Input.GetKeyDown(KeyCode.E))   //Cow
+            {
+                characterBubble[4].SetActive(false);
+                RepeatableDialogue(S5_2s, 6);
             }
             else if (bubble[7].activeSelf && Input.GetKeyDown(KeyCode.E))   //Fountain
             {
-                //dialogue
+                bubble[7].SetActive(false);
+                RepeatableDialogue(S5_2s, 3);
             }
-            else if (bubble[11].activeSelf && Input.GetKeyDown(KeyCode.E))   //Otaku
+            else if ((bubble[6].activeSelf || bubble[8].activeSelf) 
+                        && Input.GetKeyDown(KeyCode.E))   //BenchL, BenchR
             {
-
+                bubble[6].SetActive(false);
+                bubble[8].SetActive(false);
+                RepeatableDialogue(S5_2s, 7);
             }
-            else if (bubble[12].activeSelf && Input.GetKeyDown(KeyCode.E))  //Dog
+            else if (bubble[9].activeSelf && Input.GetKeyDown(KeyCode.E))   //VillageNotice
             {
-
+                bubble[9].SetActive(false);
+                villageNotice.SetActive(true);
             }
-        }
-        else if (sceneNum == 5)
-        {
-            if(bubble[3].activeSelf && Input.GetKeyDown(KeyCode.E))   //Library
+            else if (characterBubble[3].activeSelf && Input.GetKeyDown(KeyCode.E))   //Teenager
             {
-                bubble[3].SetActive(false);
-                if (libraryOpen)
-                {
-                    StartCoroutine(SceneMove());
-                }
-                else if(item[0].activeSelf)
-                {
-                    item[0].SetActive(false);
-                    libraryOpen = true;
-                    StartCoroutine(SceneMove());
-                }
-                else if(!item[0].activeSelf)
+                characterBubble[3].SetActive(false);
+                RepeatableDialogue(S5_2s, 8);
+            }
+            else if (bubble[10].activeSelf && Input.GetKeyDown(KeyCode.E))   //VillageGraffiti
+            {
+                bubble[10].SetActive(false);
+                villageGraffiti.SetActive(true);
+            }
+            else if (characterBubble[5].activeSelf && Input.GetKeyDown(KeyCode.E))   //Otaku
+            {
+                characterBubble[5].SetActive(false);
+                RepeatableDialogue(S5_2s, 4);
+            }
+            else if (characterBubble[6].activeSelf && Input.GetKeyDown(KeyCode.E))  //Dog
+            {
+                characterBubble[6].SetActive(false);
+                RepeatableDialogue(S5_2s, 5);
+            }
+            else if (bubble[3].activeSelf && Input.GetKeyDown(KeyCode.E))   //Library
+            {
+                bubble[3].SetActive(false); 
+                if(!libraryOpen && !keyItem.activeSelf)
                 {
                     libraryDetail.SetActive(true);
+                    //sound: pop_inout
 
                     player.GetComponent<Move>().enabled = false;
-                    player.transform.position = libraryPosition;
+                    //player.transform.position = libraryPosition;
 
                     //camera move
                     cameraController.targetPosition
@@ -310,34 +530,91 @@ public class Scene3_SquareManager : MonoBehaviour
                     cameraController.cameraMove = false;
                     cameraController.moveRight = true;
                 }
+                else if (keyItem.activeSelf)
+                {
+                    //sound: door_library
+                    keyItem.SetActive(false);
+                    libraryOpen = true;
+                    StartCoroutine(EnterLibrary());
+                }
+                else if (libraryOpen)
+                {
+                    StartCoroutine(EnterLibrary());
+                }
             }
             else if (libraryDetail.activeSelf && Input.GetKeyDown(KeyCode.E))
             {
+                //sound: item_get
                 libraryDetail.SetActive(false);
                 noKeyDetail.SetActive(true);
+                keyItem.SetActive(true);
                 StartCoroutine(DetailDisappear());
             }
         }
         else if(sceneNum == 7)
         {
-            if (bubble[13].activeSelf && Input.GetKeyDown(KeyCode.E))  //Dog
+            if (characterBubble[0].activeSelf && Input.GetKeyDown(KeyCode.E))  //Old Dog
             {
-
+                characterBubble[0].SetActive(false);
+                RepeatableDialogue(S7_1s, 2);
             }
+        }
+
+        if (villageNotice.activeSelf && Input.GetKeyDown(KeyCode.Escape))
+        {
+            villageNotice.SetActive(false);
+        }
+        else if (villageGraffiti.activeSelf && Input.GetKeyDown(KeyCode.Escape))
+        {
+            villageGraffiti.SetActive(false);
         }
     }
 
     IEnumerator DetailDisappear()
     {
         yield return new WaitForSecondsRealtime(1f);
+        //sound: pop_inout
         noKeyDetail.SetActive(false);
-        item[0].SetActive(true);
         player.GetComponent<Move>().enabled = true;
     }
 
-    IEnumerator SceneMove()
+    IEnumerator EnterLibrary()
     {
+        previousMap = 2;
         yield return new WaitForSecondsRealtime(1f);
         SceneManager.LoadScene("Scene4_Library");
+    }
+
+    IEnumerator Scene2Bear()
+    {
+        player.GetComponent<Move>().enabled = false;
+        Animator anim = player.GetComponent<Animator>();
+        anim.runtimeAnimatorController 
+            = lWalk.runtimeAnimatorController;
+        anim.SetBool("IsWalk", true);
+
+        Vector3 dir = (movePosition - player.transform.position).normalized;
+        float speed = 1.2f;
+        float distance = Vector3.Distance(movePosition, player.transform.position);
+
+        while (distance > 0.1f)
+        {
+            player.transform.position 
+                    = Vector3.MoveTowards(player.transform.position, movePosition, speed*Time.deltaTime);
+            distance = Vector3.Distance(movePosition, player.transform.position);
+            yield return new WaitForFixedUpdate();
+        }
+        player.GetComponent<Move>().enabled = true;
+        yield return new WaitForSeconds(1f);
+        RepeatableDialogue(S2_2s, 8);
+    }
+
+    void RepeatableDialogue(GameObject dialogue, int num)
+    {
+        dialogueManager 
+            = dialogue.transform.GetChild(num).GetComponent<DialogueManager>();
+        if (dialogueManager.GetDone())
+            dialogueManager.ResetOrder();
+        dialogueManager.StartDialogue();
     }
 }

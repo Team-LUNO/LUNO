@@ -177,6 +177,7 @@ public class DialogueManager : MonoBehaviour
 
     IEnumerator PopUp(GameObject bubble)
     {
+        yield return new WaitForSeconds(0.15f);
         bubble.SetActive(true);
         yield return new WaitForSeconds(0.2f);
     }
@@ -184,7 +185,7 @@ public class DialogueManager : MonoBehaviour
     IEnumerator PopDown(GameObject bubble)
     {
         bubble.GetComponent<Animator>().SetBool("close", true);
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.1f);
         bubble.SetActive(false);
     }
 

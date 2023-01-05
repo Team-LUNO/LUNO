@@ -1,0 +1,148 @@
+﻿{
+  "dialogues": [
+    {
+      "dialogueName": "S7-1s-1",
+      "charName": "char-02",
+      "size": 4,
+      "dialogue": "이리 와 보거라."
+    },
+    {
+      "dialogueName": "S7-1s-2",
+      "charName": "char-02",
+      "size": 4,
+      "dialogue": "해가 져 가는구나."
+    },
+    {
+      "dialogueName": "S7-1s-2",
+      "charName": "char-02",
+      "size": 2,
+      "dialogue": "보아하니 거기서 시간을 꽤 보냈나보지."
+    },
+    {
+      "dialogueName": "S7-1s-2",
+      "charName": "char-02",
+      "size": 3,
+      "dialogue": "할 말이 있단다. 들어보렴."
+    },
+    {
+      "dialogueName": "S7-1s-2",
+      "charName": "char-02",
+      "size": 2,
+      "dialogue": "짐승이란 모름지기 위치가 중요한 법."
+    },
+    {
+      "dialogueName": "S7-1s-2",
+      "charName": "char-02",
+      "size": 2,
+      "dialogue": "관장이 그렇게 가고… 네가 방황하는 걸 꽤 오래 지켜봤단다."
+    },
+    {
+      "dialogueName": "S7-1s-2",
+      "charName": "char-02",
+      "size": 2,
+      "dialogue": "네가 혼란스러운 것도 모두 네 일을 찾지 못해서인 게지."
+    },
+    {
+      "dialogueName": "S7-1s-2",
+      "charName": "char-02",
+      "size": 2,
+      "dialogue": "우리 마을에 있어 도서관은 중요하단다."
+    },
+    {
+      "dialogueName": "S7-1s-2",
+      "charName": "char-02",
+      "size": 4,
+      "dialogue": "관장도 정말 아꼈지."
+    },
+    {
+      "dialogueName": "S7-1s-2",
+      "charName": "char-02",
+      "size": 2,
+      "dialogue": "관장 덕에 도서관이 돌아간다 해도 과언이 아니었어."
+    },
+    {
+      "dialogueName": "S7-1s-2",
+      "charName": "char-02",
+      "size": 2,
+      "dialogue": "넌 아직 어리고, 여러모로 믿음직스럽진 않지만…"
+    },
+    {
+      "dialogueName": "S7-1s-2",
+      "charName": "char-02",
+      "size": 2,
+      "dialogue": "이젠 네가 그 일을 맡는 게 어떨까 생각해봤단다."
+    },
+    {
+      "dialogueName": "S7-1s-2",
+      "charName": "char-02",
+      "size": 4,
+      "dialogue": "어떻게 생각하니?"
+    },
+    {
+      "dialogueName": 1,
+      "charName": "char-01",
+      "size": 9,
+      "dialogue": "…...."
+    },
+    {
+      "dialogueName": 2,
+      "charName": "char-01",
+      "size": 9,
+      "dialogue": "무슨 일이요?"
+    },
+    {
+      "dialogueName": "S7-1s-2",
+      "charName": "char-02",
+      "size": 4,
+      "dialogue": "도서관 일 말이다."
+    },
+    {
+      "dialogueName": "S7-1s-2",
+      "charName": "char-01",
+      "size": 4,
+      "dialogue": "…...."
+    },
+    {
+      "dialogueName": "S7-1s-2",
+      "charName": "char-02",
+      "size": 3,
+      "dialogue": "네가 마을에서 겉도는 것을 알아."
+    },
+    {
+      "dialogueName": "S7-1s-2",
+      "charName": "char-02",
+      "size": 2,
+      "dialogue": "하지만 이곳이 아니면 네가 어찌 지낼 수 있을거라 생각하나?"
+    },
+    {
+      "dialogueName": "S7-1s-2",
+      "charName": "char-01",
+      "size": 4,
+      "dialogue": "…...…...."
+    },
+    {
+      "dialogueName": "S7-1s-2",
+      "charName": "char-02",
+      "size": 1,
+      "dialogue": "기억하거라, 네가 음침하고 기분 나쁘다고 하는 마을 동물들도 여럿 있다는 것을."
+    },
+    {
+      "dialogueName": "S7-1s-2",
+      "charName": "char-02",
+      "size": 2,
+      "dialogue": "관장이 있었기에 지금까지 마을은 널 품어줬지만"
+    },
+    {
+      "dialogueName": "S7-1s-2",
+      "charName": "char-02",
+      "size": 3,
+      "dialogue": "이젠 네가 스스로 노력해야 할 때야."
+    },
+    {
+      "dialogueName": "S7-1s-2",
+      "charName": "char-02",
+      "size": 4,
+      "dialogue": "네 위치를 찾으렴."
+    }
+  ]
+}
