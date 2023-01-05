@@ -4308,13 +4308,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1794312561247271221, guid: 6a7f3c29ff4e54a38beb897db4a2ef38, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 849510345
+      objectReference: {fileID: 0}
     - target: {fileID: 1794312561247271222, guid: 6a7f3c29ff4e54a38beb897db4a2ef38, type: 3}
       propertyPath: m_Text
       value: "\uBC31\uD569"
       objectReference: {fileID: 0}
+    - target: {fileID: 1794312562089889469, guid: 6a7f3c29ff4e54a38beb897db4a2ef38, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 849510345
+      objectReference: {fileID: 0}
     - target: {fileID: 1794312562089889470, guid: 6a7f3c29ff4e54a38beb897db4a2ef38, type: 3}
       propertyPath: m_Text
       value: "\uC7A5\uBBF8"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1794312562823149826, guid: 6a7f3c29ff4e54a38beb897db4a2ef38, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 849510345
       objectReference: {fileID: 0}
     - target: {fileID: 1794312562823149827, guid: 6a7f3c29ff4e54a38beb897db4a2ef38, type: 3}
       propertyPath: m_Text
