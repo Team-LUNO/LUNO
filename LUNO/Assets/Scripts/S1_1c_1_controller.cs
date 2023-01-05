@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Playables;
+using UnityEngine.SceneManagement;
 
 public class S1_1c_1_controller : MonoBehaviour
 {
@@ -69,6 +70,16 @@ public class S1_1c_1_controller : MonoBehaviour
             timeover = false;
             director4.Play();
             order++;
+        }
+        else if(order == 6)
+        {
+            StartCoroutine(Timer(13.0f));
+            if (timeover)
+            {
+                DataManager.instance.gameData.sceneNum = 2;
+                DataManager.instance.SaveData();
+                SceneManager.LoadScene("Scene2_Graveyard");
+            }
         }
     }
 

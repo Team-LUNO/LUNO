@@ -10,7 +10,7 @@
             "dialogueName": "S1-1s-1",
             "charName": "char-2",
             "size": 1,
-            "dialogue": "그가 지키던 도서관은 모두의 쉼터였죠. 여전히 그의 미소가 우리의 마음에 남아 온기를 전하는 듯 합니다. "
+            "dialogue": "그가 지키던 도서관은 모두의 쉼터였죠. 여전히 그의 미소가 우리의 마음에 남아 온기를 전하는 듯 합니다."
         },
         {
             "dialogueName": "S1-1s-1",
@@ -25,7 +25,7 @@
             "dialogue": "그곳에서 본인이 나누던 사랑을 온전히 되받길 바라며,"
         },
         {
-            "dialogueName": "S1-1s-2",
+            "dialogueName": "S1-1s-1",
             "charName": "char-2",
             "size": 4,
             "dialogue": "그의 넋을 기립니다."
