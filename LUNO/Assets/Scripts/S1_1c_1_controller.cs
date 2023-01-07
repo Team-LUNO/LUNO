@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Playables;
+using UnityEngine.SceneManagement;
 
 public class S1_1c_1_controller : MonoBehaviour
 {
@@ -18,10 +19,10 @@ public class S1_1c_1_controller : MonoBehaviour
     private PlayableDirector director4;
 
     [SerializeField]
-    private PrologueManager prologue1;
+    private DialogueManager dialogue1;
 
     [SerializeField]
-    private PrologueManager prologue2;
+    private DialogueManager dialogue2;
 
     private int order = 1;
     private bool timeover = false;
@@ -35,21 +36,21 @@ public class S1_1c_1_controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (director1.state != PlayState.Playing && Input.anyKeyDown && order == 1)
+        if (director1.state != PlayState.Playing && order == 1)
         {
             director2.Play();
             order++;
         }
         else if (order == 2)
         {
-            StartCoroutine(Timer(0f));
+            StartCoroutine(Timer(5f));
             if (timeover)
             {
-                prologue1.StartPrologue();
+                dialogue1.StartDialogue();
                 order++;
             }
         }
-        else if (order == 3 && prologue1.GetDone())
+        else if (order == 3 && dialogue1.GetDone())
         {
             timeover = false;
             director3.Play();
@@ -60,15 +61,25 @@ public class S1_1c_1_controller : MonoBehaviour
             StartCoroutine(Timer(4.0f));
             if (timeover)
             {
-                prologue2.StartPrologue();
+                dialogue2.StartDialogue();
                 order++;
             }
         }
-        else if (order == 5 && prologue2.GetDone())
+        else if (order == 5 && dialogue2.GetDone())
         {
             timeover = false;
             director4.Play();
             order++;
+        }
+        else if(order == 6)
+        {
+            StartCoroutine(Timer(13.0f));
+            if (timeover)
+            {
+                DataManager.instance.gameData.sceneNum = 2;
+                DataManager.instance.SaveData();
+                SceneManager.LoadScene("Scene2_Graveyard");
+            }
         }
     }
 

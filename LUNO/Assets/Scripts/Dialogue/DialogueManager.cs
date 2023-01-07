@@ -8,8 +8,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField]
     private DialogueLoader dialogueLoader;
 
-    [SerializeField]
-    private string dialogueName;
+    public string dialogueName;
 
     private DialogueLoader.Dialogue[] dialogues;
 
@@ -202,7 +201,7 @@ public class DialogueManager : MonoBehaviour
 
     IEnumerator TypeSentence(GameObject bubble, string sentence)
     {
-        Text text = bubble.transform.GetChild(0).GetComponent<Text>();
+        Text text = bubble.transform.GetChild(0).GetComponent<DialogueText>();
         text.text = string.Empty;
 
         yield return new WaitForSeconds(0.2f);

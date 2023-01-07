@@ -1,0 +1,64 @@
+﻿{
+    "dialogues": [
+        {
+            "dialogueName": "S2-3s-1",
+            "charName": "char-01",
+            "size": 8,
+            "dialogue": "……."
+        },
+        {
+            "dialogueName": "S2-3s-1",
+            "charName": "char-01",
+            "size": 8,
+            "dialogue": "꽃들이 다 시들었네."
+        },
+        {
+            "dialogueName": "S2-3s-1",
+            "charName": "char-01",
+            "size": 8,
+            "dialogue": "새것을 구해와야겠어."
+        },
+        {
+            "dialogueName": "S2-3s-2",
+            "charName": "char-01",
+            "size": 7,
+            "dialogue": "누구의 묘인지 모르겠어."
+        },
+        {
+            "dialogueName": "S2-3s-2",
+            "charName": "char-01",
+            "size": 7,
+            "dialogue": "내가 모르는 동물이야."
+        },
+        {
+            "dialogueName": "S2-3s-3",
+            "charName": "char-01",
+            "size": 7,
+            "dialogue": "누구의 묘인지 모르겠어."
+        },
+        {
+            "dialogueName": "S2-3s-3",
+            "charName": "char-01",
+            "size": 7,
+            "dialogue": "내가 모르는 동물이야."
+        },
+        {
+            "dialogueName": "S2-3s-3",
+            "charName": "char-01",
+            "size": 7,
+            "dialogue": "관장님의 묘를 찾아야 해."
+        },
+        {
+            "dialogueName": "S2-3s-4",
+            "charName": "char-01",
+            "size": 6,
+            "dialogue": "“여생을 행복하게 살다 간 수사슴, 미스터 스미스 씨의 묘.”"
+        },
+        {
+            "dialogueName": "S2-3s-5",
+            "charName": "char-01",
+            "size": 6,
+            "dialogue": "“여생을 행복하게 살다 간 암사슴, 미세스 스미스 씨의 묘.”"
+        }
+    ]
+}
