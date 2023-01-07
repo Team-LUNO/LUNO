@@ -575,7 +575,7 @@ public class VillageDaytimeManager : MonoBehaviour
             yield return new WaitForFixedUpdate();
         }
         player.GetComponent<Move>().enabled = true;
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(1f);
         RepeatableDialogue(dialogue, num);
     }
 
