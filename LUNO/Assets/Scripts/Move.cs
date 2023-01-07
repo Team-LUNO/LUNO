@@ -32,7 +32,7 @@ public class Move : MonoBehaviour
         gravity = rigid.gravityScale;
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         if (ladderMode)
         {
@@ -83,11 +83,12 @@ public class Move : MonoBehaviour
             if (rigid.velocity.y < 0)
             {
                 Debug.DrawRay(rigid.position, Vector3.down, new Color(0, 1, 0));
-                RaycastHit2D rayHit = Physics2D.Raycast(rigid.position, Vector3.down, 5f, LayerMask.GetMask("platform"));
+                RaycastHit2D rayHit 
+                    = Physics2D.Raycast(rigid.position, Vector3.down, 3.5f * transform.localScale.x, LayerMask.GetMask("platform"));
 
                 if (rayHit.collider != null)
                 {
-                    if (rayHit.distance < 0.5f)
+                    if (rayHit.distance < 3f * transform.localScale.x)
                         anim.SetBool("IsJump", false);
                 }
             }
