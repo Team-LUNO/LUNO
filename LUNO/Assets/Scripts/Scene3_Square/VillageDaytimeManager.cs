@@ -7,6 +7,7 @@ using UnityEngine.Playables;
 
 public class VillageDaytimeManager : MonoBehaviour
 {
+    //scene start
     public int sceneNum;
 
     [SerializeField]
@@ -16,55 +17,41 @@ public class VillageDaytimeManager : MonoBehaviour
     private GameObject player;
 
     [SerializeField]
-    private Move move;
-
-    [SerializeField]
     private Vector3[] startPosition;
 
     [SerializeField]
     private bool firstPlay;
 
-    [SerializeField]
-    private GameObject oldDog;
-
-    [SerializeField]
-    private Camera cam;
-
+    //camera
     [SerializeField]
     private GameObject mainCamera;
 
-    [SerializeField]
-    private GameObject scene7Camera;
-
-    [SerializeField]
-    private GameObject bound2;
-
     CameraController cameraController;
 
+    //interatctions
     public GameObject interactions;
+    public GameObject Characters;
     public GameObject[] bubble;
     public GameObject[] characterBubble;
+    public GameObject[] imageBubble;
     public GameObject[] item;
     private float noMoveTime = 0f;
     private bool benchDialogue = false;
-
-    [SerializeField]
-    private GameObject[] imageBubble;
-
     private int otakuDialogue = 9;
     private bool oldDogFirst = true;
-
-    [SerializeField]
-    private Vector3 movePosition;
-
-    [SerializeField]
-    private Animator lWalk;
 
     [SerializeField]
     private GameObject villageNotice;
 
     [SerializeField]
     private GameObject villageGraffiti;
+
+    //BearTalk
+    [SerializeField]
+    private Vector3 bearPosition;
+
+    [SerializeField]
+    private Animator lWalk;
 
     //library
     [SerializeField]
@@ -77,6 +64,13 @@ public class VillageDaytimeManager : MonoBehaviour
     Vector3 libraryPosition;
 
     private bool libraryOpen;
+
+    //scene7
+    [SerializeField]
+    private GameObject scene7Camera;
+
+    [SerializeField]
+    private GameObject bound2;
 
     //dialogues
     DialogueManager dialogueManager;
@@ -92,21 +86,10 @@ public class VillageDaytimeManager : MonoBehaviour
 
     void Start()
     {
-        cameraController = cam.GetComponent<CameraController>();
+        cameraController = mainCamera.GetComponent<CameraController>();
 
         //0: LunoHouse, 1: Graveyard, 2: Library
         player.transform.position = startPosition[previousMap];
-
-        if (sceneNum == 7)
-        {
-            //Camera Fixed
-            scene7Camera.SetActive(true);
-            mainCamera.SetActive(false);
-            bound2.SetActive(true);
-
-            player.transform.position = startPosition[2];   //Library
-            oldDog.SetActive(true);
-        }
 
         if (firstPlay && sceneNum == 2)
         {
@@ -117,6 +100,25 @@ public class VillageDaytimeManager : MonoBehaviour
         else
         {
             director[1].Play();
+        }
+        if(sceneNum == 5)
+        {
+            player.transform.position = startPosition[1];
+            Characters.transform.GetChild(0).gameObject.SetActive(true);    //oldDog
+            Characters.transform.GetChild(1).gameObject.SetActive(false);    //Adult
+            Characters.transform.GetChild(2).gameObject.SetActive(false);    //Adult
+            interactions.transform.GetChild(1).gameObject.SetActive(false); //forest
+            interactions.transform.GetChild(4).gameObject.SetActive(true); //BechL
+        }
+        else if (sceneNum == 7)
+        {
+            //Camera Fixed
+            scene7Camera.SetActive(true);
+            mainCamera.SetActive(false);
+            bound2.SetActive(true);
+
+            player.transform.position = startPosition[2];   //Library
+            Characters.transform.GetChild(0).gameObject.SetActive(true);    //oldDog
         }
     }
 
@@ -277,9 +279,7 @@ public class VillageDaytimeManager : MonoBehaviour
                 characterBubble[5].SetActive(false);
                 if (otakuDialogue >= 9 && otakuDialogue < 15)
                 {
-                    dialogueManager 
-                        = S3_2s.transform.GetChild(otakuDialogue).GetComponent<DialogueManager>();
-                    dialogueManager.StartDialogue();
+                    RepeatableDialogue(S3_2s, otakuDialogue);
                     otakuDialogue++;
                 }
                 else
@@ -374,9 +374,8 @@ public class VillageDaytimeManager : MonoBehaviour
                 characterBubble[0].SetActive(false);
                 if (oldDogFirst)
                 {
-                    dialogueManager
-                        = S5_2s.transform.GetChild(1).GetComponent<DialogueManager>();
-                    dialogueManager.StartDialogue();
+                    RepeatableDialogue(S5_2s, 1);
+                    oldDogFirst = false;
                 }
                 else
                 {
@@ -394,7 +393,7 @@ public class VillageDaytimeManager : MonoBehaviour
             {
                 bubble[2].SetActive(false);
                 previousMap = 0;
-                //SceneManager.LoadScene("Scene5_lunohouse");
+                SceneManager.LoadScene("LunoHouse");
                 //Bgm fade out
             }
             else if (characterBubble[4].activeSelf && Input.GetKeyDown(KeyCode.E))   //Cow
@@ -412,6 +411,7 @@ public class VillageDaytimeManager : MonoBehaviour
             {
                 bubble[6].SetActive(false);
                 bubble[8].SetActive(false);
+                //sound: sitdown
                 RepeatableDialogue(S5_2s, 7);
             }
             else if (bubble[9].activeSelf && Input.GetKeyDown(KeyCode.E))   //VillageNotice
@@ -448,11 +448,11 @@ public class VillageDaytimeManager : MonoBehaviour
                     //sound: pop_inout
 
                     player.GetComponent<Move>().enabled = false;
-                    //player.transform.position = libraryPosition;
+                    StartCoroutine(PositionRevise(libraryPosition));
 
                     //camera move
                     cameraController.targetPosition
-                        = new Vector3(cam.transform.position.x + 2.5f, cam.transform.position.y, cam.transform.position.z);
+                        = new Vector3(mainCamera.transform.position.x + 2.5f, mainCamera.transform.position.y, mainCamera.transform.position.z);
                     cameraController.smoothTime = 0.38f;
                     cameraController.cameraMove = false;
                     cameraController.moveRight = true;
@@ -516,11 +516,36 @@ public class VillageDaytimeManager : MonoBehaviour
         }
     }
 
+    IEnumerator PositionRevise(Vector3 targetPosition)
+    {
+        player.GetComponent<Move>().enabled = false;
+        float speed = 1.2f;
+        float distance = Vector3.Distance(targetPosition, player.transform.position);
+
+        while (distance > 0.1f)
+        {
+            player.transform.position
+                    = Vector3.MoveTowards(player.transform.position, targetPosition, speed * Time.deltaTime);
+            distance = Vector3.Distance(targetPosition, player.transform.position);
+            yield return new WaitForFixedUpdate();
+        }
+        yield return null;
+    }
+
     IEnumerator DetailDisappear()
     {
-        yield return new WaitForSecondsRealtime(1f);
+        yield return new WaitForSeconds(1f);
+        noKeyDetail.GetComponent<Animator>().SetTrigger("PressE");
+        yield return new WaitForSeconds(0.4f);
         //sound: pop_inout
         noKeyDetail.SetActive(false);
+
+        //camera move
+        cameraController.targetPosition
+            = new Vector3(player.transform.position.x, mainCamera.transform.position.y, mainCamera.transform.position.z);
+        cameraController.cameraMove = false;
+        cameraController.moveLeft = true;
+
         player.GetComponent<Move>().enabled = true;
     }
 
@@ -539,15 +564,14 @@ public class VillageDaytimeManager : MonoBehaviour
             = lWalk.runtimeAnimatorController;
         anim.SetBool("IsWalk", true);
 
-        Vector3 dir = (movePosition - player.transform.position).normalized;
         float speed = 1.2f;
-        float distance = Vector3.Distance(movePosition, player.transform.position);
+        float distance = Vector3.Distance(bearPosition, player.transform.position);
 
         while (distance > 0.1f)
         {
             player.transform.position 
-                    = Vector3.MoveTowards(player.transform.position, movePosition, speed*Time.deltaTime);
-            distance = Vector3.Distance(movePosition, player.transform.position);
+                    = Vector3.MoveTowards(player.transform.position, bearPosition, speed*Time.deltaTime);
+            distance = Vector3.Distance(bearPosition, player.transform.position);
             yield return new WaitForFixedUpdate();
         }
         player.GetComponent<Move>().enabled = true;

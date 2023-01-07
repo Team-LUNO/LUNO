@@ -659,7 +659,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 2175, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 945, y: 1440}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!95 &140613535
@@ -954,7 +954,7 @@ GameObject:
   - component: {fileID: 183121697}
   m_Layer: 0
   m_Name: VillageNotice
-  m_TagString: Untagged
+  m_TagString: InteractionObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1013,7 +1013,7 @@ GameObject:
   - component: {fileID: 190625388}
   m_Layer: 0
   m_Name: char-07
-  m_TagString: Obj
+  m_TagString: InteractionObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1536,7 +1536,7 @@ GameObject:
   - component: {fileID: 347807512}
   m_Layer: 0
   m_Name: Teenager
-  m_TagString: Untagged
+  m_TagString: InteractionObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1596,7 +1596,7 @@ GameObject:
   - component: {fileID: 349457187}
   m_Layer: 0
   m_Name: BenchR
-  m_TagString: Untagged
+  m_TagString: InteractionObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2293,7 +2293,7 @@ GameObject:
   - component: {fileID: 476959598}
   m_Layer: 0
   m_Name: Forest
-  m_TagString: Untagged
+  m_TagString: InteractionObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2781,23 +2781,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fef72a657a0a8b34a8efc1a687e604c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneNum: 4
+  sceneNum: 5
   director:
   - {fileID: 145121135}
   - {fileID: 1469222572}
   player: {fileID: 1055909709}
-  move: {fileID: 1055909712}
   startPosition:
   - {x: -85.84, y: -11.1928, z: 0}
   - {x: -129.015, y: -11.69436, z: 0}
   - {x: -65.59037, y: -10.07223, z: 0}
   firstPlay: 0
-  oldDog: {fileID: 944892503}
-  cam: {fileID: 1440794200}
   mainCamera: {fileID: 930210325}
-  scene7Camera: {fileID: 710216496}
-  bound2: {fileID: 1766964448}
   interactions: {fileID: 251876435}
+  Characters: {fileID: 936022465}
   bubble:
   - {fileID: 797110679}
   - {fileID: 295852499}
@@ -2818,24 +2814,26 @@ MonoBehaviour:
   - {fileID: 2087844273}
   - {fileID: 439788702}
   - {fileID: 647090175}
+  imageBubble:
+  - {fileID: 1857175577}
+  - {fileID: 1779575972}
+  - {fileID: 307171682}
+  - {fileID: 134212494}
   item:
   - {fileID: 1896398958}
   - {fileID: 74590749}
   - {fileID: 397432571}
   - {fileID: 1248577705}
   - {fileID: 1786111689}
-  imageBubble:
-  - {fileID: 1857175577}
-  - {fileID: 1779575972}
-  - {fileID: 307171682}
-  - {fileID: 134212494}
-  movePosition: {x: 10.91546, y: -11.69436, z: 0}
-  lWalk: {fileID: 930210326}
   villageNotice: {fileID: 26281136}
   villageGraffiti: {fileID: 437131007}
+  bearPosition: {x: 0, y: 0, z: 0}
+  lWalk: {fileID: 930210326}
   libraryDetail: {fileID: 140613533}
   noKeyDetail: {fileID: 1729433411}
   libraryPosition: {x: -67.75, y: -10.05645, z: 0}
+  scene7Camera: {fileID: 710216496}
+  bound2: {fileID: 1766964448}
   S2_2s: {fileID: 968602569}
   S3_2s: {fileID: 2080304230}
   S4_1s: {fileID: 1705825841}
@@ -3093,7 +3091,7 @@ GameObject:
   - component: {fileID: 661663964}
   m_Layer: 0
   m_Name: char-06
-  m_TagString: Untagged
+  m_TagString: InteractionObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3525,7 +3523,7 @@ GameObject:
   - component: {fileID: 709675512}
   m_Layer: 0
   m_Name: char-05
-  m_TagString: Obj
+  m_TagString: InteractionObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3877,7 +3875,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 944892504}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &758899395
 SpriteRenderer:
@@ -3943,7 +3941,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 324107020793958083, guid: 708f501e103934722b12d26be620449d, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 324107020793958083, guid: 708f501e103934722b12d26be620449d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4136,7 +4134,7 @@ RectTransform:
   - {fileID: 1248577706}
   - {fileID: 1786111690}
   m_Father: {fileID: 1927572250}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
@@ -4274,7 +4272,7 @@ GameObject:
   m_Component:
   - component: {fileID: 936022466}
   m_Layer: 0
-  m_Name: Character
+  m_Name: Characters
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4461,7 +4459,7 @@ GameObject:
   - component: {fileID: 944892505}
   m_Layer: 0
   m_Name: char-02
-  m_TagString: Obj
+  m_TagString: InteractionObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4477,8 +4475,8 @@ Transform:
   m_LocalPosition: {x: -118.33, y: -12.09, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 782510108}
   - {fileID: 758899394}
+  - {fileID: 782510108}
   m_Father: {fileID: 936022466}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4737,7 +4735,7 @@ GameObject:
   - component: {fileID: 971373428}
   m_Layer: 0
   m_Name: Adult
-  m_TagString: Untagged
+  m_TagString: InteractionObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4843,7 +4841,7 @@ GameObject:
   - component: {fileID: 1003089179}
   m_Layer: 0
   m_Name: Graveyard
-  m_TagString: Untagged
+  m_TagString: InteractionObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5136,7 +5134,7 @@ RectTransform:
   - {fileID: 1770817190}
   - {fileID: 1350135159}
   m_Father: {fileID: 1927572250}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -5562,7 +5560,7 @@ GameObject:
   - component: {fileID: 1138259415}
   m_Layer: 0
   m_Name: VillageGraffiti
-  m_TagString: Untagged
+  m_TagString: InteractionObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6701,11 +6699,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueLoader: {fileID: 1705825843}
   dialogueName: S4-1s-5
---- !u!20 &1440794200 stripped
-Camera:
-  m_CorrespondingSourceObject: {fileID: 8716911183015368773, guid: 2dc7b4fff84214494945d7401c6531b5, type: 3}
-  m_PrefabInstance: {fileID: 930210324}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1443508525
 GameObject:
   m_ObjectHideFlags: 0
@@ -8003,7 +7996,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 1230, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 945, y: 1440}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!95 &1729433413
@@ -8487,7 +8480,7 @@ GameObject:
   - component: {fileID: 1773519207}
   m_Layer: 0
   m_Name: Bear
-  m_TagString: Untagged
+  m_TagString: InteractionObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8717,13 +8710,13 @@ RectTransform:
   - {fileID: 140613534}
   - {fileID: 1729433412}
   m_Father: {fileID: 1927572250}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 1, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 1, y: 0.5}
 --- !u!1 &1783033466
 GameObject:
   m_ObjectHideFlags: 0
@@ -8954,7 +8947,7 @@ GameObject:
   - component: {fileID: 1806069388}
   m_Layer: 0
   m_Name: Fountain
-  m_TagString: Untagged
+  m_TagString: InteractionObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9763,9 +9756,9 @@ RectTransform:
   - {fileID: 660303271}
   - {fileID: 1886756251}
   - {fileID: 1896398959}
+  - {fileID: 1780449801}
   - {fileID: 814890472}
   - {fileID: 1064695925}
-  - {fileID: 1780449801}
   - {fileID: 26281137}
   - {fileID: 437131008}
   m_Father: {fileID: 0}
@@ -9850,7 +9843,7 @@ GameObject:
   - component: {fileID: 1978791606}
   m_Layer: 0
   m_Name: BenchL
-  m_TagString: Untagged
+  m_TagString: InteractionObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10072,7 +10065,7 @@ GameObject:
   - component: {fileID: 2064884543}
   m_Layer: 0
   m_Name: Lunohouse
-  m_TagString: LunohouseDoor
+  m_TagString: InteractionObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10369,7 +10362,7 @@ GameObject:
   - component: {fileID: 2120853733}
   m_Layer: 0
   m_Name: Library
-  m_TagString: LibraryDoor
+  m_TagString: InteractionObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

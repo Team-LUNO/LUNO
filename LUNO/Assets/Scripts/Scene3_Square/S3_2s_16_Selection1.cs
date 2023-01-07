@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class S3_2s_16_1_Selection : SelectionBalloon
+public class S3_2s_16_Selection1 : SelectionBalloon
 {
     [SerializeField]
     private DialogueManager[] dialogueManager;
