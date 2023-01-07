@@ -19,6 +19,7 @@ public class S3_2s_16_1_Selection : SelectionBalloon
 
     public override void First()
     {
+        //1A
         if (dialogueManager[1].GetDone())
             dialogueManager[1].ResetOrder();
         dialogueManager[1].StartDialogue();
@@ -28,6 +29,7 @@ public class S3_2s_16_1_Selection : SelectionBalloon
 
     public override void Second()
     {
+        //2A
         if (dialogueManager[2].GetDone())
             dialogueManager[2].ResetOrder();
         dialogueManager[2].StartDialogue();

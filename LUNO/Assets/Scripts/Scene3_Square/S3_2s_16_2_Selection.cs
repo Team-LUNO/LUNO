@@ -7,6 +7,9 @@ public class S3_2s_16_2_Selection : SelectionBalloon
     [SerializeField]
     private DialogueManager dialogueManager;
 
+    [SerializeField]
+    private VillageDaytimeManager villageDaytimeManager;
+
     void Start()
     {
         
@@ -19,16 +22,31 @@ public class S3_2s_16_2_Selection : SelectionBalloon
 
     public override void First()
     {
-        dialogueManager.IncreaseOrder();
+        //Cosmos
+        villageDaytimeManager.item[1].SetActive(true);
+        MoveOnScene4();
     }
 
     public override void Second()
     {
-        dialogueManager.IncreaseOrder();
+        //Rose
+        villageDaytimeManager.item[2].SetActive(true);
+        MoveOnScene4();
     }
 
     public override void Third()
     {
+        //Lily
+        villageDaytimeManager.item[3].SetActive(true);
+        MoveOnScene4();
+    }
+
+    public void MoveOnScene4()
+    {
+        //sound: item_get
+        villageDaytimeManager.item[0].SetActive(true);
+        villageDaytimeManager.sceneNum = 4;
+        villageDaytimeManager.Scene4Setting();
         dialogueManager.IncreaseOrder();
     }
 }
