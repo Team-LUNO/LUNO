@@ -8,51 +8,91 @@ public class Move : MonoBehaviour
     public float maxSpeed = 3.5f;
     public float jumpPower;
     public float jumpTimeLimit = 0.1f;
-    public bool IsLadder;
     public bool walkMode;
     public bool ladderMode;
+    public float ladderSpeed = 5f;
 
     public Animator rWalk;
     public Animator rRun;
     public Animator lWalk;
     public Animator lRun;
+    public Animator climb;
 
-    private float Gravity;
+    private float gravity;
     Rigidbody2D rigid;
     SpriteRenderer spriteRenderer;
     Animator anim;
 
-    public bool isOn;
 
-    // Start is called before the first frame update
     void Awake()
     {
         rigid = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
-        Gravity = rigid.gravityScale;
-        isOn = true;
+        gravity = rigid.gravityScale;
     }
 
-
-    void Update()
+    private void FixedUpdate()
     {
-        //Debug.Log(isOn);
-        if (isOn)
+        if (ladderMode)
         {
-            //????
-            if (Input.GetButtonDown("Jump") && !anim.GetBool("IsJump") && !IsLadder)
+            if (Input.GetButton("Vertical"))
+            {
+                anim.enabled = true;
+            }
+            else
+            {
+                anim.enabled = false;
+            }
+            float v = Input.GetAxis("Vertical");
+            rigid.gravityScale = 0;
+            rigid.velocity = new Vector2(rigid.velocity.x, v * ladderSpeed);
+        }
+        else
+        {
+            //Move
+            rigid.gravityScale = gravity;
+            float h = Input.GetAxis("Horizontal");
+            rigid.AddForce(Vector2.right * h, ForceMode2D.Impulse);
+
+            //Stop Speed
+            if (Input.GetButtonUp("Horizontal"))
+            {
+                rigid.velocity
+                    = new Vector2(rigid.velocity.normalized.x * 0.000000001f, rigid.velocity.y);
+            }
+
+            //max speed
+            if (rigid.velocity.x > maxSpeed)
+            {
+                rigid.velocity = new Vector2(maxSpeed, rigid.velocity.y);
+            }
+            else if (rigid.velocity.x < maxSpeed * (-1))
+            {
+                rigid.velocity = new Vector2(maxSpeed * (-1), rigid.velocity.y);
+            }
+
+            //Jump
+            if (Input.GetButtonDown("Jump") && !anim.GetBool("IsJump"))
             {
                 rigid.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
                 anim.SetBool("IsJump", true);
             }
 
+            //after jump
+            if (rigid.velocity.y < 0)
+            {
+                Debug.DrawRay(rigid.position, Vector3.down, new Color(0, 1, 0));
+                RaycastHit2D rayHit = Physics2D.Raycast(rigid.position, Vector3.down, 5f, LayerMask.GetMask("platform"));
 
-            if (Input.GetButtonUp("Horizontal"))
-            {       //?????? ???? ?????? ????  
-                rigid.velocity = new Vector2(rigid.velocity.normalized.x * 0.000000001f, rigid.velocity.y);
+                if (rayHit.collider != null)
+                {
+                    if (rayHit.distance < 0.5f)
+                        anim.SetBool("IsJump", false);
+                }
             }
 
+            //Animations
             if (Input.GetButtonDown("Horizontal"))
             {
                 //spriteRenderer.flipX = Input.GetAxisRaw("Horizontal") == -1;
@@ -80,8 +120,6 @@ public class Move : MonoBehaviour
                 }
             }
 
-
-            //????????, ???????????? ????
             if (Mathf.Abs(rigid.velocity.x) < 0.3)
             {
                 anim.SetBool("IsWalk", false);
@@ -91,10 +129,10 @@ public class Move : MonoBehaviour
                 anim.SetBool("IsWalk", true);
             }
 
-            // ??????, ???? ???? ????
+            //Walk & Run change
             if (Input.GetKeyDown(KeyCode.RightShift) || Input.GetKeyDown(KeyCode.LeftShift))
             {
-                if (walkMode)// walkMode?? true?????? ????, false?????? ??????(???????? ?????? ???? ????)
+                if (walkMode)
                 {
                     walkMode = false;
                     maxSpeed = 6.0f;
@@ -116,85 +154,23 @@ public class Move : MonoBehaviour
                 }
             }
         }
-        else
-        {
-            if (anim.runtimeAnimatorController == rWalk.runtimeAnimatorController || anim.runtimeAnimatorController == rRun.runtimeAnimatorController
-                || anim.runtimeAnimatorController == rWalk.runtimeAnimatorController || anim.runtimeAnimatorController == rRun.runtimeAnimatorController)
-            {
-                anim.SetBool("IsWalk", false);
-            }
-        }
     }
 
-
-    // Update is called once per frame
-    void FixedUpdate()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (isOn)
+        if(collision.CompareTag("Ladder"))
         {
-            //?????? ???? ????. 
-            if (IsLadder && ladderMode)
-            {
-                float ver = Input.GetAxis("Vertical");
-                rigid.gravityScale = 0.0f;
-                rigid.velocity = new Vector2(rigid.velocity.x, ver * maxSpeed);
-
-            }
-            else //ad?? ???????? ????. ?????? ???? ?????????? ???????? ???? ???? ?????? ???????? ??????.
-            {
-                rigid.gravityScale = Gravity;
-                float h = Input.GetAxis("Horizontal");
-                rigid.AddForce(Vector2.right * h, ForceMode2D.Impulse);
-            }
-
-
-            // ?????????? ???? ?????? ???????? ????
-            if (rigid.velocity.x > maxSpeed)
-            {
-                rigid.velocity = new Vector2(maxSpeed, rigid.velocity.y);
-            }
-            else if (rigid.velocity.x < maxSpeed * (-1))
-            {
-                rigid.velocity = new Vector2(maxSpeed * (-1), rigid.velocity.y);
-            }
-
-            //????????(???????? ?????????)
-            if (rigid.velocity.y < 0)
-            {
-                Debug.DrawRay(rigid.position, Vector3.down, new Color(0, 1, 0));
-                RaycastHit2D rayHit = Physics2D.Raycast(rigid.position, Vector3.down, 5f, LayerMask.GetMask("platform"));
-
-                if (rayHit.collider != null)
-                {
-                    if (rayHit.distance < 2f)
-                        anim.SetBool("IsJump", false);
-                }
-            }
-        }
-    }
-
-
-    //?????? ???????? ?????????? ???????? ?????? ????
-
-
-    public void OnTriggerStay2D(Collider2D collision)
-    {
-        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.S))
-        { // ???????? ???? ???????? W, S ???? ?????? ?????? ?????? ?????? ?? ???? ?? ???????? ?????? ?? ?????? ???? ????
+            anim.runtimeAnimatorController = climb.runtimeAnimatorController;
             ladderMode = true;
-            IsLadder = true;
         }
     }
-
-    public void OnTriggerExit2D(Collider2D collision)
+    private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("ladder"))
+        if (collision.CompareTag("Ladder"))
         {
+            anim.enabled = true;
+            anim.runtimeAnimatorController = rWalk.runtimeAnimatorController;
             ladderMode = false;
-            IsLadder = false;
         }
-
     }
-
-
 }

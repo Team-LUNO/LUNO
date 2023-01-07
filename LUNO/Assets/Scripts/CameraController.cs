@@ -8,27 +8,27 @@ public class CameraController : MonoBehaviour
     Vector3 cameraPosition = new Vector3(0, 0, -1);
     public bool cameraMove;
 
-    // �ڽ� �ݶ��̴� ������ �ּ� �ִ밪
+    //Map Bound
     public BoxCollider2D bound;
     private Vector3 minBound;
     private Vector3 maxBound;
 
-    // ī�޶��� �ݳ��̿� �ݳ���
+    //Camera size
     private float halfWidth;
     private float halfHeight;
 
-    //Ȯ��
+    //Zoom
     public bool zoomActive;
     float zoomSpeed = 0f;
-    public float zoomSize;  //Ȯ�� �� ī�޶� ũ��
+    public float zoomSize;  //camera size after zoom
 
-    //ī�޶� �̵�
+    //Camera move
     public bool moveRight;
     public bool moveLeft;
     Vector3 moveVelocity = Vector3.zero;
     public Vector3 targetPosition;
 
-    public float smoothTime;    //��ǥ���ޱ��� �ɸ��� �ð�
+    public float smoothTime;
 
     void Start()
     {
@@ -72,22 +72,22 @@ public class CameraController : MonoBehaviour
 
     void ZoomIn()
     {
-        //�÷��̾� ��ġ�� �̵�
+        //Camera Move
         Vector3 targetPosition = playerTransform.position + cameraPosition;
         transform.position = Vector3.SmoothDamp(transform.position, targetPosition,
                                                 ref moveVelocity, smoothTime);
         LimitCameraArea();
 
-        //Ȯ��
+        //Zoom
         float smoothZoomSize = Mathf.SmoothDamp(Camera.main.orthographicSize, zoomSize,
                                                 ref zoomSpeed, smoothTime);
         Camera.main.orthographicSize = smoothZoomSize;
 
-        //ī�޶� ������ ����ʿ� ���� ���� �� ����
+        //Camera area change
         halfHeight = Camera.main.orthographicSize;
         halfWidth = halfHeight * Screen.width / Screen.height;
 
-        //Ȯ�� �Ϸ�
+        //Zoom complete
         if (Mathf.Abs(Camera.main.orthographicSize - zoomSize) < 0.1f)
         {
             halfHeight = Camera.main.orthographicSize;
@@ -101,7 +101,7 @@ public class CameraController : MonoBehaviour
     {
         transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref moveVelocity, smoothTime);
 
-        //�̵� �Ϸ�
+        //Camera move complete
         if (Vector3.Distance(transform.position, targetPosition) < 0.1f)
         {
             moveRight = false;
@@ -112,7 +112,7 @@ public class CameraController : MonoBehaviour
     {
         transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref moveVelocity, smoothTime);
 
-        //�̵� �Ϸ�
+        //Camera move complete
         if (Vector3.Distance(transform.position, targetPosition) < 0.1f)
         {
             moveLeft = false;

@@ -1,0 +1,76 @@
+﻿{
+  "dialogues": [
+    {
+      "dialogueName": "S3-3s-1",
+      "charName": "char-01",
+      "size": 6,
+      "dialogue": "...이 안에 내가 찾는 게 있을 것 같지는 않아."
+    },
+    {
+      "dialogueName": "S3-3s-2",
+      "charName": "char-01",
+      "size": 7,
+      "dialogue": "관장님은 장미꽃을 좋아하셨어."
+    },
+    {
+      "dialogueName": "S3-3s-2",
+      "charName": "char-01",
+      "size": 6,
+      "dialogue": "이걸 가져가서 관장님 묘지에 놓을까?"
+    },
+    {
+      "dialogueName": 1,
+      "charName": "char-01",
+      "size": 10,
+      "dialogue": "그러자"
+    },
+    {
+      "dialogueName": 2,
+      "charName": "char-01",
+      "size": 10,
+      "dialogue": "아니야"
+    },
+    {
+      "dialogueName": "1A",
+      "charName": "char-01",
+      "size": 7,
+      "dialogue": "다 시들어버린 꽃인걸…"
+    },
+    {
+      "dialogueName": "1A",
+      "charName": "char-01",
+      "size": 8,
+      "dialogue": "새 꽃을 찾아보자."
+    },
+    {
+      "dialogueName": "2A",
+      "charName": "char-01",
+      "size": 8,
+      "dialogue": "이건 좀 그래."
+    },
+    {
+      "dialogueName": "2A",
+      "charName": "char-01",
+      "size": 8,
+      "dialogue": "다른 꽃을 찾아보자. "
+    },
+    {
+      "dialogueName": "S3-3s-3",
+      "charName": "char-01",
+      "size": 7,
+      "dialogue": "지금은 눕고 싶지 않아."
+    },
+    {
+      "dialogueName": "S3-3s-4",
+      "charName": "char-01",
+      "size": 6,
+      "dialogue": "...여기에 내가 찾는 게 있을 것 같지는 않아."
+    },
+    {
+      "dialogueName": "S3-3s-5",
+      "charName": "char-01",
+      "size": 8,
+      "dialogue": "물이 든 컵이야."
+    }
+  ]
+}

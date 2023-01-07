@@ -1,0 +1,58 @@
+﻿{
+    "dialogues": [
+        {
+            "dialogueName": "dayhouse01",
+            "charName": "char-01",
+            "size": 8,
+            "dialogue": "큰 신발과 외투."
+        },
+        {
+            "dialogueName": "dayhouse01",
+            "charName": "char-01",
+            "size": 8,
+            "dialogue": "나에게는 맞지 않아."
+        },
+        {
+            "dialogueName": "dayhouse02",
+            "charName": "char-01",
+            "size": 8,
+            "dialogue": "관장님과 찍은 사진."
+        },
+        {
+            "dialogueName": "dayhouse03",
+            "charName": "char-01",
+            "size": 6,
+            "dialogue": "장식장 안에는 잡동사니를 밀어 넣고 방치했어."
+        },
+        {
+            "dialogueName": "dayhouse03",
+            "charName": "char-01",
+            "size": 6,
+            "dialogue": "…지금 여는 건 좋은 생각이 아닌 것 같아."
+        },
+        {
+            "dialogueName": "dayhouse04",
+            "charName": "char-01",
+            "size": 8,
+            "dialogue": "시든 장미꽃."
+        },
+        {
+            "dialogueName": "dayhouse04",
+            "charName": "char-01",
+            "size": 7,
+            "dialogue": "관장님은 장미꽃을 좋아하셨어."
+        },
+        {
+            "dialogueName": "dayhouse05",
+            "charName": "char-01",
+            "size": 8,
+            "dialogue": "물이 든 컵이야."
+        },
+        {
+            "dialogueName": "dayhouse06",
+            "charName": "char-01",
+            "size": 7,
+            "dialogue": "지금은 눕고 싶지 않아."
+        }
+    ]
+}
