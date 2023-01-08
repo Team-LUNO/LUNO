@@ -26,7 +26,7 @@ public class LunoHouseManager : MonoBehaviour
     public bool graveyardDialogue; //for S2-1s-1, S2-1s-2
 
     [SerializeField]
-    GameObject graveyardBubble;
+    GameObject[] imageBubble;
 
     private float noMoveTime = 0f;
 
@@ -93,12 +93,14 @@ public class LunoHouseManager : MonoBehaviour
             //S2-1s-1, S2-1s-2 done
             if (graveyardDialogue && dialogueManager.GetDone())
             {
-                graveyardBubble.SetActive(true);
+                imageBubble[0].SetActive(true);
+                imageBubble[1].SetActive(true);
                 graveyardDialogue = false;
             }
-            else if (graveyardBubble.activeSelf && Input.GetKeyDown(KeyCode.E))
+            else if (imageBubble[1].activeSelf && Input.GetKeyDown(KeyCode.E))
             {
-                graveyardBubble.SetActive(false);
+                imageBubble[0].SetActive(false);
+                imageBubble[1].SetActive(false);
                 if(firstPlay)
                 {
                     moveInfo.SetActive(true);
@@ -182,7 +184,8 @@ public class LunoHouseManager : MonoBehaviour
 
             if (noMoveTime >= 5f)
             {
-                graveyardBubble.SetActive(true);
+                imageBubble[0].SetActive(true);
+                imageBubble[1].SetActive(true);
                 noMoveTime = 0f;
             }
         }

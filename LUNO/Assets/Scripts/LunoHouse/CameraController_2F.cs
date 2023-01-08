@@ -5,7 +5,7 @@ using UnityEngine;
 public class CameraController_2F : MonoBehaviour
 {
     public Transform playerTransform;
-    Vector3 cameraPosition = new Vector3(0, 0, -1);
+    Vector3 cameraPosition = new Vector3(0, 0, -10);
 
     //Map Bound
     public BoxCollider2D bound;
